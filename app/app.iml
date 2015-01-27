@@ -51,16 +51,10 @@
       <sourceFolder url="file://$MODULE_DIR$/src/main/assets" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/aidl" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/java" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/src/main/java/com/idiogram/umap/collections" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/src/main/java/com/idiogram/umap/utils" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/src/main/java/com/idiogram/umap/activities" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/src/main/java/com/idiogram/umap/ui" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/src/main/java/com/idiogram/umap/ui/activity" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/src/main/java/com/idiogram/umap/ui/actionbar" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/src/main/java/com/idiogram/umap/ui/fragment" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/src/main/java/com/idiogram/umap/ui/list" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/src/main/java/com/idiogram/umap/ui/dialog" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/src/main/java/com/idiogram/umap/ui/cart" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/java/com/idiogram/umap/collection" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/java/com/idiogram/umap/gemm" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/java/com/idiogram/umap/endpoints" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/java/com/idiogram/umap/discogs" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/jni" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/rs" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/androidTest/res" type="java-test-resource" />
@@ -94,8 +88,12 @@
     <orderEntry type="jdk" jdkName="Android API 21 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" exported="" name="appcompat-v7-21.0.3" level="project" />
+    <orderEntry type="library" exported="" name="joda-time-1.6.1" level="project" />
+    <orderEntry type="library" exported="" name="kotlin-runtime-0.10.195" level="project" />
+    <orderEntry type="library" exported="" name="butterknife-6.0.0" level="project" />
     <orderEntry type="library" exported="" name="support-v4-21.0.3" level="project" />
     <orderEntry type="library" exported="" name="support-annotations-21.0.3" level="project" />
+    <orderEntry type="library" exported="" name="kotlin-stdlib-0.10.195" level="project" />
   </component>
 </module>
 

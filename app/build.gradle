@@ -1,8 +1,9 @@
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
 
 android {
 	compileSdkVersion 21
-	buildToolsVersion "21.1.1"
+	buildToolsVersion "21.1.2"
 
 	defaultConfig {
 		applicationId "com.idiogram.umap"
@@ -18,8 +19,9 @@ android {
 		}
 	}
 	sourceSets {
+		main.java.srcDirs += 'src/main/kotlin'
 		main {
-			java.srcDirs = ['src/main/java', 'src/main/java/com/idiogram/umap/collections', 'src/main/java/com/idiogram/umap/utils', 'src/main/java/com/idiogram/umap/activities', 'src/main/java/com/idiogram/umap/ui', 'src/main/java/com/idiogram/umap/ui/activity', 'src/main/java/com/idiogram/umap/ui/actionbar', 'src/main/java/com/idiogram/umap/ui/fragment', 'src/main/java/com/idiogram/umap/ui/list', 'src/main/java/com/idiogram/umap/ui/dialog', 'src/main/java/com/idiogram/umap/ui/cart']
+			java.srcDirs = ['src/main/java', 'src/main/java/com/idiogram/umap/collection', 'src/main/java/com/idiogram/umap/gemm', 'src/main/java/com/idiogram/umap/endpoints', 'src/main/java/com/idiogram/umap/discogs']
 		}
 	}
 }
@@ -27,4 +29,7 @@ android {
 dependencies {
 	compile fileTree(dir: 'libs', include: ['*.jar'])
 	compile 'com.android.support:appcompat-v7:21.0.3'
+	compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin"
+	compile 'joda-time:joda-time:1.6.1'
+	compile 'com.jakewharton:butterknife:6.0.0'
 }
