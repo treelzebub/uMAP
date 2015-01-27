@@ -1,6 +1,4 @@
-# 01.26.2015
-# @author: tre murillo
-# @title: uMAP
+# uMAP
 
 :: The Plan ::
 uMAP (untitled music aggregation project) is an experiment in combining APIs for discogs.com and gemm.com, in an attempt to make it even easier for people to keep track of their record collections, wishlists, and purchase music from independent record stores.
