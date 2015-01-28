@@ -55,6 +55,8 @@
       <sourceFolder url="file://$MODULE_DIR$/src/main/java/com/idiogram/umap/gemm" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/java/com/idiogram/umap/endpoints" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/java/com/idiogram/umap/discogs" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/java/com/idiogram/umap/discogs/release" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/java/com/idiogram/umap/discogs/marketplace" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/jni" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/rs" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/androidTest/res" type="java-test-resource" />
@@ -89,11 +91,15 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" exported="" name="appcompat-v7-21.0.3" level="project" />
     <orderEntry type="library" exported="" name="joda-time-1.6.1" level="project" />
+    <orderEntry type="library" exported="" name="gson-2.3.1" level="project" />
     <orderEntry type="library" exported="" name="kotlin-runtime-0.10.195" level="project" />
     <orderEntry type="library" exported="" name="butterknife-6.0.0" level="project" />
+    <orderEntry type="library" exported="" name="okhttp-2.2.0" level="project" />
     <orderEntry type="library" exported="" name="support-v4-21.0.3" level="project" />
     <orderEntry type="library" exported="" name="support-annotations-21.0.3" level="project" />
+    <orderEntry type="library" exported="" name="retrofit-1.9.0" level="project" />
     <orderEntry type="library" exported="" name="kotlin-stdlib-0.10.195" level="project" />
+    <orderEntry type="library" exported="" name="okio-1.2.0" level="project" />
   </component>
 </module>
 
