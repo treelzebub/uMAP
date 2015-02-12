@@ -1,3 +1,5 @@
+package com.treelzebub.umap.endpoints;
+
 import java.util.List;
 
 import retrofit.client.Header;

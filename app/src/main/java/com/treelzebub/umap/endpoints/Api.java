@@ -1,6 +1,8 @@
-/**
+package com.treelzebub.umap.endpoints; /**
  * Created by Tre Murillo 1/27/2015
  */
+
+import com.treelzebub.umap.discogs.Record;
 
 import retrofit.Callback;
 import retrofit.client.Response;

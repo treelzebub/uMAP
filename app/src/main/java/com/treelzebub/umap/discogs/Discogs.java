@@ -1,3 +1,5 @@
+package com.treelzebub.umap.discogs;
+
 import java.util.ArrayList;
 import java.util.List;
 

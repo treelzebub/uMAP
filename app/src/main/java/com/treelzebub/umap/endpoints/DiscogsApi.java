@@ -1,6 +1,9 @@
+package com.treelzebub.umap.endpoints;
+
+import com.treelzebub.umap.discogs.Record;
+
 import retrofit.Callback;
 import retrofit.client.Response;
-import retrofit.http.Query;
 
 /**
  * Created by Tre Murillo 1/27/2015

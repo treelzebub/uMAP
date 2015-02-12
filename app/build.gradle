@@ -6,7 +6,7 @@ android {
 	buildToolsVersion "21.1.2"
 
 	defaultConfig {
-		applicationId "com.idiogram.umap"
+		applicationId "com.treelzebub.umap"
 		minSdkVersion 14
 		targetSdkVersion 21
 		versionCode 1
@@ -21,18 +21,20 @@ android {
 	sourceSets {
 		main.java.srcDirs += 'src/main/kotlin'
 		main {
-			java.srcDirs = ['src/main/java', 'src/main/java/com/idiogram/umap/collection',
-			                'src/main/java/com/idiogram/umap/gemm', 'src/main/java/com/idiogram/umap/endpoints',
-			                'src/main/java/com/idiogram/umap/discogs',
-			                'src/main/java/com/idiogram/umap/discogs/release',
-			                'src/main/java/com/idiogram/umap/discogs/marketplace']
+			java.srcDirs = ['src/main/java',
+			                'src/main/java/com/treelzebub/umap/collection',
+			                'src/main/java/com/treelzebub/umap/gemm',
+			                'src/main/java/com/treelzebub/umap/endpoints',
+			                'src/main/java/com/treelzebub/umap/discogs',
+			                'src/main/java/com/treelzebub/umap/discogs/release',
+			                'src/main/java/com/treelzebub/umap/discogs/marketplace']
 		}
 	}
 }
 
 dependencies {
 	compile fileTree(dir: 'libs', include: ['*.jar'])
-	compile 'com.android.support:appcompat-v7:21.0.3'
+	compile 'com.android.support:appcompat-v7:21.0.+'
 	compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin"
 	compile 'com.squareup.retrofit:retrofit:1.9.0'
 	compile 'com.squareup.okhttp:okhttp:2.2.0'

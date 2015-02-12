@@ -1,3 +1,5 @@
+package com.treelzebub.umap.ui.fragment;
+
 import android.support.v7.app.ActionBarActivity;
 import android.app.Activity;
 import android.support.v7.app.ActionBar;

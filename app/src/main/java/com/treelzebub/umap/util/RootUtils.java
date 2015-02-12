@@ -1,11 +1,11 @@
-package com.idiogram.umap.util;
+package com.treelzebub.umap.util;
 
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.util.Log;
 
-import com.idiogram.umap.util.RootUtils.ExecShell.SHELL_CMD;
+import com.treelzebub.umap.util.RootUtils.ExecShell.SHELL_CMD;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

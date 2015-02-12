@@ -1,3 +1,5 @@
+package com.treelzebub.umap.ui.activity;
+
 import android.app.Activity;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
@@ -12,6 +14,7 @@ import android.view.ViewGroup;
 import android.support.v4.widget.DrawerLayout;
 
 import com.idiogram.umap.R;
+import com.treelzebub.umap.ui.fragment.NavigationDrawerFragment;
 
 
 public class Dashboard extends ActionBarActivity

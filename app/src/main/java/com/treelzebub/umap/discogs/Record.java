@@ -1,3 +1,7 @@
+package com.treelzebub.umap.discogs;
+
+import com.treelzebub.umap.gemm.Medium;
+
 import org.joda.time.DateTime;
 
 import java.util.List;

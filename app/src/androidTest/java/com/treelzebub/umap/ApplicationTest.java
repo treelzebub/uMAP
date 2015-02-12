@@ -1,4 +1,4 @@
-package com.idiogram.umap;
+package com.treelzebub.umap;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;
