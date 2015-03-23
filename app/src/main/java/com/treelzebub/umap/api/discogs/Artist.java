@@ -1,7 +1,4 @@
-package com.treelzebub.umap.discogs;
-
-import java.util.ArrayList;
-import java.util.List;
+package com.treelzebub.umap.api.discogs;
 
 public class Artist {
     private String artistId;

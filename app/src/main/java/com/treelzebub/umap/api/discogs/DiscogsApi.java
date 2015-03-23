@@ -1,9 +1,8 @@
-package com.treelzebub.umap.endpoints;
-
-import com.treelzebub.umap.discogs.Record;
+package com.treelzebub.umap.api.discogs;
 
 import retrofit.Callback;
 import retrofit.client.Response;
+import retrofit.http.POST;
 
 /**
  * Created by Tre Murillo 1/27/2015
@@ -15,11 +14,9 @@ import retrofit.client.Response;
 //  Authorize URL	    http://www.discogs.com/oauth/authorize
 //  Access Token URL	http://api.discogs.com/oauth/access_token
 
-public class DiscogsApi implements Api {
+public interface DiscogsApi {
 
-    public Record getRecord(String title, Callback<Response> callback){
-        return new Record();
-    }
-
+    @POST(" ")
+    Record getRecord(String title, Callback<Response> callback);
 
 }

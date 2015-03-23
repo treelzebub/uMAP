@@ -1,6 +1,6 @@
-package com.treelzebub.umap.discogs;
+package com.treelzebub.umap.api.discogs;
 
-import com.treelzebub.umap.gemm.Medium;
+import com.treelzebub.umap.api.gemm.Medium;
 
 import org.joda.time.DateTime;
 
