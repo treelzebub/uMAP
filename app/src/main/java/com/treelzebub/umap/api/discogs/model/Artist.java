@@ -1,4 +1,4 @@
-package com.treelzebub.umap.api.discogs;
+package com.treelzebub.umap.api.discogs.model;
 
 public class Artist {
     private String artistId;

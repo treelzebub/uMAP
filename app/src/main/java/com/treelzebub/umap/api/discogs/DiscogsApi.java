@@ -1,5 +1,7 @@
 package com.treelzebub.umap.api.discogs;
 
+import com.treelzebub.umap.api.discogs.model.Record;
+
 import retrofit.Callback;
 import retrofit.client.Response;
 import retrofit.http.POST;

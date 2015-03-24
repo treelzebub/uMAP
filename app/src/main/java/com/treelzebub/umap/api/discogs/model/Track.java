@@ -1,4 +1,4 @@
-package com.treelzebub.umap.api.discogs;
+package com.treelzebub.umap.api.discogs.model;
 
 import org.joda.time.Period;
 
