@@ -1,6 +1,7 @@
 package com.treelzebub.umap.ui.activity;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
@@ -12,6 +13,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.support.v4.widget.DrawerLayout;
+import android.webkit.WebView;
+import android.widget.Button;
+import android.widget.EditText;
 
 import com.idiogram.umap.R;
 import com.treelzebub.umap.ui.fragment.NavigationDrawerFragment;
@@ -22,6 +26,7 @@ public class Dashboard extends ActionBarActivity
 
     private NavigationDrawerFragment mNavigationDrawerFragment;
     private CharSequence mTitle;
+    private boolean mHasLoggedIn = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +40,12 @@ public class Dashboard extends ActionBarActivity
         mNavigationDrawerFragment.setUp(
                 R.id.navigation_drawer,
                 (DrawerLayout) findViewById(R.id.drawer_layout));
+
+        if (!mHasLoggedIn) {
+
+
+
+        }
     }
 
     @Override
@@ -48,10 +59,10 @@ public class Dashboard extends ActionBarActivity
     public void onSectionAttached(int number) {
         switch (number) {
             case 1:
-                mTitle = getString(R.string.title_section1);
+                mTitle = getString(R.string.dashboard);
                 break;
             case 2:
-                mTitle = getString(R.string.title_section2);
+                mTitle = getString(R.string.my_collection);
                 break;
             case 3:
                 mTitle = getString(R.string.title_section3);
