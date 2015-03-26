@@ -11,5 +11,6 @@
 
     <string name="submit">Submit</string>
     <string name="paste_auth_label">Paste Here:</string>
+    <string name="temp">temp</string>
 
 </resources>
