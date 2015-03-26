@@ -66,23 +66,23 @@ public class LoginFragment extends Fragment {
         View v = inflater.inflate(R.layout.dialog_oauth, container, false);
         ButterKnife.inject(this, v);
 
-        submitButton.setOnClickListener(new View.OnClickListener() {
-            @SuppressWarnings("StatementWithEmptyBody")
-            @Override
-            public void onClick(View v) {
-                CharSequence authCode = authCodeET.getText();
-                if (authCode.length() > 0) {
-                    Intent intent = new Intent(
-                            Intent.ACTION_VIEW,
-                            Uri.parse(Constants.BASE_URL + "/login" + "?client_id=" + Constants.CONSUMER_KEY + "&redirect_uri=" + Constants.CALLBACK_URL));
-                    startActivity(intent);
-                    // GOAL!
-                } else {
-                    Toast.makeText(getActivity(), "Please enter authorization code", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
-
+        submitButton.setOnClickListener(
+                new View.OnClickListener() {
+                    @SuppressWarnings("StatementWithEmptyBody")
+                    @Override
+                    public void onClick(View v) {
+                        CharSequence authCode = authCodeET.getText();
+                        if (authCode.length() > 0) {
+                            Intent intent = new Intent(
+                                    Intent.ACTION_VIEW,
+                                    Uri.parse(Constants.BASE_URL + "/login" + "?client_id=" + Constants.CONSUMER_KEY + "&redirect_uri=" + Constants.CALLBACK_URL));
+                            startActivity(intent);
+                            // GOAL!
+                        } else {
+                            Toast.makeText(getActivity(), "Please enter authorization code", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
         return v;
     }
 }
