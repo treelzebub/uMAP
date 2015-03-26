@@ -24,9 +24,12 @@ public class LoginFragment extends Fragment {
 
     public boolean mHasLoggedIn = false;
 
-    @InjectView(R.id.webview) WebView webView;
-    @InjectView(R.id.auth_code_et) EditText authCodeET;
-    @InjectView(R.id.submit_button) Button submitButton;
+    @InjectView(R.id.webview)
+    WebView webView;
+    @InjectView(R.id.auth_code_et)
+    EditText authCodeET;
+    @InjectView(R.id.submit_button)
+    Button submitButton;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -41,18 +44,18 @@ public class LoginFragment extends Fragment {
         ButterKnife.inject(this, v);
 
         webView.loadUrl("http://www.asdf.com");
-        submitButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                CharSequence authCode = authCodeET.getText();
-                if (authCode.length() > 0) {
-                    // GOAL!
-                } else {
-                    Toast.makeText(getActivity(), "Please enter authorization code", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
-
+        submitButton.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        CharSequence authCode = authCodeET.getText();
+                        if (authCode.length() > 0) {
+                            // GOAL!
+                        } else {
+                            Toast.makeText(getActivity(), "Please enter authorization code", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
         return v;
     }
 }
