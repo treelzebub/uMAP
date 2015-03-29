@@ -72,7 +72,7 @@ public class NavigationDrawerFragment extends Fragment {
     @InjectView(R.id.logged_in_to_gemm)
     TextView mLoggedInGemmTV;
 
-    @InjectView(android.R.id.list)
+    @InjectView(R.id.nav_list)
     ListView mListView;
 
 
@@ -107,6 +107,7 @@ public class NavigationDrawerFragment extends Fragment {
         setHasOptionsMenu(true);
     }
 
+    @SuppressWarnings("deprecation")
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {

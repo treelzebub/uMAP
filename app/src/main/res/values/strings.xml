@@ -22,5 +22,7 @@
     <string name="sample_text">Sample Text</string>
     <string name="profile_photo">Profile Photo</string>
     <string name="no_profile">No Profile Loaded</string>
+    <string name="drawer_open">Open Navigation Drawer</string>
+    <string name="drawer_close">Close Navigation Drawer</string>
 
 </resources>
