@@ -48,7 +48,7 @@ public class SearchActivity extends FragmentActivity implements NavigationDrawer
             case R.string.search:
                 break;
             case R.string.marketplace:
-                fm.beginTransaction().add(R.id.container, new MarketplaceFragment());
+//                fm.beginTransaction().add(R.id.container, new MarketplaceFragment()).commit();
                 break;
             case R.string.my_collection:
                 break;

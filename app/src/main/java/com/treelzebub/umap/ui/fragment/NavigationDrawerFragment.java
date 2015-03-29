@@ -3,14 +3,15 @@ package com.treelzebub.umap.ui.fragment;
 import android.app.Activity;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -20,10 +21,17 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.idiogram.umap.R;
+import com.treelzebub.umap.api.discogs.model.Discogs;
+import com.treelzebub.umap.api.gemm.Gemm;
+
+import butterknife.ButterKnife;
+import butterknife.InjectView;
 
 /**
  * Fragment used for managing interactions for and presentation of a navigation drawer.
@@ -32,34 +40,41 @@ import com.idiogram.umap.R;
  */
 public class NavigationDrawerFragment extends Fragment {
 
-    /**
-     * Remember the position of the selected item.
-     */
     private static final String STATE_SELECTED_POSITION = "selected_navigation_drawer_position";
-
-    /**
-     * Per the design guidelines, you should show the drawer on launch until the user manually
-     * expands it. This shared preference tracks this.
-     */
     private static final String PREF_USER_LEARNED_DRAWER = "navigation_drawer_learned";
 
-    /**
-     * A pointer to the current callbacks instance (the Activity).
-     */
+    // A pointer to the current callbacks instance (the Activity).
     private NavigationDrawerCallbacks mCallbacks;
 
-    /**
-     * Helper component that ties the action bar to the navigation drawer.
-     */
+    // Helper component that ties the action bar to the navigation drawer.
     private ActionBarDrawerToggle mDrawerToggle;
-    private Toolbar mToolbar;
     private DrawerLayout mDrawerLayout;
-    private ListView mDrawerListView;
     private View mFragmentContainerView;
+
+    Discogs mDiscogs;
+    Gemm mGemm;
 
     private int mCurrentSelectedPosition = 0;
     private boolean mFromSavedInstanceState;
     private boolean mUserLearnedDrawer;
+    private boolean mIsLoggedInDiscogs;
+    private boolean mIsLoggedInGemm;
+
+    @InjectView(R.id.profile_photo)
+    ImageView mProfilePhotoIV;
+
+    @InjectView(R.id.profile_user)
+    TextView mProfileUserTV;
+
+    @InjectView(R.id.logged_in_to_discogs)
+    TextView mLoggedInDiscogsTV;
+
+    @InjectView(R.id.logged_in_to_gemm)
+    TextView mLoggedInGemmTV;
+
+    @InjectView(android.R.id.list)
+    ListView mListView;
+
 
     public NavigationDrawerFragment() {
     }
@@ -80,6 +95,9 @@ public class NavigationDrawerFragment extends Fragment {
 
         // Select either the default item (0) or the last selected item.
         selectItem(mCurrentSelectedPosition);
+
+        //
+        mDiscogs = Discogs.getInstance();
     }
 
     @Override
@@ -92,15 +110,16 @@ public class NavigationDrawerFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        mDrawerListView = (ListView) inflater.inflate(
-                R.layout.fragment_navigation_drawer, container, false);
-        mDrawerListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        View v = inflater.inflate(R.layout.fragment_navigation_drawer, container, false);
+        ButterKnife.inject(this, v);
+
+        mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 selectItem(position);
             }
         });
-        mDrawerListView.setAdapter(new ArrayAdapter<String>(
+        mListView.setAdapter(new ArrayAdapter<>(
                 getActionBar().getThemedContext(),
                 android.R.layout.simple_list_item_activated_1,
                 android.R.id.text1,
@@ -109,8 +128,25 @@ public class NavigationDrawerFragment extends Fragment {
                         getString(R.string.marketplace),
                         getString(R.string.my_collection),
                 }));
-        mDrawerListView.setItemChecked(mCurrentSelectedPosition, true);
-        return mDrawerListView;
+        mListView.setItemChecked(mCurrentSelectedPosition, true);
+
+        Resources res = getResources();
+        if (mIsLoggedInDiscogs) {
+//            mLoggedInDiscogsTV.setText( from discogs info
+//            mProfilePhotoIV.setImageDrawable( );
+            mLoggedInDiscogsTV.setText(res.getString(R.string.logged_in_to_discogs));
+        } else {
+            mProfilePhotoIV.setImageDrawable(res.getDrawable(R.drawable.no_profile));
+            mProfileUserTV.setText(res.getString(R.string.no_profile));
+            mLoggedInDiscogsTV.setText(res.getString(R.string.not_logged_in_to_discogs));
+        }
+        if (mIsLoggedInGemm) {
+            mLoggedInGemmTV.setText(res.getString(R.string.logged_in_to_gemm));
+        } else {
+            mLoggedInGemmTV.setText(res.getString(R.string.not_logged_in_to_gemm));
+        }
+
+        return mListView;
     }
 
     public boolean isDrawerOpen() {
@@ -137,9 +173,13 @@ public class NavigationDrawerFragment extends Fragment {
 
         // ActionBarDrawerToggle ties together the the proper interactions
         // between the navigation drawer and the action bar app icon.
-        mToolbar = new Toolbar(getActivity());
+
+
+        Toolbar mToolbar = new Toolbar(getActivity());
         mToolbar.setTitle("uMAP");
         mToolbar.setSubtitle("The Record Shops of the World/nAt your fingertips");
+        mToolbar.addView(mProfilePhotoIV);
+
 
         mDrawerToggle = new ActionBarDrawerToggle(
                 getActivity(), mDrawerLayout, mToolbar,
@@ -192,8 +232,8 @@ public class NavigationDrawerFragment extends Fragment {
 
     private void selectItem(int position) {
         mCurrentSelectedPosition = position;
-        if (mDrawerListView != null) {
-            mDrawerListView.setItemChecked(position, true);
+        if (mListView != null) {
+            mListView.setItemChecked(position, true);
         }
         if (mDrawerLayout != null) {
             mDrawerLayout.closeDrawer(mFragmentContainerView);
