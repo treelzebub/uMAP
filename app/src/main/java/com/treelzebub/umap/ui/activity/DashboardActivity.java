@@ -25,7 +25,7 @@ public class DashboardActivity extends Activity {
     private Toolbar mToolbar;
     private ActionBarDrawerToggle mDrawerToggle;
 
-    private boolean mHasLoggedIn = true; //TODO temp
+    private boolean mHasLoggedIn = false; //TODO temp
 
     @InjectView(R.id.drawer_layout)
     DrawerLayout mDrawerLayout;
@@ -41,10 +41,9 @@ public class DashboardActivity extends Activity {
         setContentView(R.layout.activity_dashboard);
         ButterKnife.inject(this);
 
-        ArrayAdapter<String> mListAdapter = new ArrayAdapter<>(DashboardActivity.this, android.R.layout.simple_list_item_1, listOptions);
+        ArrayAdapter<String> mListAdapter = new ArrayAdapter<>(
+                DashboardActivity.this, android.R.layout.simple_list_item_1, listOptions);
         mListView.setAdapter(mListAdapter);
-
-        getActionBar().setDisplayHomeAsUpEnabled(true);
 
         initDrawer();
 

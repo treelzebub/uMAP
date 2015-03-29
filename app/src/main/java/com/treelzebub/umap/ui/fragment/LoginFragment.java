@@ -4,7 +4,6 @@ import android.app.Fragment;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,11 +12,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.treelzebub.umap.Constants;
 import com.treelzebub.umap.R;
-import com.treelzebub.umap.auth.AccessToken;
-import com.treelzebub.umap.auth.LoginService;
-import com.treelzebub.umap.util.ServiceGenerator;
+import com.treelzebub.umap.api.discogs.DiscogsConstants;
+import com.treelzebub.umap.auth.AuthUrlTask;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -29,6 +26,9 @@ public class LoginFragment extends Fragment {
 
     public static final String TAG = "LoginActivity";
 
+    private boolean hasAuthUrl = false;
+
+
     @InjectView(R.id.webview)
     WebView mWebView;
     @InjectView(R.id.auth_code_et)
@@ -37,27 +37,38 @@ public class LoginFragment extends Fragment {
     Button mSubmitButton;
 
     @Override
+    public void onStart() {
+        super.onStart();
+        AuthUrlTask authUrlTask = new AuthUrlTask();
+        authUrlTask.execute(getActivity().getApplicationContext());
+    }
+
+    @Override
     public void onResume() {
         super.onResume();
 
-        // the intent filter defined in AndroidManifest will handle the return from ACTION_VIEW intent
-        Uri uri = getActivity().getIntent().getData();
-        if (uri != null && uri.toString().startsWith(Constants.CALLBACK_URL)) {
-            // use the parameter your API exposes for the code (mostly it's "code")
-            String code = uri.getQueryParameter("code");
-            if (code != null) {
-                // get access token
-                LoginService loginService =
-                        ServiceGenerator.createService(
-                                LoginService.class, Constants.BASE_URL,
-                                Constants.CONSUMER_KEY, Constants.CONSUMER_SECRET);
-                AccessToken accessToken = loginService.getAccessToken(code, "authorization_code");
 
-            } else if (uri.getQueryParameter("error") != null) {
-                // show an error message here
-                Log.e("Redirect Error:", uri.getQueryParameter("error"));
-            }
-        }
+//        // the intent filter defined in AndroidManifest will handle the return from ACTION_VIEW intent
+//        Uri uri = getActivity().getIntent().getData();
+//        if (uri != null && uri.toString().startsWith(DiscogsConstants.CALLBACK_URL)) {
+//            // use the parameter your API exposes for the code (mostly it's "code")
+//            String code = uri.getQueryParameter("code");
+//            if (code != null) {
+//                // get access token
+//                LoginService loginService =
+//                        ServiceGenerator.createService(
+//                                LoginService.class, DiscogsConstants.BASE_URL,
+//                                DiscogsConstants.CONSUMER_KEY, AuthTools.getNonce(),
+//                                DiscogsConstants.CONSUMER_SECRET + "&", DiscogsConstants.SIGNATURE_METHOD,
+//                                AuthTools.getTimestamp(), DiscogsConstants.CALLBACK_URL);
+//                AccessToken accessToken = loginService.getAccessToken(code, "authorization_code");
+//
+//            } else if (uri.getQueryParameter("error") != null) {
+//                // show an error message here
+//                Log.e("Redirect Error:", uri.getQueryParameter("error"));
+//            }
+//        }
+
     }
 
     @Override
@@ -75,7 +86,7 @@ public class LoginFragment extends Fragment {
                         if (authCode.length() > 0) {
                             Intent intent = new Intent(
                                     Intent.ACTION_VIEW,
-                                    Uri.parse(Constants.BASE_URL + "/login" + "?client_id=" + Constants.CONSUMER_KEY + "&redirect_uri=" + Constants.CALLBACK_URL));
+                                    Uri.parse(DiscogsConstants.BASE_URL + "/login" + "?client_id=" + DiscogsConstants.CONSUMER_KEY + "&redirect_uri=" + DiscogsConstants.CALLBACK_URL));
                             startActivity(intent);
                             // GOAL!
                         } else {

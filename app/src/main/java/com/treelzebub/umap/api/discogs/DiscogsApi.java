@@ -1,17 +1,13 @@
 package com.treelzebub.umap.api.discogs;
 
-import com.treelzebub.umap.api.discogs.model.Record;
-import com.treelzebub.umap.auth.AccessToken;
-
-import retrofit.Callback;
-import retrofit.client.Response;
-import retrofit.http.POST;
-import retrofit.http.Query;
+import retrofit.http.GET;
 
 /**
  * Created by Tre Murillo 1/27/2015
  */
 public interface DiscogsApi {
 
+    @GET("/request_token")
+    String getAuthUrl();
 
 }

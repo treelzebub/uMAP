@@ -21,6 +21,30 @@ public class ServiceGenerator {
         return createService(serviceClass, baseUrl, null, null);
     }
 
+
+    // Construct valid request for request token
+    public static <S> S createService(Class<S> serviceClass, String baseUrl, final String consumerKey,
+                                      final String nonce, final String consumerSecret, final String signatureMethod,
+                                      final long timestamp, final String callbackUrl) {
+        RestAdapter.Builder builder = new RestAdapter.Builder()
+                .setEndpoint(baseUrl)
+                .setClient(new OkClient(new OkHttpClient()))
+                .setRequestInterceptor(new RequestInterceptor() {
+                    @Override
+                    public void intercept(RequestFacade request) {
+                        request.addHeader("oauth_consumer_key", consumerKey);
+                        request.addHeader("oauth_nonce", nonce);
+                        request.addHeader("oauth_signature", consumerSecret + "&");
+                        request.addHeader("oauth_signature_method", signatureMethod);
+                        request.addHeader("oauth_timestamp", Long.toString(timestamp));
+                        request.addHeader("oauth_callback", callbackUrl);
+                    }
+                });
+        RestAdapter adapter = builder.build();
+
+        return adapter.create(serviceClass);
+    }
+
     public static <S> S createService(Class<S> serviceClass, String baseUrl, String username, String password) {
         RestAdapter.Builder builder = new RestAdapter.Builder()
                 .setEndpoint(baseUrl)
