@@ -1,8 +1,8 @@
 package com.treelzebub.umap.util;
 
-import android.util.Base64;
-
 import com.squareup.okhttp.OkHttpClient;
+import com.treelzebub.umap.Constants;
+import com.treelzebub.umap.api.AuthTools;
 import com.treelzebub.umap.auth.AccessToken;
 
 import retrofit.RequestInterceptor;
@@ -26,18 +26,27 @@ public class ServiceGenerator {
     public static <S> S createService(Class<S> serviceClass, String baseUrl, final String consumerKey,
                                       final String nonce, final String consumerSecret, final String signatureMethod,
                                       final long timestamp, final String callbackUrl) {
+
+
+        final String contentHeader = Constants.CONTENT_FORM_URLENCODED;
+        final String authHeader =
+                "OAuth oauth_consumer_key=\"" + consumerKey + "\", " +
+                        "oauth_nonce=\"" + nonce + "\" " +
+                        "oauth_signature=\"" + consumerSecret + "&" + "\", " +
+                        "oauth_signature_method=\"" + signatureMethod + "\", " +
+                        "oauth_timestamp=\"" + Long.toString(timestamp) + "\", " +
+                        "oauth_callback=\"" + callbackUrl + "\"";
+
         RestAdapter.Builder builder = new RestAdapter.Builder()
                 .setEndpoint(baseUrl)
                 .setClient(new OkClient(new OkHttpClient()))
                 .setRequestInterceptor(new RequestInterceptor() {
                     @Override
                     public void intercept(RequestFacade request) {
-                        request.addHeader("oauth_consumer_key", consumerKey);
-                        request.addHeader("oauth_nonce", nonce);
-                        request.addHeader("oauth_signature", consumerSecret + "&");
-                        request.addHeader("oauth_signature_method", signatureMethod);
-                        request.addHeader("oauth_timestamp", Long.toString(timestamp));
-                        request.addHeader("oauth_callback", callbackUrl);
+                        request.addHeader("Content-Type", contentHeader);
+                        request.addHeader("Authorization", authHeader);
+                        request.addHeader("User-Agent", Constants.USER_AGENT);
+
                     }
                 });
         RestAdapter adapter = builder.build();
@@ -58,9 +67,9 @@ public class ServiceGenerator {
                 @Override
                 public void intercept(RequestFacade request) {
                     // create Base64 encoded string
-                    String string = "Basic " + Base64.encodeToString(credentials.getBytes(), Base64.NO_WRAP);
+                    String encodedAuthStr = AuthTools.encodeBasicAuthBase64(credentials);
                     request.addHeader("Accept", "application/json");
-                    request.addHeader("Authorization", "Discogs " + string);
+                    request.addHeader("Authorization", "Discogs " + encodedAuthStr);
                 }
             });
         }

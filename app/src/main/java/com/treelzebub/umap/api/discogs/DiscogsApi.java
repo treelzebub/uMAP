@@ -1,5 +1,6 @@
 package com.treelzebub.umap.api.discogs;
 
+import retrofit.client.Response;
 import retrofit.http.GET;
 
 /**
@@ -8,6 +9,6 @@ import retrofit.http.GET;
 public interface DiscogsApi {
 
     @GET("/request_token")
-    String getAuthUrl();
+    Response getAuthUrl();
 
 }

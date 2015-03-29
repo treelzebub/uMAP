@@ -1,32 +1,28 @@
 package com.treelzebub.umap.api;
 
-import retrofit.client.Response;
-
 /**
  * Created by Tre Murillo on 3/28/15
  */
 public class AuthenticatedSession {
-    private String mUserName;
+    private static String mUserName;
 
-    private boolean mIsLoggedIn = false;
+    private static boolean mIsLoggedIn = false;
 
-    protected int Discogs(Response response) {
+    protected AuthenticatedSession() {
         //TODO stuff
 
-        mIsLoggedIn = !(response == null) && !(response.getBody() == null);
-
-        return response.getStatus();
+//        mIsLoggedIn = response.getStatus() == 200;
     }
 
-    public String getmUserName() {
+    public static String getUserName() {
         return mUserName;
     }
 
-    public void setmUserName(String mUserName) {
-        this.mUserName = mUserName;
+    public static void setUserName(String userName) {
+        mUserName = userName;
     }
 
-    private boolean isLoggedIn() {
+    private static boolean isLoggedIn() {
         return mIsLoggedIn;
     }
 }

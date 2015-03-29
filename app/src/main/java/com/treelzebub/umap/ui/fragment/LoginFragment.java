@@ -4,6 +4,7 @@ import android.app.Fragment;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -40,34 +41,27 @@ public class LoginFragment extends Fragment {
     public void onStart() {
         super.onStart();
         AuthUrlTask authUrlTask = new AuthUrlTask();
-        authUrlTask.execute(getActivity().getApplicationContext());
+        authUrlTask.execute(getActivity().getBaseContext());
     }
 
     @Override
     public void onResume() {
         super.onResume();
 
+        // the intent filter defined in AndroidManifest will handle the return from ACTION_VIEW intent
+        Uri uri = getActivity().getIntent().getData();
+        if (uri != null && uri.toString().startsWith(DiscogsConstants.CALLBACK_URL)) {
+            // use the parameter your API exposes for the code (mostly it's "code")
+            String code = uri.getQueryParameter("code");
+            if (code != null) {
+                // get access token
+//                AccessToken accessToken = Discogs.getInstance().getAccessToken(code, "authorization_code");
 
-//        // the intent filter defined in AndroidManifest will handle the return from ACTION_VIEW intent
-//        Uri uri = getActivity().getIntent().getData();
-//        if (uri != null && uri.toString().startsWith(DiscogsConstants.CALLBACK_URL)) {
-//            // use the parameter your API exposes for the code (mostly it's "code")
-//            String code = uri.getQueryParameter("code");
-//            if (code != null) {
-//                // get access token
-//                LoginService loginService =
-//                        ServiceGenerator.createService(
-//                                LoginService.class, DiscogsConstants.BASE_URL,
-//                                DiscogsConstants.CONSUMER_KEY, AuthTools.getNonce(),
-//                                DiscogsConstants.CONSUMER_SECRET + "&", DiscogsConstants.SIGNATURE_METHOD,
-//                                AuthTools.getTimestamp(), DiscogsConstants.CALLBACK_URL);
-//                AccessToken accessToken = loginService.getAccessToken(code, "authorization_code");
-//
-//            } else if (uri.getQueryParameter("error") != null) {
-//                // show an error message here
-//                Log.e("Redirect Error:", uri.getQueryParameter("error"));
-//            }
-//        }
+            } else if (uri.getQueryParameter("error") != null) {
+                // show an error message here
+                Log.e("Redirect Error:", uri.getQueryParameter("error"));
+            }
+        }
 
     }
 

@@ -1,5 +1,7 @@
 package com.treelzebub.umap.api;
 
+import android.util.Base64;
+
 import java.math.BigInteger;
 import java.security.SecureRandom;
 
@@ -15,6 +17,10 @@ public class AuthTools {
 
     public static long getTimestamp() {
         return System.currentTimeMillis() / 1000;
+    }
+
+    public static String encodeBasicAuthBase64(String rawStr) {
+        return "Basic " + Base64.encodeToString(rawStr.getBytes(), Base64.NO_WRAP);
     }
 
     private AuthTools() {
