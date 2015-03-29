@@ -30,10 +30,10 @@ public class DashboardActivity extends ActionBarActivity {
     private boolean mHasLoggedIn = false; //TODO use shared pref
 
     @InjectView(R.id.nav_list)
-    private ListView mListView;
+    ListView mListView;
 
     private ArrayAdapter<String> mListAdapter;
-    private static final String[] listOptions = { "Search", "My Collection", "Accounts"};
+    private static final String[] listOptions = {"Search", "My Collection", "Accounts"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,12 +41,15 @@ public class DashboardActivity extends ActionBarActivity {
         setContentView(R.layout.activity_dashboard);
         ButterKnife.inject(this);
 
+        mListAdapter = new ArrayAdapter<>(DashboardActivity.this, android.R.layout.simple_list_item_1, listOptions);
+        mListView.setAdapter(mListAdapter);
+
         if (mToolbar != null) {
             mToolbar.setTitle(mHasLoggedIn ? Discogs.getInstance().getmUserName() : "uMAP");
             setSupportActionBar(mToolbar);
         }
         initDrawer();
-        
+
         FragmentManager fm = getSupportFragmentManager();
         if (!mHasLoggedIn) {
             fm.beginTransaction().add(R.id.container, new LoginFragment()).commit();
@@ -57,18 +60,18 @@ public class DashboardActivity extends ActionBarActivity {
     }
 
     private void initDrawer() {
-        mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, mToolbar, R.string.drawer_open, R.string.drawer_close) {
+        mDrawerToggle = new ActionBarDrawerToggle(
+                this, mDrawerLayout, mToolbar,
+                R.string.drawer_open, R.string.drawer_close) {
 
             @Override
             public void onDrawerClosed(View drawerView) {
                 super.onDrawerClosed(drawerView);
-
             }
 
             @Override
             public void onDrawerOpened(View drawerView) {
                 super.onDrawerOpened(drawerView);
-
             }
         };
         mDrawerLayout.setDrawerListener(mDrawerToggle);
