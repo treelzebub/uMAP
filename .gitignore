@@ -48,6 +48,7 @@ crashlytics-build.properties
 
 ### Java ###
 *.class
+*.hprof
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
