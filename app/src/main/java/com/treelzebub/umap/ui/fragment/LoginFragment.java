@@ -1,9 +1,9 @@
 package com.treelzebub.umap.ui.fragment;
 
+import android.app.Fragment;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,8 +13,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.idiogram.umap.R;
 import com.treelzebub.umap.Constants;
+import com.treelzebub.umap.R;
 import com.treelzebub.umap.auth.AccessToken;
 import com.treelzebub.umap.auth.LoginService;
 import com.treelzebub.umap.util.ServiceGenerator;
@@ -30,11 +30,11 @@ public class LoginFragment extends Fragment {
     public static final String TAG = "LoginActivity";
 
     @InjectView(R.id.webview)
-    WebView webView;
+    WebView mWebView;
     @InjectView(R.id.auth_code_et)
-    EditText authCodeET;
+    EditText mAuthCodeET;
     @InjectView(R.id.submit_button)
-    Button submitButton;
+    Button mSubmitButton;
 
     @Override
     public void onResume() {
@@ -66,12 +66,12 @@ public class LoginFragment extends Fragment {
         View v = inflater.inflate(R.layout.dialog_oauth, container, false);
         ButterKnife.inject(this, v);
 
-        submitButton.setOnClickListener(
+        mSubmitButton.setOnClickListener(
                 new View.OnClickListener() {
                     @SuppressWarnings("StatementWithEmptyBody")
                     @Override
                     public void onClick(View v) {
-                        CharSequence authCode = authCodeET.getText();
+                        CharSequence authCode = mAuthCodeET.getText();
                         if (authCode.length() > 0) {
                             Intent intent = new Intent(
                                     Intent.ACTION_VIEW,

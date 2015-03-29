@@ -1,6 +1,6 @@
 package com.treelzebub.umap.ui.fragment;
 
-import android.support.v4.app.Fragment;
+import android.app.Fragment;
 
 /**
  * Created by Tre Murillo on 3/28/15

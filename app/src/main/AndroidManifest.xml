@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.idiogram.umap">
+    package="com.treelzebub.umap">
 
-    <uses-permission android:name="ANDROID.PERMISSION.INTERNET"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="ANDROID.PERMISSION.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -30,13 +30,20 @@
                     android:scheme="oauth" />
             </intent-filter>
         </activity>
-        <activity android:name="com.treelzebub.umap.ui.activity.SearchActivity">
+        <activity
+            android:name="com.treelzebub.umap.ui.activity.SearchActivity"
+            android:theme="@style/AppTheme"
+            android:launchMode="singleTop">
+
             <intent-filter>
-                <action android:name="android.intent.action.SEARCH"/>
+                <action android:name="android.intent.action.SEARCH" />
             </intent-filter>
+
             <meta-data
                 android:name="android.app.searchable"
-                android:resource="@xml/searchable"/>
+                android:resource="@xml/searchable"
+                android:value="com.treelzebub.umap.ui.activity.SearchActivity" />
+
         </activity>
 
     </application>
