@@ -1,6 +1,5 @@
 package com.treelzebub.umap.auth;
 
-import retrofit.http.Field;
 import retrofit.http.FormUrlEncoded;
 import retrofit.http.POST;
 import retrofit.http.Query;

@@ -12,5 +12,8 @@
     <string name="submit">Submit</string>
     <string name="paste_auth_label">Paste Here:</string>
     <string name="temp">temp</string>
+    <string name="search">Search</string>
+    <string name="marketplace">Marketplace</string>
+    <string name="search_hint">Search by Artist, Title, Label, Record Shop ...</string>
 
 </resources>
