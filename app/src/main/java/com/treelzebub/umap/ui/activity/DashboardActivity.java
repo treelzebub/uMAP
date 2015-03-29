@@ -28,7 +28,7 @@ public class DashboardActivity extends ActionBarActivity {
 
     private boolean mHasLoggedIn = false; //TODO use shared pref
 
-    @InjectView(R.id.navigation_drawer)
+    @InjectView(R.id.drawer_layout)
     DrawerLayout mDrawerLayout;
 
     @InjectView(R.id.nav_list)
