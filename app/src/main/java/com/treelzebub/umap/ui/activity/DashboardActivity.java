@@ -24,10 +24,12 @@ import butterknife.InjectView;
 public class DashboardActivity extends ActionBarActivity {
 
     private Toolbar mToolbar;
-    private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mDrawerToggle;
 
     private boolean mHasLoggedIn = false; //TODO use shared pref
+
+    @InjectView(R.id.navigation_drawer)
+    DrawerLayout mDrawerLayout;
 
     @InjectView(R.id.nav_list)
     ListView mListView;

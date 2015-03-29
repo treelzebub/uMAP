@@ -4,12 +4,9 @@ import android.app.SearchManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentManager;
 import android.support.v7.widget.SearchView;
 
 import com.idiogram.umap.R;
-import com.treelzebub.umap.ui.fragment.MarketplaceFragment;
-import com.treelzebub.umap.ui.fragment.NavigationDrawerFragment;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -17,7 +14,7 @@ import butterknife.InjectView;
 /**
  * Created by Tre Murillo on 3/28/15
  */
-public class SearchActivity extends FragmentActivity implements NavigationDrawerFragment.NavigationDrawerCallbacks {
+public class SearchActivity extends FragmentActivity {
 
     @InjectView(R.id.search_view)
     SearchView mSearchView;
@@ -39,20 +36,4 @@ public class SearchActivity extends FragmentActivity implements NavigationDrawer
         //TODO
     }
 
-    @Override
-    public void onNavigationDrawerItemSelected(int position) {
-        FragmentManager fm = getSupportFragmentManager();
-        //TODO
-
-        switch (position) {
-            case R.string.search:
-                break;
-            case R.string.marketplace:
-//                fm.beginTransaction().add(R.id.container, new MarketplaceFragment()).commit();
-                break;
-            case R.string.my_collection:
-                break;
-            default: break;
-        }
-    }
 }
