@@ -6,7 +6,10 @@ import com.treelzebub.umap.api.AuthTools;
 import com.treelzebub.umap.api.AuthenticatedSession;
 import com.treelzebub.umap.util.ServiceGenerator;
 
+import java.util.List;
+
 import retrofit.RetrofitError;
+import retrofit.client.Header;
 import retrofit.client.Response;
 
 /**
@@ -19,7 +22,10 @@ public class Discogs extends AuthenticatedSession {
     private static Discogs instance;
     private static DiscogsApi mDiscogsApi;
 
+    private static TokenResponse accessToken;
+
     protected Discogs() {
+        initRequestTokenService();
     }
 
     public static Discogs getInstance() {
@@ -29,7 +35,7 @@ public class Discogs extends AuthenticatedSession {
     public Response getRequestToken() {
         initRequestTokenService();
         try {
-            return mDiscogsApi.getAuthUrl();
+            return mDiscogsApi.getRequestToken();
         } catch (RetrofitError error) {
             if (error.getResponse() == null) {
                 Log.e("Retrofit Error", error.toString());
@@ -37,9 +43,13 @@ public class Discogs extends AuthenticatedSession {
                 Log.e("LocalizedMessage", error.getLocalizedMessage());
             } else {
                 String status = Integer.toString(error.getResponse().getStatus());
+                List<Header> headers = error.getResponse().getHeaders();
 
                 Log.e("Retrofit Response", error.getResponse().getReason());
                 Log.e("Response Status", status);
+                for (Header h : headers) {
+                    Log.e(h.getName(), h.getValue());
+                }
             }
             return null;
         }
@@ -53,6 +63,7 @@ public class Discogs extends AuthenticatedSession {
                 AuthTools.getTimestamp(), DiscogsConstants.CALLBACK_URL);
     }
 
+    //TODO abstract out if gemm's tokens are similar enough
     public class TokenResponse {
         private String mToken, mTokenSecret;
         private boolean mIsOAuthCallbackConfirmed;

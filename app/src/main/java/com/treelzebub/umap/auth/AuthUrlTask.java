@@ -10,7 +10,7 @@ import retrofit.client.Response;
 
 /**
  * Created by Tre Murillo on 3/29/15
- *
+ * <p/>
  * An AsyncTask that provides the authorization url for an access token request.
  */
 public class AuthUrlTask extends AsyncTask<Context, Integer, Response> {
@@ -43,7 +43,6 @@ public class AuthUrlTask extends AsyncTask<Context, Integer, Response> {
                 (response != null) ?
                         response.toString() :
                         "Error processing request. Check your internet connection and try again.";
-
         Toast.makeText(mContext, responseStr, Toast.LENGTH_LONG).show();
     }
 }

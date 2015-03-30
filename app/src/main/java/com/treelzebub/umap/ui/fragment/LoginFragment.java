@@ -30,7 +30,6 @@ public class LoginFragment extends Fragment {
 
     private boolean hasAuthUrl = false;
 
-
     @InjectView(R.id.webview)
     WebView mWebView;
     @InjectView(R.id.auth_code_et)
