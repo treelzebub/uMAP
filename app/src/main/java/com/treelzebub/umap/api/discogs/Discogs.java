@@ -53,4 +53,44 @@ public class Discogs extends AuthenticatedSession {
                 AuthTools.getTimestamp(), DiscogsConstants.CALLBACK_URL);
     }
 
+    public class TokenResponse {
+        private String mToken, mTokenSecret;
+        private boolean mIsOAuthCallbackConfirmed;
+
+        public TokenResponse(String token, String tokenSecret) {
+            // AccessToken response will not contain oauth_callback_confirmed header
+            mToken = token;
+            mTokenSecret = tokenSecret;
+        }
+
+        public TokenResponse(String token, String tokenSecret, boolean oAuthCallbackConfirmed) {
+            mToken = token;
+            mTokenSecret = tokenSecret;
+            mIsOAuthCallbackConfirmed = oAuthCallbackConfirmed;
+        }
+
+        public boolean isOAuthCallbackConfirmed() {
+            return mIsOAuthCallbackConfirmed;
+        }
+
+        public void setOAuthCallbackConfirmed(boolean isOAuthCallbackConfirmed) {
+            this.mIsOAuthCallbackConfirmed = isOAuthCallbackConfirmed;
+        }
+
+        public String getToken() {
+            return mToken;
+        }
+
+        public void setToken(String mToken) {
+            this.mToken = mToken;
+        }
+
+        public String getTokenSecret() {
+            return mTokenSecret;
+        }
+
+        public void setTokenSecret(String mTokenSecret) {
+            this.mTokenSecret = mTokenSecret;
+        }
+    }
 }

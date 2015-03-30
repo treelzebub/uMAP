@@ -4,7 +4,6 @@ import android.app.Fragment;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,6 +21,8 @@ import butterknife.InjectView;
 
 /**
  * Created by Tre Murillo on 3/23/15
+ *
+ * A fragment which will eventually provide a one-time login to Discogs (and optionally, Gemm)
  */
 public class LoginFragment extends Fragment {
 
@@ -49,19 +50,19 @@ public class LoginFragment extends Fragment {
         super.onResume();
 
         // the intent filter defined in AndroidManifest will handle the return from ACTION_VIEW intent
-        Uri uri = getActivity().getIntent().getData();
-        if (uri != null && uri.toString().startsWith(DiscogsConstants.CALLBACK_URL)) {
-            // use the parameter your API exposes for the code (mostly it's "code")
-            String code = uri.getQueryParameter("code");
-            if (code != null) {
-                // get access token
-//                AccessToken accessToken = Discogs.getInstance().getAccessToken(code, "authorization_code");
-
-            } else if (uri.getQueryParameter("error") != null) {
-                // show an error message here
-                Log.e("Redirect Error:", uri.getQueryParameter("error"));
-            }
-        }
+//        Uri uri = getActivity().getIntent().getData();
+//        if (uri != null && uri.toString().startsWith(DiscogsConstants.CALLBACK_URL)) {
+//            // use the parameter your API exposes for the code (mostly it's "code")
+//            String code = uri.getQueryParameter("code");
+//            if (code != null) {
+//                // get access token
+////                AccessToken accessToken = Discogs.getInstance().getAccessToken(code, "authorization_code");
+//
+//            } else if (uri.getQueryParameter("error") != null) {
+//                // show an error message here
+//                Log.e("Redirect Error:", uri.getQueryParameter("error"));
+//            }
+//        }
 
     }
 
@@ -73,7 +74,6 @@ public class LoginFragment extends Fragment {
 
         mSubmitButton.setOnClickListener(
                 new View.OnClickListener() {
-                    @SuppressWarnings("StatementWithEmptyBody")
                     @Override
                     public void onClick(View v) {
                         CharSequence authCode = mAuthCodeET.getText();

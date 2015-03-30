@@ -6,10 +6,14 @@ import android.widget.Toast;
 
 import com.treelzebub.umap.api.discogs.Discogs;
 
+import retrofit.client.Response;
+
 /**
  * Created by Tre Murillo on 3/29/15
+ *
+ * An AsyncTask that provides the authorization url for an access token request.
  */
-public class AuthUrlTask extends AsyncTask<Context, Integer, String> {
+public class AuthUrlTask extends AsyncTask<Context, Integer, Response> {
 
     private Discogs mDiscogs;
     private Context mContext;
@@ -21,10 +25,11 @@ public class AuthUrlTask extends AsyncTask<Context, Integer, String> {
     }
 
     @Override
-    protected String doInBackground(Context... params) {
+    protected Response doInBackground(Context... params) {
         mContext = params[0];
+
         try {
-            return mDiscogs.getRequestToken().getBody().toString();
+            return mDiscogs.getRequestToken();
         } catch (NullPointerException e) {
             e.printStackTrace();
             return null;
@@ -32,11 +37,13 @@ public class AuthUrlTask extends AsyncTask<Context, Integer, String> {
     }
 
     @Override
-    protected void onPostExecute(String str) {
-        super.onPostExecute(str);
+    protected void onPostExecute(Response response) {
+        super.onPostExecute(response);
+        String responseStr =
+                (response != null) ?
+                        response.toString() :
+                        "Error processing request. Check your internet connection and try again.";
 
-        if (str == null) str = "Error processing your request. Is internet available?";
-
-        Toast.makeText(mContext, str, Toast.LENGTH_LONG).show();
+        Toast.makeText(mContext, responseStr, Toast.LENGTH_LONG).show();
     }
 }

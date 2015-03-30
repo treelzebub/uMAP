@@ -46,7 +46,6 @@ public class ServiceGenerator {
                         request.addHeader("Content-Type", contentHeader);
                         request.addHeader("Authorization", authHeader);
                         request.addHeader("User-Agent", Constants.USER_AGENT);
-
                     }
                 });
         RestAdapter adapter = builder.build();
