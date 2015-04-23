@@ -6,6 +6,8 @@ import android.widget.Toast;
 
 import com.treelzebub.umap.api.discogs.Discogs;
 
+import org.jetbrains.annotations.NotNull;
+
 import retrofit.client.Response;
 
 /**
@@ -25,9 +27,8 @@ public class AuthUrlTask extends AsyncTask<Context, Integer, Response> {
     }
 
     @Override
-    protected Response doInBackground(Context... params) {
+    protected Response doInBackground(@NotNull Context... params) {
         mContext = params[0];
-
         try {
             return mDiscogs.getRequestToken();
         } catch (NullPointerException e) {
