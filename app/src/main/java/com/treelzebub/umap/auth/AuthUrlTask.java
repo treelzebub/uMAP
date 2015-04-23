@@ -15,7 +15,7 @@ import retrofit.client.Response;
  * <p/>
  * An AsyncTask that provides the authorization url for an access token request.
  */
-public class AuthUrlTask extends AsyncTask<Context, Integer, Response> {
+public class AuthUrlTask extends AsyncTask<Context, Integer, String> {
 
     private Discogs mDiscogs;
     private Context mContext;
@@ -27,7 +27,7 @@ public class AuthUrlTask extends AsyncTask<Context, Integer, Response> {
     }
 
     @Override
-    protected Response doInBackground(@NotNull Context... params) {
+    protected String doInBackground(@NotNull Context... params) {
         mContext = params[0];
         try {
             return mDiscogs.getRequestToken();
@@ -38,12 +38,10 @@ public class AuthUrlTask extends AsyncTask<Context, Integer, Response> {
     }
 
     @Override
-    protected void onPostExecute(Response response) {
+    protected void onPostExecute(String response) {
         super.onPostExecute(response);
-        String responseStr =
-                (response != null) ?
-                        response.toString() :
-                        "Error processing request. Check your internet connection and try again.";
+        String responseStr = (response != null) ?
+                        response : "Error processing request. Check your internet connection and try again.";
         Toast.makeText(mContext, responseStr, Toast.LENGTH_LONG).show();
     }
 }

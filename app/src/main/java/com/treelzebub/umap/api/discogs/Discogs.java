@@ -2,12 +2,19 @@ package com.treelzebub.umap.api.discogs;
 
 import android.util.Log;
 
+import com.treelzebub.umap.Constants;
 import com.treelzebub.umap.api.AuthTools;
 import com.treelzebub.umap.api.AuthenticatedSession;
+import com.treelzebub.umap.auth.AuthUtils;
 import com.treelzebub.umap.util.ServiceGenerator;
 
+import java.io.UnsupportedEncodingException;
 import java.util.List;
 
+import oauth.signpost.exception.OAuthCommunicationException;
+import oauth.signpost.exception.OAuthExpectationFailedException;
+import oauth.signpost.exception.OAuthMessageSignerException;
+import oauth.signpost.exception.OAuthNotAuthorizedException;
 import retrofit.RetrofitError;
 import retrofit.client.Header;
 import retrofit.client.Response;
@@ -32,26 +39,39 @@ public class Discogs extends AuthenticatedSession {
         return instance == null ? instance = new Discogs() : instance;
     }
 
-    public static Response getRequestToken() {
+    public static String getRequestToken() {
         initRequestTokenService();
         try {
-            return mDiscogsApi.getRequestToken();
-        } catch (RetrofitError error) {
-            if (error.getResponse() == null) {
-                Log.d("Retrofit Error", error.toString());
-                Log.d("Request URL", error.getUrl());
-                Log.d("LocalizedMessage", error.getLocalizedMessage());
-            } else {
-                String status = Integer.toString(error.getResponse().getStatus());
-                List<Header> headers = error.getResponse().getHeaders();
-                Log.d("Retrofit Response", error.getResponse().getReason());
-                Log.d("Response Status", status);
-                for (Header h : headers) {
-                    Log.e(h.getName(), h.getValue());
-                }
-            }
-            return null;
+            AuthUtils.OAuthHelper oAuthHelper = new AuthUtils.OAuthHelper(DiscogsConstants.CONSUMER_KEY, DiscogsConstants.CONSUMER_SECRET, null, Constants.CALLBACK_URL);
+            return oAuthHelper.getRequestToken();
+//            return mDiscogsApi.getRequestToken();
+//        } catch (RetrofitError error) {
+//            if (error.getResponse() == null) {
+//                Log.e("Retrofit Error", error.toString());
+//                Log.e("Request URL", error.getUrl());
+//                Log.e("LocalizedMessage", error.getLocalizedMessage());
+//            } else {
+//                String status = Integer.toString(error.getResponse().getStatus());
+//                List<Header> headers = error.getResponse().getHeaders();
+//                Log.w("Retrofit Response", error.getResponse().getReason());
+//                Log.w("Response Status", status);
+//                for (Header h : headers) {
+//                    Log.e(h.getName(), h.getValue());
+//                }
+//            }
+//            return null;
+        } catch (UnsupportedEncodingException e) {
+            //impossibru!
+        } catch (OAuthCommunicationException e) {
+            Log.e("OAuth Explosion", e.getMessage());
+        } catch (OAuthExpectationFailedException e) {
+            e.printStackTrace();
+        } catch (OAuthNotAuthorizedException e) {
+            e.printStackTrace();
+        } catch (OAuthMessageSignerException e) {
+            e.printStackTrace();
         }
+        return null;
     }
 
     public static void initRequestTokenService() {
@@ -59,7 +79,7 @@ public class Discogs extends AuthenticatedSession {
                 DiscogsApi.class, DiscogsConstants.BASE_URL,
                 DiscogsConstants.CONSUMER_KEY, AuthTools.getNonce(),
                 DiscogsConstants.CONSUMER_SECRET, DiscogsConstants.SIGNATURE_METHOD,
-                AuthTools.getTimestamp(), DiscogsConstants.CALLBACK_URL);
+                AuthTools.getTimestamp(), Constants.CALLBACK_URL);
     }
 
     //TODO abstract out if gemm's tokens are similar enough

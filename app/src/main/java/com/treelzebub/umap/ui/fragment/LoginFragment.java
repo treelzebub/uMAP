@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.treelzebub.umap.Constants;
 import com.treelzebub.umap.R;
 import com.treelzebub.umap.api.discogs.DiscogsConstants;
 import com.treelzebub.umap.auth.AuthUrlTask;
@@ -81,7 +82,7 @@ public class LoginFragment extends Fragment {
                                     Intent.ACTION_VIEW,
                                     Uri.parse(DiscogsConstants.BASE_URL
                                             + "/login" + "?client_id=" + DiscogsConstants.CONSUMER_KEY
-                                            + "&redirect_uri=" + DiscogsConstants.CALLBACK_URL));
+                                            + "&redirect_uri=" + Constants.CALLBACK_URL));
                             startActivity(intent);
                             // GOAL!
                         } else {

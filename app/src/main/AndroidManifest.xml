@@ -27,7 +27,7 @@
                 <category android:name="android.intent.category.BROWSABLE" />
 
                 <data
-                    android:host="treelzebub.umap"
+                    android:host="urn:ietf:wg:oauth:2.0:oob"
                     android:scheme="oauth" />
             </intent-filter>
         </activity>
