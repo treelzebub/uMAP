@@ -79,7 +79,9 @@ public class LoginFragment extends Fragment {
                         if (authCode.length() > 0) {
                             Intent intent = new Intent(
                                     Intent.ACTION_VIEW,
-                                    Uri.parse(DiscogsConstants.BASE_URL + "/login" + "?client_id=" + DiscogsConstants.CONSUMER_KEY + "&redirect_uri=" + DiscogsConstants.CALLBACK_URL));
+                                    Uri.parse(DiscogsConstants.BASE_URL
+                                            + "/login" + "?client_id=" + DiscogsConstants.CONSUMER_KEY
+                                            + "&redirect_uri=" + DiscogsConstants.CALLBACK_URL));
                             startActivity(intent);
                             // GOAL!
                         } else {
