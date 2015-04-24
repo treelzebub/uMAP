@@ -3,7 +3,6 @@ package com.treelzebub.umap.auth;
 import com.treelzebub.umap.api.discogs.DiscogsConstants;
 
 import java.io.UnsupportedEncodingException;
-import java.net.URLEncoder;
 
 import oauth.signpost.OAuth;
 import oauth.signpost.OAuthConsumer;
@@ -14,8 +13,6 @@ import oauth.signpost.exception.OAuthCommunicationException;
 import oauth.signpost.exception.OAuthExpectationFailedException;
 import oauth.signpost.exception.OAuthMessageSignerException;
 import oauth.signpost.exception.OAuthNotAuthorizedException;
-import oauth.signpost.http.HttpRequest;
-import oauth.signpost.signature.OAuthMessageSigner;
 
 /**
  * Created by Tre Murillo on 4/23/15

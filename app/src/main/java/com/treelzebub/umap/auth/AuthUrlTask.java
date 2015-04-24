@@ -7,6 +7,7 @@ import android.widget.Toast;
 import com.treelzebub.umap.api.discogs.Discogs;
 
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import retrofit.client.Response;
 
@@ -17,20 +18,18 @@ import retrofit.client.Response;
  */
 public class AuthUrlTask extends AsyncTask<Context, Integer, String> {
 
-    private Discogs mDiscogs;
     private Context mContext;
 
     @Override
     protected void onPreExecute() {
         super.onPreExecute();
-        mDiscogs = Discogs.getInstance();
     }
 
     @Override
     protected String doInBackground(@NotNull Context... params) {
         mContext = params[0];
         try {
-            return mDiscogs.getRequestToken();
+            return Discogs.getRequestToken();
         } catch (NullPointerException e) {
             e.printStackTrace();
             return null;

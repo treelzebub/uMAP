@@ -1,6 +1,7 @@
 package com.treelzebub.umap.ui.fragment;
 
 import android.app.Fragment;
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -31,18 +32,14 @@ public class LoginFragment extends Fragment {
 
     private boolean hasAuthUrl = false;
 
-    @InjectView(R.id.webview)
-    WebView mWebView;
-    @InjectView(R.id.auth_code_et)
-    EditText mAuthCodeET;
-    @InjectView(R.id.submit_button)
-    Button mSubmitButton;
+//    @InjectView(R.id.webview) WebView       mWebView;
+    @InjectView(R.id.auth_code_et) EditText mAuthCodeET;
+    @InjectView(R.id.submit_button) Button  mSubmitButton;
 
     @Override
     public void onStart() {
         super.onStart();
-        AuthUrlTask authUrlTask = new AuthUrlTask();
-        authUrlTask.execute(getActivity().getBaseContext());
+        new AuthUrlTask().execute(getActivity().getApplicationContext());
     }
 
     @Override
