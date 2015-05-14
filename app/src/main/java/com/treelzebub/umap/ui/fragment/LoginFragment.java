@@ -1,6 +1,7 @@
 package com.treelzebub.umap.ui.fragment;
 
 import android.app.Fragment;
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -12,6 +13,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.treelzebub.umap.Constants;
 import com.treelzebub.umap.R;
 import com.treelzebub.umap.api.discogs.DiscogsConstants;
 import com.treelzebub.umap.auth.AuthUrlTask;
@@ -30,18 +32,14 @@ public class LoginFragment extends Fragment {
 
     private boolean hasAuthUrl = false;
 
-    @InjectView(R.id.webview)
-    WebView mWebView;
-    @InjectView(R.id.auth_code_et)
-    EditText mAuthCodeET;
-    @InjectView(R.id.submit_button)
-    Button mSubmitButton;
+//    @InjectView(R.id.webview) WebView       mWebView;
+    @InjectView(R.id.auth_code_et) EditText mAuthCodeET;
+    @InjectView(R.id.submit_button) Button  mSubmitButton;
 
     @Override
     public void onStart() {
         super.onStart();
-        AuthUrlTask authUrlTask = new AuthUrlTask();
-        authUrlTask.execute(getActivity().getBaseContext());
+        new AuthUrlTask().execute(getActivity().getApplicationContext());
     }
 
     @Override
@@ -79,7 +77,9 @@ public class LoginFragment extends Fragment {
                         if (authCode.length() > 0) {
                             Intent intent = new Intent(
                                     Intent.ACTION_VIEW,
-                                    Uri.parse(DiscogsConstants.BASE_URL + "/login" + "?client_id=" + DiscogsConstants.CONSUMER_KEY + "&redirect_uri=" + DiscogsConstants.CALLBACK_URL));
+                                    Uri.parse(DiscogsConstants.BASE_URL
+                                            + "/login" + "?client_id=" + DiscogsConstants.CONSUMER_KEY
+                                            + "&redirect_uri=" + Constants.CALLBACK_URL));
                             startActivity(intent);
                             // GOAL!
                         } else {
