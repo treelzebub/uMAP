@@ -1,10 +1,10 @@
 package com.treelzebub.umap.ui.fragment;
 
 import android.app.Fragment;
-import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,8 +15,12 @@ import android.widget.Toast;
 
 import com.treelzebub.umap.Constants;
 import com.treelzebub.umap.R;
+import com.treelzebub.umap.api.discogs.Discogs;
 import com.treelzebub.umap.api.discogs.DiscogsConstants;
 import com.treelzebub.umap.auth.AuthUrlTask;
+import com.treelzebub.umap.util.BusProvider;
+
+import java.lang.ref.WeakReference;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -32,35 +36,33 @@ public class LoginFragment extends Fragment {
 
     private boolean hasAuthUrl = false;
 
-//    @InjectView(R.id.webview) WebView       mWebView;
+    @InjectView(R.id.webview) WebView       mWebView;
     @InjectView(R.id.auth_code_et) EditText mAuthCodeET;
     @InjectView(R.id.submit_button) Button  mSubmitButton;
 
     @Override
-    public void onStart() {
-        super.onStart();
-        new AuthUrlTask().execute(getActivity().getApplicationContext());
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        BusProvider.getInstance().register(this);
+        new AuthUrlTask().execute(new WeakReference<>(getActivity()));
     }
 
     @Override
     public void onResume() {
         super.onResume();
+        Uri uri = getActivity().getIntent().getData();
+        if (uri != null && uri.toString().startsWith(Constants.CALLBACK_URL)) {
+            // use the parameter your API exposes for the code (mostly it's "code")
+            String code = uri.getQueryParameter("code");
+            if (code != null) {
+                // get access token
+                String accessToken = new Discogs().getAccessToken(code);
 
-        // the intent filter defined in AndroidManifest will handle the return from ACTION_VIEW intent
-//        Uri uri = getActivity().getIntent().getData();
-//        if (uri != null && uri.toString().startsWith(DiscogsConstants.CALLBACK_URL)) {
-//            // use the parameter your API exposes for the code (mostly it's "code")
-//            String code = uri.getQueryParameter("code");
-//            if (code != null) {
-//                // get access token
-////                AccessToken accessToken = Discogs.getInstance().getAccessToken(code, "authorization_code");
-//
-//            } else if (uri.getQueryParameter("error") != null) {
-//                // show an error message here
-//                Log.e("Redirect Error:", uri.getQueryParameter("error"));
-//            }
-//        }
-
+            } else if (uri.getQueryParameter("error") != null) {
+                // show an error message here
+                Log.e("Redirect Error:", uri.getQueryParameter("error"));
+            }
+        }
     }
 
     @Override
@@ -88,5 +90,11 @@ public class LoginFragment extends Fragment {
                     }
                 });
         return v;
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        BusProvider.getInstance().unregister(this);
     }
 }
