@@ -37,10 +37,9 @@ public class AuthUrlTask extends AsyncTask<Context, Integer, String> {
     }
 
     @Override
-    protected void onPostExecute(String response) {
-        super.onPostExecute(response);
-        String responseStr = (response != null) ?
-                        response : "Error processing request. Check your internet connection and try again.";
-        Toast.makeText(mContext, responseStr, Toast.LENGTH_LONG).show();
+    protected void onPostExecute(String url) {
+        super.onPostExecute(url);
+        Toast.makeText(mContext, url, Toast.LENGTH_LONG).show();
+        //TODO webview bullshit or xauth slightly-less-bullshit
     }
 }
