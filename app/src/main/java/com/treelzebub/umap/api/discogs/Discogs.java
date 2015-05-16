@@ -41,7 +41,8 @@ public class Discogs extends AuthenticatedSession {
 
     public static String getRequestToken() {
         try {
-            AuthUtils.OAuthHelper oAuthHelper = new AuthUtils.OAuthHelper(DiscogsConstants.CONSUMER_KEY, DiscogsConstants.CONSUMER_SECRET, DiscogsConstants.BASE_URL, Constants.CALLBACK_URL);
+
+            AuthUtils.OAuthHelper oAuthHelper = new AuthUtils.OAuthHelper(DiscogsConstants.CONSUMER_KEY, DiscogsConstants.CONSUMER_SECRET, DiscogsConstants.REQUEST_TOKEN_URL, Constants.CALLBACK_URL);
             return oAuthHelper.getRequestToken();
 //            return mDiscogsApi.getRequestToken();
 //        } catch (RetrofitError error) {
