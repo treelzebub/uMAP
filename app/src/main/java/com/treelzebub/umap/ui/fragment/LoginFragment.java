@@ -17,10 +17,7 @@ import com.treelzebub.umap.Constants;
 import com.treelzebub.umap.R;
 import com.treelzebub.umap.api.discogs.Discogs;
 import com.treelzebub.umap.api.discogs.DiscogsConstants;
-import com.treelzebub.umap.auth.AuthUrlTask;
 import com.treelzebub.umap.util.BusProvider;
-
-import java.lang.ref.WeakReference;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -44,7 +41,6 @@ public class LoginFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         BusProvider.getInstance().register(this);
-        new AuthUrlTask().execute(new WeakReference<>(getActivity()));
     }
 
     @Override
