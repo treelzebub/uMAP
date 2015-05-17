@@ -42,6 +42,7 @@ public class LoginFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         BusProvider.getInstance().register(this);
+        new DiscogsClient().getRequestToken();
     }
 
     @Override
@@ -59,8 +60,6 @@ public class LoginFragment extends Fragment {
                 // show an error message here
                 Log.e("Redirect Error:", uri.getQueryParameter("error"));
             }
-        } else {
-            new DiscogsClient().getRequestToken();
         }
     }
 

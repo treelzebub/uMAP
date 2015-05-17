@@ -3,7 +3,6 @@ package com.treelzebub.umap.api.discogs;
 import android.util.Log;
 
 import com.treelzebub.umap.Constants;
-import com.treelzebub.umap.api.AuthTools;
 import com.treelzebub.umap.api.AuthenticatedSession;
 import com.treelzebub.umap.auth.AuthUtils;
 import com.treelzebub.umap.util.ServiceGenerator;
@@ -32,9 +31,9 @@ public class Discogs extends AuthenticatedSession {
     public void initRequestTokenService() {
         mDiscogsApi = ServiceGenerator.createService(
                 DiscogsApi.class, DiscogsConstants.BASE_URL,
-                DiscogsConstants.CONSUMER_KEY, AuthTools.getNonce(),
+                DiscogsConstants.CONSUMER_KEY, AuthUtils.getNonce(),
                 DiscogsConstants.CONSUMER_SECRET, DiscogsConstants.SIGNATURE_METHOD,
-                AuthTools.getTimestamp(), Constants.CALLBACK_URL);
+                AuthUtils.getTimestamp(), Constants.CALLBACK_URL);
     }
 
     public String getRequestToken() {

@@ -45,8 +45,8 @@ public class DiscogsClient {
 
             @Override
             protected String doInBackground(Void... params) {
+                provider.setOAuth10a(true);
                 try {
-
                     String url = provider.retrieveRequestToken(getConsumer(), Constants.CALLBACK_URL);
                     return url;
                 } catch (OAuthCommunicationException | OAuthExpectationFailedException |
