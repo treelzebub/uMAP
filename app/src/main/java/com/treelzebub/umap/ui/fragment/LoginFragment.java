@@ -31,12 +31,9 @@ public class LoginFragment extends Fragment {
 
     private boolean hasAuthUrl = false;
 
-    @InjectView(R.id.webview)
-    WebView mWebView;
-    @InjectView(R.id.auth_code_et)
-    EditText mAuthCodeET;
-    @InjectView(R.id.submit_button)
-    Button mSubmitButton;
+    @InjectView(R.id.webview) WebView        mWebView;
+    @InjectView(R.id.auth_code_et) EditText  mAuthCodeET;
+    @InjectView(R.id.submit_button) Button   mSubmitButton;
 
     @Override
     public void onStart() {
@@ -74,7 +71,7 @@ public class LoginFragment extends Fragment {
     }
 
     @OnClick(R.id.submit_button)
-    private void submit(View v) {
+    protected void submit(View v) {
         CharSequence authCode = mAuthCodeET.getText();
         if (authCode.length() > 0) {
             Intent intent = new Intent(
