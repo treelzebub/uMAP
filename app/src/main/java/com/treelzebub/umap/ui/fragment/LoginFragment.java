@@ -4,7 +4,6 @@ import android.app.Fragment;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,12 +12,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.treelzebub.umap.Constants;
 import com.treelzebub.umap.R;
-import com.treelzebub.umap.api.discogs.Discogs;
 import com.treelzebub.umap.api.discogs.DiscogsConstants;
-import com.treelzebub.umap.auth.DiscogsClient;
-import com.treelzebub.umap.util.BusProvider;
+import com.treelzebub.umap.auth.AuthUrlTask;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -34,33 +30,39 @@ public class LoginFragment extends Fragment {
 
     private boolean hasAuthUrl = false;
 
-    @InjectView(R.id.webview) WebView       mWebView;
-    @InjectView(R.id.auth_code_et) EditText mAuthCodeET;
-    @InjectView(R.id.submit_button) Button  mSubmitButton;
+    @InjectView(R.id.webview)
+    WebView mWebView;
+    @InjectView(R.id.auth_code_et)
+    EditText mAuthCodeET;
+    @InjectView(R.id.submit_button)
+    Button mSubmitButton;
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        BusProvider.getInstance().register(this);
-        new DiscogsClient().getRequestToken();
+    public void onStart() {
+        super.onStart();
+        AuthUrlTask authUrlTask = new AuthUrlTask();
+        authUrlTask.execute(getActivity().getBaseContext());
     }
 
     @Override
     public void onResume() {
         super.onResume();
-        Uri uri = getActivity().getIntent().getData();
-        if (uri != null && uri.toString().startsWith(Constants.CALLBACK_URL)) {
-            // use the parameter your API exposes for the code (mostly it's "code")
-            String code = uri.getQueryParameter("code");
-            if (code != null) {
-                // get access token
-                String accessToken = new Discogs().getAccessToken(code);
 
-            } else if (uri.getQueryParameter("error") != null) {
-                // show an error message here
-                Log.e("Redirect Error:", uri.getQueryParameter("error"));
-            }
-        }
+        // the intent filter defined in AndroidManifest will handle the return from ACTION_VIEW intent
+//        Uri uri = getActivity().getIntent().getData();
+//        if (uri != null && uri.toString().startsWith(DiscogsConstants.CALLBACK_URL)) {
+//            // use the parameter your API exposes for the code (mostly it's "code")
+//            String code = uri.getQueryParameter("code");
+//            if (code != null) {
+//                // get access token
+////                AccessToken accessToken = Discogs.getInstance().getAccessToken(code, "authorization_code");
+//
+//            } else if (uri.getQueryParameter("error") != null) {
+//                // show an error message here
+//                Log.e("Redirect Error:", uri.getQueryParameter("error"));
+//            }
+//        }
+
     }
 
     @Override
@@ -77,9 +79,7 @@ public class LoginFragment extends Fragment {
                         if (authCode.length() > 0) {
                             Intent intent = new Intent(
                                     Intent.ACTION_VIEW,
-                                    Uri.parse(DiscogsConstants.BASE_URL
-                                            + "/login" + "?client_id=" + DiscogsConstants.CONSUMER_KEY
-                                            + "&redirect_uri=" + Constants.CALLBACK_URL));
+                                    Uri.parse(DiscogsConstants.BASE_URL + "/login" + "?client_id=" + DiscogsConstants.CONSUMER_KEY + "&redirect_uri=" + DiscogsConstants.CALLBACK_URL));
                             startActivity(intent);
                             // GOAL!
                         } else {
@@ -88,11 +88,5 @@ public class LoginFragment extends Fragment {
                     }
                 });
         return v;
-    }
-
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
-        BusProvider.getInstance().unregister(this);
     }
 }

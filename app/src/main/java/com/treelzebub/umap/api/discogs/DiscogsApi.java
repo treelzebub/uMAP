@@ -1,8 +1,5 @@
 package com.treelzebub.umap.api.discogs;
 
-import com.treelzebub.umap.api.discogs.model.Identity;
-import com.treelzebub.umap.api.discogs.model.Profile;
-
 import retrofit.client.Response;
 import retrofit.http.GET;
 import retrofit.http.POST;
@@ -18,11 +15,11 @@ public interface DiscogsApi {
     @POST(DiscogsConstants.ACCESS_TOKEN_URL)
     Discogs.TokenResponse getAccessToken();
 
-    @GET(DiscogsConstants.IDENTITY_URL)
-    Identity getIdentity();
+//    @GET(DiscogsConstants.IDENTITY_URL)
+//    Identity getIdentity();
+//
+//    @GET(DiscogsConstants.PROFILE_URL)
+//    Profile getProfile();
 
-    @GET(DiscogsConstants.PROFILE_URL)
-    Profile getProfile();
-
-    //...
+    //...TODO
 }
