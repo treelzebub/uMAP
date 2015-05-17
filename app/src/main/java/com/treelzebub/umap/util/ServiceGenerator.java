@@ -2,8 +2,8 @@ package com.treelzebub.umap.util;
 
 import com.squareup.okhttp.OkHttpClient;
 import com.treelzebub.umap.Constants;
-import com.treelzebub.umap.api.AuthTools;
 import com.treelzebub.umap.auth.AccessToken;
+import com.treelzebub.umap.auth.AuthUtils;
 
 import retrofit.RequestInterceptor;
 import retrofit.RestAdapter;
@@ -66,7 +66,7 @@ public class ServiceGenerator {
                 @Override
                 public void intercept(RequestFacade request) {
                     // create Base64 encoded string
-                    String encodedAuthStr = AuthTools.encodeBasicAuthBase64(credentials);
+                    String encodedAuthStr = AuthUtils.encodeBasicAuthBase64(credentials);
                     request.addHeader("Accept", "application/json");
                     request.addHeader("Authorization", "Discogs " + encodedAuthStr);
                 }

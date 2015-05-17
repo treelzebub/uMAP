@@ -68,9 +68,9 @@ dependencies {
 
     //HTTP + REST
     compile 'com.squareup.okhttp:okhttp:2.2.0'
-
     compile 'com.squareup.retrofit:retrofit:1.9.0'
     compile 'oauth.signpost:signpost-core:1.2.1.2'
+    compile 'org.apache.commons:commons-lang3:3.4' // Signpost dependency
     compile 'com.google.code.gson:gson:2.3'
     compile 'oauth.signpost:signpost-commonshttp4:1.2.1.2'
 

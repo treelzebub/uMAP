@@ -1,8 +1,12 @@
 package com.treelzebub.umap.auth;
 
+import android.util.Base64;
+
 import com.treelzebub.umap.api.discogs.DiscogsConstants;
 
 import java.io.UnsupportedEncodingException;
+import java.math.BigInteger;
+import java.security.SecureRandom;
 
 import oauth.signpost.OAuth;
 import oauth.signpost.OAuthConsumer;
@@ -40,6 +44,20 @@ public class AuthUtils {
         OAuthExpectationFailedException, OAuthCommunicationException {
             return mProvider.retrieveRequestToken(mConsumer, mCallbackUrl);
         }
+    }
+
+    private static SecureRandom random = new SecureRandom();
+
+    public static String getNonce() {
+        return new BigInteger(130, random).toString(32);
+    }
+
+    public static long getTimestamp() {
+        return System.currentTimeMillis() / 1000;
+    }
+
+    public static String encodeBasicAuthBase64(String rawStr) {
+        return "Basic " + Base64.encodeToString(rawStr.getBytes(), Base64.NO_WRAP);
     }
 
     private AuthUtils() { throw new SecurityException(); }

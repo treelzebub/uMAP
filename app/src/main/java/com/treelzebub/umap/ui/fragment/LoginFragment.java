@@ -17,6 +17,7 @@ import com.treelzebub.umap.Constants;
 import com.treelzebub.umap.R;
 import com.treelzebub.umap.api.discogs.Discogs;
 import com.treelzebub.umap.api.discogs.DiscogsConstants;
+import com.treelzebub.umap.auth.DiscogsClient;
 import com.treelzebub.umap.util.BusProvider;
 
 import butterknife.ButterKnife;
@@ -58,6 +59,8 @@ public class LoginFragment extends Fragment {
                 // show an error message here
                 Log.e("Redirect Error:", uri.getQueryParameter("error"));
             }
+        } else {
+            new DiscogsClient().getRequestToken();
         }
     }
 
