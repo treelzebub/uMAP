@@ -1,6 +1,8 @@
 package com.treelzebub.umap.util;
 
 import com.squareup.okhttp.OkHttpClient;
+import com.treelzebub.umap.Constants;
+import com.treelzebub.umap.api.discogs.DiscogsConstants;
 import com.treelzebub.umap.auth.AccessToken;
 import com.treelzebub.umap.auth.AuthUtils;
 
@@ -35,12 +37,14 @@ public class ServiceGenerator {
                 .setRequestInterceptor(new RequestInterceptor() {
                     @Override
                     public void intercept(RequestFacade request) {
+                        request.addHeader("Content-Type", Constants.ENCODING_TYPE);
                         request.addHeader("oauth_consumer_key", consumerKey);
                         request.addHeader("oauth_nonce", nonce);
                         request.addHeader("oauth_signature", consumerSecret + "&"); // ampersand must be appended because reasons
                         request.addHeader("oauth_signature_method", signatureMethod);
                         request.addHeader("oauth_timestamp", "" + timestamp);
                         request.addHeader("oauth_callback", callbackUrl);
+                        request.addHeader("User-Agent", Constants.USER_AGENT);
                     }
                 }).build();
         return adapter.create(serviceClass);
