@@ -18,10 +18,11 @@ import com.treelzebub.umap.auth.AuthUrlTask;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
+import butterknife.OnClick;
 
 /**
  * Created by Tre Murillo on 3/23/15
- *
+ * <p/>
  * A fragment which will eventually provide a one-time login to Discogs (and optionally, Gemm)
  */
 public class LoginFragment extends Fragment {
@@ -40,8 +41,7 @@ public class LoginFragment extends Fragment {
     @Override
     public void onStart() {
         super.onStart();
-        AuthUrlTask authUrlTask = new AuthUrlTask();
-        authUrlTask.execute(getActivity().getBaseContext());
+        new AuthUrlTask().execute(getActivity());
     }
 
     @Override
@@ -70,23 +70,20 @@ public class LoginFragment extends Fragment {
         super.onCreateView(inflater, container, savedInstanceState);
         View v = inflater.inflate(R.layout.dialog_oauth, container, false);
         ButterKnife.inject(this, v);
-
-        mSubmitButton.setOnClickListener(
-                new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        CharSequence authCode = mAuthCodeET.getText();
-                        if (authCode.length() > 0) {
-                            Intent intent = new Intent(
-                                    Intent.ACTION_VIEW,
-                                    Uri.parse(DiscogsConstants.BASE_URL + "/login" + "?client_id=" + DiscogsConstants.CONSUMER_KEY + "&redirect_uri=" + DiscogsConstants.CALLBACK_URL));
-                            startActivity(intent);
-                            // GOAL!
-                        } else {
-                            Toast.makeText(getActivity(), "Please enter authorization code", Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                });
         return v;
+    }
+
+    @OnClick(R.id.submit_button)
+    private void submit(View v) {
+        CharSequence authCode = mAuthCodeET.getText();
+        if (authCode.length() > 0) {
+            Intent intent = new Intent(
+                    Intent.ACTION_VIEW,
+                    Uri.parse(DiscogsConstants.BASE_URL + "/login" + "?client_id=" + DiscogsConstants.CONSUMER_KEY + "&redirect_uri=" + DiscogsConstants.CALLBACK_URL));
+            startActivity(intent);
+            // GOAL!
+        } else {
+            Toast.makeText(getActivity(), "Please enter authorization code", Toast.LENGTH_SHORT).show();
+        }
     }
 }

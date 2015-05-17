@@ -21,7 +21,6 @@ public class ServiceGenerator {
         return createService(serviceClass, baseUrl, null, null);
     }
 
-
     // Construct valid request for request token
     public static <S> S createService(Class<S> serviceClass, String baseUrl, final String consumerKey,
                                       final String nonce, final String consumerSecret, final String signatureMethod,

@@ -27,7 +27,6 @@ public class AuthUrlTask extends AsyncTask<Context, Integer, Response> {
     @Override
     protected Response doInBackground(Context... params) {
         mContext = params[0];
-
         try {
             return mDiscogs.getRequestToken();
         } catch (NullPointerException e) {
@@ -43,7 +42,6 @@ public class AuthUrlTask extends AsyncTask<Context, Integer, Response> {
                 (response != null) ?
                         response.toString() :
                         "Error processing request. Check your internet connection and try again.";
-
         Toast.makeText(mContext, responseStr, Toast.LENGTH_LONG).show();
     }
 }
