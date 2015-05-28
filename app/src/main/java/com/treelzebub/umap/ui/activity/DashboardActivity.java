@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.FragmentManager;
 import android.content.Intent;
 import android.content.res.Configuration;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -24,8 +25,6 @@ public class DashboardActivity extends Activity {
 
     private Toolbar mToolbar;
     private ActionBarDrawerToggle mDrawerToggle;
-
-    private boolean mHasLoggedIn = false; //TODO temp
 
     @InjectView(R.id.drawer_layout)
     DrawerLayout mDrawerLayout;
@@ -48,11 +47,10 @@ public class DashboardActivity extends Activity {
         initDrawer();
 
         FragmentManager fm = getFragmentManager();
-        if (!mHasLoggedIn) {
+        if (getIntent().getData() == null) {
             fm.beginTransaction().add(R.id.container, new LoginFragment()).commit();
         } else {
-            Intent intent = new Intent(this, SearchActivity.class);
-            startActivity(intent);
+            Uri data = getIntent().getData();
         }
     }
 
@@ -102,13 +100,5 @@ public class DashboardActivity extends Activity {
             return true;
         }
         return super.onOptionsItemSelected(item);
-    }
-
-    public boolean hasLoggedIn() {
-        return mHasLoggedIn;
-    }
-
-    public void setHasLoggedIn(boolean mHasLoggedIn) {
-        this.mHasLoggedIn = mHasLoggedIn;
     }
 }

@@ -70,6 +70,7 @@ dependencies {
     compile 'com.jakewharton:butterknife:6.1.0'
     compile 'com.jakewharton:kotterknife:0.1.0-SNAPSHOT'
     compile 'joda-time:joda-time:2.7'
+    compile 'com.levelmoney.velodrome:velodrome:0.9-SNAPSHOT@aar'
 
     //HTTP + REST
     compile 'org.scribe:scribe:1.3.7'
