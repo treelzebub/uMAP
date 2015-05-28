@@ -14,7 +14,6 @@ import android.widget.Toast;
 
 import com.treelzebub.umap.R;
 import com.treelzebub.umap.api.discogs.DiscogsConstants;
-import com.treelzebub.umap.auth.AuthUrlTask;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -36,30 +35,8 @@ public class LoginFragment extends Fragment {
     @InjectView(R.id.submit_button) Button   mSubmitButton;
 
     @Override
-    public void onStart() {
-        super.onStart();
-        new AuthUrlTask().execute(getActivity());
-    }
-
-    @Override
     public void onResume() {
         super.onResume();
-
-        // the intent filter defined in AndroidManifest will handle the return from ACTION_VIEW intent
-//        Uri uri = getActivity().getIntent().getData();
-//        if (uri != null && uri.toString().startsWith(DiscogsConstants.CALLBACK_URL)) {
-//            // use the parameter your API exposes for the code (mostly it's "code")
-//            String code = uri.getQueryParameter("code");
-//            if (code != null) {
-//                // get access token
-////                AccessToken accessToken = Discogs.getInstance().getAccessToken(code, "authorization_code");
-//
-//            } else if (uri.getQueryParameter("error") != null) {
-//                // show an error message here
-//                Log.e("Redirect Error:", uri.getQueryParameter("error"));
-//            }
-//        }
-
     }
 
     @Override

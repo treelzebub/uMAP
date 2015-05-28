@@ -13,7 +13,7 @@ public interface DiscogsApi {
     Response getRequestToken();
 
     @POST(DiscogsConstants.ACCESS_TOKEN_URL)
-    Discogs.TokenResponse getAccessToken();
+    String getAccessToken();
 
 //    @GET(DiscogsConstants.IDENTITY_URL)
 //    Identity getIdentity();

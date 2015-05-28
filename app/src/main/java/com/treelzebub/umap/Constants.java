@@ -11,5 +11,7 @@ public class Constants {
     public static final String ENCODING_TYPE = "UTF-8";
     public static final String CONTENT_FORM_URLENCODED = "application/x-www-form-urlencoded";
 
+    public static final String CREDENTIALS_STORE_PREF_FILE = "umap.prefs";
+
     private Constants(){}
 }

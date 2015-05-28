@@ -66,6 +66,12 @@ dependencies {
 //    compile 'com.android.support:gridlayout-v7:22.1.1'
 //    compile 'com.android.support:recyclerview-v7:22.1.1'
 
+    //Lang + Util
+    compile "org.jetbrains.kotlin:kotlin-stdlib:0.10.195"
+    compile 'com.squareup:otto:1.3.7'
+    compile 'com.jakewharton:butterknife:6.1.0'
+    compile 'joda-time:joda-time:2.7'
+
     //HTTP + REST
     compile 'com.squareup.okhttp:okhttp:2.2.0'
     compile 'com.squareup.retrofit:retrofit:1.9.0'
@@ -73,13 +79,13 @@ dependencies {
     compile 'org.apache.commons:commons-lang3:3.4' // Signpost dependency
     compile 'com.google.code.gson:gson:2.3'
     compile 'oauth.signpost:signpost-commonshttp4:1.2.1.2'
+    compile 'com.wu-man:android-oauth-client:0.0.3'
 
+    //UI
+    compile('de.keyboardsurfer.android.widget:crouton:1.8.5@aar') {
+        exclude group: 'com.google.android', module: 'support-v4'
+    }
 //    compile 'com.squareup.picasso:picasso:2.5.2'
 
-    //Lang + Util
-    compile "org.jetbrains.kotlin:kotlin-stdlib:0.10.195"
-    compile 'com.squareup:otto:1.3.7'
-    compile 'com.jakewharton:butterknife:6.1.0'
-    compile 'joda-time:joda-time:2.7'
 }
 

@@ -28,15 +28,10 @@ public class SearchActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
         ButterKnife.inject(this);
-
         SearchManager searchManager = (SearchManager) getSystemService(SEARCH_SERVICE);
-
         mSearchView.setSearchableInfo(searchManager.getSearchableInfo(
                 new ComponentName(getApplicationContext(), SearchActivity.class)
         ));
-
-
-
         Intent intent = getIntent();
         if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
             String query = intent.getStringExtra(SearchManager.QUERY);
@@ -47,8 +42,7 @@ public class SearchActivity extends Activity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuItem mSearchMenuItem = menu.findItem(R.id.action_search);
-        mSearchView = (SearchView) MenuItemCompat.getActionView(mSearchMenuItem);
-
+        mSearchView = (SearchView) mSearchMenuItem.getActionView();
         return super.onCreateOptionsMenu(menu);
     }
 
