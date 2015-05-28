@@ -17,6 +17,9 @@ import android.widget.EditText
 import android.widget.ListView
 import butterknife.bindView
 import com.treelzebub.umap.R
+import com.treelzebub.umap.api.discogs.DiscogsApi
+import com.treelzebub.umap.api.discogs.constants.*
+import org.scribe.builder.ServiceBuilder
 import kotlin.com.treelzebub.umap.util.BusProvider
 
 /**
@@ -39,15 +42,23 @@ public class DashboardActivity : Activity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dashboard)
         BusProvider.getInstance().register(this)
-        val prefs: SharedPreferences = this.getSharedPreferences(getString(R.string.key_pref_file), Context.MODE_PRIVATE)
+        val prefs: SharedPreferences = getSharedPreferences(getString(R.string.key_pref_file), Context.MODE_PRIVATE)
         initDrawer()
 
         val data = getIntent().getData()
-        if (data == null || prefs.getString(getString(R.string.key_oauth_token), "") != "") {
+        if (data == null || !prefs.contains(getString(R.string.key_oauth_token))) {
             getFragmentManager().beginTransaction().add(R.id.container, LoginFragment()).commit()
         } else {
             prefs.edit().putString(getString(R.string.key_oauth_token), data.getQueryParameter("oauth_token"))
             prefs.edit().putString(getString(R.string.key_oauth_verifier), data.getQueryParameter("oauth_verifier"))
+            //TODO get (request)Token from LoginFragment here
+            val service = ServiceBuilder()
+                    .apiKey(CONSUMER_KEY)
+                    .apiSecret(CONSUMER_SECRET)
+                    .callback(CALLBACK_URL)
+                    .provider(javaClass<DiscogsApi>())
+                    .build()
+            val rt = service.getRequestToken()
         }
     }
 

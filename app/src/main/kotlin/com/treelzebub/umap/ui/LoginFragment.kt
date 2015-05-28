@@ -1,8 +1,10 @@
 package com.treelzebub.umap.ui
 
+import android.app.Activity
 import android.os.AsyncTask
 import android.os.Bundle
 import android.app.Fragment
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -15,6 +17,7 @@ import com.treelzebub.umap.api.discogs.constants.CALLBACK_URL
 import com.treelzebub.umap.api.discogs.constants.CONSUMER_KEY
 import com.treelzebub.umap.api.discogs.constants.CONSUMER_SECRET
 import org.scribe.builder.ServiceBuilder
+import java.lang.ref.WeakReference
 
 /**
  * Created by Tre Murillo on 5/28/15
@@ -30,8 +33,11 @@ public class LoginFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        object : AsyncTask<Void, Void, Void>() {
-            override fun doInBackground(vararg params: Void): Void? {
+        val wa = WeakReference<Activity>(getActivity())
+        var request_token: String? = null
+
+        object : AsyncTask<WeakReference<Activity>, Void, String>() {
+            override fun doInBackground(vararg params: WeakReference<Activity>): String {
                 val service = ServiceBuilder()
                         .apiKey(CONSUMER_KEY)
                         .apiSecret(CONSUMER_SECRET)
@@ -39,14 +45,17 @@ public class LoginFragment : Fragment() {
                         .provider(javaClass<DiscogsApi>())
                         .build()
                 val rt = service.getRequestToken()
-                authUrl = service.getAuthorizationUrl(rt) + AUTH_URL_APPEND + rt.getToken()
-                return null
+                request_token = rt.getToken()
+                return service.getAuthorizationUrl(rt) + AUTH_URL_APPEND + rt.getToken()
             }
 
-            override fun onPostExecute(foo: Void?) {
+            override fun onPostExecute(authurl: String) {
+                //unbox WeakReference to
+                val prefs = wa.get().getSharedPreferences(getString(R.string.key_pref_file), Context.MODE_PRIVATE)
+                prefs.edit().putString(getString(R.string.key_request_token), request_token)
                 mWebView.loadUrl(authUrl)
             }
-        }.execute()
+        }.execute(wa)
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
