@@ -2,7 +2,6 @@ package com.treelzebub.umap.ui.activity;
 
 import android.app.Activity;
 import android.app.FragmentManager;
-import android.content.Intent;
 import android.content.res.Configuration;
 import android.net.Uri;
 import android.os.Bundle;
@@ -51,6 +50,8 @@ public class DashboardActivity extends Activity {
             fm.beginTransaction().add(R.id.container, new LoginFragment()).commit();
         } else {
             Uri data = getIntent().getData();
+            String token = data.getQueryParameter("oauth_token");
+            String verifier = data.getQueryParameter("oauth_verifier");
         }
     }
 
