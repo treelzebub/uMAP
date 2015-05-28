@@ -53,7 +53,7 @@ public class LoginFragment extends Fragment {
                         .provider(DiscogsApi.class)
                         .build();
                 Token rt = service.getRequestToken();
-                authUrl = service.getAuthorizationUrl(rt) + DiscogsConstants.AUTH_URL_APPEND + "<" + rt.getToken() + ">";
+                authUrl = service.getAuthorizationUrl(rt) + DiscogsConstants.AUTH_URL_APPEND + rt.getToken();
                 return null;
             }
 
