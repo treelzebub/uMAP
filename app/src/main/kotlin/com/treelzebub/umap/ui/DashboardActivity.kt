@@ -13,13 +13,13 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.ArrayAdapter
-import android.widget.Button
-import android.widget.EditText
 import android.widget.ListView
 import butterknife.bindView
 import com.treelzebub.umap.R
 import com.treelzebub.umap.api.discogs.DiscogsApi
-import com.treelzebub.umap.api.discogs.constants.*
+import com.treelzebub.umap.api.discogs.constants.CALLBACK_URL
+import com.treelzebub.umap.api.discogs.constants.CONSUMER_KEY
+import com.treelzebub.umap.api.discogs.constants.CONSUMER_SECRET
 import com.treelzebub.umap.util.TokenHolder
 import org.scribe.builder.ServiceBuilder
 import org.scribe.model.Verifier
@@ -38,8 +38,6 @@ public class DashboardActivity : Activity() {
 
     val drawerLayout: DrawerLayout  by bindView(R.id.drawer_layout)
     val listView: ListView          by bindView(R.id.nav_list)
-    val authCodeET: EditText        by bindView(R.id.auth_code_et)
-    val submitButton: Button        by bindView(R.id.submit_button)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -75,7 +73,7 @@ public class DashboardActivity : Activity() {
     }
 
     private fun initDrawer() {
-        val mListAdapter = ArrayAdapter<String>(this@DashboardActivity, android.R.layout.simple_list_item_1, listOptions)
+        val mListAdapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, listOptions)
         listView.setAdapter(mListAdapter)
         //TODO toolbar
         drawerToggle = object : ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.drawer_open, R.string.drawer_close) {
