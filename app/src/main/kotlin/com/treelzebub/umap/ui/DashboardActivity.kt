@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Context
 import android.content.SharedPreferences
 import android.content.res.Configuration
+import android.os.AsyncTask
 import android.os.Bundle
 import android.support.v4.widget.DrawerLayout
 import android.support.v7.app.ActionBarDrawerToggle
@@ -19,7 +20,9 @@ import butterknife.bindView
 import com.treelzebub.umap.R
 import com.treelzebub.umap.api.discogs.DiscogsApi
 import com.treelzebub.umap.api.discogs.constants.*
+import com.treelzebub.umap.util.TokenHolder
 import org.scribe.builder.ServiceBuilder
+import org.scribe.model.Verifier
 import kotlin.com.treelzebub.umap.util.BusProvider
 
 /**
@@ -46,19 +49,28 @@ public class DashboardActivity : Activity() {
         initDrawer()
 
         val data = getIntent().getData()
-        if (data == null || !prefs.contains(getString(R.string.key_oauth_token))) {
+        if (data == null) {
             getFragmentManager().beginTransaction().add(R.id.container, LoginFragment()).commit()
         } else {
             prefs.edit().putString(getString(R.string.key_oauth_token), data.getQueryParameter("oauth_token"))
             prefs.edit().putString(getString(R.string.key_oauth_verifier), data.getQueryParameter("oauth_verifier"))
-            //TODO get (request)Token from LoginFragment here
+
+            val requestToken = TokenHolder.getRequestToken()
+            val verifier = Verifier(data.getQueryParameter("oauth_verifier"))
+
             val service = ServiceBuilder()
                     .apiKey(CONSUMER_KEY)
                     .apiSecret(CONSUMER_SECRET)
                     .callback(CALLBACK_URL)
                     .provider(javaClass<DiscogsApi>())
                     .build()
-            val rt = service.getRequestToken()
+            object : AsyncTask<Void, Void, Void>() {
+                override fun doInBackground(vararg params: Void?): Void? {
+                    val accessToken = service.getAccessToken(requestToken, verifier)
+                    TokenHolder.setAccessToken(accessToken)
+                    return null
+                }
+            }.execute()
         }
     }
 
