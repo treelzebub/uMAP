@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="key_pref_file">net.treelzebub.umap.PREFS</string>
     <string name="key_oauth_token">key_oauth_token</string>
     <string name="key_oauth_verifier">key_oauth_verifier</string>
 </resources>

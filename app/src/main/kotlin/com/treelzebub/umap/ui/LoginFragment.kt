@@ -2,7 +2,7 @@ package com.treelzebub.umap.ui
 
 import android.os.AsyncTask
 import android.os.Bundle
-import android.support.v4.app.Fragment
+import android.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -43,7 +43,7 @@ public class LoginFragment : Fragment() {
                 return null
             }
 
-            override fun onPostExecute(foo: Void) {
+            override fun onPostExecute(foo: Void?) {
                 mWebView.loadUrl(authUrl)
             }
         }.execute()
