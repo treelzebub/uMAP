@@ -34,7 +34,7 @@ public class LoginFragment extends Fragment {
 
     public static final String TAG = "LoginActivity";
 
-    private boolean hasAuthUrl = false;
+    private String authUrl;
 
     @InjectView(R.id.webview) WebView        mWebView;
     @InjectView(R.id.auth_code_et) EditText  mAuthCodeET;
@@ -52,9 +52,14 @@ public class LoginFragment extends Fragment {
                         .callback(DiscogsConstants.CALLBACK_URL)
                         .provider(DiscogsApi.class)
                         .build();
-                Token requestToken = service.getRequestToken();
-                String temp = requestToken.getToken();
+                Token rt = service.getRequestToken();
+                authUrl = service.getAuthorizationUrl(rt) + DiscogsConstants.AUTH_URL_APPEND + "<" + rt.getToken() + ">";
                 return null;
+            }
+
+            @Override
+            protected void onPostExecute(Void foo) {
+                mWebView.loadUrl(authUrl);
             }
         }.execute();
     }
