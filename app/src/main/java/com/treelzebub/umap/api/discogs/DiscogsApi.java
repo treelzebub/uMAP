@@ -1,25 +1,25 @@
 package com.treelzebub.umap.api.discogs;
 
-import retrofit.client.Response;
-import retrofit.http.GET;
-import retrofit.http.POST;
+import org.scribe.builder.api.DefaultApi10a;
+import org.scribe.model.Token;
 
 /**
  * Created by Tre Murillo 1/27/2015
  */
-public interface DiscogsApi {
+public class DiscogsApi extends DefaultApi10a {
 
-    @GET(DiscogsConstants.REQUEST_TOKEN_URL)
-    Response getRequestToken();
+    @Override
+    public String getRequestTokenEndpoint() {
+        return DiscogsConstants.REQUEST_TOKEN_URL;
+    }
 
-    @POST(DiscogsConstants.ACCESS_TOKEN_URL)
-    String getAccessToken();
+    @Override
+    public String getAccessTokenEndpoint() {
+        return DiscogsConstants.ACCESS_TOKEN_URL;
+    }
 
-//    @GET(DiscogsConstants.IDENTITY_URL)
-//    Identity getIdentity();
-//
-//    @GET(DiscogsConstants.PROFILE_URL)
-//    Profile getProfile();
-
-    //...TODO
+    @Override
+    public String getAuthorizationUrl(Token requestToken) {
+        return DiscogsConstants.AUTHORIZATION_URL;
+    }
 }

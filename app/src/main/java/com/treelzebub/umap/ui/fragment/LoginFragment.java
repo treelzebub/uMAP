@@ -3,6 +3,7 @@ package com.treelzebub.umap.ui.fragment;
 import android.app.Fragment;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,7 +14,12 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.treelzebub.umap.R;
+import com.treelzebub.umap.api.discogs.DiscogsApi;
 import com.treelzebub.umap.api.discogs.DiscogsConstants;
+
+import org.scribe.builder.ServiceBuilder;
+import org.scribe.model.Token;
+import org.scribe.oauth.OAuthService;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -35,8 +41,22 @@ public class LoginFragment extends Fragment {
     @InjectView(R.id.submit_button) Button   mSubmitButton;
 
     @Override
-    public void onResume() {
-        super.onResume();
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        new AsyncTask<Void, Void, Void>() {
+            @Override
+            protected Void doInBackground(Void... params) {
+                OAuthService service = new ServiceBuilder()
+                        .apiKey(DiscogsConstants.CONSUMER_KEY)
+                        .apiSecret(DiscogsConstants.CONSUMER_SECRET)
+                        .callback(DiscogsConstants.CALLBACK_URL)
+                        .provider(DiscogsApi.class)
+                        .build();
+                Token requestToken = service.getRequestToken();
+                String temp = requestToken.getToken();
+                return null;
+            }
+        }.execute();
     }
 
     @Override
