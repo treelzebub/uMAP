@@ -3,11 +3,11 @@
 buildscript {
 
     ext.sdk_version     = 22
-    ext.kotlin_version  = "0.11.91.4"
+    ext.kotlin_version  = "0.12.213"
     ext.build_tools     = "22.0.1"
     ext.gradle_plugin   = "1.2.3"
-    ext.support_version = "22.1.1"
-    ext.play_version    = "6.5.87"
+    ext.support_version = "22.2.0"
+    ext.play_version    = "7.5.0"
 
     repositories {
         mavenLocal()
@@ -26,8 +26,7 @@ allprojects {
         }
         mavenLocal()
         jcenter()
-        maven {
-            url 'https://oss.sonatype.org/content/repositories/snapshots/'
-        }
+        maven { url 'https://github.com/asarazan/maven-repository/raw/master/' }
+        maven { url 'https://oss.sonatype.org/content/repositories/snapshots/' }
     }
 }

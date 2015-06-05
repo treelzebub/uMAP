@@ -26,4 +26,11 @@ public class TokenHolder {
     public static void setAccessToken(Token accessToken) {
         TokenHolder.accessToken = accessToken;
     }
+
+    public Token createTokenFromPref(String key, String secret, String rawResponse) {
+        return new Token(key, secret, rawResponse);
+    }
+
+    private TokenHolder() {
+    }
 }
