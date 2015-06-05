@@ -8,4 +8,5 @@
     <dimen name="navigation_drawer_width">240dp</dimen>
     <dimen name="nav_profile_photo">96dp</dimen>
     <dimen name="small_spacer">8dp</dimen>
+    <dimen name="spacing_large">16dp</dimen>
 </resources>

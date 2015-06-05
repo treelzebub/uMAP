@@ -61,6 +61,7 @@ dependencies {
     //Back-compat
     compile "com.android.support:appcompat-v7:$support_version"
     compile "com.android.support:support-annotations:$support_version"
+    compile "com.android.support:design:$support_version"
     compile "com.android.support:cardview-v7:$support_version"
     compile "com.android.support:gridlayout-v7:$support_version"
     compile "com.android.support:recyclerview-v7:$support_version"

@@ -31,7 +31,7 @@ import kotlin.com.treelzebub.umap.util.BusProvider
  */
 public class DashboardActivity : Activity() {
 
-    private val listOptions = array("Search", "My Collection", "Accounts")
+    private val listOptions = arrayOf("Search", "My Collection", "Accounts")
 
     private val toolbar: Toolbar? = null
     private var drawerToggle: ActionBarDrawerToggle? = null
