@@ -10,8 +10,7 @@
         android:id="@+id/search_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:animateLayoutChanges="true"
-        android:closeIcon="@android:drawable/ic_menu_close_clear_cancel" />
+        android:animateLayoutChanges="true" />
 
     <ListView
         android:id="@+id/results_list"

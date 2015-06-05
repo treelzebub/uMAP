@@ -28,7 +28,8 @@ public class TokenHolder {
     }
 
     public Token createTokenFromPref(String key, String secret, String rawResponse) {
-        return new Token(key, secret, rawResponse);
+        setAccessToken(new Token(key, secret, rawResponse));
+        return getAccessToken();
     }
 
     private TokenHolder() {

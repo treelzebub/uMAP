@@ -1,19 +1,14 @@
 package com.treelzebub.umap.ui
 
-import android.app.Activity
 import android.content.Context
 import android.content.SharedPreferences
-import android.content.res.Configuration
 import android.os.AsyncTask
 import android.os.Bundle
 import android.support.v4.widget.DrawerLayout
-import android.support.v7.app.ActionBarDrawerToggle
+import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.Toolbar
 import android.view.Menu
 import android.view.MenuItem
-import android.view.View
-import android.widget.ArrayAdapter
-import android.widget.ListView
 import butterknife.bindView
 import com.treelzebub.umap.R
 import com.treelzebub.umap.api.discogs.DiscogsApi
@@ -29,26 +24,20 @@ import kotlin.com.treelzebub.umap.util.BusProvider
  * Created by Tre Murillo on 5/28/15
  * Copyright(c) 2015 Level, Inc.
  */
-public class DashboardActivity : Activity() {
-
-    private val listOptions = arrayOf("Search", "My Collection", "Accounts")
-
-    private val toolbar: Toolbar? = null
-    private var drawerToggle: ActionBarDrawerToggle? = null
+public class DashboardActivity : AppCompatActivity() {
 
     val drawerLayout: DrawerLayout  by bindView(R.id.drawer_layout)
-    val listView: ListView          by bindView(R.id.nav_list)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_dashboard)
         BusProvider.getInstance().register(this)
+        setContentView(R.layout.activity_dashboard)
+        initToolbar()
         val prefs: SharedPreferences = getSharedPreferences(getString(R.string.key_pref_file), Context.MODE_PRIVATE)
-        initDrawer()
 
         val data = getIntent().getData()
         if (data == null) {
-            getFragmentManager().beginTransaction().add(R.id.container, LoginFragment()).commit()
+            getFragmentManager().beginTransaction().add(R.id.content, LoginFragment()).commit()
         } else {
             prefs.edit().putString(getString(R.string.key_oauth_token), data.getQueryParameter("oauth_token"))
             prefs.edit().putString(getString(R.string.key_oauth_verifier), data.getQueryParameter("oauth_verifier"))
@@ -72,31 +61,14 @@ public class DashboardActivity : Activity() {
         }
     }
 
-    private fun initDrawer() {
-        val mListAdapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, listOptions)
-        listView.setAdapter(mListAdapter)
-        //TODO toolbar
-        drawerToggle = object : ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.drawer_open, R.string.drawer_close) {
-
-            override fun onDrawerClosed(drawerView: View) {
-                super.onDrawerClosed(drawerView)
-            }
-
-            override fun onDrawerOpened(drawerView: View) {
-                super.onDrawerOpened(drawerView)
-            }
+    private fun initToolbar() {
+        val toolbar: Toolbar = findViewById(R.id.toolbar) as Toolbar
+        val actionBar = getActionBar()
+        setSupportActionBar(toolbar)
+        if (actionBar != null) {
+            actionBar.setHomeAsUpIndicator(R.drawable.abc_ic_menu_moreoverflow_mtrl_alpha) //TODO
+            actionBar.setDisplayHomeAsUpEnabled(true)
         }
-        drawerLayout.setDrawerListener(drawerToggle)
-    }
-
-    override fun onPostCreate(savedInstanceState: Bundle?) {
-        super.onPostCreate(savedInstanceState)
-        drawerToggle!!.syncState()
-    }
-
-    override fun onConfigurationChanged(newConfig: Configuration) {
-        super.onConfigurationChanged(newConfig)
-        drawerToggle!!.onConfigurationChanged(newConfig)
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -107,9 +79,6 @@ public class DashboardActivity : Activity() {
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
         val id = item!!.getItemId()
         if (id == R.id.action_settings) {
-            return true
-        }
-        if (drawerToggle!!.onOptionsItemSelected(item)) {
             return true
         }
         return super.onOptionsItemSelected(item)
