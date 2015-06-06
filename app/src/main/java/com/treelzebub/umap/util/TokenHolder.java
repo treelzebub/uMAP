@@ -10,7 +10,6 @@ import org.scribe.model.Token;
 
 /**
  * Created by Tre Murillo on 5/28/15
- * Copyright(c) 2015 Level, Inc.
  */
 public class TokenHolder {
 
@@ -35,7 +34,7 @@ public class TokenHolder {
 
     public static boolean createTokenFromPref(@NonNull Context c) {
         if (accessToken != null) return true;
-        SharedPreferences prefs = c.getSharedPreferences(c.getString(R.string.key_pref_file), Context.MODE_PRIVATE);
+        SharedPreferences prefs = c.getApplicationContext().getSharedPreferences(c.getString(R.string.key_pref_file), Context.MODE_PRIVATE);
         String key = prefs.getString(c.getString(R.string.key_access_token), null);
         String secret = prefs.getString(c.getString(R.string.key_access_token_secret), null);
         String rawResponse = prefs.getString(c.getString(R.string.key_access_token_raw_response), null);

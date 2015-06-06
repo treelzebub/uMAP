@@ -17,22 +17,21 @@ import android.view.MenuItem
 import android.view.ViewGroup
 import butterknife.bindView
 import com.treelzebub.umap.R
-import com.treelzebub.umap.api.discogs.DiscogsApi
+import com.treelzebub.umap.auth.DiscogsApi
 import com.treelzebub.umap.api.discogs.constants.CALLBACK_URL
 import com.treelzebub.umap.api.discogs.constants.CONSUMER_KEY
 import com.treelzebub.umap.api.discogs.constants.CONSUMER_SECRET
 import com.treelzebub.umap.util.TokenHolder
+import com.treelzebub.umap.util.clearPrefs
+import com.treelzebub.umap.util.getPrefs
 import org.scribe.builder.ServiceBuilder
 import org.scribe.model.Verifier
 import kotlin.com.treelzebub.umap.util.BusProvider
 
 /**
  * Created by Tre Murillo on 5/28/15
- * Copyright(c) 2015 Level, Inc.
  */
 public class DashboardActivity : AppCompatActivity() {
-
-    var prefs: SharedPreferences? = null
 
     val drawerLayout: DrawerLayout  by bindView(R.id.drawer_layout)
     val navView: NavigationView     by bindView(R.id.navigation_view)
@@ -44,20 +43,24 @@ public class DashboardActivity : AppCompatActivity() {
         setContentView(R.layout.activity_dashboard)
         setupToolbar()
         setupDrawer()
-        prefs = getSharedPreferences(getString(R.string.key_pref_file), Context.MODE_PRIVATE)
-        if (TokenHolder.hasAccessToken(getApplicationContext())) {
-            getSupportFragmentManager().beginTransaction().add(R.id.content, HomeFragment()).commit()
-        }
+
         val data = getIntent().getData()
-        if (data == null) {
-            //            getSupportFragmentManager().beginTransaction().add(R.id.content, LoginFragment()).commit()
-        } else {
+        if (data != null && getPrefs(this)?.getString(getString(R.string.key_oauth_token), "null")!!.equals("null")) {
+            val editor = getPrefs(this)?.edit()
+            // probably don't need to persist these, but will for now
+            editor?.putString(getString(R.string.key_oauth_token), data.getQueryParameter("oauth_token"))
+            editor?.putString(getString(R.string.key_oauth_verifier), data.getQueryParameter("oauth_verifier"))
+            editor?.commit()
             requestAccessToken(data)
+        } else if (TokenHolder.hasAccessToken(this)) {
+            getSupportFragmentManager().beginTransaction().add(R.id.content, HomeFragment()).commit()
+        } else {
+            getSupportFragmentManager().beginTransaction().add(R.id.content, LoginFragment()).commit()
         }
     }
 
     private fun setupToolbar() {
-        val toolbar: Toolbar = findViewById(R.id.toolbar) as Toolbar
+        val toolbar = findViewById(R.id.toolbar) as Toolbar
         setSupportActionBar(toolbar)
         val actionBar = getSupportActionBar()
         if (actionBar != null) {
@@ -76,21 +79,19 @@ public class DashboardActivity : AppCompatActivity() {
     }
 
     private fun requestAccessToken(data: Uri) {
-        prefs?.edit()?.putString(getString(R.string.key_oauth_token), data.getQueryParameter("oauth_token"))
-        prefs?.edit()?.putString(getString(R.string.key_oauth_verifier), data.getQueryParameter("oauth_verifier"))
-        val requestToken = TokenHolder.getRequestToken()
-        val verifier = Verifier(data.getQueryParameter("oauth_verifier"))
-        val service = ServiceBuilder()
-                .apiKey(CONSUMER_KEY)
-                .apiSecret(CONSUMER_SECRET)
-                .callback(CALLBACK_URL)
-                .provider(javaClass<DiscogsApi>())
-                .build()
         object : AsyncTask<Void, Void, Void>() {
             override fun doInBackground(vararg params: Void?): Void? {
+                val editor = getPrefs(getApplicationContext())?.edit()
+                val requestToken = TokenHolder.getRequestToken()
+                val verifier = Verifier(data.getQueryParameter("oauth_verifier"))
+                val service = ServiceBuilder()
+                        .apiKey(CONSUMER_KEY)
+                        .apiSecret(CONSUMER_SECRET)
+                        .callback(CALLBACK_URL)
+                        .provider(javaClass<DiscogsApi>())
+                        .build()
                 val accessToken = service.getAccessToken(requestToken, verifier)
                 TokenHolder.setAccessToken(accessToken)
-                val editor = prefs?.edit()
                 editor?.putString(getString(R.string.key_access_token), accessToken.getToken())
                 editor?.putString(getString(R.string.key_access_token_secret), accessToken.getSecret())
                 editor?.putString(getString(R.string.key_access_token_raw_response), accessToken.getRawResponse())
@@ -107,10 +108,9 @@ public class DashboardActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
-        val id = item!!.getItemId()
-        if (id == android.R.id.home) {
-            drawerLayout.openDrawer(GravityCompat.START)
-            return true
+        when (item!!.getItemId()) {
+            android.R.id.home -> drawerLayout.openDrawer(GravityCompat.START)
+            R.id.clear_prefs -> clearPrefs(this)
         }
         return super.onOptionsItemSelected(item)
     }

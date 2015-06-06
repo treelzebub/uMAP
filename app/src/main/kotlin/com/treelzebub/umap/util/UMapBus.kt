@@ -6,7 +6,6 @@ import com.squareup.otto.Bus
 
 /**
  * Created by Tre Murillo on 5/28/15
- * Copyright(c) 2015 Level, Inc.
  */
 public class UMapBus : Bus() {
 

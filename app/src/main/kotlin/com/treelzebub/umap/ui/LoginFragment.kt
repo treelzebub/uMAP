@@ -13,7 +13,7 @@ import android.webkit.WebView
 import android.webkit.WebViewClient
 import butterknife.bindView
 import com.treelzebub.umap.R
-import com.treelzebub.umap.api.discogs.DiscogsApi
+import com.treelzebub.umap.auth.DiscogsApi
 import com.treelzebub.umap.api.discogs.constants.AUTH_URL_APPEND
 import com.treelzebub.umap.api.discogs.constants.CALLBACK_URL
 import com.treelzebub.umap.api.discogs.constants.CONSUMER_KEY
@@ -23,7 +23,6 @@ import org.scribe.builder.ServiceBuilder
 
 /**
  * Created by Tre Murillo on 5/28/15
- * Copyright(c) 2015 Level, Inc.
  *
  * A fragment that provides a one-time login to Discogs.com
  */
