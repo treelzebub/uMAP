@@ -1,5 +1,11 @@
 package com.treelzebub.umap.util;
 
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.support.annotation.NonNull;
+
+import com.treelzebub.umap.R;
+
 import org.scribe.model.Token;
 
 /**
@@ -8,8 +14,8 @@ import org.scribe.model.Token;
  */
 public class TokenHolder {
 
-    private static Token requestToken;
-    private static Token accessToken;
+    private static Token requestToken = null;
+    private static Token accessToken = null;
 
     public static Token getRequestToken() {
         return requestToken;
@@ -27,9 +33,21 @@ public class TokenHolder {
         TokenHolder.accessToken = accessToken;
     }
 
-    public Token createTokenFromPref(String key, String secret, String rawResponse) {
+    public static boolean createTokenFromPref(@NonNull Context c) {
+        if (accessToken != null) return true;
+        SharedPreferences prefs = c.getSharedPreferences(c.getString(R.string.key_pref_file), Context.MODE_PRIVATE);
+        String key = prefs.getString(c.getString(R.string.key_access_token), null);
+        String secret = prefs.getString(c.getString(R.string.key_access_token_secret), null);
+        String rawResponse = prefs.getString(c.getString(R.string.key_access_token_raw_response), null);
+        if (key == null || secret == null || rawResponse == null) {
+            return false;
+        }
         setAccessToken(new Token(key, secret, rawResponse));
-        return getAccessToken();
+        return true;
+    }
+
+    public static boolean hasAccessToken(@NonNull Context c) {
+        return createTokenFromPref(c);
     }
 
     private TokenHolder() {
