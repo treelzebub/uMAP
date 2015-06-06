@@ -7,7 +7,7 @@ import android.os.AsyncTask
 import android.os.Bundle
 import android.support.v4.widget.DrawerLayout
 import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.Toolbar
+import android.widget.Toolbar
 import android.view.Menu
 import android.view.MenuItem
 import butterknife.bindView
@@ -42,10 +42,8 @@ public class DashboardActivity : Activity() {
         } else {
             prefs.edit().putString(getString(R.string.key_oauth_token), data.getQueryParameter("oauth_token"))
             prefs.edit().putString(getString(R.string.key_oauth_verifier), data.getQueryParameter("oauth_verifier"))
-
             val requestToken = TokenHolder.getRequestToken()
             val verifier = Verifier(data.getQueryParameter("oauth_verifier"))
-
             val service = ServiceBuilder()
                     .apiKey(CONSUMER_KEY)
                     .apiSecret(CONSUMER_SECRET)
@@ -63,9 +61,9 @@ public class DashboardActivity : Activity() {
     }
 
     private fun initToolbar() {
-//        val toolbar: Toolbar = findViewById(R.id.toolbar) as Toolbar
+        val toolbar: Toolbar = findViewById(R.id.toolbar) as Toolbar
         val actionBar = getActionBar()
-//        setSupportActionBar(toolbar)
+        setActionBar(toolbar)
         if (actionBar != null) {
             actionBar.setHomeAsUpIndicator(R.drawable.abc_ic_menu_moreoverflow_mtrl_alpha) //TODO
             actionBar.setDisplayHomeAsUpEnabled(true)

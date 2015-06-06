@@ -3,10 +3,14 @@ package com.treelzebub.umap.ui
 import android.os.AsyncTask
 import android.os.Bundle
 import android.app.Fragment
+import android.content.Intent
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.webkit.WebSettings
 import android.webkit.WebView
+import android.webkit.WebViewClient
 import butterknife.bindView
 import com.treelzebub.umap.R
 import com.treelzebub.umap.api.discogs.DiscogsApi
@@ -27,7 +31,7 @@ public class LoginFragment : Fragment() {
 
     private var authUrl: String? = null
 
-    val mWebView: WebView by bindView(R.id.webview)
+    val webView: WebView by bindView(R.id.webview)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,14 +49,28 @@ public class LoginFragment : Fragment() {
                 return null
             }
 
-            override fun onPostExecute(foo: Void?) {
-                mWebView.loadUrl(authUrl)
+            override fun onPostExecute(result: Void?) {
+                webView.getSettings().setBuiltInZoomControls(true)
+                webView.getSettings().setJavaScriptEnabled(true)
+                webView.setWebViewClient(Callback())
+                webView.loadUrl(authUrl)
             }
         }.execute()
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         super.onCreateView(inflater, container, savedInstanceState)
-        return inflater.inflate(R.layout.dialog_oauth, container, false)
+        return inflater.inflate(R.layout.fragment_login, container, false)
+    }
+
+    inner class Callback: WebViewClient() {
+        override fun shouldOverrideUrlLoading(view: WebView?, url: String?): Boolean {
+            if (url != null && url.startsWith(CALLBACK_URL)) {
+                val i = Intent(getActivity(), javaClass<DashboardActivity>()).setData(Uri.parse(url))
+                startActivity(i)
+                return true
+            }
+            return false
+        }
     }
 }
