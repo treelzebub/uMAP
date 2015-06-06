@@ -1,5 +1,6 @@
 package com.treelzebub.umap.ui
 
+import android.app.Activity
 import android.content.Context
 import android.content.SharedPreferences
 import android.os.AsyncTask
@@ -24,7 +25,7 @@ import kotlin.com.treelzebub.umap.util.BusProvider
  * Created by Tre Murillo on 5/28/15
  * Copyright(c) 2015 Level, Inc.
  */
-public class DashboardActivity : AppCompatActivity() {
+public class DashboardActivity : Activity() {
 
     val drawerLayout: DrawerLayout  by bindView(R.id.drawer_layout)
 
@@ -62,9 +63,9 @@ public class DashboardActivity : AppCompatActivity() {
     }
 
     private fun initToolbar() {
-        val toolbar: Toolbar = findViewById(R.id.toolbar) as Toolbar
+//        val toolbar: Toolbar = findViewById(R.id.toolbar) as Toolbar
         val actionBar = getActionBar()
-        setSupportActionBar(toolbar)
+//        setSupportActionBar(toolbar)
         if (actionBar != null) {
             actionBar.setHomeAsUpIndicator(R.drawable.abc_ic_menu_moreoverflow_mtrl_alpha) //TODO
             actionBar.setDisplayHomeAsUpEnabled(true)
