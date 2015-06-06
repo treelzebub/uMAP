@@ -6,31 +6,27 @@
         <item
             android:id="@+id/drawer_home"
             android:checked="true"
-            android:icon="@drawable/abc_ic_menu_copy_mtrl_am_alpha"
+            android:icon="@drawable/ic_home_white_24dp"
             android:title="@string/home" />
 
         <item
-            android:id="@+id/drawer_favourite"
-            android:icon="@drawable/abc_ic_menu_copy_mtrl_am_alpha"
+            android:id="@+id/collection"
+            android:icon="@drawable/ic_library_music_black_24dp"
             android:title="@string/collection" />
 
         <item
-            android:id="@+id/drawer_downloaded"
-            android:icon="@drawable/abc_ic_menu_copy_mtrl_am_alpha"
+            android:id="@+id/marketplace"
+            android:icon="@drawable/ic_shopping_cart_black_24dp"
             android:title="@string/marketplace" />
 
         <item
-            android:id="@+id/drawer_more"
-            android:icon="@drawable/abc_ic_menu_copy_mtrl_am_alpha"
-            android:title="@string/wishlist" />
-        <item
             android:id="@+id/drawer_account"
-            android:icon="@drawable/abc_ic_menu_copy_mtrl_am_alpha"
+            android:icon="@drawable/ic_account_box_black_24dp"
             android:title="@string/account" />
 
         <item
             android:id="@+id/drawer_settings"
-            android:icon="@drawable/abc_ic_menu_copy_mtrl_am_alpha"
+            android:icon="@drawable/ic_settings_black_24dp"
             android:title="@string/settings" />
 
     </group>

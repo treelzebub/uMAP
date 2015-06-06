@@ -5,12 +5,16 @@ import android.content.SharedPreferences
 import android.net.Uri
 import android.os.AsyncTask
 import android.os.Bundle
+import android.support.design.widget.NavigationView
+import android.support.design.widget.Snackbar
+import android.support.v4.view.GravityCompat
 import android.support.v4.widget.DrawerLayout
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.Toolbar
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import android.view.ViewGroup
 import butterknife.bindView
 import com.treelzebub.umap.R
 import com.treelzebub.umap.api.discogs.DiscogsApi
@@ -31,21 +35,24 @@ public class DashboardActivity : AppCompatActivity() {
     var prefs: SharedPreferences? = null
 
     val drawerLayout: DrawerLayout  by bindView(R.id.drawer_layout)
+    val navView: NavigationView     by bindView(R.id.navigation_view)
+    val content: ViewGroup          by bindView(R.id.content)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         BusProvider.getInstance().register(this)
         setContentView(R.layout.activity_dashboard)
         initToolbar()
+        setupDrawerLayout()
         prefs = getSharedPreferences(getString(R.string.key_pref_file), Context.MODE_PRIVATE)
 
-        if (TokenHolder.hasAccessToken(this)) {
+        if (TokenHolder.hasAccessToken(getApplicationContext())) {
             getSupportFragmentManager().beginTransaction().add(R.id.content, HomeFragment()).commit()
         }
 
         val data = getIntent().getData()
         if (data == null) {
-            getSupportFragmentManager().beginTransaction().add(R.id.content, LoginFragment()).commit()
+            //            getSupportFragmentManager().beginTransaction().add(R.id.content, LoginFragment()).commit()
         } else {
             requestAccessToken(data)
         }
@@ -53,12 +60,21 @@ public class DashboardActivity : AppCompatActivity() {
 
     private fun initToolbar() {
         val toolbar: Toolbar = findViewById(R.id.toolbar) as Toolbar
-        val actionBar = getActionBar()
         setSupportActionBar(toolbar)
+        val actionBar = getSupportActionBar()
         if (actionBar != null) {
-            actionBar.setHomeAsUpIndicator(R.drawable.abc_ic_menu_moreoverflow_mtrl_alpha) //TODO
+            actionBar.setHomeAsUpIndicator(R.drawable.ic_menu_white_24dp)
             actionBar.setDisplayHomeAsUpEnabled(true)
         }
+    }
+
+    private fun setupDrawerLayout() {
+        navView.setNavigationItemSelectedListener({
+            Snackbar.make(content, it.getTitle(), Snackbar.LENGTH_LONG).show()
+            it.setChecked(true)
+            drawerLayout.closeDrawers()
+            true
+        })
     }
 
     private fun requestAccessToken(data: Uri) {
@@ -94,7 +110,8 @@ public class DashboardActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
         val id = item!!.getItemId()
-        if (id == R.id.action_settings) {
+        if (id == android.R.id.home) {
+            drawerLayout.openDrawer(GravityCompat.START)
             return true
         }
         return super.onOptionsItemSelected(item)

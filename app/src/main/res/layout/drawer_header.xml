@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="172dp"
-    android:background="@drawable/drawer_bg"
+    android:background="@drawable/drawer_header_bg"
     android:orientation="vertical"
     android:paddingTop="@dimen/status_bar_height"
     android:theme="@style/ThemeOverlay.AppCompat.Dark">
@@ -13,7 +13,8 @@
         android:layout_width="64dp"
         android:layout_height="64dp"
         android:layout_margin="@dimen/spacing_large"
-        tools:src="@drawable/ic_drawer"/>
+        android:elevation="6dp"
+        tools:src="@drawable/ic_account_circle_white_24dp"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -21,7 +22,7 @@
         android:layout_above="@+id/email"
         android:layout_marginLeft="@dimen/spacing_large"
         android:layout_marginStart="@dimen/spacing_large"
-        android:text="Username"
+        android:text="My Username"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"/>
     <TextView
         android:id="@+id/email"
@@ -31,6 +32,6 @@
         android:layout_marginLeft="@dimen/spacing_large"
         android:layout_marginStart="@dimen/spacing_large"
         android:layout_marginBottom="@dimen/spacing_large"
-        android:text="username@mymail.com"
+        android:text="username@discogs.com"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"/>
 </RelativeLayout>
