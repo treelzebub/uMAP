@@ -42,14 +42,12 @@ public class DashboardActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         BusProvider.getInstance().register(this)
         setContentView(R.layout.activity_dashboard)
-        initToolbar()
-        setupDrawerLayout()
+        setupToolbar()
+        setupDrawer()
         prefs = getSharedPreferences(getString(R.string.key_pref_file), Context.MODE_PRIVATE)
-
         if (TokenHolder.hasAccessToken(getApplicationContext())) {
             getSupportFragmentManager().beginTransaction().add(R.id.content, HomeFragment()).commit()
         }
-
         val data = getIntent().getData()
         if (data == null) {
             //            getSupportFragmentManager().beginTransaction().add(R.id.content, LoginFragment()).commit()
@@ -58,7 +56,7 @@ public class DashboardActivity : AppCompatActivity() {
         }
     }
 
-    private fun initToolbar() {
+    private fun setupToolbar() {
         val toolbar: Toolbar = findViewById(R.id.toolbar) as Toolbar
         setSupportActionBar(toolbar)
         val actionBar = getSupportActionBar()
@@ -68,7 +66,7 @@ public class DashboardActivity : AppCompatActivity() {
         }
     }
 
-    private fun setupDrawerLayout() {
+    private fun setupDrawer() {
         navView.setNavigationItemSelectedListener({
             Snackbar.make(content, it.getTitle(), Snackbar.LENGTH_LONG).show()
             it.setChecked(true)
