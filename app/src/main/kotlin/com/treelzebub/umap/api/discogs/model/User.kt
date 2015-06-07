@@ -20,7 +20,7 @@ public data class User(
     private var username: String? = null,
     private var collection_fields_url: String? = null,
     private var releases_contributed: Int = -1,
-    private var registered: DateTime? = null, // ex "2-112--18-15T211336"
+    private var registered: DateTime? = null, // ex: "2012-08-15T21:13:36"
     private var rating_avg: Double = -1.0, // hundredths
     private var num_collection: Int = -1,
     private var releases_rated: Int = -1,
