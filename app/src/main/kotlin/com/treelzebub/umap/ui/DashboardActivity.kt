@@ -1,7 +1,6 @@
 package com.treelzebub.umap.ui
 
-import android.content.Context
-import android.content.SharedPreferences
+import android.content.Intent
 import android.net.Uri
 import android.os.AsyncTask
 import android.os.Bundle
@@ -17,10 +16,10 @@ import android.view.MenuItem
 import android.view.ViewGroup
 import butterknife.bindView
 import com.treelzebub.umap.R
-import com.treelzebub.umap.auth.DiscogsApi
 import com.treelzebub.umap.api.discogs.constants.CALLBACK_URL
 import com.treelzebub.umap.api.discogs.constants.CONSUMER_KEY
 import com.treelzebub.umap.api.discogs.constants.CONSUMER_SECRET
+import com.treelzebub.umap.auth.DiscogsApi
 import com.treelzebub.umap.util.TokenHolder
 import com.treelzebub.umap.util.clearPrefs
 import com.treelzebub.umap.util.getPrefs
@@ -52,7 +51,7 @@ public class DashboardActivity : AppCompatActivity() {
             editor?.putString(getString(R.string.key_oauth_verifier), data.getQueryParameter("oauth_verifier"))
             editor?.commit()
             requestAccessToken(data)
-        } else if (TokenHolder.hasAccessToken(this)) {
+        } else if (TokenHolder.hasAccessToken(getApplicationContext())) {
             getSupportFragmentManager().beginTransaction().add(R.id.content, HomeFragment()).commit()
         } else {
             getSupportFragmentManager().beginTransaction().add(R.id.content, LoginFragment()).commit()
@@ -73,6 +72,9 @@ public class DashboardActivity : AppCompatActivity() {
         navView.setNavigationItemSelectedListener({
             Snackbar.make(content, it.getTitle(), Snackbar.LENGTH_LONG).show()
             it.setChecked(true)
+            when (it.getItemId()) {
+                R.id.drawer_home -> getSupportFragmentManager().beginTransaction().add(R.id.content, HomeFragment())
+            }
             drawerLayout.closeDrawers()
             true
         })

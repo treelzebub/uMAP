@@ -31,4 +31,9 @@ public data class User(
     private var avatar_url: String? = null,
     private var uri: String? = null,
     private var resourceUrl: String? = null
-)
+) {
+    public fun getName(): String? {
+        return username
+    }
+}
+

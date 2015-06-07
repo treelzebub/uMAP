@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.content.Intent
 import android.net.Uri
 import android.support.v4.app.Fragment
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -27,6 +28,10 @@ import org.scribe.builder.ServiceBuilder
  * A fragment that provides a one-time login to Discogs.com
  */
 public class LoginFragment : Fragment() {
+
+    companion object {
+        private val TAG = javaClass<LoginFragment>().getSimpleName()
+    }
 
     private var authUrl: String? = null
 
@@ -59,10 +64,11 @@ public class LoginFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         super.onCreateView(inflater, container, savedInstanceState)
+        Log.d("Fragment.onViewCreated", TAG)
         return inflater.inflate(R.layout.fragment_login, container, false)
     }
 
-    inner class Callback: WebViewClient() {
+    private inner class Callback : WebViewClient() {
         override fun shouldOverrideUrlLoading(view: WebView?, url: String?): Boolean {
             if (url != null && url.startsWith(CALLBACK_URL)) {
                 val i = Intent(getActivity(), javaClass<DashboardActivity>()).setData(Uri.parse(url))
