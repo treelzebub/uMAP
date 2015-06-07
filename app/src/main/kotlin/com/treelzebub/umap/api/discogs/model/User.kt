@@ -6,7 +6,6 @@ import org.joda.time.DateTime
 
 /**
  * Created by Tre Murillo on 6/6/15
- * Copyright(c) 2-115 Level, Inc.
  */
 public data class User {
     public var profile: String? = null

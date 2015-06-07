@@ -26,10 +26,10 @@ public class CollectionFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         BusProvider.getInstance().register(this)
-        syncCollection(getActivity())
+        syncCollection(getActivity(), true)
     }
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup, savedInstanceState: Bundle?): View {
         super.onCreateView(inflater, container, savedInstanceState)
         val v = inflater.inflate(R.layout.fragment_collection, container, false)
 
@@ -42,7 +42,7 @@ public class CollectionFragment : Fragment() {
     }
 
     Subscribe
-    public fun onCollection(event: CollectionReleasesEvent) {
+    public fun onCollectionReleases(event: CollectionReleasesEvent) {
         collectionReleases = event.collectionReleases
         tempText.setText(event.collectionReleases.releases!!.first().basic_information!!.title)
     }

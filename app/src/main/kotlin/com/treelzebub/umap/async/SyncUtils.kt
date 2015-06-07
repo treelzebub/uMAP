@@ -2,12 +2,14 @@ package com.treelzebub.umap.async
 
 import android.content.Context
 import android.os.AsyncTask
+import com.squareup.otto.Subscribe
 import com.treelzebub.umap.R
 import com.treelzebub.umap.api.discogs.DiscogsService
 import com.treelzebub.umap.api.discogs.constants.BASE_URL
 import com.treelzebub.umap.api.discogs.model.CollectionFolder
 import com.treelzebub.umap.api.discogs.model.CollectionReleases
 import com.treelzebub.umap.api.discogs.model.User
+import com.treelzebub.umap.async.event.CollectionEvent
 import com.treelzebub.umap.async.event.CollectionReleasesEvent
 import com.treelzebub.umap.async.event.UserEvent
 import com.treelzebub.umap.util.TokenHolder
@@ -16,6 +18,7 @@ import retrofit.RestAdapter
 import retrofit.client.OkClient
 import kotlin.com.treelzebub.umap.util.BusProvider
 import kotlin.com.treelzebub.umap.util.BusProvider.getInstance
+import kotlin.platform.platformStatic
 
 /**
  * Created by Tre Murillo on 6/6/15
@@ -56,14 +59,23 @@ public fun syncUser() {
     }.execute()
 }
 
-public fun syncFolders(c: Context) {
-    folders = getService().getCollection(getUsername(c)).folders
+public fun syncCollection(c: Context, fullSync: Boolean) {
+    object : AsyncTask<Void, Void, List<CollectionFolder>>() {
+        override fun doInBackground(vararg params: Void?): List<CollectionFolder> {
+            return getService().getCollection(getUsername(c)).folders
+        }
+
+        override fun onPostExecute(result: List<CollectionFolder>) {
+            folders = result
+            BusProvider.getInstance().post(CollectionEvent(result))
+            if (fullSync) {
+                syncCollectionReleases(c)
+            }
+        }
+    }.execute()
 }
 
-public fun syncCollection(c: Context) {
-    if (folders == null) {
-        syncFolders(c)
-    }
+public fun syncCollectionReleases(c: Context) {
     object : AsyncTask<Void, Void, CollectionReleases>() {
         override fun doInBackground(vararg params: Void?): CollectionReleases {
             return getService().getCollectionReleases(getUsername(c), folders!!.first().id.toString())
@@ -72,5 +84,5 @@ public fun syncCollection(c: Context) {
         override fun onPostExecute(result: CollectionReleases) {
             BusProvider.getInstance().post(CollectionReleasesEvent(result))
         }
-    }
+    }.execute()
 }
