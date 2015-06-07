@@ -1,7 +1,7 @@
 package com.treelzebub.umap.util
 
 import android.os.AsyncTask
-import com.treelzebub.umap.api.discogs.Discogs
+import com.treelzebub.umap.api.discogs.DiscogsService
 import com.treelzebub.umap.api.discogs.constants.BASE_URL
 import com.treelzebub.umap.api.discogs.model.User
 import com.treelzebub.umap.async.event.UserEvent
@@ -24,7 +24,7 @@ public fun syncUser() {
                         it.addHeader("oauth_token", TokenHolder.getAccessToken().getToken())
                     }
                     .build()
-            val service = restAdapter.create(javaClass<Discogs>())
+            val service = restAdapter.create(javaClass<DiscogsService>())
             return service.getUser("treelzebub")
         }
 
