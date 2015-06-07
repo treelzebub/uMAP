@@ -1,8 +1,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center_vertical|center_horizontal"
+    android:orientation="vertical"
     android:weightSum="4">
 
     <WebView
@@ -15,37 +15,16 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="0.5"
-        android:orientation="horizontal"
         android:gravity="center_horizontal|center_vertical"
+        android:orientation="horizontal"
         android:weightSum="3">
 
         <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:labelFor="@+id/auth_code_et"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/paste_auth_label" />
+            android:lines="2"
+            android:text="A one-time login to Discogs is required /n to authorize uMAP to access your data" />
 
-        <Space
-            android:layout_width="12dp"
-            android:layout_height="match_parent" />
-
-        <EditText
-            android:id="@id/auth_code_et"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ems="4"
-            android:layout_margin="@dimen/abc_control_padding_material"
-            android:inputType="text" />
-
-        <Space
-            android:layout_width="12dp"
-            android:layout_height="match_parent" />
-
-        <Button
-            android:id="@+id/submit_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/submit" />
     </LinearLayout>
-
 </LinearLayout>

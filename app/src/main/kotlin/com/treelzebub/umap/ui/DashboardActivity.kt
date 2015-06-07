@@ -87,7 +87,8 @@ public class DashboardActivity : AppCompatActivity() {
             Snackbar.make(content, it.getTitle(), Snackbar.LENGTH_LONG).show()
             it.setChecked(true)
             when (it.getItemId()) {
-                R.id.drawer_home -> getSupportFragmentManager().beginTransaction().add(R.id.content, HomeFragment())
+                R.id.drawer_home -> getSupportFragmentManager().beginTransaction().replace(R.id.content, HomeFragment()).commit()
+                R.id.collection -> getSupportFragmentManager().beginTransaction().replace(R.id.content, CollectionFragment()).commit()
             }
             drawerLayout.closeDrawers()
             true
