@@ -1,26 +1,16 @@
 package com.treelzebub.umap.ui
 
-import android.os.AsyncTask
 import android.os.Bundle
 import android.support.v4.app.Fragment
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import butterknife.bindView
-import com.google.gson.FieldNamingPolicy
-import com.google.gson.GsonBuilder
-import com.google.gson.internal.bind.DateTypeAdapter
+import com.squareup.otto.Subscribe
 import com.treelzebub.umap.R
-import com.treelzebub.umap.api.discogs.Discogs
-import com.treelzebub.umap.api.discogs.constants.BASE_URL
-import com.treelzebub.umap.util.TokenHolder
-import com.treelzebub.umap.util.getUser
-import org.joda.time.DateTime
-import retrofit.RestAdapter
-import retrofit.client.OkClient
-import retrofit.converter.GsonConverter
+import com.treelzebub.umap.async.event.UserEvent
+import kotlin.com.treelzebub.umap.util.BusProvider
 
 /**
  * Created by Tre Murillo on 6/6/15
@@ -33,6 +23,11 @@ public class HomeFragment : Fragment() {
 
     val tokenText: TextView by bindView(R.id.token_text)
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        BusProvider.getInstance().register(this)
+    }
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup, savedInstanceState: Bundle?): View {
         super.onCreateView(inflater, container, savedInstanceState)
         return inflater.inflate(R.layout.fragment_home, container, false)
@@ -40,10 +35,15 @@ public class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        setUserNameTextView()
     }
 
-    private fun setUserNameTextView() {
-        tokenText.setText(getUser().username)
+    override fun onDestroy() {
+        super.onDestroy()
+        BusProvider.getInstance().unregister(this)
+    }
+
+    Subscribe
+    public fun setUserNameTextView(event: UserEvent) {
+        tokenText.setText(event.user.username)
     }
 }

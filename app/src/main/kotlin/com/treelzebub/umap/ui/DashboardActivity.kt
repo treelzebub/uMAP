@@ -14,17 +14,20 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.TextView
 import butterknife.bindView
+import com.squareup.otto.Subscribe
 import com.squareup.picasso.Picasso
 import com.treelzebub.umap.R
 import com.treelzebub.umap.api.discogs.constants.CALLBACK_URL
 import com.treelzebub.umap.api.discogs.constants.CONSUMER_KEY
 import com.treelzebub.umap.api.discogs.constants.CONSUMER_SECRET
+import com.treelzebub.umap.async.event.UserEvent
 import com.treelzebub.umap.auth.DiscogsApi
 import com.treelzebub.umap.util.TokenHolder
 import com.treelzebub.umap.util.clearPrefs
 import com.treelzebub.umap.util.getPrefs
-import com.treelzebub.umap.util.getUser
+import com.treelzebub.umap.util.syncUser
 import org.scribe.builder.ServiceBuilder
 import org.scribe.model.Verifier
 import kotlin.com.treelzebub.umap.util.BusProvider
@@ -38,7 +41,8 @@ public class DashboardActivity : AppCompatActivity() {
     val navView: NavigationView     by bindView(R.id.navigation_view)
     val content: ViewGroup          by bindView(R.id.content)
     val avatar: ImageView           by bindView(R.id.avatar)
-    var avatarUrl: String? = null
+    val username: TextView          by bindView(R.id.username)
+    val name: TextView             by bindView(R.id.name)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -56,8 +60,7 @@ public class DashboardActivity : AppCompatActivity() {
             editor?.commit()
             requestAccessToken(data)
         } else if (TokenHolder.hasAccessToken(getApplicationContext())) {
-            avatarUrl = getUser().avatarUrl
-            setupDrawer()
+            syncUser()
             getSupportFragmentManager().beginTransaction().add(R.id.content, HomeFragment()).commit()
         } else {
             getSupportFragmentManager().beginTransaction().add(R.id.content, LoginFragment()).commit()
@@ -74,10 +77,12 @@ public class DashboardActivity : AppCompatActivity() {
         }
     }
 
+    override fun onDestroy() {
+        super.onDestroy()
+        BusProvider.getInstance().unregister(this)
+    }
+
     private fun setupDrawer() {
-        if (avatarUrl != "") {
-            Picasso.with(this).load(avatarUrl).transform(CircleTransform()).into(avatar)
-        }
         navView.setNavigationItemSelectedListener({
             Snackbar.make(content, it.getTitle(), Snackbar.LENGTH_LONG).show()
             it.setChecked(true)
@@ -124,5 +129,12 @@ public class DashboardActivity : AppCompatActivity() {
             R.id.clear_prefs -> clearPrefs(this)
         }
         return super.onOptionsItemSelected(item)
+    }
+
+    Subscribe
+    public fun onUserEvent(event: UserEvent) {
+        Picasso.with(this).load(event.user.avatarUrl).transform(CircleTransform()).into(avatar)
+        username.setText(event.user.username)
+        name.setText(event.user.name)
     }
 }

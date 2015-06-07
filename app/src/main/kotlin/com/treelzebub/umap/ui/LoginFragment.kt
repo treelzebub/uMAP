@@ -1,24 +1,22 @@
 package com.treelzebub.umap.ui
 
-import android.os.AsyncTask
-import android.os.Bundle
 import android.content.Intent
 import android.net.Uri
+import android.os.AsyncTask
+import android.os.Bundle
 import android.support.v4.app.Fragment
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.webkit.WebSettings
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import butterknife.bindView
 import com.treelzebub.umap.R
-import com.treelzebub.umap.auth.DiscogsApi
 import com.treelzebub.umap.api.discogs.constants.AUTH_URL_APPEND
 import com.treelzebub.umap.api.discogs.constants.CALLBACK_URL
 import com.treelzebub.umap.api.discogs.constants.CONSUMER_KEY
 import com.treelzebub.umap.api.discogs.constants.CONSUMER_SECRET
+import com.treelzebub.umap.auth.DiscogsApi
 import com.treelzebub.umap.util.TokenHolder
 import org.scribe.builder.ServiceBuilder
 
