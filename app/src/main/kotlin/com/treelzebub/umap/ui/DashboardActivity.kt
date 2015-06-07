@@ -1,5 +1,6 @@
 package com.treelzebub.umap.ui
 
+import android.app.FragmentTransaction
 import android.net.Uri
 import android.os.AsyncTask
 import android.os.Bundle
@@ -84,12 +85,16 @@ public class DashboardActivity : AppCompatActivity() {
 
     private fun setupDrawer() {
         navView.setNavigationItemSelectedListener({
+            val ft = getSupportFragmentManager().beginTransaction()
             Snackbar.make(content, it.getTitle(), Snackbar.LENGTH_LONG).show()
             it.setChecked(true)
+
             when (it.getItemId()) {
-                R.id.drawer_home -> getSupportFragmentManager().beginTransaction().replace(R.id.content, HomeFragment()).commit()
-                R.id.collection -> getSupportFragmentManager().beginTransaction().replace(R.id.content, CollectionFragment()).commit()
+                R.id.drawer_home -> ft.replace(R.id.content, HomeFragment())
+                R.id.collection -> ft.replace(R.id.content, CollectionFragment())
             }
+            ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+            ft.commit()
             drawerLayout.closeDrawers()
             true
         })

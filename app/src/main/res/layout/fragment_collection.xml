@@ -2,11 +2,19 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background_material_dark"
     android:gravity="center">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Collection"/>
+        android:text="First Collection Item:"
+        android:textColor="@color/primary_light"/>
+
+    <TextView
+        android:id="@+id/collection_item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/accent_translucent"/>
 
 </LinearLayout>

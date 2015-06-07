@@ -5,6 +5,7 @@ import android.os.AsyncTask
 import com.treelzebub.umap.R
 import com.treelzebub.umap.api.discogs.DiscogsService
 import com.treelzebub.umap.api.discogs.constants.BASE_URL
+import com.treelzebub.umap.api.discogs.model.CollectionFolder
 import com.treelzebub.umap.api.discogs.model.CollectionReleases
 import com.treelzebub.umap.api.discogs.model.User
 import com.treelzebub.umap.async.event.CollectionReleasesEvent
@@ -19,6 +20,8 @@ import kotlin.com.treelzebub.umap.util.BusProvider.getInstance
 /**
  * Created by Tre Murillo on 6/6/15
  */
+
+var folders: List<CollectionFolder>? = null
 
 fun getService(): DiscogsService {
     val restAdapter = RestAdapter.Builder()
@@ -53,14 +56,21 @@ public fun syncUser() {
     }.execute()
 }
 
+public fun syncFolders(c: Context) {
+    folders = getService().getCollection(getUsername(c)).folders
+}
+
 public fun syncCollection(c: Context) {
-//    object : AsyncTask<Void, Void, CollectionReleases>() {
-//        override fun doInBackground(vararg params: Void?): CollectionReleases {
-//            return getService().getCollectionReleases(getUsername(c), folderId)
-//        }
-//
-//        override fun onPostExecute(result: CollectionReleases) {
-//            BusProvider.getInstance().post(CollectionReleasesEvent(result))
-//        }
-//    }
+    if (folders == null) {
+        syncFolders(c)
+    }
+    object : AsyncTask<Void, Void, CollectionReleases>() {
+        override fun doInBackground(vararg params: Void?): CollectionReleases {
+            return getService().getCollectionReleases(getUsername(c), folders!!.first().id.toString())
+        }
+
+        override fun onPostExecute(result: CollectionReleases) {
+            BusProvider.getInstance().post(CollectionReleasesEvent(result))
+        }
+    }
 }
