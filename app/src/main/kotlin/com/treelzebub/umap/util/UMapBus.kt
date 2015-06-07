@@ -3,11 +3,12 @@ package com.treelzebub.umap.util
 import android.os.Handler
 import android.os.Looper
 import com.squareup.otto.Bus
+import com.squareup.otto.ThreadEnforcer
 
 /**
  * Created by Tre Murillo on 5/28/15
  */
-public class UMapBus : Bus() {
+public class UMapBus : Bus(ThreadEnforcer.ANY) {
 
     private val mainThread = Handler(Looper.getMainLooper())
 
@@ -15,11 +16,7 @@ public class UMapBus : Bus() {
         if (Looper.myLooper() == Looper.getMainLooper()) {
             super.post(event)
         } else {
-            mainThread.post(object : Runnable {
-                override fun run() {
-                    post(event)
-                }
-            })
+            mainThread.post { post(event) }
         }
     }
 
@@ -27,11 +24,7 @@ public class UMapBus : Bus() {
         if (Looper.myLooper() == Looper.getMainLooper()) {
             super.register(any)
         } else {
-            mainThread.post(object : Runnable {
-                override fun run() {
-                    register(any)
-                }
-            })
+            mainThread.post { register(any) }
         }
     }
 
@@ -44,11 +37,7 @@ public class UMapBus : Bus() {
             }
 
         } else {
-            mainThread.post(object : Runnable {
-                override fun run() {
-                    unregister(any)
-                }
-            })
+            mainThread.post { unregister(any) }
         }
     }
 }

@@ -24,10 +24,7 @@ import com.treelzebub.umap.api.discogs.constants.CONSUMER_KEY
 import com.treelzebub.umap.api.discogs.constants.CONSUMER_SECRET
 import com.treelzebub.umap.async.event.UserEvent
 import com.treelzebub.umap.auth.DiscogsApi
-import com.treelzebub.umap.util.TokenHolder
-import com.treelzebub.umap.util.clearPrefs
-import com.treelzebub.umap.util.getPrefs
-import com.treelzebub.umap.util.syncUser
+import com.treelzebub.umap.util.*
 import org.scribe.builder.ServiceBuilder
 import org.scribe.model.Verifier
 import kotlin.com.treelzebub.umap.util.BusProvider
@@ -133,7 +130,8 @@ public class DashboardActivity : AppCompatActivity() {
 
     Subscribe
     public fun onUserEvent(event: UserEvent) {
-        Picasso.with(this).load(event.user.avatarUrl).transform(CircleTransform()).into(avatar)
+        setUser(getApplicationContext(), event.user)
+        Picasso.with(this).load(event.user.avatar_url).transform(CircleTransform()).into(avatar)
         username.setText(event.user.username)
         name.setText(event.user.name)
     }

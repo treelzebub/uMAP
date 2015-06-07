@@ -11,7 +11,6 @@ import kotlin.com.treelzebub.umap.util.BusProvider
 
 /**
  * Created by Tre Murillo on 6/6/15
- * Copyright(c) 2015 Level, Inc.
  */
 
 public fun syncUser() {

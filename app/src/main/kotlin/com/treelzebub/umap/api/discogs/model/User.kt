@@ -8,89 +8,28 @@ import org.joda.time.DateTime
  * Created by Tre Murillo on 6/6/15
  * Copyright(c) 2-115 Level, Inc.
  */
-public class User {
-
-    Expose
+public data class User {
     public var profile: String? = null
-
-    SerializedName("wantlist_url")
-    Expose
-    public var wantlistUrl: String? = null
-
-    Expose
+    public var wantlist_url: String? = null
     public var rank: Double = -1.0
-
-    SerializedName("num_pending")
-    Expose
-    public var numPending: Int = -1
-
-    Expose
+    public var num_pending: Int = -1
     public var id: Int = -1
-
-    SerializedName("num_for_sale")
-    Expose
-    public var numForSale: Int = -1
-
-    SerializedName("home_page")
-    Expose
-    public var homePage: String? = null
-
-    Expose
+    public var num_for_sale: Int = -1
+    public var home_page: String? = null
     public var location: String? = null
-
-    SerializedName("collection_folders_url")
-    Expose
-    public var collectionFoldersUrl: String? = null
-
-    Expose
+    public var collection_folders_url: String? = null
     public var username: String? = null
-    SerializedName("collection_fields_url")
-
-    Expose
-    public var collectionFieldsUrl: String? = null
-    SerializedName("releases_contributed")
-
-    Expose
-    public var releasesContributed: Int = -1
-
-    Expose
+    public var collection_fields_url: String? = null
+    public var releases_contributed: Int = -1
     public var registered: String? = null
-    SerializedName("rating_avg")
-
-    Expose
-    public var ratingAvg: Double = -1.0
-    SerializedName("num_collection")
-
-    Expose
-    public var numCollection: Int = -1
-    SerializedName("releases_rated")
-
-    Expose
-    public var releasesRated: Int = -1
-    SerializedName("num_lists")
-
-    Expose
-    public var numLists: Int = -1
-
-    Expose
+    public var rating_avg: Double = -1.0
+    public var num_collection: Int = -1
+    public var releases_rated: Int = -1
+    public var num_lists: Int = -1
     public var name: String? = null
-
-    SerializedName("num_wantlist")
-    Expose
-    public var numWantlist: Int = -1
-
-    SerializedName("inventory_url")
-    Expose
-    public var inventoryUrl: String? = null
-
-    Expose
+    public var num_wantlist: Int = -1
+    public var inventory_url: String? = null
     public var uri: String? = null
-    SerializedName("avatar_url")
-
-    Expose
-    public var avatarUrl: String? = null
-    SerializedName("resource_url")
-
-    Expose
-    public var resourceUrl: String? = null
+    public var avatar_url: String? = null
+    public var resource_url: String? = null
 }
