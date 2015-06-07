@@ -23,7 +23,10 @@ import com.treelzebub.umap.api.discogs.constants.CALLBACK_URL
 import com.treelzebub.umap.api.discogs.constants.CONSUMER_KEY
 import com.treelzebub.umap.api.discogs.constants.CONSUMER_SECRET
 import com.treelzebub.umap.async.event.UserEvent
+import com.treelzebub.umap.async.persistUsername
+import com.treelzebub.umap.async.syncUser
 import com.treelzebub.umap.auth.DiscogsApi
+import com.treelzebub.umap.graphics.CircleTransform
 import com.treelzebub.umap.util.*
 import org.scribe.builder.ServiceBuilder
 import org.scribe.model.Verifier
@@ -130,7 +133,7 @@ public class DashboardActivity : AppCompatActivity() {
 
     Subscribe
     public fun onUserEvent(event: UserEvent) {
-        setUser(getApplicationContext(), event.user)
+        persistUsername(getApplicationContext(), event.user)
         Picasso.with(this).load(event.user.avatar_url).transform(CircleTransform()).into(avatar)
         username.setText(event.user.username)
         name.setText(event.user.name)

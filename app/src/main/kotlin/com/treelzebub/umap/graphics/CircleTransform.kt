@@ -1,4 +1,4 @@
-package com.treelzebub.umap.ui
+package com.treelzebub.umap.graphics
 
 import android.graphics.*
 import com.squareup.picasso.Transformation

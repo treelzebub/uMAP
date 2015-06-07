@@ -20,7 +20,3 @@ fun getPrefs(c: Context): SharedPreferences? {
 fun clearPrefs(c: Context) {
     getPrefs(c)?.edit()?.clear()?.commit()
 }
-
-fun setUser(c: Context, u: User) {
-    getPrefs(c)?.edit()?.putString(c.getString(R.string.key_username), u.username)?.commit()
-}
