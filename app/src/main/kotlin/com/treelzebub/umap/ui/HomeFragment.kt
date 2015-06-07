@@ -60,7 +60,7 @@ public class HomeFragment : Fragment() {
                         }
                         .build()
                 val service = restAdapter.create(javaClass<Discogs>())
-                return service.getUser("treelzebub").toString();
+                return service.getUser("treelzebub").username;
             }
 
             override fun onPostExecute(result: String?) {
