@@ -1,6 +1,5 @@
 package com.treelzebub.umap.ui
 
-import android.content.Intent
 import android.net.Uri
 import android.os.AsyncTask
 import android.os.Bundle
@@ -14,7 +13,9 @@ import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.ViewGroup
+import android.widget.ImageView
 import butterknife.bindView
+import com.squareup.picasso.Picasso
 import com.treelzebub.umap.R
 import com.treelzebub.umap.api.discogs.constants.CALLBACK_URL
 import com.treelzebub.umap.api.discogs.constants.CONSUMER_KEY
@@ -23,6 +24,7 @@ import com.treelzebub.umap.auth.DiscogsApi
 import com.treelzebub.umap.util.TokenHolder
 import com.treelzebub.umap.util.clearPrefs
 import com.treelzebub.umap.util.getPrefs
+import com.treelzebub.umap.util.getUser
 import org.scribe.builder.ServiceBuilder
 import org.scribe.model.Verifier
 import kotlin.com.treelzebub.umap.util.BusProvider
@@ -35,6 +37,8 @@ public class DashboardActivity : AppCompatActivity() {
     val drawerLayout: DrawerLayout  by bindView(R.id.drawer_layout)
     val navView: NavigationView     by bindView(R.id.navigation_view)
     val content: ViewGroup          by bindView(R.id.content)
+    val avatar: ImageView           by bindView(R.id.avatar)
+    var avatarUrl: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -52,6 +56,8 @@ public class DashboardActivity : AppCompatActivity() {
             editor?.commit()
             requestAccessToken(data)
         } else if (TokenHolder.hasAccessToken(getApplicationContext())) {
+            avatarUrl = getUser().avatarUrl
+            setupDrawer()
             getSupportFragmentManager().beginTransaction().add(R.id.content, HomeFragment()).commit()
         } else {
             getSupportFragmentManager().beginTransaction().add(R.id.content, LoginFragment()).commit()
@@ -69,6 +75,9 @@ public class DashboardActivity : AppCompatActivity() {
     }
 
     private fun setupDrawer() {
+        if (avatarUrl != "") {
+            Picasso.with(this).load(avatarUrl).transform(CircleTransform()).into(avatar)
+        }
         navView.setNavigationItemSelectedListener({
             Snackbar.make(content, it.getTitle(), Snackbar.LENGTH_LONG).show()
             it.setChecked(true)

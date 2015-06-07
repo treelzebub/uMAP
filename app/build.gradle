@@ -84,7 +84,7 @@ dependencies {
     compile 'com.google.code.gson:gson:2.3'
 
     //UI
-//    compile 'com.squareup.picasso:picasso:2.5.2'
+    compile 'com.squareup.picasso:picasso:2.5.2'
 
 }
 //kotlinOptions.annotations = file('../annotations')
