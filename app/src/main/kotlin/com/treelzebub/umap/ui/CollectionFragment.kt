@@ -25,7 +25,7 @@ public class CollectionFragment : Fragment() {
     var collectionReleases: CollectionReleases? = null
 
     val tempText: TextView by bindView(R.id.collection_item)
-    val recycler: RecyclerView by bindView(R.id.recycler)
+    var recyclerView: RecyclerView? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,9 +36,9 @@ public class CollectionFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup, savedInstanceState: Bundle?): View {
         super.onCreateView(inflater, container, savedInstanceState)
         val v = inflater.inflate(R.layout.fragment_collection, container, false)
-        recycler.setHasFixedSize(true)
-        recycler.setLayoutManager(LinearLayoutManager(getActivity()))
-        recycler.setAdapter(CollectionAdapter())
+        recyclerView = v.findViewById(R.id.recycler_view) as RecyclerView
+        recyclerView?.setHasFixedSize(true)
+        recyclerView?.setLayoutManager(LinearLayoutManager(getActivity()))
         return v
     }
 
@@ -51,5 +51,7 @@ public class CollectionFragment : Fragment() {
     public fun onCollectionReleases(event: CollectionReleasesEvent) {
         collectionReleases = event.collectionReleases
         tempText.setText(event.collectionReleases.releases!!.first().basic_information!!.title)
+        recyclerView?.setAdapter(CollectionAdapter(event.collectionReleases))
+        recyclerView?.getAdapter()?.notifyDataSetChanged()
     }
 }

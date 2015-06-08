@@ -19,19 +19,22 @@ import com.treelzebub.umap.api.discogs.model.CollectionReleases
 /**
  * Created by Tre Murillo on 6/7/15
  */
-public class CollectionAdapter : RecyclerView.Adapter<CollectionAdapter.ViewHolder>() {
+public class CollectionAdapter(collectionReleases: CollectionReleases) : RecyclerView.Adapter<CollectionAdapter.ViewHolder>() {
 
     var context: Context? = null
-    var collectionReleases = CollectionReleases()
+    var collectionReleases = collectionReleases
 
     override fun onCreateViewHolder(parent: ViewGroup, i: Int): ViewHolder {
         context = parent.getContext()
-        val v = LayoutInflater.from(context).inflate(R.layout.collection_recycler, parent, false)
+        val v = LayoutInflater.from(context).inflate(R.layout.collection_card, parent, false)
         return ViewHolder(v)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, i: Int) {
-        val albumCoverUrl = collectionReleases.releases!!.get(i).basic_information!!.thumb
+        var albumCoverUrl = collectionReleases.releases!!.get(i).basic_information!!.thumb
+        if (albumCoverUrl == "") {
+            albumCoverUrl = "http://en.wikipedia.org/wiki/Template:Infobox_album#/media/File:Nirvana_album_cover.svg"
+        }
         Picasso.with(context)
                 .load(albumCoverUrl)
                 .resize(50, 50)
