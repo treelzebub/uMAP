@@ -18,9 +18,9 @@ import com.treelzebub.umap.api.discogs.constants.CONSUMER_KEY
 import com.treelzebub.umap.api.discogs.constants.CONSUMER_SECRET
 import com.treelzebub.umap.async.event.UserEvent
 import com.treelzebub.umap.auth.DiscogsApi
+import com.treelzebub.umap.util.BusProvider
 import com.treelzebub.umap.util.TokenHolder
 import org.scribe.builder.ServiceBuilder
-import com.treelzebub.umap.util.BusProvider
 
 /**
  * Created by Tre Murillo on 5/28/15

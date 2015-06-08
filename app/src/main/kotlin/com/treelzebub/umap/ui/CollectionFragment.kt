@@ -15,7 +15,6 @@ import com.treelzebub.umap.api.discogs.model.CollectionReleases
 import com.treelzebub.umap.async.event.CollectionReleasesEvent
 import com.treelzebub.umap.async.syncCollection
 import com.treelzebub.umap.ui.adapter.CollectionAdapter
-import kotlin.com.treelzebub.umap.util.BusProvider
 
 /**
  * Created by Tre Murillo on 6/6/15

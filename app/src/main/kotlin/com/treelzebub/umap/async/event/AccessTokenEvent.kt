@@ -5,7 +5,7 @@ import com.treelzebub.umap.R
 import com.treelzebub.umap.util.TokenHolder
 import com.treelzebub.umap.util.getPrefs
 import org.scribe.model.Token
-import kotlin.com.treelzebub.umap.util.BusProvider
+
 /**
  * Created by Tre Murillo on 6/7/15
  */

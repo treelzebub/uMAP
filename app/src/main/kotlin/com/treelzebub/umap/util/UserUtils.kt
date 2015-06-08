@@ -4,7 +4,10 @@ import android.content.Context
 import android.util.Log
 import com.treelzebub.umap.api.discogs.constants.USER_FILENAME
 import com.treelzebub.umap.api.discogs.model.User
-import java.io.*
+import java.io.IOException
+import java.io.ObjectInputStream
+import java.io.ObjectOutputStream
+import java.io.Serializable
 
 /**
  * Created by Tre Murillo on 6/7/15

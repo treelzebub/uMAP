@@ -2,7 +2,6 @@ package com.treelzebub.umap.async
 
 import android.content.Context
 import android.os.AsyncTask
-import com.squareup.otto.Subscribe
 import com.treelzebub.umap.R
 import com.treelzebub.umap.api.discogs.DiscogsService
 import com.treelzebub.umap.api.discogs.constants.BASE_URL
@@ -12,12 +11,11 @@ import com.treelzebub.umap.api.discogs.model.User
 import com.treelzebub.umap.async.event.CollectionEvent
 import com.treelzebub.umap.async.event.CollectionReleasesEvent
 import com.treelzebub.umap.async.event.UserEvent
+import com.treelzebub.umap.util.BusProvider
 import com.treelzebub.umap.util.TokenHolder
 import com.treelzebub.umap.util.getPrefs
 import retrofit.RestAdapter
 import retrofit.client.OkClient
-import com.treelzebub.umap.util.BusProvider
-import kotlin.platform.platformStatic
 
 /**
  * Created by Tre Murillo on 6/6/15

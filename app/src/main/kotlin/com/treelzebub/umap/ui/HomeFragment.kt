@@ -10,7 +10,6 @@ import butterknife.bindView
 import com.squareup.otto.Subscribe
 import com.treelzebub.umap.R
 import com.treelzebub.umap.async.event.UserEvent
-import kotlin.com.treelzebub.umap.util.BusProvider
 
 /**
  * Created by Tre Murillo on 6/6/15

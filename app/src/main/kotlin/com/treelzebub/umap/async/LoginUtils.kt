@@ -4,7 +4,6 @@ import android.content.Context
 import android.net.Uri
 import android.os.AsyncTask
 import android.util.Log
-import com.treelzebub.umap.R
 import com.treelzebub.umap.api.discogs.constants.AUTH_URL_APPEND
 import com.treelzebub.umap.api.discogs.constants.CALLBACK_URL
 import com.treelzebub.umap.api.discogs.constants.CONSUMER_KEY
@@ -12,13 +11,12 @@ import com.treelzebub.umap.api.discogs.constants.CONSUMER_SECRET
 import com.treelzebub.umap.async.event.AccessTokenEvent
 import com.treelzebub.umap.async.event.AuthUrlEvent
 import com.treelzebub.umap.auth.DiscogsApi
+import com.treelzebub.umap.util.BusProvider
 import com.treelzebub.umap.util.TokenHolder
-import com.treelzebub.umap.util.getPrefs
 import org.scribe.builder.ServiceBuilder
 import org.scribe.exceptions.OAuthException
 import org.scribe.model.Verifier
 import org.scribe.oauth.OAuthService
-import com.treelzebub.umap.util.BusProvider
 
 /**
  * Created by Tre Murillo on 6/7/15

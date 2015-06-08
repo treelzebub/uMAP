@@ -1,8 +1,6 @@
 package com.treelzebub.umap.ui
 
 import android.app.FragmentTransaction
-import android.net.Uri
-import android.os.AsyncTask
 import android.os.Bundle
 import android.support.design.widget.NavigationView
 import android.support.design.widget.Snackbar
@@ -10,7 +8,6 @@ import android.support.v4.view.GravityCompat
 import android.support.v4.widget.DrawerLayout
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.Toolbar
-import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.ViewGroup
@@ -20,19 +17,15 @@ import butterknife.bindView
 import com.squareup.otto.Subscribe
 import com.squareup.picasso.Picasso
 import com.treelzebub.umap.R
-import com.treelzebub.umap.api.discogs.constants.CALLBACK_URL
-import com.treelzebub.umap.api.discogs.constants.CONSUMER_KEY
-import com.treelzebub.umap.api.discogs.constants.CONSUMER_SECRET
 import com.treelzebub.umap.async.event.AuthUrlEvent
 import com.treelzebub.umap.async.event.UserEvent
 import com.treelzebub.umap.async.persistUsername
-import com.treelzebub.umap.async.syncUser
 import com.treelzebub.umap.async.requestAccessToken
-import com.treelzebub.umap.auth.DiscogsApi
+import com.treelzebub.umap.async.syncUser
 import com.treelzebub.umap.graphics.CircleTransform
-import com.treelzebub.umap.util.*
-import org.scribe.builder.ServiceBuilder
-import org.scribe.model.Verifier
+import com.treelzebub.umap.util.TokenHolder
+import com.treelzebub.umap.util.clearPrefs
+import com.treelzebub.umap.util.getPrefs
 
 /**
  * Created by Tre Murillo on 5/28/15

@@ -1,10 +1,9 @@
 package com.treelzebub.umap.api.discogs
 
-import com.treelzebub.umap.api.discogs.model.User
 import com.treelzebub.umap.api.discogs.model.Collection
 import com.treelzebub.umap.api.discogs.model.CollectionFolder
 import com.treelzebub.umap.api.discogs.model.CollectionReleases
-import retrofit.client.Response
+import com.treelzebub.umap.api.discogs.model.User
 import retrofit.http.GET
 import retrofit.http.Path
 
