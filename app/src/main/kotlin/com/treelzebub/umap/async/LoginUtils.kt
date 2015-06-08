@@ -18,7 +18,7 @@ import org.scribe.builder.ServiceBuilder
 import org.scribe.exceptions.OAuthException
 import org.scribe.model.Verifier
 import org.scribe.oauth.OAuthService
-import kotlin.com.treelzebub.umap.util.BusProvider
+import com.treelzebub.umap.util.BusProvider
 
 /**
  * Created by Tre Murillo on 6/7/15

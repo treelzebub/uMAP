@@ -17,3 +17,5 @@ public val SIGNATURE_METHOD: String = "PLAINTEXT"
 
 public val IDENTITY_URL: String = "/oauth/identity"
 public val PROFILE_URL: String = "/users" // + /{username}
+
+public val USER_FILENAME: String = "umap.discogs.user"

@@ -33,7 +33,6 @@ import com.treelzebub.umap.graphics.CircleTransform
 import com.treelzebub.umap.util.*
 import org.scribe.builder.ServiceBuilder
 import org.scribe.model.Verifier
-import kotlin.com.treelzebub.umap.util.BusProvider
 
 /**
  * Created by Tre Murillo on 5/28/15
@@ -62,7 +61,7 @@ public class DashboardActivity : AppCompatActivity() {
             editor?.putString(getString(R.string.key_oauth_verifier), data.getQueryParameter("oauth_verifier"))
             editor?.commit()
             requestAccessToken(this, data)
-        } else if (TokenHolder.hasAccessToken(getApplicationContext())) {
+        } else if (TokenHolder.hasAccessToken(getApplicationContext()) && getUser() != null) {
             syncUser()
             getSupportFragmentManager().beginTransaction().add(R.id.content, HomeFragment()).commit()
         } else {

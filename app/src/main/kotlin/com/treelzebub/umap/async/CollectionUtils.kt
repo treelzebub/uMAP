@@ -16,8 +16,7 @@ import com.treelzebub.umap.util.TokenHolder
 import com.treelzebub.umap.util.getPrefs
 import retrofit.RestAdapter
 import retrofit.client.OkClient
-import kotlin.com.treelzebub.umap.util.BusProvider
-import kotlin.com.treelzebub.umap.util.BusProvider.getInstance
+import com.treelzebub.umap.util.BusProvider
 import kotlin.platform.platformStatic
 
 /**
@@ -54,7 +53,7 @@ public fun syncUser() {
         }
 
         override fun onPostExecute(result: User) {
-            getInstance().post(UserEvent(result))
+            BusProvider.getInstance().post(UserEvent(result))
         }
     }.execute()
 }

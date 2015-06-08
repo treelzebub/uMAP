@@ -1,4 +1,4 @@
-package kotlin.com.treelzebub.umap.util.BusProvider
+package com.treelzebub.umap.util.BusProvider
 
 import android.util.Log
 import com.treelzebub.umap.util.UMapBus
@@ -8,7 +8,7 @@ import com.treelzebub.umap.util.UMapBus
  */
 private var BUS: UMapBus? = null
 
-public fun getInstance(): UMapBus {
+fun getInstance(): UMapBus {
     if (BUS == null) {
         Log.d("BusProvider", "Instantiate new provider")
         BUS = UMapBus()
