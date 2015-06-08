@@ -11,7 +11,6 @@ import com.treelzebub.umap.api.discogs.constants.CONSUMER_KEY
 import com.treelzebub.umap.api.discogs.constants.CONSUMER_SECRET
 import com.treelzebub.umap.async.event.AccessTokenEvent
 import com.treelzebub.umap.async.event.LoginEvent
-import com.treelzebub.umap.async.event.UserEvent
 import com.treelzebub.umap.auth.DiscogsApi
 import com.treelzebub.umap.util.TokenHolder
 import com.treelzebub.umap.util.getPrefs

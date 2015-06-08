@@ -3,11 +3,7 @@ package com.treelzebub.umap.util
 import android.content.Context
 import android.content.SharedPreferences
 import com.treelzebub.umap.R
-import com.treelzebub.umap.api.discogs.model.User
-import net.sarazan.prefs.Pref
-import net.sarazan.prefs.SharedPref
 import java.io.File
-import kotlin.platform.platformStatic
 
 /**
  * Created by Tre Murillo on 6/5/15

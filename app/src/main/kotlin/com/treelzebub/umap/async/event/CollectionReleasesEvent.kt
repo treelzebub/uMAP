@@ -1,6 +1,5 @@
 package com.treelzebub.umap.async.event
 
-import com.treelzebub.umap.api.discogs.model.Collection
 import com.treelzebub.umap.api.discogs.model.CollectionReleases
 
 /**

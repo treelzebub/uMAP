@@ -1,19 +1,15 @@
 package com.treelzebub.umap.ui.adapter
 
 import android.content.Context
-import android.support.v7.widget.CardView
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.BaseAdapter
 import android.widget.ImageView
 import android.widget.TextView
-import com.treelzebub.umap.R
-import com.treelzebub.umap.api.discogs.model.CollectionFolder
 import butterknife.bindView
 import com.squareup.picasso.Picasso
-import com.squareup.picasso.Target
+import com.treelzebub.umap.R
 import com.treelzebub.umap.api.discogs.model.CollectionReleases
 
 /**

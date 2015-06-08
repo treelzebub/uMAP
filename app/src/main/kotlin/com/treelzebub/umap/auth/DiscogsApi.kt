@@ -1,6 +1,8 @@
 package com.treelzebub.umap.auth
 
-import com.treelzebub.umap.api.discogs.constants.*
+import com.treelzebub.umap.api.discogs.constants.ACCESS_TOKEN_URL
+import com.treelzebub.umap.api.discogs.constants.AUTHORIZATION_URL
+import com.treelzebub.umap.api.discogs.constants.REQUEST_TOKEN_URL
 import org.scribe.builder.api.DefaultApi10a
 import org.scribe.model.Token
 
