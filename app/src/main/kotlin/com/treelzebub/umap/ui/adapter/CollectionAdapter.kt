@@ -3,6 +3,7 @@ package com.treelzebub.umap.ui.adapter
 import android.content.Context
 import android.support.v7.widget.CardView
 import android.support.v7.widget.RecyclerView
+import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
@@ -20,11 +21,18 @@ import com.treelzebub.umap.api.discogs.model.CollectionReleases
  */
 public class CollectionAdapter : RecyclerView.Adapter<CollectionAdapter.ViewHolder>() {
 
+    var context: Context? = null
     var collectionReleases = CollectionReleases()
+
+    override fun onCreateViewHolder(parent: ViewGroup, i: Int): ViewHolder {
+        context = parent.getContext()
+        val v = LayoutInflater.from(context).inflate(R.layout.collection_recycler, parent, false)
+        return ViewHolder(v)
+    }
 
     override fun onBindViewHolder(holder: ViewHolder, i: Int) {
         val albumCoverUrl = collectionReleases.releases!!.get(i).basic_information!!.thumb
-        Picasso.with(holder.c)
+        Picasso.with(context)
                 .load(albumCoverUrl)
                 .resize(50, 50)
                 .centerCrop()
@@ -37,16 +45,9 @@ public class CollectionAdapter : RecyclerView.Adapter<CollectionAdapter.ViewHold
         return collectionReleases.releases!!.size()
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-
-    }
-
-    private inner class ViewHolder(v: View, c: Context) : RecyclerView.ViewHolder(v) {
-        val c = c
+    private inner class ViewHolder(v: View) : RecyclerView.ViewHolder(v) {
         val albumCover: ImageView  by bindView(R.id.cardview_album_cover)
         val artist: TextView       by bindView(R.id.cardview_artist)
         val title: TextView        by bindView(R.id.cardview_title)
-
-
     }
 }
