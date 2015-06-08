@@ -23,7 +23,7 @@ import com.treelzebub.umap.R
 import com.treelzebub.umap.api.discogs.constants.CALLBACK_URL
 import com.treelzebub.umap.api.discogs.constants.CONSUMER_KEY
 import com.treelzebub.umap.api.discogs.constants.CONSUMER_SECRET
-import com.treelzebub.umap.async.event.LoginEvent
+import com.treelzebub.umap.async.event.AuthUrlEvent
 import com.treelzebub.umap.async.event.UserEvent
 import com.treelzebub.umap.async.persistUsername
 import com.treelzebub.umap.async.syncUser
@@ -123,7 +123,7 @@ public class DashboardActivity : AppCompatActivity() {
     }
 
     Subscribe
-    public fun onLoginEvent(event: LoginEvent) {
+    public fun onLoginEvent(event: AuthUrlEvent) {
 
     }
 }

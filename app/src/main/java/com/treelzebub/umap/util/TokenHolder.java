@@ -51,4 +51,9 @@ public class TokenHolder {
 
     private TokenHolder() {
     }
+
+    public static void clearTokens() {
+        requestToken = null;
+        accessToken = null;
+    }
 }
