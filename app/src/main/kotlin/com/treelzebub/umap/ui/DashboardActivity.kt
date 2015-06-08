@@ -23,9 +23,11 @@ import com.treelzebub.umap.R
 import com.treelzebub.umap.api.discogs.constants.CALLBACK_URL
 import com.treelzebub.umap.api.discogs.constants.CONSUMER_KEY
 import com.treelzebub.umap.api.discogs.constants.CONSUMER_SECRET
+import com.treelzebub.umap.async.event.LoginEvent
 import com.treelzebub.umap.async.event.UserEvent
 import com.treelzebub.umap.async.persistUsername
 import com.treelzebub.umap.async.syncUser
+import com.treelzebub.umap.async.requestAccessToken
 import com.treelzebub.umap.auth.DiscogsApi
 import com.treelzebub.umap.graphics.CircleTransform
 import com.treelzebub.umap.util.*
@@ -59,7 +61,7 @@ public class DashboardActivity : AppCompatActivity() {
             editor?.putString(getString(R.string.key_oauth_token), data.getQueryParameter("oauth_token"))
             editor?.putString(getString(R.string.key_oauth_verifier), data.getQueryParameter("oauth_verifier"))
             editor?.commit()
-            requestAccessToken(data)
+            requestAccessToken(this, data)
         } else if (TokenHolder.hasAccessToken(getApplicationContext())) {
             syncUser()
             getSupportFragmentManager().beginTransaction().add(R.id.content, HomeFragment()).commit()
@@ -88,7 +90,6 @@ public class DashboardActivity : AppCompatActivity() {
             val ft = getSupportFragmentManager().beginTransaction()
             Snackbar.make(content, it.getTitle(), Snackbar.LENGTH_LONG).show()
             it.setChecked(true)
-
             when (it.getItemId()) {
                 R.id.drawer_home -> ft.replace(R.id.content, HomeFragment())
                 R.id.collection -> ft.replace(R.id.content, CollectionFragment())
@@ -98,30 +99,6 @@ public class DashboardActivity : AppCompatActivity() {
             drawerLayout.closeDrawers()
             true
         })
-    }
-
-    private fun requestAccessToken(data: Uri) {
-        object : AsyncTask<Void, Void, Void>() {
-            override fun doInBackground(vararg params: Void?): Void? {
-                val editor = getPrefs(getApplicationContext())?.edit()
-                val requestToken = TokenHolder.getRequestToken()
-                val verifier = Verifier(data.getQueryParameter("oauth_verifier"))
-                val service = ServiceBuilder()
-                        .apiKey(CONSUMER_KEY)
-                        .apiSecret(CONSUMER_SECRET)
-                        .callback(CALLBACK_URL)
-                        .provider(javaClass<DiscogsApi>())
-                        .build()
-                val accessToken = service.getAccessToken(requestToken, verifier)
-                TokenHolder.setAccessToken(accessToken)
-                editor?.putString(getString(R.string.key_access_token), accessToken.getToken())
-                editor?.putString(getString(R.string.key_access_token_secret), accessToken.getSecret())
-                editor?.putString(getString(R.string.key_access_token_raw_response), accessToken.getRawResponse())
-                editor?.commit()
-                Log.d("OAuth Token: ", accessToken.getToken())
-                return null
-            }
-        }.execute()
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -143,5 +120,10 @@ public class DashboardActivity : AppCompatActivity() {
         Picasso.with(this).load(event.user.avatar_url).transform(CircleTransform()).into(avatar)
         username.setText(event.user.username)
         name.setText(event.user.name)
+    }
+
+    Subscribe
+    public fun onLoginEvent(event: LoginEvent) {
+
     }
 }

@@ -33,11 +33,11 @@ public class CollectionAdapter(collectionReleases: CollectionReleases) : Recycle
     override fun onBindViewHolder(holder: ViewHolder, i: Int) {
         var albumCoverUrl = collectionReleases.releases!!.get(i).basic_information!!.thumb
         if (albumCoverUrl == "") {
-            albumCoverUrl = "http://en.wikipedia.org/wiki/Template:Infobox_album#/media/File:Nirvana_album_cover.svg"
+            albumCoverUrl = "http://treelzebub.net/img/no-cover.png"
         }
         Picasso.with(context)
                 .load(albumCoverUrl)
-                .resize(50, 50)
+                .fit()
                 .centerCrop()
                 .into(holder.albumCover)
         holder.artist.setText(collectionReleases.releases!!.get(i).basic_information!!.artists.first().name)

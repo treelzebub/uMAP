@@ -50,7 +50,7 @@ public class CollectionFragment : Fragment() {
     Subscribe
     public fun onCollectionReleases(event: CollectionReleasesEvent) {
         collectionReleases = event.collectionReleases
-        tempText.setText(event.collectionReleases.releases!!.first().basic_information!!.title)
+        tempText.setText(event.collectionReleases.releases?.first()?.basic_information?.title)
         recyclerView?.setAdapter(CollectionAdapter(event.collectionReleases))
         recyclerView?.getAdapter()?.notifyDataSetChanged()
     }
