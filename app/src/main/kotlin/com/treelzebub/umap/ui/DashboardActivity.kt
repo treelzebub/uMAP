@@ -43,7 +43,7 @@ public class DashboardActivity : AppCompatActivity() {
     val content: ViewGroup          by bindView(R.id.content)
     val avatar: ImageView           by bindView(R.id.avatar)
     val username: TextView          by bindView(R.id.username)
-    val name: TextView             by bindView(R.id.name)
+    val name: TextView              by bindView(R.id.name)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

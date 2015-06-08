@@ -1,9 +1,5 @@
 package com.treelzebub.umap.api.discogs.model
 
-import com.google.gson.annotations.Expose
-import com.google.gson.annotations.SerializedName
-import org.joda.time.DateTime
-
 /**
  * Created by Tre Murillo on 6/6/15
  */
