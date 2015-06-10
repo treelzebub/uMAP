@@ -116,6 +116,6 @@ public class DashboardActivity : AppCompatActivity() {
 
     Subscribe
     public fun onLoginEvent(event: AuthUrlEvent) {
-
+        //TODO
     }
 }

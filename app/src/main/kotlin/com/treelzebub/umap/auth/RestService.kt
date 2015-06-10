@@ -2,7 +2,6 @@ package com.treelzebub.umap.auth
 
 import com.treelzebub.umap.api.discogs.DiscogsService
 import com.treelzebub.umap.api.discogs.constants.BASE_URL
-import com.treelzebub.umap.util.TokenHolder
 import retrofit.RestAdapter
 import retrofit.client.OkClient
 import kotlin.platform.platformStatic
