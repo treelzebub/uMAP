@@ -23,6 +23,7 @@ import com.treelzebub.umap.async.persistUsername
 import com.treelzebub.umap.async.requestAccessToken
 import com.treelzebub.umap.async.syncUser
 import com.treelzebub.umap.graphics.CircleTransform
+import com.treelzebub.umap.util.BusProvider
 import com.treelzebub.umap.util.TokenHolder
 import com.treelzebub.umap.util.clearPrefs
 import com.treelzebub.umap.util.getPrefs
@@ -41,7 +42,7 @@ public class DashboardActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        BusProvider.getInstance().register(this)
+        BusProvider.getInstance.register(this)
         setContentView(R.layout.activity_dashboard)
         setupToolbar()
         setupDrawer()
@@ -74,7 +75,7 @@ public class DashboardActivity : AppCompatActivity() {
 
     override fun onDestroy() {
         super.onDestroy()
-        BusProvider.getInstance().unregister(this)
+        BusProvider.getInstance.unregister(this)
     }
 
     private fun setupDrawer() {

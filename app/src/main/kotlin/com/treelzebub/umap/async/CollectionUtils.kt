@@ -51,7 +51,7 @@ public fun syncUser() {
         }
 
         override fun onPostExecute(result: User) {
-            BusProvider.getInstance().post(UserEvent(result))
+            BusProvider.getInstance.post(UserEvent(result))
         }
     }.execute()
 }
@@ -64,7 +64,7 @@ public fun syncCollection(c: Context, fullSync: Boolean) {
 
         override fun onPostExecute(result: List<CollectionFolder>) {
             folders = result
-            BusProvider.getInstance().post(CollectionEvent(result))
+            BusProvider.getInstance.post(CollectionEvent(result))
             if (fullSync) {
                 syncCollectionReleases(c)
             }
@@ -79,7 +79,7 @@ public fun syncCollectionReleases(c: Context) {
         }
 
         override fun onPostExecute(result: CollectionReleases) {
-            BusProvider.getInstance().post(CollectionReleasesEvent(result))
+            BusProvider.getInstance.post(CollectionReleasesEvent(result))
         }
     }.execute()
 }

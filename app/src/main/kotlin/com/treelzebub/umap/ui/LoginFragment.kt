@@ -39,7 +39,7 @@ public class LoginFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        BusProvider.getInstance().register(this)
+        BusProvider.getInstance.register(this)
         object : AsyncTask<Void, Void, Void>() {
             override fun doInBackground(vararg params: Void): Void? {
                 val service = ServiceBuilder()
@@ -72,7 +72,7 @@ public class LoginFragment : Fragment() {
         override fun shouldOverrideUrlLoading(view: WebView?, url: String?): Boolean {
             if (url != null && url.startsWith(CALLBACK_URL)) {
                 val i = Intent(getActivity(), javaClass<DashboardActivity>()).setData(Uri.parse(url))
-                BusProvider.getInstance().post(UserEvent())
+                BusProvider.getInstance.post(UserEvent())
                 startActivity(i)
                 return true
             }

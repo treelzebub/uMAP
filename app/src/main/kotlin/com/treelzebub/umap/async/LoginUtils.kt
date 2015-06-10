@@ -50,7 +50,7 @@ public fun retrieveAuthUrl() {
         }
 
         override fun onPostExecute(result: Void?) {
-            BusProvider.getInstance().post(AuthUrlEvent(authUrl))
+            BusProvider.getInstance.post(AuthUrlEvent(authUrl))
         }
     }.execute()
 }

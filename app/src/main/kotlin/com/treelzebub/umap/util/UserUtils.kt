@@ -11,7 +11,6 @@ import java.io.Serializable
 
 /**
  * Created by Tre Murillo on 6/7/15
- * Copyright(c) 2015 Level, Inc.
  */
 public class UserUtils() : Serializable {
 

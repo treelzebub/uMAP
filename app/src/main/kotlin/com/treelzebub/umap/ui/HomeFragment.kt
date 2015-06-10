@@ -10,6 +10,7 @@ import butterknife.bindView
 import com.squareup.otto.Subscribe
 import com.treelzebub.umap.R
 import com.treelzebub.umap.async.event.UserEvent
+import com.treelzebub.umap.util.BusProvider
 
 /**
  * Created by Tre Murillo on 6/6/15
@@ -24,7 +25,7 @@ public class HomeFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        BusProvider.getInstance().register(this)
+        BusProvider.getInstance.register(this)
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup, savedInstanceState: Bundle?): View {
@@ -38,7 +39,7 @@ public class HomeFragment : Fragment() {
 
     override fun onDestroy() {
         super.onDestroy()
-        BusProvider.getInstance().unregister(this)
+        BusProvider.getInstance.unregister(this)
     }
 
     Subscribe

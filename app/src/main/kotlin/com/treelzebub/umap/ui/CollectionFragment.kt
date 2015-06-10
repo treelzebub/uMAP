@@ -15,6 +15,7 @@ import com.treelzebub.umap.api.discogs.model.CollectionReleases
 import com.treelzebub.umap.async.event.CollectionReleasesEvent
 import com.treelzebub.umap.async.syncCollection
 import com.treelzebub.umap.ui.adapter.CollectionAdapter
+import com.treelzebub.umap.util.BusProvider
 
 /**
  * Created by Tre Murillo on 6/6/15
@@ -28,7 +29,7 @@ public class CollectionFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        BusProvider.getInstance().register(this)
+        BusProvider.getInstance.register(this)
         syncCollection(getActivity(), true)
     }
 
@@ -43,7 +44,7 @@ public class CollectionFragment : Fragment() {
 
     override fun onDestroy() {
         super.onDestroy()
-        BusProvider.getInstance().unregister(this)
+        BusProvider.getInstance.unregister(this)
     }
 
     Subscribe
