@@ -25,7 +25,7 @@ public class HomeFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        BusProvider.getInstance.register(this)
+        BusProvider.instance.register(this)
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup, savedInstanceState: Bundle?): View {
@@ -33,13 +33,13 @@ public class HomeFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_home, container, false)
     }
 
-    override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        BusProvider.getInstance.unregister(this)
+        BusProvider.instance.unregister(this)
     }
 
     Subscribe

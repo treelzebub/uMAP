@@ -1,9 +1,11 @@
 package com.treelzebub.umap.api.discogs.model
 
+import java.io.Serializable
+
 /**
  * Created by Tre Murillo on 6/6/15
  */
-public data class User {
+public data class User : Serializable {
     public var profile: String? = null
     public var wantlist_url: String? = null
     public var rank: Double = -1.0

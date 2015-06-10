@@ -16,7 +16,6 @@ import com.treelzebub.umap.api.discogs.constants.AUTH_URL_APPEND
 import com.treelzebub.umap.api.discogs.constants.CALLBACK_URL
 import com.treelzebub.umap.api.discogs.constants.CONSUMER_KEY
 import com.treelzebub.umap.api.discogs.constants.CONSUMER_SECRET
-import com.treelzebub.umap.async.event.UserEvent
 import com.treelzebub.umap.auth.DiscogsApi
 import com.treelzebub.umap.util.BusProvider
 import com.treelzebub.umap.util.TokenHolder
@@ -39,7 +38,7 @@ public class LoginFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        BusProvider.getInstance.register(this)
+        BusProvider.instance.register(this)
         object : AsyncTask<Void, Void, Void>() {
             override fun doInBackground(vararg params: Void): Void? {
                 val service = ServiceBuilder()
@@ -72,7 +71,6 @@ public class LoginFragment : Fragment() {
         override fun shouldOverrideUrlLoading(view: WebView?, url: String?): Boolean {
             if (url != null && url.startsWith(CALLBACK_URL)) {
                 val i = Intent(getActivity(), javaClass<DashboardActivity>()).setData(Uri.parse(url))
-                BusProvider.getInstance.post(UserEvent())
                 startActivity(i)
                 return true
             }

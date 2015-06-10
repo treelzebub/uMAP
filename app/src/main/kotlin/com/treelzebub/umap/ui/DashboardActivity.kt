@@ -17,16 +17,14 @@ import butterknife.bindView
 import com.squareup.otto.Subscribe
 import com.squareup.picasso.Picasso
 import com.treelzebub.umap.R
+import com.treelzebub.umap.async.LoginUtils
 import com.treelzebub.umap.async.event.AuthUrlEvent
 import com.treelzebub.umap.async.event.UserEvent
-import com.treelzebub.umap.async.persistUsername
-import com.treelzebub.umap.async.requestAccessToken
-import com.treelzebub.umap.async.syncUser
 import com.treelzebub.umap.graphics.CircleTransform
 import com.treelzebub.umap.util.BusProvider
+import com.treelzebub.umap.util.PrefsUtils
 import com.treelzebub.umap.util.TokenHolder
-import com.treelzebub.umap.util.clearPrefs
-import com.treelzebub.umap.util.getPrefs
+import com.treelzebub.umap.util.UserUtils
 
 /**
  * Created by Tre Murillo on 5/28/15
@@ -42,21 +40,21 @@ public class DashboardActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        BusProvider.getInstance.register(this)
+        BusProvider.instance.register(this)
         setContentView(R.layout.activity_dashboard)
         setupToolbar()
         setupDrawer()
 
         val data = getIntent().getData()
-        if (data != null && getPrefs(this)?.getString(getString(R.string.key_oauth_token), "null")!!.equals("null")) {
-            val editor = getPrefs(this)?.edit()
+        if (data != null && PrefsUtils.getPrefs(this)?.getString(getString(R.string.key_oauth_token), "null")!!.equals("null")) {
+            val editor = PrefsUtils.getPrefs(this)?.edit()
             // probably don't need to persist these, but will for now
             editor?.putString(getString(R.string.key_oauth_token), data.getQueryParameter("oauth_token"))
             editor?.putString(getString(R.string.key_oauth_verifier), data.getQueryParameter("oauth_verifier"))
             editor?.commit()
-            requestAccessToken(this, data)
-        } else if (TokenHolder.hasAccessToken(getApplicationContext()) && getUser() != null) {
-            syncUser()
+            LoginUtils.requestAccessToken(this, data)
+        } else if (TokenHolder.hasAccessToken(getApplicationContext()) && UserUtils.hasUser()) {
+            UserUtils.syncUser()
             getSupportFragmentManager().beginTransaction().add(R.id.content, HomeFragment()).commit()
         } else {
             getSupportFragmentManager().beginTransaction().add(R.id.content, LoginFragment()).commit()
@@ -75,7 +73,7 @@ public class DashboardActivity : AppCompatActivity() {
 
     override fun onDestroy() {
         super.onDestroy()
-        BusProvider.getInstance.unregister(this)
+        BusProvider.instance.unregister(this)
     }
 
     private fun setupDrawer() {
@@ -102,14 +100,14 @@ public class DashboardActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
         when (item!!.getItemId()) {
             android.R.id.home -> drawerLayout.openDrawer(GravityCompat.START)
-            R.id.clear_prefs -> clearPrefs(this)
+            R.id.clear_prefs -> PrefsUtils.clearPrefs(this)
         }
         return super.onOptionsItemSelected(item)
     }
 
     Subscribe
     public fun onUserEvent(event: UserEvent) {
-        persistUsername(getApplicationContext(), event.user)
+        UserUtils.toFile(getApplicationContext(), event.user)
         Picasso.with(this).load(event.user.avatar_url).transform(CircleTransform()).into(avatar)
         username.setText(event.user.username)
         name.setText(event.user.name)
