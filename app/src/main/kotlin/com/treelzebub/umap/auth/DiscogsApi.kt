@@ -9,7 +9,7 @@ import org.scribe.model.Token
 /**
  * Created by Tre Murillo on 5/28/15
  */
-public object DiscogsApi : DefaultApi10a() {
+public class DiscogsApi() : DefaultApi10a() {
 
     override fun getRequestTokenEndpoint(): String {
         return REQUEST_TOKEN_URL

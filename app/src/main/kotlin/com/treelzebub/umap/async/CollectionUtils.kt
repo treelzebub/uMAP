@@ -38,7 +38,7 @@ public object CollectionUtils {
     public fun syncCollectionReleases(c: Context) {
         object : AsyncTask<Void, Void, CollectionReleases>() {
             override fun doInBackground(vararg params: Void?): CollectionReleases {
-                return RestService.service.getCollectionReleases(PrefsUtils.usernameFromPrefs(c), folders!!.first().id.toString())
+                return RestService.service.getCollectionReleases(UserUtils.usernameFromPrefs(c), folders!!.first().id.toString())
             }
 
             override fun onPostExecute(result: CollectionReleases) {
