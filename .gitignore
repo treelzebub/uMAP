@@ -88,3 +88,6 @@ proguard/
 
 ### Android Patch ###
 gen-external-apklibs
+
+## Stupid fucking mac metadata bullshit
+.DS_Store
