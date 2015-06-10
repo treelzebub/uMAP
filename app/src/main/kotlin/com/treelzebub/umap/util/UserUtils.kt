@@ -69,16 +69,15 @@ public object UserUtils {
     }
 
     platformStatic
-    public fun syncUser() {
-        object : AsyncTask<Void, Void, User>() {
-            override fun doInBackground(vararg params: Void?): User {
-//                return RestService.service.getUser(UserUtils.user?.username!!)
-                return RestService.service.getUser("treelzebub")
+    public fun syncUser(c: Context) {
+        object : AsyncTask<Context, Void, User>() {
+            override fun doInBackground(vararg params: Context): User {
+                return RestService.service.getUser(UserUtils.usernameFromPrefs(params[0]))
             }
 
             override fun onPostExecute(result: User) {
                 BusProvider.instance.post(UserEvent(result))
             }
-        }.execute()
+        }.execute(c)
     }
 }

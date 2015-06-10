@@ -11,8 +11,8 @@ import com.treelzebub.umap.api.discogs.constants.CONSUMER_SECRET
 import com.treelzebub.umap.async.event.AccessTokenEvent
 import com.treelzebub.umap.async.event.AuthUrlEvent
 import com.treelzebub.umap.auth.DiscogsApi
+import com.treelzebub.umap.auth.TokenHolder
 import com.treelzebub.umap.util.BusProvider
-import com.treelzebub.umap.util.TokenHolder
 import org.scribe.builder.ServiceBuilder
 import org.scribe.exceptions.OAuthException
 import org.scribe.model.Verifier
@@ -46,7 +46,7 @@ public object LoginUtils {
             override fun doInBackground(vararg params: Void): Void? {
                 try {
                     val rt = getOAuthService().getRequestToken()
-                    TokenHolder.setRequestToken(rt)
+                    TokenHolder.requestToken = rt
                     authUrl = getOAuthService().getAuthorizationUrl(rt) + AUTH_URL_APPEND + rt.getToken()
                 } catch (e: OAuthException) {
                     Log.e("OAuthException: ", e.getMessage())
@@ -72,7 +72,7 @@ public object LoginUtils {
     public fun requestAccessToken(c: Context, data: Uri) {
         object : AsyncTask<Void, Void, Void>() {
             override fun doInBackground(vararg params: Void?): Void? {
-                val requestToken = TokenHolder.getRequestToken()
+                val requestToken = TokenHolder.requestToken
                 val verifier = Verifier(data.getQueryParameter("oauth_verifier"))
                 val service = ServiceBuilder()
                         .apiKey(CONSUMER_KEY)

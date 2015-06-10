@@ -19,7 +19,7 @@ public object RestService {
                     .setEndpoint(BASE_URL)
                     .setLogLevel(RestAdapter.LogLevel.FULL)
                     .setRequestInterceptor {
-                        it.addHeader("oauth_token", TokenHolder.getAccessToken().getToken())
+                        it.addHeader("oauth_token", TokenHolder.accessToken?.getToken())
                     }
                     .build()
 

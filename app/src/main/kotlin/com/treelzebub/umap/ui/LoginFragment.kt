@@ -17,9 +17,8 @@ import com.treelzebub.umap.api.discogs.constants.CALLBACK_URL
 import com.treelzebub.umap.api.discogs.constants.CONSUMER_KEY
 import com.treelzebub.umap.api.discogs.constants.CONSUMER_SECRET
 import com.treelzebub.umap.auth.DiscogsApi
+import com.treelzebub.umap.auth.TokenHolder
 import com.treelzebub.umap.util.BusProvider
-import com.treelzebub.umap.util.TokenHolder
-import com.treelzebub.umap.util.UserUtils
 import org.scribe.builder.ServiceBuilder
 
 /**
@@ -65,7 +64,7 @@ public class LoginFragment : Fragment() {
                         .provider(javaClass<DiscogsApi>())
                         .build()
                 val rt = oAuthService.getRequestToken()
-                TokenHolder.setRequestToken(rt)
+                TokenHolder.requestToken = rt
                 authUrl = oAuthService.getAuthorizationUrl(rt) + AUTH_URL_APPEND + rt.getToken()
                 return null
             }

@@ -20,10 +20,10 @@ import com.treelzebub.umap.R
 import com.treelzebub.umap.async.LoginUtils
 import com.treelzebub.umap.async.event.AuthUrlEvent
 import com.treelzebub.umap.async.event.UserEvent
+import com.treelzebub.umap.auth.TokenHolder
 import com.treelzebub.umap.graphics.CircleTransform
 import com.treelzebub.umap.util.BusProvider
 import com.treelzebub.umap.util.PrefsUtils
-import com.treelzebub.umap.util.TokenHolder
 import com.treelzebub.umap.util.UserUtils
 
 /**
@@ -54,7 +54,7 @@ public class DashboardActivity : AppCompatActivity() {
             editor?.commit()
             LoginUtils.requestAccessToken(this, data)
         } else if (TokenHolder.hasAccessToken(getApplicationContext())) {
-            UserUtils.syncUser()
+            UserUtils.syncUser(this)
             getSupportFragmentManager().beginTransaction().add(R.id.content, HomeFragment()).commit()
         } else {
             getSupportFragmentManager().beginTransaction().add(R.id.content, LoginFragment()).commit()
