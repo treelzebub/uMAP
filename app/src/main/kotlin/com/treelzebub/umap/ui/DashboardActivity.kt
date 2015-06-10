@@ -46,19 +46,24 @@ public class DashboardActivity : AppCompatActivity() {
         setupDrawer()
 
         val data = getIntent().getData()
-        if (data != null && PrefsUtils.getPrefs(this)?.getString(getString(R.string.key_oauth_token), "null")!!.equals("null")) {
+        if (data != null && PrefsUtils.getPrefs(this)!!.getString(getString(R.string.key_oauth_token), "null").equals("null")) {
             val editor = PrefsUtils.getPrefs(this)?.edit()
             // probably don't need to persist these, but will for now
             editor?.putString(getString(R.string.key_oauth_token), data.getQueryParameter("oauth_token"))
             editor?.putString(getString(R.string.key_oauth_verifier), data.getQueryParameter("oauth_verifier"))
             editor?.commit()
             LoginUtils.requestAccessToken(this, data)
-        } else if (TokenHolder.hasAccessToken(getApplicationContext()) && UserUtils.hasUser()) {
+        } else if (TokenHolder.hasAccessToken(getApplicationContext())) {
             UserUtils.syncUser()
             getSupportFragmentManager().beginTransaction().add(R.id.content, HomeFragment()).commit()
         } else {
             getSupportFragmentManager().beginTransaction().add(R.id.content, LoginFragment()).commit()
         }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        BusProvider.instance.unregister(this)
     }
 
     private fun setupToolbar() {
@@ -69,11 +74,6 @@ public class DashboardActivity : AppCompatActivity() {
             actionBar.setHomeAsUpIndicator(R.drawable.ic_menu_white_24dp)
             actionBar.setDisplayHomeAsUpEnabled(true)
         }
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        BusProvider.instance.unregister(this)
     }
 
     private fun setupDrawer() {
@@ -108,6 +108,7 @@ public class DashboardActivity : AppCompatActivity() {
     Subscribe
     public fun onUserEvent(event: UserEvent) {
         UserUtils.toFile(getApplicationContext(), event.user)
+        UserUtils.usernameToPrefs(this, event.user)
         Picasso.with(this).load(event.user.avatar_url).transform(CircleTransform()).into(avatar)
         username.setText(event.user.username)
         name.setText(event.user.name)

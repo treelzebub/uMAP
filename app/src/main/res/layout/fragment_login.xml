@@ -20,6 +20,7 @@
         android:padding="@dimen/abc_action_bar_default_padding_material"
         android:weightSum="3">
 
+        <!-- TODO replace with dialog -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

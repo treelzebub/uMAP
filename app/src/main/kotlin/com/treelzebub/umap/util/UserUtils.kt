@@ -72,8 +72,8 @@ public object UserUtils {
     public fun syncUser() {
         object : AsyncTask<Void, Void, User>() {
             override fun doInBackground(vararg params: Void?): User {
-                val service = RestService.service
-                return service.getUser("treelzebub")
+//                return RestService.service.getUser(UserUtils.user?.username!!)
+                return RestService.service.getUser("treelzebub")
             }
 
             override fun onPostExecute(result: User) {

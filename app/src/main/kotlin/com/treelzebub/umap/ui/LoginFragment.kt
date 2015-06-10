@@ -19,6 +19,7 @@ import com.treelzebub.umap.api.discogs.constants.CONSUMER_SECRET
 import com.treelzebub.umap.auth.DiscogsApi
 import com.treelzebub.umap.util.BusProvider
 import com.treelzebub.umap.util.TokenHolder
+import com.treelzebub.umap.util.UserUtils
 import org.scribe.builder.ServiceBuilder
 
 /**
@@ -39,27 +40,7 @@ public class LoginFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         BusProvider.instance.register(this)
-        object : AsyncTask<Void, Void, Void>() {
-            override fun doInBackground(vararg params: Void): Void? {
-                val service = ServiceBuilder()
-                        .apiKey(CONSUMER_KEY)
-                        .apiSecret(CONSUMER_SECRET)
-                        .callback(CALLBACK_URL)
-                        .provider(javaClass<DiscogsApi>())
-                        .build()
-                val rt = service.getRequestToken()
-                TokenHolder.setRequestToken(rt)
-                authUrl = service.getAuthorizationUrl(rt) + AUTH_URL_APPEND + rt.getToken()
-                return null
-            }
-
-            override fun onPostExecute(result: Void?) {
-                webView.getSettings().setBuiltInZoomControls(true)
-                webView.getSettings().setJavaScriptEnabled(true)
-                webView.setWebViewClient(Callback())
-                webView.loadUrl(authUrl)
-            }
-        }.execute()
+        loadAuthUrl()
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup, savedInstanceState: Bundle?): View? {
@@ -67,8 +48,36 @@ public class LoginFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_login, container, false)
     }
 
+    override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        webView.getSettings().setBuiltInZoomControls(true)
+        webView.getSettings().setJavaScriptEnabled(true)
+        webView.setWebViewClient(Callback())
+    }
+
+    private fun loadAuthUrl() {
+        object : AsyncTask<Void, Void, Void>() {
+            override fun doInBackground(vararg params: Void): Void? {
+                val oAuthService = ServiceBuilder()
+                        .apiKey(CONSUMER_KEY)
+                        .apiSecret(CONSUMER_SECRET)
+                        .callback(CALLBACK_URL)
+                        .provider(javaClass<DiscogsApi>())
+                        .build()
+                val rt = oAuthService.getRequestToken()
+                TokenHolder.setRequestToken(rt)
+                authUrl = oAuthService.getAuthorizationUrl(rt) + AUTH_URL_APPEND + rt.getToken()
+                return null
+            }
+
+            override fun onPostExecute(result: Void?) {
+                webView.loadUrl(authUrl)
+            }
+        }.execute()
+    }
+
     private inner class Callback : WebViewClient() {
-        override fun shouldOverrideUrlLoading(view: WebView?, url: String?): Boolean {
+        override fun shouldOverrideUrlLoading(view: WebView, url: String?): Boolean {
             if (url != null && url.startsWith(CALLBACK_URL)) {
                 val i = Intent(getActivity(), javaClass<DashboardActivity>()).setData(Uri.parse(url))
                 startActivity(i)

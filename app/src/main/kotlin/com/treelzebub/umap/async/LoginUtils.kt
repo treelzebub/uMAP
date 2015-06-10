@@ -42,7 +42,7 @@ public object LoginUtils {
     platformStatic
     public fun retrieveAuthUrl() {
         object : AsyncTask<Void, Void, Void>() {
-            var authUrl = "http://treelzebub.net"
+            var authUrl = "http://treelzebub.net" //TODO
             override fun doInBackground(vararg params: Void): Void? {
                 try {
                     val rt = getOAuthService().getRequestToken()
