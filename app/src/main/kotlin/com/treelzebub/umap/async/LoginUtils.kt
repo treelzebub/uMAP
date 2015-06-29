@@ -4,10 +4,11 @@ import android.content.Context
 import android.net.Uri
 import android.os.AsyncTask
 import android.util.Log
-import com.treelzebub.umap.api.discogs.constants.AUTH_URL_APPEND
-import com.treelzebub.umap.api.discogs.constants.CALLBACK_URL
-import com.treelzebub.umap.api.discogs.constants.CONSUMER_KEY
-import com.treelzebub.umap.api.discogs.constants.CONSUMER_SECRET
+import com.treelzebub.umap
+import com.treelzebub.umap.DISCOGS_AUTH_URL_APPEND
+import com.treelzebub.umap.CALLBACK_URL
+import com.treelzebub.umap.DISCOGS_CONSUMER_KEY
+import com.treelzebub.umap.DISCOGS_CONSUMER_SECRET
 import com.treelzebub.umap.async.event.AccessTokenEvent
 import com.treelzebub.umap.async.event.AuthUrlEvent
 import com.treelzebub.umap.auth.DiscogsApi
@@ -29,9 +30,9 @@ public object LoginUtils {
     platformStatic
     public fun getOAuthService(): OAuthService {
         return ServiceBuilder()
-                .apiKey(CONSUMER_KEY)
-                .apiSecret(CONSUMER_SECRET)
-                .callback(CALLBACK_URL)
+                .apiKey(DISCOGS_CONSUMER_KEY)
+                .apiSecret(DISCOGS_CONSUMER_SECRET)
+                .callback(umap.CALLBACK_URL)
                 .provider(javaClass<DiscogsApi>())
                 .build()
     }
@@ -47,7 +48,7 @@ public object LoginUtils {
                 try {
                     val rt = getOAuthService().getRequestToken()
                     TokenHolder.requestToken = rt
-                    authUrl = getOAuthService().getAuthorizationUrl(rt) + AUTH_URL_APPEND + rt.getToken()
+                    authUrl = getOAuthService().getAuthorizationUrl(rt) + DISCOGS_AUTH_URL_APPEND + rt.getToken()
                 } catch (e: OAuthException) {
                     Log.e("OAuthException: ", e.getMessage())
                 }
@@ -75,9 +76,9 @@ public object LoginUtils {
                 val requestToken = TokenHolder.requestToken
                 val verifier = Verifier(data.getQueryParameter("oauth_verifier"))
                 val service = ServiceBuilder()
-                        .apiKey(CONSUMER_KEY)
-                        .apiSecret(CONSUMER_SECRET)
-                        .callback(CALLBACK_URL)
+                        .apiKey(DISCOGS_CONSUMER_KEY)
+                        .apiSecret(DISCOGS_CONSUMER_SECRET)
+                        .callback(umap.CALLBACK_URL)
                         .provider(javaClass<DiscogsApi>())
                         .build()
                 val accessToken = service.getAccessToken(requestToken, verifier)

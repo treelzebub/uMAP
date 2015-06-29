@@ -1,7 +1,7 @@
 package com.treelzebub.umap.auth
 
 import com.treelzebub.umap.api.discogs.DiscogsService
-import com.treelzebub.umap.api.discogs.constants.BASE_URL
+import com.treelzebub.umap.DISCOGS_BASE_URL
 import retrofit.RestAdapter
 import retrofit.client.OkClient
 import kotlin.platform.platformStatic
@@ -15,7 +15,7 @@ public object RestService {
     private val restAdapter =
             RestAdapter.Builder()
                     .setClient(OkClient())
-                    .setEndpoint(BASE_URL)
+                    .setEndpoint(DISCOGS_BASE_URL)
                     .setLogLevel(RestAdapter.LogLevel.FULL)
                     .setRequestInterceptor {
                         it.addHeader("oauth_token", TokenHolder.accessToken?.getToken())

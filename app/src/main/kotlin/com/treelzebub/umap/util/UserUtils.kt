@@ -4,7 +4,7 @@ import android.content.Context
 import android.os.AsyncTask
 import android.util.Log
 import com.treelzebub.umap.R
-import com.treelzebub.umap.api.discogs.constants.USER_FILENAME
+import com.treelzebub.umap.USER_FILENAME
 import com.treelzebub.umap.api.discogs.model.User
 import com.treelzebub.umap.async.event.UserEvent
 import com.treelzebub.umap.auth.RestService

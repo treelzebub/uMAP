@@ -11,11 +11,12 @@ import android.view.ViewGroup
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import butterknife.bindView
+import com.treelzebub.umap
 import com.treelzebub.umap.R
-import com.treelzebub.umap.api.discogs.constants.AUTH_URL_APPEND
-import com.treelzebub.umap.api.discogs.constants.CALLBACK_URL
-import com.treelzebub.umap.api.discogs.constants.CONSUMER_KEY
-import com.treelzebub.umap.api.discogs.constants.CONSUMER_SECRET
+import com.treelzebub.umap.DISCOGS_AUTH_URL_APPEND
+import com.treelzebub.umap.CALLBACK_URL
+import com.treelzebub.umap.DISCOGS_CONSUMER_KEY
+import com.treelzebub.umap.DISCOGS_CONSUMER_SECRET
 import com.treelzebub.umap.auth.DiscogsApi
 import com.treelzebub.umap.auth.TokenHolder
 import com.treelzebub.umap.util.BusProvider
@@ -58,14 +59,14 @@ public class LoginFragment : Fragment() {
         object : AsyncTask<Void, Void, Void>() {
             override fun doInBackground(vararg params: Void): Void? {
                 val oAuthService = ServiceBuilder()
-                        .apiKey(CONSUMER_KEY)
-                        .apiSecret(CONSUMER_SECRET)
-                        .callback(CALLBACK_URL)
+                        .apiKey(DISCOGS_CONSUMER_KEY)
+                        .apiSecret(DISCOGS_CONSUMER_SECRET)
+                        .callback(umap.CALLBACK_URL)
                         .provider(javaClass<DiscogsApi>())
                         .build()
                 val rt = oAuthService.getRequestToken()
                 TokenHolder.requestToken = rt
-                authUrl = oAuthService.getAuthorizationUrl(rt) + AUTH_URL_APPEND + rt.getToken()
+                authUrl = oAuthService.getAuthorizationUrl(rt) + DISCOGS_AUTH_URL_APPEND + rt.getToken()
                 return null
             }
 
@@ -77,7 +78,7 @@ public class LoginFragment : Fragment() {
 
     private inner class Callback : WebViewClient() {
         override fun shouldOverrideUrlLoading(view: WebView, url: String?): Boolean {
-            if (url != null && url.startsWith(CALLBACK_URL)) {
+            if (url != null && url.startsWith(umap.CALLBACK_URL)) {
                 val i = Intent(getActivity(), javaClass<DashboardActivity>()).setData(Uri.parse(url))
                 startActivity(i)
                 return true
