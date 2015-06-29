@@ -7,7 +7,7 @@ import retrofit.http.Path
  * Created by Tre Murillo on 6/28/15
  *
  * Let's use 3 different fucking servers to access cover art, because Discogs allows only 100 requests per day.
- * 
+ *
  * https://musicbrainz.org/doc/Cover_Art_Archive/API
  */
 public interface MusicBrainzService {

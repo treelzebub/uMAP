@@ -11,7 +11,6 @@ import com.treelzebub.umap.auth.RestService
 import java.io.IOException
 import java.io.ObjectInputStream
 import java.io.ObjectOutputStream
-import java.io.Serializable
 import kotlin.platform.platformStatic
 
 /**

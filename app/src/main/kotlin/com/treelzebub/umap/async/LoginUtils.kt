@@ -6,7 +6,6 @@ import android.os.AsyncTask
 import android.util.Log
 import com.treelzebub.umap
 import com.treelzebub.umap.DISCOGS_AUTH_URL_APPEND
-import com.treelzebub.umap.CALLBACK_URL
 import com.treelzebub.umap.DISCOGS_CONSUMER_KEY
 import com.treelzebub.umap.DISCOGS_CONSUMER_SECRET
 import com.treelzebub.umap.async.event.AccessTokenEvent

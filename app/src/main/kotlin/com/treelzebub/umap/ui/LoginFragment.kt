@@ -12,11 +12,10 @@ import android.webkit.WebView
 import android.webkit.WebViewClient
 import butterknife.bindView
 import com.treelzebub.umap
-import com.treelzebub.umap.R
 import com.treelzebub.umap.DISCOGS_AUTH_URL_APPEND
-import com.treelzebub.umap.CALLBACK_URL
 import com.treelzebub.umap.DISCOGS_CONSUMER_KEY
 import com.treelzebub.umap.DISCOGS_CONSUMER_SECRET
+import com.treelzebub.umap.R
 import com.treelzebub.umap.auth.DiscogsApi
 import com.treelzebub.umap.auth.TokenHolder
 import com.treelzebub.umap.util.BusProvider
