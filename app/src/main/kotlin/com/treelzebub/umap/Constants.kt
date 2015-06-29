@@ -22,10 +22,8 @@ public val DISCOGS_PROFILE_URL: String = "/users" // + /{username}
 public val DISCOGS_CONSUMER_KEY: String = "JfdZojxprrQHOqIpHwpV"
 public val DISCOGS_CONSUMER_SECRET: String = "uigJkstmlBPlLBFMoxAApEHgIdrCGQsx"
 
-// Fuck my actual life.
-public val MUSIC_BRAINZ_BASE_URL: String = "http://musicbrainz.org"
-public val COVER_ART_ARCHIVE_BASE_URL: String = "http://coverartarchive.org"
-
+public val ONEMUSIC_BASE_URL: String = "http://api.onemusicapi.com/"
+public val ONEMUSIC_CONSUMER_KEY: String = ""
 
 public val CREDENTIALS_STORE_FILENAME: String = "umap.prefs"
 public val USER_FILENAME: String = "umap.discogs.user"

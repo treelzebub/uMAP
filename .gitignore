@@ -3,6 +3,9 @@
 ### Intellij ###
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm
 
+## Para seguridad
+Constants.kt
+
 ## Directory-based project format:
 .idea/
 
