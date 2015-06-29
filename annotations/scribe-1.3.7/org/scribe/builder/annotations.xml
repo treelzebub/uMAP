@@ -1,0 +1,32 @@
+<root>
+    <item name='org.scribe.builder.ServiceBuilder org.scribe.builder.ServiceBuilder apiSecret(java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.ServiceBuilder org.scribe.builder.ServiceBuilder apiKey(java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.ServiceBuilder org.scribe.builder.ServiceBuilder debugStream(java.io.OutputStream)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.ServiceBuilder org.scribe.builder.ServiceBuilder callback(java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.ServiceBuilder org.scribe.builder.ServiceBuilder provider(org.scribe.builder.api.Api)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.ServiceBuilder org.scribe.builder.ServiceBuilder provider(java.lang.Class&lt;? extends org.scribe.builder.api.Api&gt;)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.ServiceBuilder org.scribe.builder.ServiceBuilder provider(java.lang.Class&lt;? extends org.scribe.builder.api.Api&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.ServiceBuilder org.scribe.builder.ServiceBuilder signatureType(org.scribe.model.SignatureType)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.ServiceBuilder org.scribe.builder.ServiceBuilder scope(java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.ServiceBuilder org.scribe.builder.ServiceBuilder debug()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+</root>

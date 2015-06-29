@@ -1,0 +1,164 @@
+<root>
+    <item name='org.jetbrains.anko.custom.CustomPackage T addView(android.view.ViewManager, kotlin.jvm.functions.Function1&lt;? super android.content.Context,? extends T&gt;)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.custom.CustomPackage.Custom.a89794ad T customView(android.app.Activity, kotlin.jvm.functions.Function1&lt;? super T,? extends kotlin.Unit&gt;) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.custom.CustomPackage.Custom.a89794ad T addView(android.content.Context, kotlin.jvm.functions.Function1&lt;? super android.content.Context,? extends T&gt;) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.custom.CustomPackage.Custom.a89794ad T addView(android.app.Fragment, kotlin.jvm.functions.Function1&lt;? super android.content.Context,? extends T&gt;) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.custom.CustomPackage.Custom.a89794ad T customView(android.content.Context, kotlin.jvm.functions.Function1&lt;? super T,? extends kotlin.Unit&gt;)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.custom.CustomPackage T addView(android.app.Fragment, kotlin.jvm.functions.Function1&lt;? super android.content.Context,? extends T&gt;)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.custom.CustomPackage.Custom.a89794ad T addView(android.view.ViewManager, kotlin.jvm.functions.Function1&lt;? super android.content.Context,? extends T&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.custom.CustomPackage.Custom.a89794ad T addView(android.content.Context, kotlin.jvm.functions.Function1&lt;? super android.content.Context,? extends T&gt;)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.custom.CustomPackage.Custom.a89794ad T customView(android.view.ViewManager, kotlin.jvm.functions.Function1&lt;? super T,? extends kotlin.Unit&gt;) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.custom.CustomPackage T addView(android.view.ViewManager, T) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.custom.CustomPackage T customView(android.content.Context, kotlin.jvm.functions.Function1&lt;? super T,? extends kotlin.Unit&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.custom.CustomPackage.Custom.a89794ad T customView(android.app.Activity, kotlin.jvm.functions.Function1&lt;? super T,? extends kotlin.Unit&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.custom.CustomPackage.Custom.a89794ad.addView.2 void invoke(org.jetbrains.anko.UiHelper) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.custom.CustomPackage T addView(android.view.ViewManager, T)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.custom.CustomPackage T addView(android.view.ViewManager, kotlin.jvm.functions.Function1&lt;? super android.content.Context,? extends T&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.custom.CustomPackage.Custom.a89794ad T addView(android.app.Activity, kotlin.jvm.functions.Function1&lt;? super android.content.Context,? extends T&gt;) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.custom.CustomPackage.Custom.a89794ad T addView(android.content.Context, kotlin.jvm.functions.Function1&lt;? super android.content.Context,? extends T&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.custom.CustomPackage T addView(android.content.Context, kotlin.jvm.functions.Function1&lt;? super android.content.Context,? extends T&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.custom.CustomPackage.Custom.a89794ad T addView(android.app.Fragment, kotlin.jvm.functions.Function1&lt;? super android.content.Context,? extends T&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.custom.CustomPackage T addView(android.app.Fragment, kotlin.jvm.functions.Function1&lt;? super android.content.Context,? extends T&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.custom.CustomPackage T customView(android.app.Activity, kotlin.jvm.functions.Function1&lt;? super T,? extends kotlin.Unit&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.custom.CustomPackage.Custom.a89794ad T addView(android.view.ViewManager, kotlin.jvm.functions.Function1&lt;? super android.content.Context,? extends T&gt;) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.custom.CustomPackage.Custom.a89794ad T customView(android.view.ViewManager, kotlin.jvm.functions.Function1&lt;? super T,? extends kotlin.Unit&gt;)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.custom.CustomPackage T customView(android.app.Activity, kotlin.jvm.functions.Function1&lt;? super T,? extends kotlin.Unit&gt;)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.custom.CustomPackage T customView(android.content.Context, kotlin.jvm.functions.Function1&lt;? super T,? extends kotlin.Unit&gt;) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.custom.CustomPackage T addView(android.view.ViewManager, kotlin.jvm.functions.Function1&lt;? super android.content.Context,? extends T&gt;) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.custom.CustomPackage.Custom.a89794ad.addView.1 java.lang.Object invoke(java.lang.Object) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.custom.CustomPackage T addView(android.app.Activity, kotlin.jvm.functions.Function1&lt;? super android.content.Context,? extends T&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.custom.CustomPackage T customView(android.view.ViewManager, kotlin.jvm.functions.Function1&lt;? super T,? extends kotlin.Unit&gt;) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.custom.CustomPackage.Custom.a89794ad T customView(android.view.ViewManager, kotlin.jvm.functions.Function1&lt;? super T,? extends kotlin.Unit&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.custom.CustomPackage T addView(android.content.Context, kotlin.jvm.functions.Function1&lt;? super android.content.Context,? extends T&gt;)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.custom.CustomPackage.Custom.a89794ad T addView(android.view.ViewManager, T) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.custom.CustomPackage T customView(android.view.ViewManager, kotlin.jvm.functions.Function1&lt;? super T,? extends kotlin.Unit&gt;)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.custom.CustomPackage.Custom.a89794ad T addView(android.app.Activity, kotlin.jvm.functions.Function1&lt;? super android.content.Context,? extends T&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.custom.CustomPackage T customView(android.content.Context, kotlin.jvm.functions.Function1&lt;? super T,? extends kotlin.Unit&gt;)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.custom.CustomPackage T addView(android.content.Context, kotlin.jvm.functions.Function1&lt;? super android.content.Context,? extends T&gt;) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.custom.CustomPackage.Custom.a89794ad T customView(android.content.Context, kotlin.jvm.functions.Function1&lt;? super T,? extends kotlin.Unit&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.custom.CustomPackage.Custom.a89794ad.addView.2 java.lang.Object invoke(java.lang.Object) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.custom.CustomPackage.Custom.a89794ad.addView.1 void invoke(org.jetbrains.anko.UiHelper) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.custom.CustomPackage T addView(android.app.Fragment, kotlin.jvm.functions.Function1&lt;? super android.content.Context,? extends T&gt;) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.custom.CustomPackage T addView(android.view.ViewManager, T) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.custom.CustomPackage T customView(android.app.Activity, kotlin.jvm.functions.Function1&lt;? super T,? extends kotlin.Unit&gt;) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.custom.CustomPackage.Custom.a89794ad.addView.3 java.lang.Object invoke(java.lang.Object) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.custom.CustomPackage.Custom.a89794ad T addView(android.app.Activity, kotlin.jvm.functions.Function1&lt;? super android.content.Context,? extends T&gt;)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.custom.CustomPackage.Custom.a89794ad.addView.3 void invoke(org.jetbrains.anko.UiHelper) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.custom.CustomPackage T customView(android.view.ViewManager, kotlin.jvm.functions.Function1&lt;? super T,? extends kotlin.Unit&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.custom.CustomPackage.Custom.a89794ad T addView(android.view.ViewManager, T)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.custom.CustomPackage T addView(android.app.Activity, kotlin.jvm.functions.Function1&lt;? super android.content.Context,? extends T&gt;) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.custom.CustomPackage.Custom.a89794ad T addView(android.view.ViewManager, T) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.custom.CustomPackage.Custom.a89794ad T customView(android.app.Activity, kotlin.jvm.functions.Function1&lt;? super T,? extends kotlin.Unit&gt;)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.custom.CustomPackage.Custom.a89794ad T customView(android.content.Context, kotlin.jvm.functions.Function1&lt;? super T,? extends kotlin.Unit&gt;) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.custom.CustomPackage T addView(android.app.Activity, kotlin.jvm.functions.Function1&lt;? super android.content.Context,? extends T&gt;)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.custom.CustomPackage.Custom.a89794ad T addView(android.view.ViewManager, kotlin.jvm.functions.Function1&lt;? super android.content.Context,? extends T&gt;)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.custom.CustomPackage.Custom.a89794ad T addView(android.app.Fragment, kotlin.jvm.functions.Function1&lt;? super android.content.Context,? extends T&gt;)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+</root>

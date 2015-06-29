@@ -1,0 +1,245 @@
+<root>
+    <item name='com.squareup.okhttp.internal.http.HttpConnection okio.Source newFixedLengthSource(long)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.internal.http.StatusLine com.squareup.okhttp.internal.http.StatusLine parse(java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.internal.http.HttpMethod boolean permitsRequestBody(java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.internal.http.RequestLine java.lang.String version(com.squareup.okhttp.Protocol)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.internal.http.SpdyTransport com.squareup.okhttp.Response.Builder readNameValueBlock(java.util.List&lt;com.squareup.okhttp.internal.spdy.Header&gt;, com.squareup.okhttp.Protocol)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.internal.http.OkHeaders boolean varyMatches(com.squareup.okhttp.Response, com.squareup.okhttp.Headers, com.squareup.okhttp.Request) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.internal.http.RouteSelector com.squareup.okhttp.internal.http.RouteSelector get(com.squareup.okhttp.Request, com.squareup.okhttp.OkHttpClient) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.internal.http.SpdyTransport com.squareup.okhttp.Response.Builder readResponseHeaders()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.internal.http.HttpConnection com.squareup.okhttp.Response.Builder readResponse()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.internal.http.Transport com.squareup.okhttp.Response.Builder readResponseHeaders()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+        <annotation name='org.jetbrains.kannotator.runtime.annotations.Propagated'>
+            <val name="value" val="{org.jetbrains.kannotator.controlFlow.builder.analysis.NullabilityKey.class}"/>
+        </annotation>
+    </item>
+    <item name='com.squareup.okhttp.internal.http.HttpEngine java.lang.String hostHeader(java.net.URL) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.internal.http.HttpEngine boolean hasBody(com.squareup.okhttp.Response) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.internal.http.OkHeaders java.util.List&lt;com.squareup.okhttp.Challenge&gt; parseChallenges(com.squareup.okhttp.Headers, java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.internal.http.HttpConnection okio.Source newChunkedSource(com.squareup.okhttp.internal.http.HttpEngine)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.internal.http.SpdyTransport void writeRequestHeaders(com.squareup.okhttp.Request) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+        <annotation name='org.jetbrains.kannotator.runtime.annotations.Propagated'>
+            <val name="value" val="{org.jetbrains.kannotator.controlFlow.builder.analysis.NullabilityKey.class}"/>
+        </annotation>
+    </item>
+    <item name='com.squareup.okhttp.internal.http.SpdyTransport com.squareup.okhttp.Response.Builder readNameValueBlock(java.util.List&lt;com.squareup.okhttp.internal.spdy.Header&gt;, com.squareup.okhttp.Protocol) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.internal.http.HeaderParser int skipUntil(java.lang.String, int, java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.internal.http.AuthenticatorAdapter INSTANCE'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.internal.http.Transport com.squareup.okhttp.ResponseBody openResponseBody(com.squareup.okhttp.Response) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+        <annotation name='org.jetbrains.kannotator.runtime.annotations.Propagated'>
+            <val name="value" val="{org.jetbrains.kannotator.controlFlow.builder.analysis.NullabilityKey.class}"/>
+        </annotation>
+    </item>
+    <item name='com.squareup.okhttp.internal.http.HttpTransport com.squareup.okhttp.ResponseBody openResponseBody(com.squareup.okhttp.Response) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.internal.http.OkHeaders void addCookies(com.squareup.okhttp.Request.Builder, java.util.Map&lt;java.lang.String,java.util.List&lt;java.lang.String&gt;&gt;) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.internal.http.OkHeaders long contentLength(com.squareup.okhttp.Headers) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.internal.http.HttpTransport okio.Sink createRequestBody(com.squareup.okhttp.Request, long)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.internal.http.HeaderParser int skipWhitespace(java.lang.String, int) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.internal.http.HttpConnection okio.Source newUnknownLengthSource()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.internal.http.HttpTransport okio.Sink createRequestBody(com.squareup.okhttp.Request, long) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.internal.http.StatusLine com.squareup.okhttp.internal.http.StatusLine get(com.squareup.okhttp.Response) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.internal.http.RouteSelector com.squareup.okhttp.internal.http.RouteSelector get(com.squareup.okhttp.Request, com.squareup.okhttp.OkHttpClient)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.internal.http.HttpConnection void writeRequest(com.squareup.okhttp.Headers, java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.internal.http.StatusLine com.squareup.okhttp.internal.http.StatusLine parse(java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.internal.http.OkHeaders com.squareup.okhttp.Headers varyHeaders(com.squareup.okhttp.Response)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.internal.http.RequestLine java.lang.String requestPath(java.net.URL) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.internal.http.SpdyTransport java.util.List&lt;com.squareup.okhttp.internal.spdy.Header&gt; writeNameValueBlock(com.squareup.okhttp.Request, com.squareup.okhttp.Protocol, java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.internal.http.SpdyTransport com.squareup.okhttp.Response.Builder readNameValueBlock(java.util.List&lt;com.squareup.okhttp.internal.spdy.Header&gt;, com.squareup.okhttp.Protocol) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.internal.http.SpdyTransport java.util.List&lt;com.squareup.okhttp.internal.spdy.Header&gt; writeNameValueBlock(com.squareup.okhttp.Request, com.squareup.okhttp.Protocol, java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.internal.http.SpdyTransport com.squareup.okhttp.ResponseBody openResponseBody(com.squareup.okhttp.Response)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.internal.http.HttpConnection okio.Sink newChunkedSink()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.internal.http.HttpTransport com.squareup.okhttp.Response.Builder readResponseHeaders()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.internal.http.SpdyTransport com.squareup.okhttp.ResponseBody openResponseBody(com.squareup.okhttp.Response) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.internal.http.HttpEngine boolean sameConnection(java.net.URL) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.internal.http.HttpConnection void writeRequestBody(com.squareup.okhttp.internal.http.RetryableSink) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.internal.http.StatusLine com.squareup.okhttp.internal.http.StatusLine get(com.squareup.okhttp.Response)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.internal.http.SpdyTransport void writeRequestBody(com.squareup.okhttp.internal.http.RetryableSink) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.internal.http.SpdyTransport okio.Sink createRequestBody(com.squareup.okhttp.Request, long)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.internal.http.SpdyTransport okio.Sink createRequestBody(com.squareup.okhttp.Request, long) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+        <annotation name='org.jetbrains.kannotator.runtime.annotations.Propagated'>
+            <val name="value" val="{org.jetbrains.kannotator.controlFlow.builder.analysis.NullabilityKey.class}"/>
+        </annotation>
+    </item>
+    <item name='com.squareup.okhttp.internal.http.Transport okio.Sink createRequestBody(com.squareup.okhttp.Request, long)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+        <annotation name='org.jetbrains.kannotator.runtime.annotations.Propagated'>
+            <val name="value" val="{org.jetbrains.kannotator.controlFlow.builder.analysis.NullabilityKey.class}"/>
+        </annotation>
+    </item>
+    <item name='com.squareup.okhttp.internal.http.HttpDate java.util.Date parse(java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.internal.http.OkHeaders long contentLength(com.squareup.okhttp.Response) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.internal.http.OkHeaders java.util.Map&lt;java.lang.String,java.util.List&lt;java.lang.String&gt;&gt; toMultimap(com.squareup.okhttp.Headers, java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.internal.http.Transport void writeRequestBody(com.squareup.okhttp.internal.http.RetryableSink) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+        <annotation name='org.jetbrains.kannotator.runtime.annotations.Propagated'>
+            <val name="value" val="{org.jetbrains.kannotator.controlFlow.builder.analysis.NullabilityKey.class}"/>
+        </annotation>
+    </item>
+    <item name='com.squareup.okhttp.internal.http.Transport okio.Sink createRequestBody(com.squareup.okhttp.Request, long) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+        <annotation name='org.jetbrains.kannotator.runtime.annotations.Propagated'>
+            <val name="value" val="{org.jetbrains.kannotator.controlFlow.builder.analysis.NullabilityKey.class}"/>
+        </annotation>
+    </item>
+    <item name='com.squareup.okhttp.internal.http.CacheStrategy.Factory com.squareup.okhttp.internal.http.CacheStrategy get()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.internal.http.Transport com.squareup.okhttp.ResponseBody openResponseBody(com.squareup.okhttp.Response)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+        <annotation name='org.jetbrains.kannotator.runtime.annotations.Propagated'>
+            <val name="value" val="{org.jetbrains.kannotator.controlFlow.builder.analysis.NullabilityKey.class}"/>
+        </annotation>
+    </item>
+    <item name='com.squareup.okhttp.internal.http.OkHeaders boolean hasVaryAll(com.squareup.okhttp.Response) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.internal.http.OkHeaders com.squareup.okhttp.Headers varyHeaders(com.squareup.okhttp.Response) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.internal.http.RetryableSink void write(okio.Buffer, long) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.internal.http.OkHeaders long contentLength(com.squareup.okhttp.Request) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.internal.http.HttpTransport void writeRequestHeaders(com.squareup.okhttp.Request) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.internal.http.HttpMethod boolean requiresRequestBody(java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.internal.http.OkHeaders com.squareup.okhttp.Request processAuthHeader(com.squareup.okhttp.Authenticator, com.squareup.okhttp.Response, java.net.Proxy) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.internal.http.AuthenticatorAdapter com.squareup.okhttp.Request authenticate(java.net.Proxy, com.squareup.okhttp.Response) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.internal.http.Transport void writeRequestHeaders(com.squareup.okhttp.Request) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+        <annotation name='org.jetbrains.kannotator.runtime.annotations.Propagated'>
+            <val name="value" val="{org.jetbrains.kannotator.controlFlow.builder.analysis.NullabilityKey.class}"/>
+        </annotation>
+    </item>
+    <item name='com.squareup.okhttp.internal.http.AuthenticatorAdapter com.squareup.okhttp.Request authenticateProxy(java.net.Proxy, com.squareup.okhttp.Response) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.internal.http.RouteSelector com.squareup.okhttp.internal.http.RouteSelector get(com.squareup.okhttp.Request, com.squareup.okhttp.OkHttpClient) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.internal.http.RetryableSink void writeToSocket(okio.Sink) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.internal.http.HttpConnection okio.Sink newFixedLengthSink(long)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.internal.http.CacheStrategy boolean isCacheable(com.squareup.okhttp.Response, com.squareup.okhttp.Request) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.internal.http.HttpTransport com.squareup.okhttp.ResponseBody openResponseBody(com.squareup.okhttp.Response)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.internal.http.HttpMethod boolean invalidatesCache(java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.internal.http.HttpTransport void writeRequestBody(com.squareup.okhttp.internal.http.RetryableSink) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.internal.http.OkHeaders com.squareup.okhttp.Request processAuthHeader(com.squareup.okhttp.Authenticator, com.squareup.okhttp.Response, java.net.Proxy) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.internal.http.OkHeaders java.util.List&lt;com.squareup.okhttp.Challenge&gt; parseChallenges(com.squareup.okhttp.Headers, java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+</root>

@@ -1,0 +1,5 @@
+<root>
+    <item name='org.scribe.utils.Preconditions void checkValidOAuthCallback(java.lang.String, java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+</root>

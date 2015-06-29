@@ -1,0 +1,68 @@
+<root>
+    <item name='org.jetbrains.anko.internals.AnkoInternals void internalStartService(android.content.Context, java.lang.Class&lt;? extends android.app.Service&gt;, kotlin.Pair&lt;java.lang.String,java.lang.Object&gt;[]) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.internals.AnkoInternals void internalStartService(android.content.Context, java.lang.Class&lt;? extends android.app.Service&gt;, kotlin.Pair&lt;java.lang.String,java.lang.Object&gt;[]) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.internals.AnkoInternals android.content.Intent createIntent(android.content.Context, java.lang.Class&lt;? extends T&gt;, kotlin.Pair&lt;java.lang.String,java.lang.Object&gt;[]) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.internals.AnkoInternals android.content.Intent createIntent(android.content.Context, java.lang.Class&lt;? extends T&gt;, kotlin.Pair&lt;java.lang.String,java.lang.Object&gt;[]) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.internals.AnkoInternals void internalStartActivityForResult(android.app.Activity, java.lang.Class&lt;? extends android.app.Activity&gt;, int, kotlin.Pair&lt;java.lang.String,java.lang.Object&gt;[]) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.internals.AnkoInternals T initiateView(android.content.Context, java.lang.Class&lt;T&gt;)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.internals.AnkoInternals void internalStartActivityForResult(android.app.Activity, java.lang.Class&lt;? extends android.app.Activity&gt;, int, kotlin.Pair&lt;java.lang.String,java.lang.Object&gt;[]) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.internals.AnkoInternals void internalStartActivityForResult(android.app.Activity, java.lang.Class&lt;? extends android.app.Activity&gt;, int, kotlin.Pair&lt;java.lang.String,java.lang.Object&gt;[]) 3'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.internals.AnkoInternals T useCursor(android.database.Cursor, kotlin.jvm.functions.Function1&lt;? super android.database.Cursor,? extends T&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.internals.AnkoInternals T useCursor(android.database.Cursor, kotlin.jvm.functions.Function1&lt;? super android.database.Cursor,? extends T&gt;) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.internals.AnkoInternals void internalStartService(android.content.Context, java.lang.Class&lt;? extends android.app.Service&gt;, kotlin.Pair&lt;java.lang.String,java.lang.Object&gt;[]) 2'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.internals.AnkoInternals android.content.Intent createIntent(android.content.Context, java.lang.Class&lt;? extends T&gt;, kotlin.Pair&lt;java.lang.String,java.lang.Object&gt;[]) 2'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.internals.AnkoInternals T initiateView(android.content.Context, java.lang.Class&lt;T&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.internals.AnkoInternals void internalStartActivity(android.content.Context, java.lang.Class&lt;? extends android.app.Activity&gt;, kotlin.Pair&lt;java.lang.String,java.lang.Object&gt;[]) 2'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.internals.AnkoInternals INSTANCE$'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.internals.AnkoInternals T useDatabase(android.database.sqlite.SQLiteDatabase, kotlin.jvm.functions.Function1&lt;? super android.database.sqlite.SQLiteDatabase,? extends T&gt;) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.internals.AnkoInternals T initiateView(android.content.Context, java.lang.Class&lt;T&gt;) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.internals.AnkoInternals void internalStartActivity(android.content.Context, java.lang.Class&lt;? extends android.app.Activity&gt;, kotlin.Pair&lt;java.lang.String,java.lang.Object&gt;[]) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.internals.AnkoInternals void internalStartActivity(android.content.Context, java.lang.Class&lt;? extends android.app.Activity&gt;, kotlin.Pair&lt;java.lang.String,java.lang.Object&gt;[]) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.internals.AnkoInternals boolean testConfiguration(android.content.Context, org.jetbrains.anko.ScreenSize, kotlin.Range&lt;java.lang.Integer&gt;, java.lang.String, org.jetbrains.anko.Orientation, java.lang.Boolean, java.lang.Integer, java.lang.Integer, org.jetbrains.anko.UiMode, java.lang.Boolean, java.lang.Boolean, java.lang.Integer) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.internals.AnkoInternals T useDatabase(android.database.sqlite.SQLiteDatabase, kotlin.jvm.functions.Function1&lt;? super android.database.sqlite.SQLiteDatabase,? extends T&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.internals.AnkoInternals android.content.Intent createIntent(android.content.Context, java.lang.Class&lt;? extends T&gt;, kotlin.Pair&lt;java.lang.String,java.lang.Object&gt;[])'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+</root>

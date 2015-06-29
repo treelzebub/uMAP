@@ -1,0 +1,1265 @@
+<root>
+    <item name='org.jetbrains.anko.db.DbPackage.Database.7e588ca3 void dropTable$default(android.database.sqlite.SQLiteDatabase, java.lang.String, boolean, int) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage java.lang.Object[] readColumnsArray(android.database.Cursor) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage int delete(android.database.sqlite.SQLiteDatabase, java.lang.String, java.lang.String, kotlin.Pair&lt;java.lang.String,java.lang.Object&gt;...) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.SqlParsers.349a01f8 org.jetbrains.anko.db.RowParser&lt;java.lang.Float&gt; getFloatParser()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.SqlParserHelpers.17d9afc6 org.jetbrains.anko.db.RowParser&lt;R&gt; rowParser(kotlin.jvm.functions.Function11&lt;? super T1,? super T2,? super T3,? super T4,? super T5,? super T6,? super T7,? super T8,? super T9,? super T10,? super T11,? extends R&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage org.jetbrains.anko.db.RowParser&lt;R&gt; rowParser(kotlin.jvm.functions.Function21&lt;? super T1,? super T2,? super T3,? super T4,? super T5,? super T6,? super T7,? super T8,? super T9,? super T10,? super T11,? super T12,? super T13,? super T14,? super T15,? super T16,? super T17,? super T18,? super T19,? super T20,? super T21,? extends R&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage org.jetbrains.anko.db.RowParser&lt;T&gt; classParser()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.SqlParsers.349a01f8 java.util.List&lt;T&gt; parseList(android.database.Cursor, org.jetbrains.anko.db.RowParser&lt;T&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.SqlParsers.349a01f8 kotlin.Sequence&lt;java.util.Map&lt;java.lang.String,? extends java.lang.Object&gt;&gt; mapStream(android.database.Cursor)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.Database.7e588ca3 long replace(android.database.sqlite.SQLiteDatabase, java.lang.String, kotlin.Pair&lt;java.lang.String,java.lang.Object&gt;...) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage org.jetbrains.anko.db.RowParser&lt;R&gt; rowParser(kotlin.jvm.functions.Function7&lt;? super T1,? super T2,? super T3,? super T4,? super T5,? super T6,? super T7,? extends R&gt;)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.SqlParsers.349a01f8 java.util.List&lt;T&gt; parseList(android.database.Cursor, org.jetbrains.anko.db.MapRowParser&lt;T&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.SqlParserHelpers.17d9afc6.rowParser.19 R parseRow(java.lang.Object[]) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.Database.7e588ca3 long replaceOrThrow(android.database.sqlite.SQLiteDatabase, java.lang.String, kotlin.Pair&lt;java.lang.String,java.lang.Object&gt;...) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage java.lang.String applyArguments(java.lang.String, kotlin.Pair&lt;java.lang.String,java.lang.Object&gt;...)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.SqlParserHelpers.17d9afc6 org.jetbrains.anko.db.RowParser&lt;R&gt; rowParser(kotlin.jvm.functions.Function4&lt;? super T1,? super T2,? super T3,? super T4,? extends R&gt;)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.SqlParserHelpers.17d9afc6 org.jetbrains.anko.db.RowParser&lt;R&gt; rowParser(kotlin.jvm.functions.Function2&lt;? super T1,? super T2,? extends R&gt;)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.SqlParserHelpers.17d9afc6 org.jetbrains.anko.db.RowParser&lt;R&gt; rowParser(kotlin.jvm.functions.Function7&lt;? super T1,? super T2,? super T3,? super T4,? super T5,? super T6,? super T7,? extends R&gt;)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.Database.7e588ca3 void dropTable$default(android.database.sqlite.SQLiteDatabase, java.lang.String, boolean, int) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage int delete(android.database.sqlite.SQLiteDatabase, java.lang.String, java.lang.String, kotlin.Pair&lt;java.lang.String,java.lang.Object&gt;...) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage org.jetbrains.anko.db.RowParser&lt;R&gt; rowParser(kotlin.jvm.functions.Function6&lt;? super T1,? super T2,? super T3,? super T4,? super T5,? super T6,? extends R&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.CursorSequence android.database.Cursor getCursor()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.Database.7e588ca3 org.jetbrains.anko.db.SqlType plus(org.jetbrains.anko.db.SqlType, org.jetbrains.anko.db.SqlTypeModifier) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.Database.7e588ca3 org.jetbrains.anko.db.SqlTypeModifier DEFAULT(java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.Database.7e588ca3 long replaceOrThrow(android.database.sqlite.SQLiteDatabase, java.lang.String, kotlin.Pair&lt;java.lang.String,java.lang.Object&gt;...) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.SqlParserHelpers.17d9afc6 org.jetbrains.anko.db.RowParser&lt;R&gt; rowParser(kotlin.jvm.functions.Function8&lt;? super T1,? super T2,? super T3,? super T4,? super T5,? super T6,? super T7,? super T8,? extends R&gt;)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.CursorIterator android.database.Cursor getCursor()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.Database.7e588ca3 long replace(android.database.sqlite.SQLiteDatabase, java.lang.String, kotlin.Pair&lt;java.lang.String,java.lang.Object&gt;...) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage org.jetbrains.anko.db.RowParser&lt;R&gt; rowParser(kotlin.jvm.functions.Function10&lt;? super T1,? super T2,? super T3,? super T4,? super T5,? super T6,? super T7,? super T8,? super T9,? super T10,? extends R&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.SqlParserHelpers.17d9afc6 org.jetbrains.anko.db.RowParser&lt;R&gt; rowParser(kotlin.jvm.functions.Function12&lt;? super T1,? super T2,? super T3,? super T4,? super T5,? super T6,? super T7,? super T8,? super T9,? super T10,? super T11,? super T12,? extends R&gt;)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage org.jetbrains.anko.db.RowParser&lt;R&gt; rowParser(kotlin.jvm.functions.Function13&lt;? super T1,? super T2,? super T3,? super T4,? super T5,? super T6,? super T7,? super T8,? super T9,? super T10,? super T11,? super T12,? super T13,? extends R&gt;)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.SelectQueryBuilder org.jetbrains.anko.db.SelectQueryBuilder groupBy(java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.SqlParserHelpers.17d9afc6 org.jetbrains.anko.db.RowParser&lt;R&gt; rowParser(kotlin.jvm.functions.Function6&lt;? super T1,? super T2,? super T3,? super T4,? super T5,? super T6,? extends R&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.SqlParserHelpers.17d9afc6.rowParser.1 R parseRow(java.lang.Object[]) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage long replace(android.database.sqlite.SQLiteDatabase, java.lang.String, kotlin.Pair&lt;java.lang.String,java.lang.Object&gt;...) 2'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage org.jetbrains.anko.db.RowParser&lt;R&gt; rowParser(kotlin.jvm.functions.Function15&lt;? super T1,? super T2,? super T3,? super T4,? super T5,? super T6,? super T7,? super T8,? super T9,? super T10,? super T11,? super T12,? super T13,? super T14,? super T15,? extends R&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.SqlParserHelpers.17d9afc6.rowParser.6 R parseRow(java.lang.Object[]) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage org.jetbrains.anko.db.RowParser&lt;R&gt; rowParser(kotlin.jvm.functions.Function11&lt;? super T1,? super T2,? super T3,? super T4,? super T5,? super T6,? super T7,? super T8,? super T9,? super T10,? super T11,? extends R&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage org.jetbrains.anko.db.RowParser&lt;R&gt; rowParser(kotlin.jvm.functions.Function7&lt;? super T1,? super T2,? super T3,? super T4,? super T5,? super T6,? super T7,? extends R&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage org.jetbrains.anko.db.RowParser&lt;java.lang.String&gt; getStringParser()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.Database.7e588ca3 org.jetbrains.anko.db.SqlType plus(org.jetbrains.anko.db.SqlType, org.jetbrains.anko.db.SqlTypeModifier) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage java.lang.String applyArguments(java.lang.String, java.util.Map&lt;java.lang.String,? extends java.lang.Object&gt;) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage T parseOpt(android.database.Cursor, org.jetbrains.anko.db.RowParser&lt;T&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.UpdateQueryBuilder UpdateQueryBuilder(android.database.sqlite.SQLiteDatabase, java.lang.String, kotlin.Pair&lt;java.lang.String,java.lang.Object&gt;[]) 2'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.Database.7e588ca3 org.jetbrains.anko.db.SqlType plus(org.jetbrains.anko.db.SqlType, org.jetbrains.anko.db.SqlTypeModifier)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.SqlParserHelpers.17d9afc6.rowParser.13 R parseRow(java.lang.Object[]) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage long replace(android.database.sqlite.SQLiteDatabase, java.lang.String, kotlin.Pair&lt;java.lang.String,java.lang.Object&gt;...) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage org.jetbrains.anko.db.RowParser&lt;R&gt; rowParser(kotlin.jvm.functions.Function19&lt;? super T1,? super T2,? super T3,? super T4,? super T5,? super T6,? super T7,? super T8,? super T9,? super T10,? super T11,? super T12,? super T13,? super T14,? super T15,? super T16,? super T17,? super T18,? super T19,? extends R&gt;)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.SqlParserHelpers.17d9afc6.rowParser.2 R parseRow(java.lang.Object[]) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage org.jetbrains.anko.db.RowParser&lt;R&gt; rowParser(kotlin.jvm.functions.Function1&lt;? super T1,? extends R&gt;)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage org.jetbrains.anko.db.RowParser&lt;R&gt; rowParser(kotlin.jvm.functions.Function8&lt;? super T1,? super T2,? super T3,? super T4,? super T5,? super T6,? super T7,? super T8,? extends R&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.ManagedSQLiteOpenHelper T use(kotlin.jvm.functions.Function1&lt;? super android.database.sqlite.SQLiteDatabase,? extends T&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.SqlParserHelpers.17d9afc6 org.jetbrains.anko.db.RowParser&lt;R&gt; rowParser(kotlin.jvm.functions.Function6&lt;? super T1,? super T2,? super T3,? super T4,? super T5,? super T6,? extends R&gt;)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.Database.7e588ca3 java.lang.String applyArguments(java.lang.String, kotlin.Pair&lt;java.lang.String,java.lang.Object&gt;...) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.Database.7e588ca3 org.jetbrains.anko.db.SqlType getTEXT()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.Database.7e588ca3 long replace(android.database.sqlite.SQLiteDatabase, java.lang.String, kotlin.Pair&lt;java.lang.String,java.lang.Object&gt;...) 2'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage java.lang.String applyArguments(java.lang.String, java.util.Map&lt;java.lang.String,? extends java.lang.Object&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage T parseOpt(android.database.Cursor, org.jetbrains.anko.db.RowParser&lt;T&gt;) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage long replace(android.database.sqlite.SQLiteDatabase, java.lang.String, kotlin.Pair&lt;java.lang.String,java.lang.Object&gt;...) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.Database.7e588ca3 org.jetbrains.anko.db.SqlType getREAL()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.SqlParserHelpers.17d9afc6 org.jetbrains.anko.db.RowParser&lt;R&gt; rowParser(kotlin.jvm.functions.Function17&lt;? super T1,? super T2,? super T3,? super T4,? super T5,? super T6,? super T7,? super T8,? super T9,? super T10,? super T11,? super T12,? super T13,? super T14,? super T15,? super T16,? super T17,? extends R&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.SelectQueryBuilder T parseOpt(org.jetbrains.anko.db.RowParser&lt;T&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.SqlParsers.349a01f8 kotlin.Sequence&lt;java.lang.Object[]&gt; sequence(android.database.Cursor) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage void dropTable$default(android.database.sqlite.SQLiteDatabase, java.lang.String, boolean, int) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.Database.7e588ca3 org.jetbrains.anko.db.SqlType FOREIGN_KEY(java.lang.String, java.lang.String, java.lang.String) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.Database.7e588ca3 void dropTable(android.database.sqlite.SQLiteDatabase, java.lang.String, boolean) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.Database.7e588ca3 java.lang.String applyArguments(java.lang.String, kotlin.Pair&lt;java.lang.String,java.lang.Object&gt;...) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.SelectQueryBuilder org.jetbrains.anko.db.SelectQueryBuilder column(java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage T parseSingle(android.database.Cursor, org.jetbrains.anko.db.RowParser&lt;T&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage void dropTable$default(android.database.sqlite.SQLiteDatabase, java.lang.String, boolean, int) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage org.jetbrains.anko.db.RowParser&lt;R&gt; rowParser(kotlin.jvm.functions.Function6&lt;? super T1,? super T2,? super T3,? super T4,? super T5,? super T6,? extends R&gt;)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.Database.7e588ca3 org.jetbrains.anko.db.SelectQueryBuilder select(android.database.sqlite.SQLiteDatabase, java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.Database.7e588ca3 org.jetbrains.anko.db.SqlType FOREIGN_KEY(java.lang.String, java.lang.String, java.lang.String) 2'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage org.jetbrains.anko.db.RowParser&lt;java.lang.Short&gt; getShortParser()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage org.jetbrains.anko.db.RowParser&lt;R&gt; rowParser(kotlin.jvm.functions.Function17&lt;? super T1,? super T2,? super T3,? super T4,? super T5,? super T6,? super T7,? super T8,? super T9,? super T10,? super T11,? super T12,? super T13,? super T14,? super T15,? super T16,? super T17,? extends R&gt;)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.Database.7e588ca3 int delete$default(android.database.sqlite.SQLiteDatabase, java.lang.String, java.lang.String, kotlin.Pair[], int) 3'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage org.jetbrains.anko.db.RowParser&lt;R&gt; rowParser(kotlin.jvm.functions.Function9&lt;? super T1,? super T2,? super T3,? super T4,? super T5,? super T6,? super T7,? super T8,? super T9,? extends R&gt;)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.SqlParserHelpers.17d9afc6 org.jetbrains.anko.db.RowParser&lt;R&gt; rowParser(kotlin.jvm.functions.Function12&lt;? super T1,? super T2,? super T3,? super T4,? super T5,? super T6,? super T7,? super T8,? super T9,? super T10,? super T11,? super T12,? extends R&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.SelectQueryBuilder org.jetbrains.anko.db.SelectQueryBuilder having(java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage org.jetbrains.anko.db.UpdateQueryBuilder update(android.database.sqlite.SQLiteDatabase, java.lang.String, kotlin.Pair&lt;java.lang.String,java.lang.Object&gt;...) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.SelectQueryBuilder T parseSingle(org.jetbrains.anko.db.MapRowParser&lt;T&gt;)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage void dropTable(android.database.sqlite.SQLiteDatabase, java.lang.String, boolean) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.SqlParserHelpers.17d9afc6 org.jetbrains.anko.db.RowParser&lt;R&gt; rowParser(kotlin.jvm.functions.Function15&lt;? super T1,? super T2,? super T3,? super T4,? super T5,? super T6,? super T7,? super T8,? super T9,? super T10,? super T11,? super T12,? super T13,? super T14,? super T15,? extends R&gt;)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage org.jetbrains.anko.db.SqlTypeModifier DEFAULT(java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.SqlParsers.349a01f8 kotlin.Sequence&lt;java.lang.Object[]&gt; sequence(android.database.Cursor)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.CursorIterator java.lang.Object next()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage org.jetbrains.anko.db.UpdateQueryBuilder update(android.database.sqlite.SQLiteDatabase, java.lang.String, kotlin.Pair&lt;java.lang.String,java.lang.Object&gt;...)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.SqlType java.lang.String getName()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.SqlParserHelpers.17d9afc6 org.jetbrains.anko.db.RowParser&lt;R&gt; rowParser(kotlin.jvm.functions.Function18&lt;? super T1,? super T2,? super T3,? super T4,? super T5,? super T6,? super T7,? super T8,? super T9,? super T10,? super T11,? super T12,? super T13,? super T14,? super T15,? super T16,? super T17,? super T18,? extends R&gt;)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.SingleColumnParser T parseRow(java.lang.Object[]) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage org.jetbrains.anko.db.RowParser&lt;byte[]&gt; getBlobParser()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage org.jetbrains.anko.db.UpdateQueryBuilder update(android.database.sqlite.SQLiteDatabase, java.lang.String, kotlin.Pair&lt;java.lang.String,java.lang.Object&gt;...) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.SqlParserHelpers.17d9afc6.rowParser.11 R parseRow(java.lang.Object[]) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage org.jetbrains.anko.db.RowParser&lt;R&gt; rowParser(kotlin.jvm.functions.Function12&lt;? super T1,? super T2,? super T3,? super T4,? super T5,? super T6,? super T7,? super T8,? super T9,? super T10,? super T11,? super T12,? extends R&gt;)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage org.jetbrains.anko.db.RowParser&lt;R&gt; rowParser(kotlin.jvm.functions.Function14&lt;? super T1,? super T2,? super T3,? super T4,? super T5,? super T6,? super T7,? super T8,? super T9,? super T10,? super T11,? super T12,? super T13,? super T14,? extends R&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.SelectQueryBuilder T parseOpt(org.jetbrains.anko.db.MapRowParser&lt;T&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.Database.7e588ca3 org.jetbrains.anko.db.SqlType FOREIGN_KEY(java.lang.String, java.lang.String, java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.SqlParserHelpers.17d9afc6.rowParser.18 R parseRow(java.lang.Object[]) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.SqlParserHelpers.17d9afc6 org.jetbrains.anko.db.RowParser&lt;R&gt; rowParser(kotlin.jvm.functions.Function18&lt;? super T1,? super T2,? super T3,? super T4,? super T5,? super T6,? super T7,? super T8,? super T9,? super T10,? super T11,? super T12,? super T13,? super T14,? super T15,? super T16,? super T17,? super T18,? extends R&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage T parseSingle(android.database.Cursor, org.jetbrains.anko.db.RowParser&lt;T&gt;) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage int delete$default(android.database.sqlite.SQLiteDatabase, java.lang.String, java.lang.String, kotlin.Pair[], int) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.SqlTypeModifierImpl SqlTypeModifierImpl(java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.SqlParserHelpers.17d9afc6 org.jetbrains.anko.db.RowParser&lt;R&gt; rowParser(kotlin.jvm.functions.Function21&lt;? super T1,? super T2,? super T3,? super T4,? super T5,? super T6,? super T7,? super T8,? super T9,? super T10,? super T11,? super T12,? super T13,? super T14,? super T15,? super T16,? super T17,? super T18,? super T19,? super T20,? super T21,? extends R&gt;)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.SqlParsers.349a01f8 java.util.List&lt;T&gt; parseList(android.database.Cursor, org.jetbrains.anko.db.MapRowParser&lt;T&gt;) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.SqlParserHelpers.17d9afc6 org.jetbrains.anko.db.RowParser&lt;R&gt; rowParser(kotlin.jvm.functions.Function14&lt;? super T1,? super T2,? super T3,? super T4,? super T5,? super T6,? super T7,? super T8,? super T9,? super T10,? super T11,? super T12,? super T13,? super T14,? extends R&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.Database.7e588ca3 void dropTable(android.database.sqlite.SQLiteDatabase, java.lang.String, boolean) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage org.jetbrains.anko.db.RowParser&lt;java.lang.Integer&gt; getIntParser()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.SqlParserHelpers.17d9afc6 org.jetbrains.anko.db.RowParser&lt;R&gt; rowParser(kotlin.jvm.functions.Function20&lt;? super T1,? super T2,? super T3,? super T4,? super T5,? super T6,? super T7,? super T8,? super T9,? super T10,? super T11,? super T12,? super T13,? super T14,? super T15,? super T16,? super T17,? super T18,? super T19,? super T20,? extends R&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage org.jetbrains.anko.db.RowParser&lt;R&gt; rowParser(kotlin.jvm.functions.Function9&lt;? super T1,? super T2,? super T3,? super T4,? super T5,? super T6,? super T7,? super T8,? super T9,? extends R&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage int delete$default(android.database.sqlite.SQLiteDatabase, java.lang.String, java.lang.String, kotlin.Pair[], int) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.Database.7e588ca3 org.jetbrains.anko.db.SelectQueryBuilder select(android.database.sqlite.SQLiteDatabase, java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage void createTable(android.database.sqlite.SQLiteDatabase, java.lang.String, boolean, kotlin.Pair&lt;java.lang.String,org.jetbrains.anko.db.SqlType&gt;...) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.SqlParserHelpers.17d9afc6 org.jetbrains.anko.db.RowParser&lt;R&gt; rowParser(kotlin.jvm.functions.Function14&lt;? super T1,? super T2,? super T3,? super T4,? super T5,? super T6,? super T7,? super T8,? super T9,? super T10,? super T11,? super T12,? super T13,? super T14,? extends R&gt;)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage org.jetbrains.anko.db.SqlType FOREIGN_KEY(java.lang.String, java.lang.String, java.lang.String) 2'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.SqlParserHelpers.17d9afc6.rowParser.12 R parseRow(java.lang.Object[]) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.SqlParserHelpers.17d9afc6 org.jetbrains.anko.db.RowParser&lt;R&gt; rowParser(kotlin.jvm.functions.Function8&lt;? super T1,? super T2,? super T3,? super T4,? super T5,? super T6,? super T7,? super T8,? extends R&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage org.jetbrains.anko.db.RowParser&lt;R&gt; rowParser(kotlin.jvm.functions.Function15&lt;? super T1,? super T2,? super T3,? super T4,? super T5,? super T6,? super T7,? super T8,? super T9,? super T10,? super T11,? super T12,? super T13,? super T14,? super T15,? extends R&gt;)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.SqlParsers.349a01f8 org.jetbrains.anko.db.RowParser&lt;java.lang.Short&gt; getShortParser()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.CursorMapSequence java.util.Iterator&lt;java.util.Map&lt;java.lang.String,? extends java.lang.Object&gt;&gt; iterator()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.SqlParsers.349a01f8 org.jetbrains.anko.db.RowParser&lt;T&gt; classParser()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage int delete$default(android.database.sqlite.SQLiteDatabase, java.lang.String, java.lang.String, kotlin.Pair[], int) 2'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.Database.7e588ca3 org.jetbrains.anko.db.SelectQueryBuilder select(android.database.sqlite.SQLiteDatabase, java.lang.String) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage org.jetbrains.anko.db.SqlType FOREIGN_KEY(java.lang.String, java.lang.String, java.lang.String) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage org.jetbrains.anko.db.RowParser&lt;R&gt; rowParser(kotlin.jvm.functions.Function5&lt;? super T1,? super T2,? super T3,? super T4,? super T5,? extends R&gt;)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.SelectQueryBuilder org.jetbrains.anko.db.SelectQueryBuilder orderBy$default(org.jetbrains.anko.db.SelectQueryBuilder, java.lang.String, org.jetbrains.anko.db.SqlOrderDirection, int) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage org.jetbrains.anko.db.SqlType plus(org.jetbrains.anko.db.SqlType, org.jetbrains.anko.db.SqlTypeModifier) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage org.jetbrains.anko.db.SqlType getTEXT()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.Database.7e588ca3 void transaction(android.database.sqlite.SQLiteDatabase, kotlin.jvm.functions.Function1&lt;? super android.database.sqlite.SQLiteDatabase,? extends kotlin.Unit&gt;) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.CursorMapIterator android.database.Cursor getCursor()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage org.jetbrains.anko.db.SelectQueryBuilder select(android.database.sqlite.SQLiteDatabase, java.lang.String) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.SqlParserHelpers.17d9afc6 org.jetbrains.anko.db.RowParser&lt;R&gt; rowParser(kotlin.jvm.functions.Function7&lt;? super T1,? super T2,? super T3,? super T4,? super T5,? super T6,? super T7,? extends R&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage org.jetbrains.anko.db.RowParser&lt;R&gt; rowParser(kotlin.jvm.functions.Function16&lt;? super T1,? super T2,? super T3,? super T4,? super T5,? super T6,? super T7,? super T8,? super T9,? super T10,? super T11,? super T12,? super T13,? super T14,? super T15,? super T16,? extends R&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.SelectQueryBuilder T parseSingle(org.jetbrains.anko.db.RowParser&lt;T&gt;)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage kotlin.Sequence&lt;java.lang.Object[]&gt; stream(android.database.Cursor) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.SqlParserHelpers.17d9afc6 org.jetbrains.anko.db.RowParser&lt;R&gt; rowParser(kotlin.jvm.functions.Function3&lt;? super T1,? super T2,? super T3,? extends R&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage int delete$default(android.database.sqlite.SQLiteDatabase, java.lang.String, java.lang.String, kotlin.Pair[], int) 3'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage org.jetbrains.anko.db.SelectQueryBuilder select(android.database.sqlite.SQLiteDatabase, java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.SelectQueryBuilder org.jetbrains.anko.db.SelectQueryBuilder orderBy$default(org.jetbrains.anko.db.SelectQueryBuilder, java.lang.String, org.jetbrains.anko.db.SqlOrderDirection, int) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.SqlOrderDirection DESC'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage org.jetbrains.anko.db.RowParser&lt;R&gt; rowParser(kotlin.jvm.functions.Function3&lt;? super T1,? super T2,? super T3,? extends R&gt;)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage kotlin.Sequence&lt;java.lang.Object[]&gt; sequence(android.database.Cursor) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.SqlParserHelpers.17d9afc6 org.jetbrains.anko.db.RowParser&lt;R&gt; rowParser(kotlin.jvm.functions.Function20&lt;? super T1,? super T2,? super T3,? super T4,? super T5,? super T6,? super T7,? super T8,? super T9,? super T10,? super T11,? super T12,? super T13,? super T14,? super T15,? super T16,? super T17,? super T18,? super T19,? super T20,? extends R&gt;)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.SelectQueryBuilder org.jetbrains.anko.db.SelectQueryBuilder column(java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.SqlParserHelpers.17d9afc6 org.jetbrains.anko.db.RowParser&lt;R&gt; rowParser(kotlin.jvm.functions.Function5&lt;? super T1,? super T2,? super T3,? super T4,? super T5,? extends R&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.SqlParsers.349a01f8 java.util.List&lt;T&gt; parseList(android.database.Cursor, org.jetbrains.anko.db.RowParser&lt;T&gt;)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage void createTable(android.database.sqlite.SQLiteDatabase, java.lang.String, boolean, kotlin.Pair&lt;java.lang.String,org.jetbrains.anko.db.SqlType&gt;...) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.Database.7e588ca3 org.jetbrains.anko.db.SqlTypeModifier getAUTOINCREMENT()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.SqlParserHelpers.17d9afc6.rowParser.17 R parseRow(java.lang.Object[]) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.SelectQueryBuilder org.jetbrains.anko.db.SelectQueryBuilder orderBy$default(org.jetbrains.anko.db.SelectQueryBuilder, java.lang.String, org.jetbrains.anko.db.SqlOrderDirection, int) 2'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.SelectQueryBuilder org.jetbrains.anko.db.SelectQueryBuilder where(java.lang.String, kotlin.Pair&lt;java.lang.String,java.lang.Object&gt;...)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.CursorMapIterator java.util.Map&lt;java.lang.String,java.lang.Object&gt; next()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.SqlParserHelpers.17d9afc6 org.jetbrains.anko.db.RowParser&lt;R&gt; rowParser(kotlin.jvm.functions.Function4&lt;? super T1,? super T2,? super T3,? super T4,? extends R&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage org.jetbrains.anko.db.RowParser&lt;R&gt; rowParser(kotlin.jvm.functions.Function4&lt;? super T1,? super T2,? super T3,? super T4,? extends R&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.Database.7e588ca3 org.jetbrains.anko.db.SqlTypeModifier getUNIQUE()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage kotlin.Sequence&lt;java.lang.Object[]&gt; sequence(android.database.Cursor)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.Database.7e588ca3 java.lang.String applyArguments(java.lang.String, java.util.Map&lt;java.lang.String,? extends java.lang.Object&gt;)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.SelectQueryBuilder SelectQueryBuilder(android.database.sqlite.SQLiteDatabase, java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage long insertOrThrow(android.database.sqlite.SQLiteDatabase, java.lang.String, kotlin.Pair&lt;java.lang.String,java.lang.Object&gt;...) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.Database.7e588ca3 int delete(android.database.sqlite.SQLiteDatabase, java.lang.String, java.lang.String, kotlin.Pair&lt;java.lang.String,java.lang.Object&gt;...) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage java.lang.String applyArguments(java.lang.String, kotlin.Pair&lt;java.lang.String,java.lang.Object&gt;...) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.Database.7e588ca3 org.jetbrains.anko.db.UpdateQueryBuilder update(android.database.sqlite.SQLiteDatabase, java.lang.String, kotlin.Pair&lt;java.lang.String,java.lang.Object&gt;...) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage java.util.Map&lt;java.lang.String,java.lang.Object&gt; readColumnsMap(android.database.Cursor)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.SqlParserHelpers.17d9afc6 org.jetbrains.anko.db.RowParser&lt;R&gt; rowParser(kotlin.jvm.functions.Function19&lt;? super T1,? super T2,? super T3,? super T4,? super T5,? super T6,? super T7,? super T8,? super T9,? super T10,? super T11,? super T12,? super T13,? super T14,? super T15,? super T16,? super T17,? super T18,? super T19,? extends R&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage org.jetbrains.anko.db.RowParser&lt;java.lang.Double&gt; getDoubleParser()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.SelectQueryBuilder T parseSingle(org.jetbrains.anko.db.RowParser&lt;T&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage org.jetbrains.anko.db.RowParser&lt;R&gt; rowParser(kotlin.jvm.functions.Function18&lt;? super T1,? super T2,? super T3,? super T4,? super T5,? super T6,? super T7,? super T8,? super T9,? super T10,? super T11,? super T12,? super T13,? super T14,? super T15,? super T16,? super T17,? super T18,? extends R&gt;)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.SelectQueryBuilder org.jetbrains.anko.db.SelectQueryBuilder whereSupport(java.lang.String, java.lang.String...)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.SqlParserHelpers.17d9afc6.rowParser.21 R parseRow(java.lang.Object[]) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage T parseSingle(android.database.Cursor, org.jetbrains.anko.db.MapRowParser&lt;T&gt;) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.SelectQueryBuilder SelectQueryBuilder(android.database.sqlite.SQLiteDatabase, java.lang.String) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage org.jetbrains.anko.db.SqlTypeModifier getPRIMARY_KEY()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.SqlParsers.349a01f8 kotlin.Sequence&lt;java.lang.Object[]&gt; stream(android.database.Cursor) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage long insertOrThrow(android.database.sqlite.SQLiteDatabase, java.lang.String, kotlin.Pair&lt;java.lang.String,java.lang.Object&gt;...) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage kotlin.Sequence&lt;java.util.Map&lt;java.lang.String,? extends java.lang.Object&gt;&gt; mapSequence(android.database.Cursor)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage void createTable(android.database.sqlite.SQLiteDatabase, java.lang.String, boolean, kotlin.Pair&lt;java.lang.String,org.jetbrains.anko.db.SqlType&gt;...) 3'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.Database.7e588ca3 org.jetbrains.anko.db.UpdateQueryBuilder update(android.database.sqlite.SQLiteDatabase, java.lang.String, kotlin.Pair&lt;java.lang.String,java.lang.Object&gt;...) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.SqlParsers.349a01f8.classParser.1 T parseRow(java.lang.Object[]) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.SqlParsers.349a01f8 T parseSingle(android.database.Cursor, org.jetbrains.anko.db.MapRowParser&lt;T&gt;)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.UpdateQueryBuilder org.jetbrains.anko.db.UpdateQueryBuilder where(java.lang.String, kotlin.Pair&lt;java.lang.String,java.lang.Object&gt;...)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.SelectQueryBuilder org.jetbrains.anko.db.SelectQueryBuilder orderBy(java.lang.String, org.jetbrains.anko.db.SqlOrderDirection) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.Database.7e588ca3 void transaction(android.database.sqlite.SQLiteDatabase, kotlin.jvm.functions.Function1&lt;? super android.database.sqlite.SQLiteDatabase,? extends kotlin.Unit&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage T parseSingle(android.database.Cursor, org.jetbrains.anko.db.MapRowParser&lt;T&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage int delete(android.database.sqlite.SQLiteDatabase, java.lang.String, java.lang.String, kotlin.Pair&lt;java.lang.String,java.lang.Object&gt;...) 2'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.Database.7e588ca3 java.lang.String escape(java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.Database.7e588ca3 int delete(android.database.sqlite.SQLiteDatabase, java.lang.String, java.lang.String, kotlin.Pair&lt;java.lang.String,java.lang.Object&gt;...) 2'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage java.util.List&lt;T&gt; parseList(android.database.Cursor, org.jetbrains.anko.db.MapRowParser&lt;T&gt;) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage org.jetbrains.anko.db.SqlType plus(org.jetbrains.anko.db.SqlType, org.jetbrains.anko.db.SqlTypeModifier)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.ManagedSQLiteOpenHelper ManagedSQLiteOpenHelper(android.content.Context, java.lang.String, android.database.sqlite.SQLiteDatabase.CursorFactory, int) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.UpdateQueryBuilder org.jetbrains.anko.db.UpdateQueryBuilder where(java.lang.String, kotlin.Pair&lt;java.lang.String,java.lang.Object&gt;...) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.MapRowParser T parseRow(java.util.Map&lt;java.lang.String,? extends java.lang.Object&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage java.lang.Object[] readColumnsArray(android.database.Cursor)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage org.jetbrains.anko.db.SelectQueryBuilder select(android.database.sqlite.SQLiteDatabase, java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.SelectQueryBuilder org.jetbrains.anko.db.SelectQueryBuilder having(java.lang.String, kotlin.Pair&lt;java.lang.String,java.lang.Object&gt;...)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.SqlTypeImpl SqlTypeImpl(java.lang.String, java.lang.String, int, kotlin.jvm.internal.DefaultConstructorMarker) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.SelectQueryBuilder org.jetbrains.anko.db.SelectQueryBuilder orderBy(java.lang.String, org.jetbrains.anko.db.SqlOrderDirection) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage int delete(android.database.sqlite.SQLiteDatabase, java.lang.String, java.lang.String, kotlin.Pair&lt;java.lang.String,java.lang.Object&gt;...) 3'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.UpdateQueryBuilder org.jetbrains.anko.db.UpdateQueryBuilder where(java.lang.String, kotlin.Pair&lt;java.lang.String,java.lang.Object&gt;...) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.CursorSequence java.util.Iterator&lt;java.lang.Object[]&gt; iterator()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.Database.7e588ca3 org.jetbrains.anko.db.UpdateQueryBuilder update(android.database.sqlite.SQLiteDatabase, java.lang.String, kotlin.Pair&lt;java.lang.String,java.lang.Object&gt;...) 2'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage org.jetbrains.anko.db.RowParser&lt;R&gt; rowParser(kotlin.jvm.functions.Function1&lt;? super T1,? extends R&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage org.jetbrains.anko.db.RowParser&lt;R&gt; rowParser(kotlin.jvm.functions.Function11&lt;? super T1,? super T2,? super T3,? super T4,? super T5,? super T6,? super T7,? super T8,? super T9,? super T10,? super T11,? extends R&gt;)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage java.lang.String applyArguments(java.lang.String, kotlin.Pair&lt;java.lang.String,java.lang.Object&gt;...) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.Database.7e588ca3 int delete(android.database.sqlite.SQLiteDatabase, java.lang.String, java.lang.String, kotlin.Pair&lt;java.lang.String,java.lang.Object&gt;...) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage java.util.List&lt;T&gt; parseList(android.database.Cursor, org.jetbrains.anko.db.MapRowParser&lt;T&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.UpdateQueryBuilder org.jetbrains.anko.db.UpdateQueryBuilder whereSupport(java.lang.String, java.lang.String...) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage T parseSingle(android.database.Cursor, org.jetbrains.anko.db.RowParser&lt;T&gt;)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.Database.7e588ca3 int delete(android.database.sqlite.SQLiteDatabase, java.lang.String, java.lang.String, kotlin.Pair&lt;java.lang.String,java.lang.Object&gt;...) 3'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.Database.7e588ca3 org.jetbrains.anko.db.SqlTypeModifier getPRIMARY_KEY()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.SqlParsers.349a01f8 T parseSingle(android.database.Cursor, org.jetbrains.anko.db.RowParser&lt;T&gt;)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.SqlParsers.349a01f8 java.lang.Object[] readColumnsArray(android.database.Cursor)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.UpdateQueryBuilder org.jetbrains.anko.db.UpdateQueryBuilder whereSupport(java.lang.String, java.lang.String...)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage org.jetbrains.anko.db.SelectQueryBuilder select(android.database.sqlite.SQLiteDatabase, java.lang.String, java.lang.String...) 2'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.SqlParsers.349a01f8 T parseSingle(android.database.Cursor, org.jetbrains.anko.db.RowParser&lt;T&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage java.util.List&lt;T&gt; parseList(android.database.Cursor, org.jetbrains.anko.db.RowParser&lt;T&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.CursorSequence CursorSequence(android.database.Cursor) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.SqlTypeModifier java.lang.String getModifier()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.UpdateQueryBuilder java.lang.String getTableName()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage org.jetbrains.anko.db.RowParser&lt;R&gt; rowParser(kotlin.jvm.functions.Function20&lt;? super T1,? super T2,? super T3,? super T4,? super T5,? super T6,? super T7,? super T8,? super T9,? super T10,? super T11,? super T12,? super T13,? super T14,? super T15,? super T16,? super T17,? super T18,? super T19,? super T20,? extends R&gt;)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.SqlTypeModifierImpl java.lang.String toString()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage org.jetbrains.anko.db.RowParser&lt;R&gt; rowParser(kotlin.jvm.functions.Function13&lt;? super T1,? super T2,? super T3,? super T4,? super T5,? super T6,? super T7,? super T8,? super T9,? super T10,? super T11,? super T12,? super T13,? extends R&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage org.jetbrains.anko.db.RowParser&lt;R&gt; rowParser(kotlin.jvm.functions.Function18&lt;? super T1,? super T2,? super T3,? super T4,? super T5,? super T6,? super T7,? super T8,? super T9,? super T10,? super T11,? super T12,? super T13,? super T14,? super T15,? super T16,? super T17,? super T18,? extends R&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.SqlParsers.349a01f8 org.jetbrains.anko.db.RowParser&lt;java.lang.Long&gt; getLongParser()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.SqlParserHelpers.17d9afc6.rowParser.16 R parseRow(java.lang.Object[]) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.UpdateQueryBuilder org.jetbrains.anko.db.UpdateQueryBuilder whereSupport(java.lang.String, java.lang.String...) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.SqlParserHelpers.17d9afc6 org.jetbrains.anko.db.RowParser&lt;R&gt; rowParser(kotlin.jvm.functions.Function10&lt;? super T1,? super T2,? super T3,? super T4,? super T5,? super T6,? super T7,? super T8,? super T9,? super T10,? extends R&gt;)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage void createTable$default(android.database.sqlite.SQLiteDatabase, java.lang.String, boolean, kotlin.Pair[], int) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage org.jetbrains.anko.db.SelectQueryBuilder select(android.database.sqlite.SQLiteDatabase, java.lang.String, java.lang.String...) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.SelectQueryBuilder org.jetbrains.anko.db.SelectQueryBuilder limit(int, int)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.SqlParsers.349a01f8 T parseSingle(android.database.Cursor, org.jetbrains.anko.db.RowParser&lt;T&gt;) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage java.util.List&lt;T&gt; parseList(android.database.Cursor, org.jetbrains.anko.db.RowParser&lt;T&gt;) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage org.jetbrains.anko.db.RowParser&lt;R&gt; rowParser(kotlin.jvm.functions.Function5&lt;? super T1,? super T2,? super T3,? super T4,? super T5,? extends R&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.SqlParserHelpers.17d9afc6.rowParser.15 R parseRow(java.lang.Object[]) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.SelectQueryBuilder org.jetbrains.anko.db.SelectQueryBuilder limit(int)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage org.jetbrains.anko.db.RowParser&lt;R&gt; rowParser(kotlin.jvm.functions.Function17&lt;? super T1,? super T2,? super T3,? super T4,? super T5,? super T6,? super T7,? super T8,? super T9,? super T10,? super T11,? super T12,? super T13,? super T14,? super T15,? super T16,? super T17,? extends R&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage org.jetbrains.anko.db.SqlType getBLOB()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.SqlParserHelpers.17d9afc6 org.jetbrains.anko.db.RowParser&lt;R&gt; rowParser(kotlin.jvm.functions.Function1&lt;? super T1,? extends R&gt;)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage org.jetbrains.anko.db.RowParser&lt;R&gt; rowParser(kotlin.jvm.functions.Function22&lt;? super T1,? super T2,? super T3,? super T4,? super T5,? super T6,? super T7,? super T8,? super T9,? super T10,? super T11,? super T12,? super T13,? super T14,? super T15,? super T16,? super T17,? super T18,? super T19,? super T20,? super T21,? super T22,? extends R&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage T parseOpt(android.database.Cursor, org.jetbrains.anko.db.MapRowParser&lt;T&gt;) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.Database.7e588ca3 java.lang.String applyArguments(java.lang.String, kotlin.Pair&lt;java.lang.String,java.lang.Object&gt;...)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.CursorMapIterator java.lang.Object next()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage org.jetbrains.anko.db.SqlType getINTEGER()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage org.jetbrains.anko.db.RowParser&lt;R&gt; rowParser(kotlin.jvm.functions.Function20&lt;? super T1,? super T2,? super T3,? super T4,? super T5,? super T6,? super T7,? super T8,? super T9,? super T10,? super T11,? super T12,? super T13,? super T14,? super T15,? super T16,? super T17,? super T18,? super T19,? super T20,? extends R&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.SelectQueryBuilder org.jetbrains.anko.db.SelectQueryBuilder where(java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.SqlParsers.349a01f8 org.jetbrains.anko.db.RowParser&lt;java.lang.Integer&gt; getIntParser()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage org.jetbrains.anko.db.SqlType getREAL()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage long insert(android.database.sqlite.SQLiteDatabase, java.lang.String, kotlin.Pair&lt;java.lang.String,java.lang.Object&gt;...) 2'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.Database.7e588ca3 org.jetbrains.anko.db.UpdateQueryBuilder update(android.database.sqlite.SQLiteDatabase, java.lang.String, kotlin.Pair&lt;java.lang.String,java.lang.Object&gt;...)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage org.jetbrains.anko.db.SqlTypeModifier getAUTOINCREMENT()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage long replaceOrThrow(android.database.sqlite.SQLiteDatabase, java.lang.String, kotlin.Pair&lt;java.lang.String,java.lang.Object&gt;...) 2'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.SelectQueryBuilder org.jetbrains.anko.db.SelectQueryBuilder orderBy(java.lang.String, org.jetbrains.anko.db.SqlOrderDirection)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.Database.7e588ca3 org.jetbrains.anko.db.SqlType FOREIGN_KEY(java.lang.String, java.lang.String, java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.UpdateQueryBuilder UpdateQueryBuilder(android.database.sqlite.SQLiteDatabase, java.lang.String, kotlin.Pair&lt;java.lang.String,java.lang.Object&gt;[]) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.SqlParsers.349a01f8 kotlin.Sequence&lt;java.util.Map&lt;java.lang.String,? extends java.lang.Object&gt;&gt; mapSequence(android.database.Cursor) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage long insertOrThrow(android.database.sqlite.SQLiteDatabase, java.lang.String, kotlin.Pair&lt;java.lang.String,java.lang.Object&gt;...) 2'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage T parseOpt(android.database.Cursor, org.jetbrains.anko.db.MapRowParser&lt;T&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.SqlParserHelpers.17d9afc6 org.jetbrains.anko.db.RowParser&lt;R&gt; rowParser(kotlin.jvm.functions.Function17&lt;? super T1,? super T2,? super T3,? super T4,? super T5,? super T6,? super T7,? super T8,? super T9,? super T10,? super T11,? super T12,? super T13,? super T14,? super T15,? super T16,? super T17,? extends R&gt;)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.SqlParserHelpers.17d9afc6.rowParser.14 R parseRow(java.lang.Object[]) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.Database.7e588ca3 org.jetbrains.anko.db.SqlTypeModifier getNOT_NULL()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.SqlParserHelpers.17d9afc6 org.jetbrains.anko.db.RowParser&lt;R&gt; rowParser(kotlin.jvm.functions.Function5&lt;? super T1,? super T2,? super T3,? super T4,? super T5,? extends R&gt;)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage android.content.ContentValues toContentValues(kotlin.Pair&lt;java.lang.String,java.lang.Object&gt;[])'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.Database.7e588ca3 void createTable$default(android.database.sqlite.SQLiteDatabase, java.lang.String, boolean, kotlin.Pair[], int) 3'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.ManagedSQLiteOpenHelper ManagedSQLiteOpenHelper(android.content.Context, java.lang.String, android.database.sqlite.SQLiteDatabase.CursorFactory, int) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage long replaceOrThrow(android.database.sqlite.SQLiteDatabase, java.lang.String, kotlin.Pair&lt;java.lang.String,java.lang.Object&gt;...) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.UpdateQueryBuilder UpdateQueryBuilder(android.database.sqlite.SQLiteDatabase, java.lang.String, kotlin.Pair&lt;java.lang.String,java.lang.Object&gt;[]) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.Database.7e588ca3 long insertOrThrow(android.database.sqlite.SQLiteDatabase, java.lang.String, kotlin.Pair&lt;java.lang.String,java.lang.Object&gt;...) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.Database.7e588ca3 org.jetbrains.anko.db.SqlType getNULL()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage void createTable$default(android.database.sqlite.SQLiteDatabase, java.lang.String, boolean, kotlin.Pair[], int) 3'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage org.jetbrains.anko.db.SqlType getNULL()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.SelectQueryBuilder org.jetbrains.anko.db.SelectQueryBuilder distinct()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.SelectQueryBuilder org.jetbrains.anko.db.SelectQueryBuilder having(java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.SelectQueryBuilder java.util.List&lt;T&gt; parseList(org.jetbrains.anko.db.MapRowParser&lt;T&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage org.jetbrains.anko.db.SqlTypeModifier getNOT_NULL()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.Database.7e588ca3 int delete$default(android.database.sqlite.SQLiteDatabase, java.lang.String, java.lang.String, kotlin.Pair[], int) 2'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage long insert(android.database.sqlite.SQLiteDatabase, java.lang.String, kotlin.Pair&lt;java.lang.String,java.lang.Object&gt;...) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage java.lang.String escape(java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage org.jetbrains.anko.db.RowParser&lt;R&gt; rowParser(kotlin.jvm.functions.Function22&lt;? super T1,? super T2,? super T3,? super T4,? super T5,? super T6,? super T7,? super T8,? super T9,? super T10,? super T11,? super T12,? super T13,? super T14,? super T15,? super T16,? super T17,? super T18,? super T19,? super T20,? super T21,? super T22,? extends R&gt;)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.Database.7e588ca3 long insertOrThrow(android.database.sqlite.SQLiteDatabase, java.lang.String, kotlin.Pair&lt;java.lang.String,java.lang.Object&gt;...) 2'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.SqlTypeImpl java.lang.String toString()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.Database.7e588ca3 void createTable$default(android.database.sqlite.SQLiteDatabase, java.lang.String, boolean, kotlin.Pair[], int) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.SqlParserHelpers.17d9afc6 org.jetbrains.anko.db.RowParser&lt;R&gt; rowParser(kotlin.jvm.functions.Function1&lt;? super T1,? extends R&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage java.util.regex.Pattern getARG_PATTERN()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage org.jetbrains.anko.db.RowParser&lt;R&gt; rowParser(kotlin.jvm.functions.Function14&lt;? super T1,? super T2,? super T3,? super T4,? super T5,? super T6,? super T7,? super T8,? super T9,? super T10,? super T11,? super T12,? super T13,? super T14,? extends R&gt;)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.Database.7e588ca3 int delete$default(android.database.sqlite.SQLiteDatabase, java.lang.String, java.lang.String, kotlin.Pair[], int) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.RowParser T parseRow(java.lang.Object[]) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.SelectQueryBuilder android.database.sqlite.SQLiteDatabase getDb()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage long insert(android.database.sqlite.SQLiteDatabase, java.lang.String, kotlin.Pair&lt;java.lang.String,java.lang.Object&gt;...) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.SelectQueryBuilder org.jetbrains.anko.db.SelectQueryBuilder having(java.lang.String, kotlin.Pair&lt;java.lang.String,java.lang.Object&gt;...) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.SelectQueryBuilder org.jetbrains.anko.db.SelectQueryBuilder where(java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.Database.7e588ca3 void createTable$default(android.database.sqlite.SQLiteDatabase, java.lang.String, boolean, kotlin.Pair[], int) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage java.util.List&lt;T&gt; parseList(android.database.Cursor, org.jetbrains.anko.db.RowParser&lt;T&gt;)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.SqlParserHelpers.17d9afc6 org.jetbrains.anko.db.RowParser&lt;R&gt; rowParser(kotlin.jvm.functions.Function10&lt;? super T1,? super T2,? super T3,? super T4,? super T5,? super T6,? super T7,? super T8,? super T9,? super T10,? extends R&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage void createTable$default(android.database.sqlite.SQLiteDatabase, java.lang.String, boolean, kotlin.Pair[], int) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.Database.7e588ca3 java.lang.String applyArguments(java.lang.String, java.util.Map&lt;java.lang.String,? extends java.lang.Object&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage org.jetbrains.anko.db.SelectQueryBuilder select(android.database.sqlite.SQLiteDatabase, java.lang.String, java.lang.String...) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.SqlParserHelpers.17d9afc6 org.jetbrains.anko.db.RowParser&lt;R&gt; rowParser(kotlin.jvm.functions.Function3&lt;? super T1,? super T2,? super T3,? extends R&gt;)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.SelectQueryBuilder java.lang.String getTableName()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.SqlParsers.349a01f8 java.lang.Object[] readColumnsArray(android.database.Cursor) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.Database.7e588ca3 org.jetbrains.anko.db.SqlTypeModifier DEFAULT(java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage kotlin.Sequence&lt;java.util.Map&lt;java.lang.String,? extends java.lang.Object&gt;&gt; mapSequence(android.database.Cursor) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage org.jetbrains.anko.db.RowParser&lt;R&gt; rowParser(kotlin.jvm.functions.Function19&lt;? super T1,? super T2,? super T3,? super T4,? super T5,? super T6,? super T7,? super T8,? super T9,? super T10,? super T11,? super T12,? super T13,? super T14,? super T15,? super T16,? super T17,? super T18,? super T19,? extends R&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.Database.7e588ca3 int delete$default(android.database.sqlite.SQLiteDatabase, java.lang.String, java.lang.String, kotlin.Pair[], int) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage org.jetbrains.anko.db.RowParser&lt;R&gt; rowParser(kotlin.jvm.functions.Function4&lt;? super T1,? super T2,? super T3,? super T4,? extends R&gt;)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.UpdateQueryBuilder kotlin.Pair&lt;java.lang.String,java.lang.Object&gt;[] getValues()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.SelectQueryBuilder org.jetbrains.anko.db.SelectQueryBuilder having(java.lang.String, kotlin.Pair&lt;java.lang.String,java.lang.Object&gt;...) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.SqlParserHelpers.17d9afc6.rowParser.9 R parseRow(java.lang.Object[]) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.Database.7e588ca3 java.lang.String applyArguments(java.lang.String, java.util.Map&lt;java.lang.String,? extends java.lang.Object&gt;) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.Database.7e588ca3 long insertOrThrow(android.database.sqlite.SQLiteDatabase, java.lang.String, kotlin.Pair&lt;java.lang.String,java.lang.Object&gt;...) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage org.jetbrains.anko.db.SqlType plus(org.jetbrains.anko.db.SqlType, org.jetbrains.anko.db.SqlTypeModifier) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage java.util.List&lt;T&gt; parseList(android.database.Cursor, org.jetbrains.anko.db.MapRowParser&lt;T&gt;)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage org.jetbrains.anko.db.SqlType FOREIGN_KEY(java.lang.String, java.lang.String, java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.Database.7e588ca3 org.jetbrains.anko.db.SqlType getINTEGER()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.SqlOrderDirection ASC'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.CursorMapIterator CursorMapIterator(android.database.Cursor) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage org.jetbrains.anko.db.SqlTypeModifier getUNIQUE()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.SqlParserHelpers.17d9afc6.rowParser.8 R parseRow(java.lang.Object[]) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage org.jetbrains.anko.db.SqlType FOREIGN_KEY(java.lang.String, java.lang.String, java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.SqlParsers.349a01f8 java.util.Map&lt;java.lang.String,java.lang.Object&gt; readColumnsMap(android.database.Cursor) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.SqlParserHelpers.17d9afc6.rowParser.20 R parseRow(java.lang.Object[]) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.SelectQueryBuilder java.util.List&lt;T&gt; parseList(org.jetbrains.anko.db.RowParser&lt;T&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.CursorMapSequence android.database.Cursor getCursor()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.SqlParserHelpers.17d9afc6 org.jetbrains.anko.db.RowParser&lt;R&gt; rowParser(kotlin.jvm.functions.Function19&lt;? super T1,? super T2,? super T3,? super T4,? super T5,? super T6,? super T7,? super T8,? super T9,? super T10,? super T11,? super T12,? super T13,? super T14,? super T15,? super T16,? super T17,? super T18,? super T19,? extends R&gt;)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.SqlParserHelpers.17d9afc6 org.jetbrains.anko.db.RowParser&lt;R&gt; rowParser(kotlin.jvm.functions.Function13&lt;? super T1,? super T2,? super T3,? super T4,? super T5,? super T6,? super T7,? super T8,? super T9,? super T10,? super T11,? super T12,? super T13,? extends R&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage java.util.Map&lt;java.lang.String,java.lang.Object&gt; readColumnsMap(android.database.Cursor) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.SqlParsers.349a01f8 T parseOpt(android.database.Cursor, org.jetbrains.anko.db.RowParser&lt;T&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.Database.7e588ca3 org.jetbrains.anko.db.SqlType getINT()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.SqlParsers.349a01f8 T parseSingle(android.database.Cursor, org.jetbrains.anko.db.MapRowParser&lt;T&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.SqlParsers.349a01f8 kotlin.Sequence&lt;java.lang.Object[]&gt; stream(android.database.Cursor)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.SelectQueryBuilder org.jetbrains.anko.db.SelectQueryBuilder whereSupport(java.lang.String, java.lang.String...) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage org.jetbrains.anko.db.SqlTypeModifier DEFAULT(java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.ManagedSQLiteOpenHelper ManagedSQLiteOpenHelper(android.content.Context, java.lang.String, android.database.sqlite.SQLiteDatabase.CursorFactory, int, int, kotlin.jvm.internal.DefaultConstructorMarker) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.SelectQueryBuilder java.util.List&lt;T&gt; parseList(org.jetbrains.anko.db.RowParser&lt;T&gt;)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.SqlParsers.349a01f8 T parseOpt(android.database.Cursor, org.jetbrains.anko.db.MapRowParser&lt;T&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage org.jetbrains.anko.db.RowParser&lt;R&gt; rowParser(kotlin.jvm.functions.Function8&lt;? super T1,? super T2,? super T3,? super T4,? super T5,? super T6,? super T7,? super T8,? extends R&gt;)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.Database.7e588ca3 long insert(android.database.sqlite.SQLiteDatabase, java.lang.String, kotlin.Pair&lt;java.lang.String,java.lang.Object&gt;...) 2'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.ScalarColumnParser T parseRow(java.lang.Object[]) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.SelectQueryBuilder org.jetbrains.anko.db.SelectQueryBuilder columns(java.lang.String...)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage kotlin.Sequence&lt;java.util.Map&lt;java.lang.String,? extends java.lang.Object&gt;&gt; mapStream(android.database.Cursor) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.SqlParsers.349a01f8 T parseSingle(android.database.Cursor, org.jetbrains.anko.db.MapRowParser&lt;T&gt;) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.SelectQueryBuilder T parseSingle(org.jetbrains.anko.db.MapRowParser&lt;T&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage org.jetbrains.anko.db.UpdateQueryBuilder update(android.database.sqlite.SQLiteDatabase, java.lang.String, kotlin.Pair&lt;java.lang.String,java.lang.Object&gt;...) 2'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.ManagedSQLiteOpenHelper ManagedSQLiteOpenHelper(android.content.Context, java.lang.String, android.database.sqlite.SQLiteDatabase.CursorFactory, int, int, kotlin.jvm.internal.DefaultConstructorMarker) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.SqlParserHelpers.17d9afc6 org.jetbrains.anko.db.RowParser&lt;R&gt; rowParser(kotlin.jvm.functions.Function16&lt;? super T1,? super T2,? super T3,? super T4,? super T5,? super T6,? super T7,? super T8,? super T9,? super T10,? super T11,? super T12,? super T13,? super T14,? super T15,? super T16,? extends R&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.SqlParserHelpers.17d9afc6 org.jetbrains.anko.db.RowParser&lt;R&gt; rowParser(kotlin.jvm.functions.Function11&lt;? super T1,? super T2,? super T3,? super T4,? super T5,? super T6,? super T7,? super T8,? super T9,? super T10,? super T11,? extends R&gt;)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.SqlTypeImpl java.lang.String getName()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.SqlParsers.349a01f8 T parseOpt(android.database.Cursor, org.jetbrains.anko.db.MapRowParser&lt;T&gt;) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.SqlParserHelpers.17d9afc6.rowParser.10 R parseRow(java.lang.Object[]) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.SelectQueryBuilder java.util.List&lt;T&gt; parseList(org.jetbrains.anko.db.MapRowParser&lt;T&gt;)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.SelectQueryBuilder org.jetbrains.anko.db.SelectQueryBuilder where(java.lang.String, kotlin.Pair&lt;java.lang.String,java.lang.Object&gt;...) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage org.jetbrains.anko.db.RowParser&lt;R&gt; rowParser(kotlin.jvm.functions.Function10&lt;? super T1,? super T2,? super T3,? super T4,? super T5,? super T6,? super T7,? super T8,? super T9,? super T10,? extends R&gt;)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.CursorIterator java.lang.Object[] next()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.Database.7e588ca3 long insert(android.database.sqlite.SQLiteDatabase, java.lang.String, kotlin.Pair&lt;java.lang.String,java.lang.Object&gt;...) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage void dropTable(android.database.sqlite.SQLiteDatabase, java.lang.String, boolean) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.SqlParserHelpers.17d9afc6 org.jetbrains.anko.db.RowParser&lt;R&gt; rowParser(kotlin.jvm.functions.Function2&lt;? super T1,? super T2,? extends R&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage android.content.ContentValues toContentValues(kotlin.Pair&lt;java.lang.String,java.lang.Object&gt;[]) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.SqlParserHelpers.17d9afc6.rowParser.22 R parseRow(java.lang.Object[]) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage org.jetbrains.anko.db.RowParser&lt;R&gt; rowParser(kotlin.jvm.functions.Function3&lt;? super T1,? super T2,? super T3,? extends R&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage org.jetbrains.anko.db.RowParser&lt;R&gt; rowParser(kotlin.jvm.functions.Function2&lt;? super T1,? super T2,? extends R&gt;)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.CursorIterator CursorIterator(android.database.Cursor) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.SqlParserHelpers.17d9afc6.rowParser.5 R parseRow(java.lang.Object[]) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.SqlParsers.349a01f8 java.util.Map&lt;java.lang.String,java.lang.Object&gt; readColumnsMap(android.database.Cursor)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage org.jetbrains.anko.db.SelectQueryBuilder select(android.database.sqlite.SQLiteDatabase, java.lang.String, java.lang.String...)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage org.jetbrains.anko.db.RowParser&lt;java.lang.Long&gt; getLongParser()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.SqlParsers.349a01f8 T parseOpt(android.database.Cursor, org.jetbrains.anko.db.RowParser&lt;T&gt;) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.Database.7e588ca3 long insert(android.database.sqlite.SQLiteDatabase, java.lang.String, kotlin.Pair&lt;java.lang.String,java.lang.Object&gt;...) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.SelectQueryBuilder org.jetbrains.anko.db.SelectQueryBuilder orderBy$default(org.jetbrains.anko.db.SelectQueryBuilder, java.lang.String, org.jetbrains.anko.db.SqlOrderDirection, int)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage org.jetbrains.anko.db.RowParser&lt;R&gt; rowParser(kotlin.jvm.functions.Function2&lt;? super T1,? super T2,? extends R&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage T parseSingle(android.database.Cursor, org.jetbrains.anko.db.MapRowParser&lt;T&gt;)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.SqlParsers.349a01f8 java.util.List&lt;T&gt; parseList(android.database.Cursor, org.jetbrains.anko.db.RowParser&lt;T&gt;) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.UpdateQueryBuilder org.jetbrains.anko.db.UpdateQueryBuilder where(java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage long replaceOrThrow(android.database.sqlite.SQLiteDatabase, java.lang.String, kotlin.Pair&lt;java.lang.String,java.lang.Object&gt;...) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.Database.7e588ca3 java.util.regex.Pattern getARG_PATTERN()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.Database.7e588ca3 org.jetbrains.anko.db.SelectQueryBuilder select(android.database.sqlite.SQLiteDatabase, java.lang.String, java.lang.String...) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.SqlParserHelpers.17d9afc6 org.jetbrains.anko.db.RowParser&lt;R&gt; rowParser(kotlin.jvm.functions.Function21&lt;? super T1,? super T2,? super T3,? super T4,? super T5,? super T6,? super T7,? super T8,? super T9,? super T10,? super T11,? super T12,? super T13,? super T14,? super T15,? super T16,? super T17,? super T18,? super T19,? super T20,? super T21,? extends R&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.SqlParsers.349a01f8 kotlin.Sequence&lt;java.util.Map&lt;java.lang.String,? extends java.lang.Object&gt;&gt; mapStream(android.database.Cursor) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.SqlParserHelpers.17d9afc6 org.jetbrains.anko.db.RowParser&lt;R&gt; rowParser(kotlin.jvm.functions.Function9&lt;? super T1,? super T2,? super T3,? super T4,? super T5,? super T6,? super T7,? super T8,? super T9,? extends R&gt;)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.SqlParserHelpers.17d9afc6 org.jetbrains.anko.db.RowParser&lt;R&gt; rowParser(kotlin.jvm.functions.Function22&lt;? super T1,? super T2,? super T3,? super T4,? super T5,? super T6,? super T7,? super T8,? super T9,? super T10,? super T11,? super T12,? super T13,? super T14,? super T15,? super T16,? super T17,? super T18,? super T19,? super T20,? super T21,? super T22,? extends R&gt;)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.SqlParserHelpers.17d9afc6.rowParser.4 R parseRow(java.lang.Object[]) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.UpdateQueryBuilder org.jetbrains.anko.db.UpdateQueryBuilder where(java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.SqlParserHelpers.17d9afc6.rowParser.3 R parseRow(java.lang.Object[]) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage kotlin.Sequence&lt;java.lang.Object[]&gt; stream(android.database.Cursor)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.Database.7e588ca3 void createTable(android.database.sqlite.SQLiteDatabase, java.lang.String, boolean, kotlin.Pair&lt;java.lang.String,org.jetbrains.anko.db.SqlType&gt;...) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.SelectQueryBuilder org.jetbrains.anko.db.SelectQueryBuilder where(java.lang.String, kotlin.Pair&lt;java.lang.String,java.lang.Object&gt;...) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.Database.7e588ca3 org.jetbrains.anko.db.SelectQueryBuilder select(android.database.sqlite.SQLiteDatabase, java.lang.String, java.lang.String...) 2'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.SqlParsers.349a01f8 java.util.List&lt;T&gt; parseList(android.database.Cursor, org.jetbrains.anko.db.MapRowParser&lt;T&gt;)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.UpdateQueryBuilder android.database.sqlite.SQLiteDatabase getDb()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.SqlParsers.349a01f8 org.jetbrains.anko.db.RowParser&lt;byte[]&gt; getBlobParser()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.Database.7e588ca3 android.content.ContentValues toContentValues(kotlin.Pair&lt;java.lang.String,java.lang.Object&gt;[])'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.SqlParserHelpers.17d9afc6 org.jetbrains.anko.db.RowParser&lt;R&gt; rowParser(kotlin.jvm.functions.Function13&lt;? super T1,? super T2,? super T3,? super T4,? super T5,? super T6,? super T7,? super T8,? super T9,? super T10,? super T11,? super T12,? super T13,? extends R&gt;)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.Database.7e588ca3 void createTable(android.database.sqlite.SQLiteDatabase, java.lang.String, boolean, kotlin.Pair&lt;java.lang.String,org.jetbrains.anko.db.SqlType&gt;...) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage void transaction(android.database.sqlite.SQLiteDatabase, kotlin.jvm.functions.Function1&lt;? super android.database.sqlite.SQLiteDatabase,? extends kotlin.Unit&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage org.jetbrains.anko.db.SqlType getINT()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.SqlParserHelpers.17d9afc6 org.jetbrains.anko.db.RowParser&lt;R&gt; rowParser(kotlin.jvm.functions.Function22&lt;? super T1,? super T2,? super T3,? super T4,? super T5,? super T6,? super T7,? super T8,? super T9,? super T10,? super T11,? super T12,? super T13,? super T14,? super T15,? super T16,? super T17,? super T18,? super T19,? super T20,? super T21,? super T22,? extends R&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage org.jetbrains.anko.db.RowParser&lt;R&gt; rowParser(kotlin.jvm.functions.Function12&lt;? super T1,? super T2,? super T3,? super T4,? super T5,? super T6,? super T7,? super T8,? super T9,? super T10,? super T11,? super T12,? extends R&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.SqlParserHelpers.17d9afc6.rowParser.7 R parseRow(java.lang.Object[]) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage java.lang.String applyArguments(java.lang.String, java.util.Map&lt;java.lang.String,? extends java.lang.Object&gt;)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.Database.7e588ca3 org.jetbrains.anko.db.SqlType getBLOB()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.SqlTypeModifierImpl java.lang.String getModifier()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.SqlParserHelpers.17d9afc6 org.jetbrains.anko.db.RowParser&lt;R&gt; rowParser(kotlin.jvm.functions.Function9&lt;? super T1,? super T2,? super T3,? super T4,? super T5,? super T6,? super T7,? super T8,? super T9,? extends R&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage kotlin.Sequence&lt;java.util.Map&lt;java.lang.String,? extends java.lang.Object&gt;&gt; mapStream(android.database.Cursor)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.SqlParsers.349a01f8 kotlin.Sequence&lt;java.util.Map&lt;java.lang.String,? extends java.lang.Object&gt;&gt; mapSequence(android.database.Cursor)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.CursorMapSequence CursorMapSequence(android.database.Cursor) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage org.jetbrains.anko.db.RowParser&lt;R&gt; rowParser(kotlin.jvm.functions.Function16&lt;? super T1,? super T2,? super T3,? super T4,? super T5,? super T6,? super T7,? super T8,? super T9,? super T10,? super T11,? super T12,? super T13,? super T14,? super T15,? super T16,? extends R&gt;)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage void transaction(android.database.sqlite.SQLiteDatabase, kotlin.jvm.functions.Function1&lt;? super android.database.sqlite.SQLiteDatabase,? extends kotlin.Unit&gt;) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.Database.7e588ca3 java.lang.String escape(java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.SqlParserHelpers.17d9afc6 org.jetbrains.anko.db.RowParser&lt;R&gt; rowParser(kotlin.jvm.functions.Function16&lt;? super T1,? super T2,? super T3,? super T4,? super T5,? super T6,? super T7,? super T8,? super T9,? super T10,? super T11,? super T12,? super T13,? super T14,? super T15,? super T16,? extends R&gt;)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.Database.7e588ca3 org.jetbrains.anko.db.SelectQueryBuilder select(android.database.sqlite.SQLiteDatabase, java.lang.String, java.lang.String...) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage org.jetbrains.anko.db.RowParser&lt;R&gt; rowParser(kotlin.jvm.functions.Function21&lt;? super T1,? super T2,? super T3,? super T4,? super T5,? super T6,? super T7,? super T8,? super T9,? super T10,? super T11,? super T12,? super T13,? super T14,? super T15,? super T16,? super T17,? super T18,? super T19,? super T20,? super T21,? extends R&gt;)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.SqlTypeImpl SqlTypeImpl(java.lang.String, java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.Database.7e588ca3 org.jetbrains.anko.db.SelectQueryBuilder select(android.database.sqlite.SQLiteDatabase, java.lang.String, java.lang.String...)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.SqlParsers.349a01f8 org.jetbrains.anko.db.RowParser&lt;java.lang.Double&gt; getDoubleParser()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.Database.7e588ca3 long replaceOrThrow(android.database.sqlite.SQLiteDatabase, java.lang.String, kotlin.Pair&lt;java.lang.String,java.lang.Object&gt;...) 2'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.SqlParsers.349a01f8 org.jetbrains.anko.db.RowParser&lt;java.lang.String&gt; getStringParser()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage java.lang.String escape(java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.Database.7e588ca3 void createTable(android.database.sqlite.SQLiteDatabase, java.lang.String, boolean, kotlin.Pair&lt;java.lang.String,org.jetbrains.anko.db.SqlType&gt;...) 3'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.SelectQueryBuilder org.jetbrains.anko.db.SelectQueryBuilder whereSupport(java.lang.String, java.lang.String...) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.Database.7e588ca3 android.content.ContentValues toContentValues(kotlin.Pair&lt;java.lang.String,java.lang.Object&gt;[]) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.SelectQueryBuilder org.jetbrains.anko.db.SelectQueryBuilder groupBy(java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.SelectQueryBuilder T exec(kotlin.jvm.functions.Function1&lt;? super android.database.Cursor,? extends T&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage org.jetbrains.anko.db.RowParser&lt;java.lang.Float&gt; getFloatParser()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.DbPackage.SqlParserHelpers.17d9afc6 org.jetbrains.anko.db.RowParser&lt;R&gt; rowParser(kotlin.jvm.functions.Function15&lt;? super T1,? super T2,? super T3,? super T4,? super T5,? super T6,? super T7,? super T8,? super T9,? super T10,? super T11,? super T12,? super T13,? super T14,? super T15,? extends R&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.db.SelectQueryBuilder org.jetbrains.anko.db.SelectQueryBuilder columns(java.lang.String...) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+</root>

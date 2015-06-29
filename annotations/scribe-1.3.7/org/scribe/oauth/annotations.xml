@@ -1,0 +1,95 @@
+<root>
+    <item name='org.scribe.oauth.OAuthService void signRequest(org.scribe.model.Token, org.scribe.model.OAuthRequest) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+        <annotation name='org.jetbrains.kannotator.runtime.annotations.Propagated'>
+            <val name="value" val="{org.jetbrains.kannotator.controlFlow.builder.analysis.NullabilityKey.class}"/>
+        </annotation>
+    </item>
+    <item name='org.scribe.oauth.OAuth10aServiceImpl void signRequest(org.scribe.model.Token, org.scribe.model.OAuthRequest) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.oauth.OAuthService java.lang.String getAuthorizationUrl(org.scribe.model.Token) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+        <annotation name='org.jetbrains.kannotator.runtime.annotations.Propagated'>
+            <val name="value" val="{org.jetbrains.kannotator.controlFlow.builder.analysis.NullabilityKey.class}"/>
+        </annotation>
+    </item>
+    <item name='org.scribe.oauth.OAuth10aServiceImpl void signRequest(org.scribe.model.Token, org.scribe.model.OAuthRequest) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.oauth.OAuth20ServiceImpl java.lang.String getAuthorizationUrl(org.scribe.model.Token) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+        <annotation name='org.jetbrains.kannotator.runtime.annotations.Propagated'>
+            <val name="value" val="{org.jetbrains.kannotator.controlFlow.builder.analysis.NullabilityKey.class}"/>
+        </annotation>
+    </item>
+    <item name='org.scribe.oauth.OAuthService void signRequest(org.scribe.model.Token, org.scribe.model.OAuthRequest) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+        <annotation name='org.jetbrains.kannotator.runtime.annotations.Propagated'>
+            <val name="value" val="{org.jetbrains.kannotator.controlFlow.builder.analysis.NullabilityKey.class}"/>
+        </annotation>
+    </item>
+    <item name='org.scribe.oauth.OAuth10aServiceImpl org.scribe.model.Token getAccessToken(org.scribe.model.Token, org.scribe.model.Verifier, int, java.util.concurrent.TimeUnit) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.oauth.OAuth10aServiceImpl org.scribe.model.Token getAccessToken(org.scribe.model.Token, org.scribe.model.Verifier, org.scribe.model.RequestTuner) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.oauth.OAuth10aServiceImpl java.lang.String getAuthorizationUrl(org.scribe.model.Token) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+        <annotation name='org.jetbrains.kannotator.runtime.annotations.Propagated'>
+            <val name="value" val="{org.jetbrains.kannotator.controlFlow.builder.analysis.NullabilityKey.class}"/>
+        </annotation>
+    </item>
+    <item name='org.scribe.oauth.OAuth10aServiceImpl org.scribe.model.Token getAccessToken(org.scribe.model.Token, org.scribe.model.Verifier, int, java.util.concurrent.TimeUnit) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.oauth.OAuth10aServiceImpl org.scribe.model.Token getAccessToken(org.scribe.model.Token, org.scribe.model.Verifier, org.scribe.model.RequestTuner) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.oauth.OAuth10aServiceImpl java.lang.String getVersion()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.oauth.OAuthService org.scribe.model.Token getAccessToken(org.scribe.model.Token, org.scribe.model.Verifier) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+        <annotation name='org.jetbrains.kannotator.runtime.annotations.Propagated'>
+            <val name="value" val="{org.jetbrains.kannotator.controlFlow.builder.analysis.NullabilityKey.class}"/>
+        </annotation>
+    </item>
+    <item name='org.scribe.oauth.OAuthService org.scribe.model.Token getAccessToken(org.scribe.model.Token, org.scribe.model.Verifier) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+        <annotation name='org.jetbrains.kannotator.runtime.annotations.Propagated'>
+            <val name="value" val="{org.jetbrains.kannotator.controlFlow.builder.analysis.NullabilityKey.class}"/>
+        </annotation>
+    </item>
+    <item name='org.scribe.oauth.OAuth10aServiceImpl org.scribe.model.Token getAccessToken(org.scribe.model.Token, org.scribe.model.Verifier) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.oauth.OAuthService java.lang.String getVersion()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+        <annotation name='org.jetbrains.kannotator.runtime.annotations.Propagated'>
+            <val name="value" val="{org.jetbrains.kannotator.controlFlow.builder.analysis.NullabilityKey.class}"/>
+        </annotation>
+    </item>
+    <item name='org.scribe.oauth.OAuth10aServiceImpl org.scribe.model.Token getAccessToken(org.scribe.model.Token, org.scribe.model.Verifier) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.oauth.OAuth20ServiceImpl java.lang.String getVersion()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.oauth.OAuth20ServiceImpl void signRequest(org.scribe.model.Token, org.scribe.model.OAuthRequest) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.oauth.OAuth20ServiceImpl org.scribe.model.Token getAccessToken(org.scribe.model.Token, org.scribe.model.Verifier) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+        <annotation name='org.jetbrains.kannotator.runtime.annotations.Propagated'>
+            <val name="value" val="{org.jetbrains.kannotator.controlFlow.builder.analysis.NullabilityKey.class}"/>
+        </annotation>
+    </item>
+    <item name='org.scribe.oauth.OAuth20ServiceImpl org.scribe.model.Token getAccessToken(org.scribe.model.Token, org.scribe.model.Verifier) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.oauth.OAuth20ServiceImpl void signRequest(org.scribe.model.Token, org.scribe.model.OAuthRequest) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+</root>

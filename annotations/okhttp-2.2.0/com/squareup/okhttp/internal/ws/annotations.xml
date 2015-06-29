@@ -1,0 +1,53 @@
+<root>
+    <item name='com.squareup.okhttp.internal.ws.WebSocketWriter WebSocketWriter(boolean, okio.BufferedSink, java.util.Random) 2'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.internal.ws.WebSocketWriter void sendMessage(com.squareup.okhttp.internal.ws.WebSocket.PayloadType, okio.Buffer) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.internal.ws.WebSocketWriter WebSocketWriter(boolean, okio.BufferedSink, java.util.Random) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.internal.ws.WebSocketReader WebSocketReader(boolean, okio.BufferedSource, com.squareup.okhttp.internal.ws.WebSocketListener, com.squareup.okhttp.internal.ws.WebSocketReader.FrameCallback) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.internal.ws.WebSocketWriter void sendMessage(com.squareup.okhttp.internal.ws.WebSocket.PayloadType, okio.Buffer) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.internal.ws.WebSocketReader WebSocketReader(boolean, okio.BufferedSource, com.squareup.okhttp.internal.ws.WebSocketListener, com.squareup.okhttp.internal.ws.WebSocketReader.FrameCallback) 3'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.internal.ws.WebSocketReader WebSocketReader(boolean, okio.BufferedSource, com.squareup.okhttp.internal.ws.WebSocketListener, com.squareup.okhttp.internal.ws.WebSocketReader.FrameCallback) 2'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.internal.ws.WebSocket com.squareup.okhttp.internal.ws.WebSocket newWebSocket(com.squareup.okhttp.OkHttpClient, com.squareup.okhttp.Request)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.internal.ws.WebSocket void sendMessage(com.squareup.okhttp.internal.ws.WebSocket.PayloadType, okio.Buffer) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.internal.ws.WebSocket void sendMessage(com.squareup.okhttp.internal.ws.WebSocket.PayloadType, okio.Buffer) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.internal.ws.WebSocket.PayloadType TEXT'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.internal.ws.WebSocketWriter okio.BufferedSink newMessageSink(com.squareup.okhttp.internal.ws.WebSocket.PayloadType) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.internal.ws.WebSocket.PayloadType BINARY'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.internal.ws.WebSocket com.squareup.okhttp.Request request()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.internal.ws.WebSocket com.squareup.okhttp.internal.ws.WebSocket newWebSocket(com.squareup.okhttp.OkHttpClient, com.squareup.okhttp.Request) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.internal.ws.WebSocket okio.BufferedSink newMessageSink(com.squareup.okhttp.internal.ws.WebSocket.PayloadType) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.internal.ws.WebSocket com.squareup.okhttp.Response connect(com.squareup.okhttp.internal.ws.WebSocketListener)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+</root>

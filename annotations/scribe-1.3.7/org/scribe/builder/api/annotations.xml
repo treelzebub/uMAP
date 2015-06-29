@@ -1,0 +1,542 @@
+<root>
+    <item name='org.scribe.builder.api.DefaultApi10a java.lang.String getAuthorizationUrl(org.scribe.model.Token) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+        <annotation name='org.jetbrains.kannotator.runtime.annotations.Propagated'>
+            <val name="value" val="{org.jetbrains.kannotator.controlFlow.builder.analysis.NullabilityKey.class}"/>
+        </annotation>
+    </item>
+    <item name='org.scribe.builder.api.NetProspexApi java.lang.String getRequestTokenEndpoint()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.TumblrApi java.lang.String getAuthorizationUrl(org.scribe.model.Token) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.TwitterApi java.lang.String getRequestTokenEndpoint()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.DefaultApi10a org.scribe.model.Verb getRequestTokenVerb()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.RenrenApi org.scribe.extractors.AccessTokenExtractor getAccessTokenExtractor()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.GetGlueApi java.lang.String getRequestTokenEndpoint()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.DiggApi java.lang.String getAccessTokenEndpoint()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.FoursquareApi java.lang.String getRequestTokenEndpoint()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.EvernoteApi.Sandbox java.lang.String serviceUrl()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.DiggApi java.lang.String getRequestTokenEndpoint()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.DropBoxApi java.lang.String getAccessTokenEndpoint()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.SimpleGeoApi java.lang.String getAuthorizationUrl(org.scribe.model.Token)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.VimeoApi java.lang.String getAccessTokenEndpoint()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.KaixinApi java.lang.String getAuthorizationUrl(org.scribe.model.Token) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.FreelancerApi.Sandbox java.lang.String getAccessTokenEndpoint()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.PlurkApi java.lang.String getAuthorizationUrl(org.scribe.model.Token) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.KaixinApi20 java.lang.String getAuthorizationUrl(org.scribe.model.OAuthConfig) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.DefaultApi10a org.scribe.extractors.HeaderExtractor getHeaderExtractor()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.MeetupApi java.lang.String getRequestTokenEndpoint()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.FlickrApi java.lang.String getAccessTokenEndpoint()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.FreelancerApi org.scribe.model.Verb getRequestTokenVerb()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.MendeleyApi org.scribe.model.Verb getAccessTokenVerb()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.SkyrockApi java.lang.String getAuthorizationUrl(org.scribe.model.Token) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.XingApi java.lang.String getAccessTokenEndpoint()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.DefaultApi10a org.scribe.extractors.AccessTokenExtractor getAccessTokenExtractor()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.Px500Api java.lang.String getAccessTokenEndpoint()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.MendeleyApi org.scribe.model.Verb getRequestTokenVerb()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.PlurkApi java.lang.String getAccessTokenEndpoint()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.YammerApi java.lang.String getAuthorizationUrl(org.scribe.model.Token) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.VimeoApi java.lang.String getRequestTokenEndpoint()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.ConstantContactApi2 java.lang.String getAuthorizationUrl(org.scribe.model.OAuthConfig) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.GoogleApi java.lang.String getAuthorizationUrl(org.scribe.model.Token) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.GetGlueApi java.lang.String getAuthorizationUrl(org.scribe.model.Token) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.ConstantContactApi2 org.scribe.model.Verb getAccessTokenVerb()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.PlurkApi.Mobile java.lang.String getAuthorizationUrl(org.scribe.model.Token) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.SapoApi java.lang.String getAccessTokenEndpoint()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.DefaultApi10a org.scribe.extractors.RequestTokenExtractor getRequestTokenExtractor()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.VkontakteApi java.lang.String getAccessTokenEndpoint()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.SinaWeiboApi java.lang.String getAuthorizationUrl(org.scribe.model.Token) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.AWeberApi java.lang.String getAuthorizationUrl(org.scribe.model.Token) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.YahooApi java.lang.String getAccessTokenEndpoint()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.TwitterApi java.lang.String getAccessTokenEndpoint()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.AWeberApi java.lang.String getAccessTokenEndpoint()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.SinaWeiboApi20 java.lang.String getAccessTokenEndpoint()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.RenrenApi java.lang.String getAccessTokenEndpoint()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.DefaultApi10a org.scribe.services.TimestampService getTimestampService()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.KaixinApi java.lang.String getAccessTokenEndpoint()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.DefaultApi20 org.scribe.oauth.OAuthService createService(org.scribe.model.OAuthConfig)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.DefaultApi10a java.lang.String getAccessTokenEndpoint()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+        <annotation name='org.jetbrains.kannotator.runtime.annotations.Propagated'>
+            <val name="value" val="{org.jetbrains.kannotator.controlFlow.builder.analysis.NullabilityKey.class}"/>
+        </annotation>
+    </item>
+    <item name='org.scribe.builder.api.FacebookApi java.lang.String getAccessTokenEndpoint()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.GoogleApi org.scribe.model.Verb getAccessTokenVerb()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.PlurkApi java.lang.String getRequestTokenEndpoint()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.FreelancerApi java.lang.String getAuthorizationUrl(org.scribe.model.Token) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.KaixinApi org.scribe.model.Verb getAccessTokenVerb()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.SinaWeiboApi java.lang.String getRequestTokenEndpoint()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.KaixinApi20 java.lang.String getAccessTokenEndpoint()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.LinkedInApi java.lang.String getAccessTokenEndpoint()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.SapoApi java.lang.String getRequestTokenEndpoint()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.TwitterApi.Authenticate java.lang.String getAuthorizationUrl(org.scribe.model.Token) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.TumblrApi java.lang.String getRequestTokenEndpoint()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.MeetupApi java.lang.String getAccessTokenEndpoint()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.YammerApi java.lang.String getRequestTokenEndpoint()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.DefaultApi10a java.lang.String getRequestTokenEndpoint()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+        <annotation name='org.jetbrains.kannotator.runtime.annotations.Propagated'>
+            <val name="value" val="{org.jetbrains.kannotator.controlFlow.builder.analysis.NullabilityKey.class}"/>
+        </annotation>
+    </item>
+    <item name='org.scribe.builder.api.DefaultApi20 java.lang.String getAuthorizationUrl(org.scribe.model.OAuthConfig) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+        <annotation name='org.jetbrains.kannotator.runtime.annotations.Propagated'>
+            <val name="value" val="{org.jetbrains.kannotator.controlFlow.builder.analysis.NullabilityKey.class}"/>
+        </annotation>
+    </item>
+    <item name='org.scribe.builder.api.XingApi java.lang.String getRequestTokenEndpoint()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.ConstantContactApi java.lang.String getAuthorizationUrl(org.scribe.model.Token) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.ConstantContactApi java.lang.String getRequestTokenEndpoint()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.KaixinApi java.lang.String getRequestTokenEndpoint()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.TrelloApi java.lang.String getRequestTokenEndpoint()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.SapoApi java.lang.String getAuthorizationUrl(org.scribe.model.Token) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.NeteaseWeibooApi java.lang.String getAuthorizationUrl(org.scribe.model.Token) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.KaixinApi org.scribe.model.Verb getRequestTokenVerb()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.FreelancerApi.Sandbox java.lang.String getAuthorizationUrl(org.scribe.model.Token) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.GetGlueApi java.lang.String getAccessTokenEndpoint()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.FoursquareApi java.lang.String getAccessTokenEndpoint()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.NetProspexApi java.lang.String getAccessTokenEndpoint()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.NeteaseWeibooApi java.lang.String getRequestTokenEndpoint()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.ImgUrApi java.lang.String getAuthorizationUrl(org.scribe.model.Token) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.SinaWeiboApi20 java.lang.String getAuthorizationUrl(org.scribe.model.OAuthConfig) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.ConstantContactApi java.lang.String getAccessTokenEndpoint()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.FreelancerApi.Sandbox java.lang.String getRequestTokenEndpoint()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.SimpleGeoApi java.lang.String getAuthorizationUrl(org.scribe.model.Token) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+        <annotation name='org.jetbrains.kannotator.runtime.annotations.Propagated'>
+            <val name="value" val="{org.jetbrains.kannotator.controlFlow.builder.analysis.NullabilityKey.class}"/>
+        </annotation>
+    </item>
+    <item name='org.scribe.builder.api.Px500Api java.lang.String getAuthorizationUrl(org.scribe.model.Token) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.FacebookApi java.lang.String getAuthorizationUrl(org.scribe.model.OAuthConfig) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.Foursquare2Api java.lang.String getAccessTokenEndpoint()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.DropBoxApi java.lang.String getRequestTokenEndpoint()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.NeteaseWeibooApi java.lang.String getAccessTokenEndpoint()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.TumblrApi java.lang.String getAccessTokenEndpoint()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.YammerApi org.scribe.services.SignatureService getSignatureService()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.LiveApi org.scribe.extractors.AccessTokenExtractor getAccessTokenExtractor()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.DefaultApi10a org.scribe.extractors.BaseStringExtractor getBaseStringExtractor()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.ConstantContactApi2 java.lang.String getAccessTokenEndpoint()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.YahooApi java.lang.String getRequestTokenEndpoint()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.UbuntuOneApi java.lang.String getAuthorizationUrl(org.scribe.model.Token) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.EvernoteApi java.lang.String serviceUrl()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.KaixinApi20 org.scribe.extractors.AccessTokenExtractor getAccessTokenExtractor()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.LinkedInApi java.lang.String getAuthorizationUrl(org.scribe.model.Token) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.YahooApi java.lang.String getAuthorizationUrl(org.scribe.model.Token) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.UbuntuOneApi java.lang.String getAccessTokenEndpoint()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.MendeleyApi java.lang.String getAuthorizationUrl(org.scribe.model.Token) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.SinaWeiboApi java.lang.String getAccessTokenEndpoint()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.FoursquareApi java.lang.String getAuthorizationUrl(org.scribe.model.Token) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.VkontakteApi org.scribe.extractors.AccessTokenExtractor getAccessTokenExtractor()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.RenrenApi java.lang.String getAuthorizationUrl(org.scribe.model.OAuthConfig) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.EvernoteApi.Yinxiang java.lang.String serviceUrl()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.NeteaseWeibooApi java.lang.String getAuthenticateUrl(org.scribe.model.Token) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.DefaultApi10a org.scribe.services.SignatureService getSignatureService()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.MendeleyApi java.lang.String getAccessTokenEndpoint()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.QWeiboApi java.lang.String getRequestTokenEndpoint()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.YammerApi java.lang.String getAccessTokenEndpoint()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.LoveFilmApi java.lang.String getRequestTokenEndpoint()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.SkyrockApi java.lang.String getRequestTokenEndpoint()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.GoogleApi org.scribe.model.Verb getRequestTokenVerb()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.TwitterApi java.lang.String getAuthorizationUrl(org.scribe.model.Token) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.SohuWeiboApi java.lang.String getAccessTokenEndpoint()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.Foursquare2Api org.scribe.extractors.AccessTokenExtractor getAccessTokenExtractor()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.ViadeoApi java.lang.String getAccessTokenEndpoint()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.ViadeoApi java.lang.String getAuthorizationUrl(org.scribe.model.OAuthConfig) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.GoogleApi java.lang.String getAccessTokenEndpoint()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.MisoApi java.lang.String getRequestTokenEndpoint()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.MendeleyApi java.lang.String getRequestTokenEndpoint()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.LiveApi java.lang.String getAuthorizationUrl(org.scribe.model.OAuthConfig) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.LoveFilmApi java.lang.String getAuthorizationUrl(org.scribe.model.Token) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.MisoApi java.lang.String getAccessTokenEndpoint()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.EvernoteApi java.lang.String getAuthorizationUrl(org.scribe.model.Token) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.DefaultApi20 java.lang.String getAccessTokenEndpoint()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+        <annotation name='org.jetbrains.kannotator.runtime.annotations.Propagated'>
+            <val name="value" val="{org.jetbrains.kannotator.controlFlow.builder.analysis.NullabilityKey.class}"/>
+        </annotation>
+    </item>
+    <item name='org.scribe.builder.api.QWeiboApi java.lang.String getAccessTokenEndpoint()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.QWeiboApi java.lang.String getAuthorizationUrl(org.scribe.model.Token) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.ConstantContactApi2 org.scribe.extractors.AccessTokenExtractor getAccessTokenExtractor()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.DropBoxApi java.lang.String getAuthorizationUrl(org.scribe.model.Token) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.DefaultApi20 org.scribe.extractors.AccessTokenExtractor getAccessTokenExtractor()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.SkyrockApi java.lang.String getAccessTokenEndpoint()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.FlickrApi java.lang.String getAuthorizationUrl(org.scribe.model.Token) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.AWeberApi java.lang.String getRequestTokenEndpoint()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.ViadeoApi org.scribe.extractors.AccessTokenExtractor getAccessTokenExtractor()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.TrelloApi java.lang.String getAccessTokenEndpoint()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.VkontakteApi java.lang.String getAuthorizationUrl(org.scribe.model.OAuthConfig) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.SohuWeiboApi java.lang.String getRequestTokenEndpoint()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.Foursquare2Api java.lang.String getAuthorizationUrl(org.scribe.model.OAuthConfig) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.Px500Api java.lang.String getRequestTokenEndpoint()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.SinaWeiboApi20 org.scribe.model.Verb getAccessTokenVerb()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.FreelancerApi org.scribe.model.Verb getAccessTokenVerb()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.UbuntuOneApi java.lang.String getRequestTokenEndpoint()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.VimeoApi java.lang.String getAuthorizationUrl(org.scribe.model.Token) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.MeetupApi java.lang.String getAuthorizationUrl(org.scribe.model.Token) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.DefaultApi20 org.scribe.model.Verb getAccessTokenVerb()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.DefaultApi10a org.scribe.oauth.OAuthService createService(org.scribe.model.OAuthConfig)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.SapoApi org.scribe.model.Verb getAccessTokenVerb()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.GoogleApi java.lang.String getRequestTokenEndpoint()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.SinaWeiboApi20 org.scribe.extractors.AccessTokenExtractor getAccessTokenExtractor()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.SapoApi org.scribe.model.Verb getRequestTokenVerb()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.DefaultApi10a java.lang.String getAuthorizationUrl(org.scribe.model.Token)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+        <annotation name='org.jetbrains.kannotator.runtime.annotations.Propagated'>
+            <val name="value" val="{org.jetbrains.kannotator.controlFlow.builder.analysis.NullabilityKey.class}"/>
+        </annotation>
+    </item>
+    <item name='org.scribe.builder.api.Api org.scribe.oauth.OAuthService createService(org.scribe.model.OAuthConfig)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+        <annotation name='org.jetbrains.kannotator.runtime.annotations.Propagated'>
+            <val name="value" val="{org.jetbrains.kannotator.controlFlow.builder.analysis.NullabilityKey.class}"/>
+        </annotation>
+    </item>
+    <item name='org.scribe.builder.api.ImgUrApi java.lang.String getAccessTokenEndpoint()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.SohuWeiboApi java.lang.String getAuthorizationUrl(org.scribe.model.Token) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.DiggApi java.lang.String getAuthorizationUrl(org.scribe.model.Token) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.XingApi java.lang.String getAuthorizationUrl(org.scribe.model.Token) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.SimpleGeoApi java.lang.String getRequestTokenEndpoint()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.SimpleGeoApi java.lang.String getAccessTokenEndpoint()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.MisoApi java.lang.String getAuthorizationUrl(org.scribe.model.Token) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.LoveFilmApi java.lang.String getAccessTokenEndpoint()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.UbuntuOneApi org.scribe.services.SignatureService getSignatureService()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.FreelancerApi java.lang.String getAccessTokenEndpoint()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.FreelancerApi java.lang.String getRequestTokenEndpoint()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.FlickrApi java.lang.String getRequestTokenEndpoint()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.LiveApi java.lang.String getAccessTokenEndpoint()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.DefaultApi10a org.scribe.model.Verb getAccessTokenVerb()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.NetProspexApi java.lang.String getAuthorizationUrl(org.scribe.model.Token) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.TrelloApi java.lang.String getAuthorizationUrl(org.scribe.model.Token) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.ImgUrApi java.lang.String getRequestTokenEndpoint()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.scribe.builder.api.LinkedInApi org.scribe.builder.api.LinkedInApi withScopes(java.lang.String...)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+</root>

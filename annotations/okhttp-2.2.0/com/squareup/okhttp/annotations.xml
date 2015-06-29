@@ -1,0 +1,851 @@
+<root>
+    <item name='com.squareup.okhttp.Authenticator com.squareup.okhttp.Request authenticate(java.net.Proxy, com.squareup.okhttp.Response) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+        <annotation name='org.jetbrains.kannotator.runtime.annotations.Propagated'>
+            <val name="value" val="{org.jetbrains.kannotator.controlFlow.builder.analysis.NullabilityKey.class}"/>
+        </annotation>
+    </item>
+    <item name='com.squareup.okhttp.Authenticator com.squareup.okhttp.Request authenticateProxy(java.net.Proxy, com.squareup.okhttp.Response) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+        <annotation name='org.jetbrains.kannotator.runtime.annotations.Propagated'>
+            <val name="value" val="{org.jetbrains.kannotator.controlFlow.builder.analysis.NullabilityKey.class}"/>
+        </annotation>
+    </item>
+    <item name='com.squareup.okhttp.CipherSuite TLS_ECDH_anon_WITH_AES_256_CBC_SHA'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.OkHttpClient com.squareup.okhttp.OkHttpClient setDispatcher(com.squareup.okhttp.Dispatcher)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.Protocol HTTP_1_1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.CipherSuite TLS_DH_anon_WITH_AES_256_CBC_SHA'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.ConnectionSpec MODERN_TLS'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.CipherSuite TLS_RSA_WITH_DES_CBC_SHA'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.CertificatePinner.Builder com.squareup.okhttp.CertificatePinner build()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.CipherSuite TLS_KRB5_WITH_DES_CBC_MD5'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.ResponseBody com.squareup.okhttp.ResponseBody create(com.squareup.okhttp.MediaType, long, okio.BufferedSource) 2'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.Route Route(com.squareup.okhttp.Address, java.net.Proxy, java.net.InetSocketAddress, com.squareup.okhttp.ConnectionSpec, boolean) 3'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.ConnectionSpec CLEARTEXT'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.MultipartBuilder com.squareup.okhttp.MultipartBuilder addFormDataPart(java.lang.String, java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.CipherSuite TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.Route com.squareup.okhttp.ConnectionSpec getConnectionSpec()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.CipherSuite TLS_ECDHE_ECDSA_WITH_RC4_128_SHA'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.ConnectionSpec.Builder com.squareup.okhttp.ConnectionSpec build()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.Request.Builder com.squareup.okhttp.Request.Builder removeHeader(java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.MultipartBuilder com.squareup.okhttp.MultipartBuilder addFormDataPart(java.lang.String, java.lang.String, com.squareup.okhttp.RequestBody) 2'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.Protocol HTTP_1_0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.Handshake com.squareup.okhttp.Handshake get(java.lang.String, java.util.List&lt;java.security.cert.Certificate&gt;, java.util.List&lt;java.security.cert.Certificate&gt;)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.OkHttpClient com.squareup.okhttp.OkHttpClient setConnectionPool(com.squareup.okhttp.ConnectionPool)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.Route Route(com.squareup.okhttp.Address, java.net.Proxy, java.net.InetSocketAddress, com.squareup.okhttp.ConnectionSpec, boolean) 2'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.CipherSuite TLS_ECDH_ECDSA_WITH_AES_256_CBC_SHA384'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.Protocol com.squareup.okhttp.Protocol get(java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.CipherSuite TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.CipherSuite TLS_DH_anon_WITH_AES_128_CBC_SHA'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.MultipartBuilder com.squareup.okhttp.MultipartBuilder addFormDataPart(java.lang.String, java.lang.String) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.CipherSuite TLS_KRB5_WITH_DES_CBC_SHA'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.OkHttpClient com.squareup.okhttp.OkHttpClient setSocketFactory(javax.net.SocketFactory)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.CipherSuite TLS_ECDHE_RSA_WITH_NULL_SHA'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.ConnectionSpec.Builder com.squareup.okhttp.ConnectionSpec.Builder tlsVersions(com.squareup.okhttp.TlsVersion...) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.CacheControl com.squareup.okhttp.CacheControl parse(com.squareup.okhttp.Headers)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.Request.Builder com.squareup.okhttp.Request.Builder patch(com.squareup.okhttp.RequestBody)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.CipherSuite TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.Response.Builder com.squareup.okhttp.Response.Builder removeHeader(java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.CipherSuite TLS_DHE_DSS_WITH_AES_128_CBC_SHA'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.RequestBody com.squareup.okhttp.RequestBody create(com.squareup.okhttp.MediaType, java.io.File) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.FormEncodingBuilder com.squareup.okhttp.RequestBody build()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.RequestBody com.squareup.okhttp.RequestBody create(com.squareup.okhttp.MediaType, byte[]) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.Request.Builder com.squareup.okhttp.Request.Builder cacheControl(com.squareup.okhttp.CacheControl)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.Call Call(com.squareup.okhttp.OkHttpClient, com.squareup.okhttp.Request) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.CipherSuite TLS_KRB5_EXPORT_WITH_RC4_40_SHA'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.Response.Builder com.squareup.okhttp.Response.Builder header(java.lang.String, java.lang.String) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.Address Address(java.lang.String, int, javax.net.SocketFactory, javax.net.ssl.SSLSocketFactory, javax.net.ssl.HostnameVerifier, com.squareup.okhttp.CertificatePinner, com.squareup.okhttp.Authenticator, java.net.Proxy, java.util.List&lt;com.squareup.okhttp.Protocol&gt;, java.util.List&lt;com.squareup.okhttp.ConnectionSpec&gt;, java.net.ProxySelector) 10'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.ConnectionSpec.Builder com.squareup.okhttp.ConnectionSpec.Builder cipherSuites(com.squareup.okhttp.CipherSuite...) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.Headers.Builder com.squareup.okhttp.Headers build()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.CipherSuite TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.CacheControl.Builder com.squareup.okhttp.CacheControl.Builder noStore()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.Request.Builder com.squareup.okhttp.Request.Builder method(java.lang.String, com.squareup.okhttp.RequestBody) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.CipherSuite TLS_ECDH_ECDSA_WITH_AES_256_CBC_SHA'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.CipherSuite TLS_RSA_WITH_NULL_SHA256'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.CipherSuite TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.CipherSuite TLS_KRB5_EXPORT_WITH_DES_CBC_40_MD5'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.CipherSuite TLS_KRB5_WITH_RC4_128_SHA'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.MultipartBuilder com.squareup.okhttp.RequestBody build()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.OkHttpClient com.squareup.okhttp.Call newCall(com.squareup.okhttp.Request)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.Response.Builder com.squareup.okhttp.Response.Builder addHeader(java.lang.String, java.lang.String) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.CipherSuite TLS_ECDH_anon_WITH_RC4_128_SHA'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.CipherSuite TLS_ECDHE_RSA_WITH_3DES_EDE_CBC_SHA'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.CipherSuite TLS_ECDH_RSA_WITH_NULL_SHA'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.MultipartBuilder com.squareup.okhttp.MultipartBuilder addFormDataPart(java.lang.String, java.lang.String, com.squareup.okhttp.RequestBody) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.CipherSuite TLS_RSA_EXPORT_WITH_RC4_40_MD5'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.Request.Builder com.squareup.okhttp.Request.Builder url(java.net.URL)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.Protocol com.squareup.okhttp.Protocol get(java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.CipherSuite TLS_ECDH_ECDSA_WITH_NULL_SHA'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.Address java.lang.String getUriHost()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.CipherSuite TLS_ECDH_RSA_WITH_AES_128_GCM_SHA256'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.CipherSuite TLS_DHE_RSA_WITH_AES_256_GCM_SHA384'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.CipherSuite TLS_RSA_WITH_AES_256_CBC_SHA256'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.Response.Builder com.squareup.okhttp.Response.Builder header(java.lang.String, java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.CipherSuite TLS_DH_anon_WITH_RC4_128_MD5'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.Cache java.util.Iterator&lt;java.lang.String&gt; urls()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.TlsVersion TLS_1_0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.Response com.squareup.okhttp.Response.Builder newBuilder()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.CipherSuite TLS_ECDH_RSA_WITH_AES_256_CBC_SHA'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.Request.Builder com.squareup.okhttp.Request.Builder post(com.squareup.okhttp.RequestBody)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.CipherSuite TLS_KRB5_EXPORT_WITH_RC4_40_MD5'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.Response.Builder com.squareup.okhttp.Response.Builder handshake(com.squareup.okhttp.Handshake)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.CertificatePinner.Builder com.squareup.okhttp.CertificatePinner.Builder add(java.lang.String, java.lang.String...) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.CacheControl.Builder com.squareup.okhttp.CacheControl.Builder minFresh(int, java.util.concurrent.TimeUnit)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.MultipartBuilder com.squareup.okhttp.MultipartBuilder addPart(com.squareup.okhttp.Headers, com.squareup.okhttp.RequestBody) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.OkHttpClient com.squareup.okhttp.OkHttpClient setFollowSslRedirects(boolean)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.Response.Builder com.squareup.okhttp.Response.Builder addHeader(java.lang.String, java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.MultipartBuilder com.squareup.okhttp.MultipartBuilder addFormDataPart(java.lang.String, java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.CacheControl.Builder com.squareup.okhttp.CacheControl.Builder onlyIfCached()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.CipherSuite TLS_RSA_WITH_AES_256_GCM_SHA384'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.Address Address(java.lang.String, int, javax.net.SocketFactory, javax.net.ssl.SSLSocketFactory, javax.net.ssl.HostnameVerifier, com.squareup.okhttp.CertificatePinner, com.squareup.okhttp.Authenticator, java.net.Proxy, java.util.List&lt;com.squareup.okhttp.Protocol&gt;, java.util.List&lt;com.squareup.okhttp.ConnectionSpec&gt;, java.net.ProxySelector) 8'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.CipherSuite TLS_RSA_WITH_AES_128_GCM_SHA256'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.TlsVersion TLS_1_1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.Request com.squareup.okhttp.Request.Builder newBuilder()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.CertificatePinner.Builder com.squareup.okhttp.CertificatePinner.Builder add(java.lang.String, java.lang.String...) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.Request.Builder com.squareup.okhttp.Request.Builder headers(com.squareup.okhttp.Headers) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.MultipartBuilder com.squareup.okhttp.MultipartBuilder addPart(com.squareup.okhttp.RequestBody)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.CipherSuite TLS_ECDHE_RSA_WITH_RC4_128_SHA'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.Response.Builder com.squareup.okhttp.Response.Builder priorResponse(com.squareup.okhttp.Response)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.CipherSuite TLS_ECDHE_ECDSA_WITH_3DES_EDE_CBC_SHA'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.CertificatePinner java.lang.String pin(java.security.cert.Certificate) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.CipherSuite TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.CertificatePinner DEFAULT'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.OkHttpClient com.squareup.okhttp.OkHttpClient setProtocols(java.util.List&lt;com.squareup.okhttp.Protocol&gt;)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.CipherSuite TLS_ECDH_RSA_WITH_3DES_EDE_CBC_SHA'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.CipherSuite TLS_DHE_DSS_WITH_DES_CBC_SHA'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.Request.Builder com.squareup.okhttp.Request.Builder url(java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.CipherSuite TLS_ECDHE_ECDSA_WITH_NULL_SHA'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.CipherSuite TLS_DHE_RSA_WITH_DES_CBC_SHA'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.CipherSuite TLS_KRB5_WITH_3DES_EDE_CBC_MD5'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.CacheControl com.squareup.okhttp.CacheControl parse(com.squareup.okhttp.Headers) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.TlsVersion TLS_1_2'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.CipherSuite TLS_RSA_WITH_RC4_128_MD5'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.ConnectionPool com.squareup.okhttp.ConnectionPool getDefault()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.CipherSuite TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.OkHttpClient com.squareup.okhttp.OkHttpClient setDispatcher(com.squareup.okhttp.Dispatcher) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.OkHttpClient void setReadTimeout(long, java.util.concurrent.TimeUnit) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.MultipartBuilder com.squareup.okhttp.MultipartBuilder addFormDataPart(java.lang.String, java.lang.String, com.squareup.okhttp.RequestBody)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.CipherSuite TLS_DHE_RSA_WITH_AES_128_GCM_SHA256'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.Headers.Builder com.squareup.okhttp.Headers.Builder removeAll(java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.CacheControl.Builder com.squareup.okhttp.CacheControl.Builder maxStale(int, java.util.concurrent.TimeUnit)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.CipherSuite TLS_DHE_RSA_WITH_3DES_EDE_CBC_SHA'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.CipherSuite TLS_DHE_DSS_WITH_AES_128_GCM_SHA256'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.MultipartBuilder com.squareup.okhttp.MultipartBuilder addPart(com.squareup.okhttp.Headers, com.squareup.okhttp.RequestBody)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.MultipartBuilder com.squareup.okhttp.MultipartBuilder addPart(com.squareup.okhttp.RequestBody) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.Request.Builder com.squareup.okhttp.Request.Builder head()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.CacheControl.Builder com.squareup.okhttp.CacheControl.Builder maxAge(int, java.util.concurrent.TimeUnit) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.Address Address(java.lang.String, int, javax.net.SocketFactory, javax.net.ssl.SSLSocketFactory, javax.net.ssl.HostnameVerifier, com.squareup.okhttp.CertificatePinner, com.squareup.okhttp.Authenticator, java.net.Proxy, java.util.List&lt;com.squareup.okhttp.Protocol&gt;, java.util.List&lt;com.squareup.okhttp.ConnectionSpec&gt;, java.net.ProxySelector) 6'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.ResponseBody com.squareup.okhttp.ResponseBody create(com.squareup.okhttp.MediaType, byte[])'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.Handshake com.squareup.okhttp.Handshake get(java.lang.String, java.util.List&lt;java.security.cert.Certificate&gt;, java.util.List&lt;java.security.cert.Certificate&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.ResponseBody java.io.Reader charStream()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.Response.Builder com.squareup.okhttp.Response.Builder header(java.lang.String, java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.CipherSuite TLS_RSA_WITH_AES_128_CBC_SHA'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.CipherSuite TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.OkHttpClient com.squareup.okhttp.OkHttpClient setCache(com.squareup.okhttp.Cache)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.Request java.net.URL url()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.CipherSuite TLS_ECDH_RSA_WITH_AES_128_CBC_SHA256'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.OkHttpClient com.squareup.okhttp.OkHttpClient setConnectionSpecs(java.util.List&lt;com.squareup.okhttp.ConnectionSpec&gt;)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.Response.Builder com.squareup.okhttp.Response build()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.CipherSuite TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.Handshake com.squareup.okhttp.Handshake get(javax.net.ssl.SSLSession) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.CipherSuite TLS_RSA_WITH_3DES_EDE_CBC_SHA'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.CipherSuite TLS_DHE_RSA_WITH_AES_256_CBC_SHA256'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.MultipartBuilder com.squareup.okhttp.MultipartBuilder type(com.squareup.okhttp.MediaType)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.RequestBody void writeTo(okio.BufferedSink) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+        <annotation name='org.jetbrains.kannotator.runtime.annotations.Propagated'>
+            <val name="value" val="{org.jetbrains.kannotator.controlFlow.builder.analysis.NullabilityKey.class}"/>
+        </annotation>
+    </item>
+    <item name='com.squareup.okhttp.CipherSuite TLS_DH_anon_WITH_AES_256_GCM_SHA384'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.CacheControl.Builder com.squareup.okhttp.CacheControl.Builder minFresh(int, java.util.concurrent.TimeUnit) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.CipherSuite TLS_ECDH_anon_WITH_NULL_SHA'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.CipherSuite TLS_RSA_WITH_AES_256_CBC_SHA'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.ConnectionSpec COMPATIBLE_TLS'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.ResponseBody com.squareup.okhttp.ResponseBody create(com.squareup.okhttp.MediaType, byte[]) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.Protocol HTTP_2'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.CipherSuite TLS_DHE_DSS_WITH_AES_256_GCM_SHA384'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.OkHttpClient com.squareup.okhttp.OkHttpClient setCertificatePinner(com.squareup.okhttp.CertificatePinner)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.Request com.squareup.okhttp.CacheControl cacheControl()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.Headers.Builder com.squareup.okhttp.Headers.Builder set(java.lang.String, java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.CipherSuite TLS_RSA_WITH_AES_128_CBC_SHA256'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.Response.Builder com.squareup.okhttp.Response.Builder message(java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.CacheControl FORCE_CACHE'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.OkHttpClient com.squareup.okhttp.OkHttpClient setProxy(java.net.Proxy)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.Response.Builder com.squareup.okhttp.Response.Builder code(int)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.CipherSuite TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.Response com.squareup.okhttp.CacheControl cacheControl()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.Protocol SPDY_3'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.Response.Builder com.squareup.okhttp.Response.Builder headers(com.squareup.okhttp.Headers) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.CipherSuite TLS_DH_anon_WITH_AES_128_GCM_SHA256'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.RequestBody com.squareup.okhttp.RequestBody create(com.squareup.okhttp.MediaType, java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.CipherSuite TLS_ECDH_ECDSA_WITH_3DES_EDE_CBC_SHA'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.CacheControl.Builder com.squareup.okhttp.CacheControl.Builder maxStale(int, java.util.concurrent.TimeUnit) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.ResponseBody java.lang.String string()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.CipherSuite TLS_DH_anon_WITH_AES_128_CBC_SHA256'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.CipherSuite TLS_DHE_DSS_WITH_AES_256_CBC_SHA256'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.Headers.Builder com.squareup.okhttp.Headers.Builder set(java.lang.String, java.lang.String) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.Request.Builder com.squareup.okhttp.Request.Builder cacheControl(com.squareup.okhttp.CacheControl) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.Headers com.squareup.okhttp.Headers.Builder newBuilder()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.CipherSuite TLS_ECDH_ECDSA_WITH_AES_256_GCM_SHA384'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.Request.Builder com.squareup.okhttp.Request.Builder tag(java.lang.Object)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.Request.Builder com.squareup.okhttp.Request.Builder header(java.lang.String, java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.RequestBody com.squareup.okhttp.RequestBody create(com.squareup.okhttp.MediaType, java.lang.String) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.Route com.squareup.okhttp.Address getAddress()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.Request.Builder com.squareup.okhttp.Request.Builder addHeader(java.lang.String, java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.CipherSuite TLS_DHE_DSS_WITH_AES_256_CBC_SHA'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.CertificatePinner.Builder com.squareup.okhttp.CertificatePinner.Builder add(java.lang.String, java.lang.String...)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.OkHttpClient java.util.List&lt;com.squareup.okhttp.Interceptor&gt; interceptors()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.OkHttpClient void setWriteTimeout(long, java.util.concurrent.TimeUnit) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.Request.Builder com.squareup.okhttp.Request.Builder url(java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.CipherSuite TLS_DHE_RSA_EXPORT_WITH_DES40_CBC_SHA'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.Request.Builder com.squareup.okhttp.Request.Builder header(java.lang.String, java.lang.String) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.CipherSuite TLS_ECDH_RSA_WITH_AES_128_CBC_SHA'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.CipherSuite TLS_DHE_DSS_WITH_3DES_EDE_CBC_SHA'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.CipherSuite TLS_RSA_WITH_NULL_MD5'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.Response com.squareup.okhttp.Headers headers()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.CacheControl.Builder com.squareup.okhttp.CacheControl build()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.Request.Builder com.squareup.okhttp.Request.Builder method(java.lang.String, com.squareup.okhttp.RequestBody)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.Handshake com.squareup.okhttp.Handshake get(javax.net.ssl.SSLSession)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.CipherSuite TLS_DHE_RSA_WITH_AES_256_CBC_SHA'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.Response.Builder com.squareup.okhttp.Response.Builder addHeader(java.lang.String, java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.Request.Builder com.squareup.okhttp.Request.Builder addHeader(java.lang.String, java.lang.String) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.CipherSuite TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.ConnectionSpec.Builder com.squareup.okhttp.ConnectionSpec.Builder cipherSuites(com.squareup.okhttp.CipherSuite...)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.CipherSuite TLS_DH_anon_EXPORT_WITH_DES40_CBC_SHA'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.RequestBody com.squareup.okhttp.RequestBody create(com.squareup.okhttp.MediaType, byte[])'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.Request.Builder com.squareup.okhttp.Request.Builder put(com.squareup.okhttp.RequestBody)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.Request.Builder com.squareup.okhttp.Request.Builder addHeader(java.lang.String, java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.Request.Builder com.squareup.okhttp.Request build()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.OkHttpClient com.squareup.okhttp.OkHttpClient setSslSocketFactory(javax.net.ssl.SSLSocketFactory)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.CipherSuite TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.CipherSuite TLS_KRB5_WITH_RC4_128_MD5'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.MultipartBuilder com.squareup.okhttp.MultipartBuilder type(com.squareup.okhttp.MediaType) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.Request.Builder com.squareup.okhttp.Request.Builder header(java.lang.String, java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.OkHttpClient com.squareup.okhttp.OkHttpClient setCookieHandler(java.net.CookieHandler)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.CipherSuite TLS_ECDH_ECDSA_WITH_AES_128_GCM_SHA256'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.Route java.net.Proxy getProxy()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.CipherSuite TLS_DH_anon_WITH_DES_CBC_SHA'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.ResponseBody com.squareup.okhttp.ResponseBody create(com.squareup.okhttp.MediaType, java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.ResponseBody okio.BufferedSource source()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+        <annotation name='org.jetbrains.kannotator.runtime.annotations.Propagated'>
+            <val name="value" val="{org.jetbrains.kannotator.controlFlow.builder.analysis.NullabilityKey.class}"/>
+        </annotation>
+    </item>
+    <item name='com.squareup.okhttp.TlsVersion SSL_3_0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.Route java.net.InetSocketAddress getSocketAddress()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.CacheControl.Builder com.squareup.okhttp.CacheControl.Builder maxAge(int, java.util.concurrent.TimeUnit)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.CipherSuite TLS_DHE_DSS_EXPORT_WITH_DES40_CBC_SHA'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.Request.Builder com.squareup.okhttp.Request.Builder url(java.net.URL) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.CipherSuite TLS_KRB5_EXPORT_WITH_DES_CBC_40_SHA'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.CipherSuite TLS_KRB5_WITH_3DES_EDE_CBC_SHA'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.CacheControl.Builder com.squareup.okhttp.CacheControl.Builder noTransform()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.Route Route(com.squareup.okhttp.Address, java.net.Proxy, java.net.InetSocketAddress, com.squareup.okhttp.ConnectionSpec) 3'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.Response.Builder com.squareup.okhttp.Response.Builder body(com.squareup.okhttp.ResponseBody)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.ConnectionSpec.Builder com.squareup.okhttp.ConnectionSpec.Builder supportsTlsExtensions(boolean)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.Address Address(java.lang.String, int, javax.net.SocketFactory, javax.net.ssl.SSLSocketFactory, javax.net.ssl.HostnameVerifier, com.squareup.okhttp.CertificatePinner, com.squareup.okhttp.Authenticator, java.net.Proxy, java.util.List&lt;com.squareup.okhttp.Protocol&gt;, java.util.List&lt;com.squareup.okhttp.ConnectionSpec&gt;, java.net.ProxySelector) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.CipherSuite TLS_ECDH_anon_WITH_3DES_EDE_CBC_SHA'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.CipherSuite TLS_ECDH_anon_WITH_AES_128_CBC_SHA'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.Request.Builder com.squareup.okhttp.Request.Builder delete()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.OkHttpClient com.squareup.okhttp.OkHttpClient setAuthenticator(com.squareup.okhttp.Authenticator)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.Route Route(com.squareup.okhttp.Address, java.net.Proxy, java.net.InetSocketAddress, com.squareup.okhttp.ConnectionSpec, boolean) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.CipherSuite TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.OkHttpClient void setConnectTimeout(long, java.util.concurrent.TimeUnit) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.Response.Builder com.squareup.okhttp.Response.Builder protocol(com.squareup.okhttp.Protocol)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.Response.Builder com.squareup.okhttp.Response.Builder networkResponse(com.squareup.okhttp.Response)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.Route Route(com.squareup.okhttp.Address, java.net.Proxy, java.net.InetSocketAddress, com.squareup.okhttp.ConnectionSpec) 2'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.Address java.net.ProxySelector getProxySelector()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.CipherSuite TLS_DH_anon_EXPORT_WITH_RC4_40_MD5'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.CipherSuite TLS_EMPTY_RENEGOTIATION_INFO_SCSV'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.ResponseBody com.squareup.okhttp.ResponseBody create(com.squareup.okhttp.MediaType, long, okio.BufferedSource)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.CipherSuite TLS_ECDH_ECDSA_WITH_RC4_128_SHA'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.CacheControl.Builder com.squareup.okhttp.CacheControl.Builder noCache()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.Request.Builder com.squareup.okhttp.Request.Builder get()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.Call com.squareup.okhttp.Response execute()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.ConnectionSpec.Builder com.squareup.okhttp.ConnectionSpec.Builder tlsVersions(com.squareup.okhttp.TlsVersion...)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.Route Route(com.squareup.okhttp.Address, java.net.Proxy, java.net.InetSocketAddress, com.squareup.okhttp.ConnectionSpec, boolean) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.Headers.Builder com.squareup.okhttp.Headers.Builder add(java.lang.String, java.lang.String) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.FormEncodingBuilder com.squareup.okhttp.FormEncodingBuilder add(java.lang.String, java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.RequestBody com.squareup.okhttp.RequestBody create(com.squareup.okhttp.MediaType, java.io.File)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.Headers.Builder com.squareup.okhttp.Headers.Builder add(java.lang.String, java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.CipherSuite TLS_RSA_WITH_RC4_128_SHA'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.Request com.squareup.okhttp.Headers headers()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.Route Route(com.squareup.okhttp.Address, java.net.Proxy, java.net.InetSocketAddress, com.squareup.okhttp.ConnectionSpec) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.Response.Builder com.squareup.okhttp.Response.Builder request(com.squareup.okhttp.Request)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.Request.Builder com.squareup.okhttp.Request.Builder headers(com.squareup.okhttp.Headers)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.CacheControl FORCE_NETWORK'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.CipherSuite TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA256'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.OkHttpClient java.util.List&lt;com.squareup.okhttp.Interceptor&gt; networkInterceptors()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.CipherSuite TLS_DH_anon_WITH_AES_256_CBC_SHA256'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.CipherSuite TLS_ECDH_RSA_WITH_RC4_128_SHA'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.CipherSuite TLS_ECDH_RSA_WITH_AES_256_GCM_SHA384'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.CipherSuite TLS_RSA_WITH_NULL_SHA'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.Headers.Builder com.squareup.okhttp.Headers.Builder add(java.lang.String, java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.CipherSuite TLS_DH_anon_WITH_3DES_EDE_CBC_SHA'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.CipherSuite TLS_DHE_RSA_WITH_AES_128_CBC_SHA'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.Response.Builder com.squareup.okhttp.Response.Builder headers(com.squareup.okhttp.Headers)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.CipherSuite TLS_ECDH_RSA_WITH_AES_256_CBC_SHA384'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.CipherSuite TLS_DHE_DSS_WITH_AES_128_CBC_SHA256'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.Headers com.squareup.okhttp.Headers of(java.lang.String...)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.CipherSuite TLS_RSA_EXPORT_WITH_DES40_CBC_SHA'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.Route Route(com.squareup.okhttp.Address, java.net.Proxy, java.net.InetSocketAddress, com.squareup.okhttp.ConnectionSpec) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.ConnectionSpec.Builder Builder(com.squareup.okhttp.ConnectionSpec) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.Address com.squareup.okhttp.Authenticator getAuthenticator()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.OkHttpClient com.squareup.okhttp.OkHttpClient setHostnameVerifier(javax.net.ssl.HostnameVerifier)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.Response.Builder com.squareup.okhttp.Response.Builder cacheResponse(com.squareup.okhttp.Response)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.CipherSuite TLS_DHE_RSA_WITH_AES_128_CBC_SHA256'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.OkHttpClient com.squareup.okhttp.OkHttpClient setProxySelector(java.net.ProxySelector)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.OkHttpClient com.squareup.okhttp.OkHttpClient cancel(java.lang.Object)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.squareup.okhttp.Headers.Builder com.squareup.okhttp.Headers.Builder set(java.lang.String, java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+</root>
