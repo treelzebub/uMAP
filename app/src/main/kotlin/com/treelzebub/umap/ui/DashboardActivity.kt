@@ -23,8 +23,9 @@ import com.treelzebub.umap.async.requestAccessToken
 import com.treelzebub.umap.auth.TokenHolder
 import com.treelzebub.umap.graphics.CircleTransform
 import com.treelzebub.umap.util.BusProvider
-import com.treelzebub.umap.util.PrefsUtils
 import com.treelzebub.umap.util.UserUtils
+import com.treelzebub.umap.util.clearPrefs
+import com.treelzebub.umap.util.getPrefs
 
 /**
  * Created by Tre Murillo on 5/28/15
@@ -46,8 +47,8 @@ public class DashboardActivity : AppCompatActivity() {
         setupDrawer()
 
         val data = getIntent().getData()
-        if (data != null && PrefsUtils.getPrefs(this)?.getString(getString(R.string.key_oauth_token), "null")?.equals("null") ?: false) {
-            val editor = PrefsUtils.getPrefs(this)?.edit()
+        if (data != null && getPrefs(this)?.getString(getString(R.string.key_oauth_token), "null")?.equals("null") ?: false) {
+            val editor = getPrefs(this)?.edit()
             // probably don't need to persist these, but will for now
             editor?.putString(getString(R.string.key_oauth_token), data.getQueryParameter("oauth_token"))
             editor?.putString(getString(R.string.key_oauth_verifier), data.getQueryParameter("oauth_verifier"))
@@ -100,7 +101,7 @@ public class DashboardActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.getItemId()) {
             android.R.id.home -> drawerLayout.openDrawer(GravityCompat.START)
-            R.id.clear_prefs -> PrefsUtils.clearPrefs(this)
+            R.id.clear_prefs -> clearPrefs(this)
         }
         return super.onOptionsItemSelected(item)
     }

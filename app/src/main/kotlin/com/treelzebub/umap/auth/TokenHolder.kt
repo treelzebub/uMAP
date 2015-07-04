@@ -2,11 +2,12 @@ package com.treelzebub.umap.auth
 
 import android.content.Context
 import com.treelzebub.umap.R
+import com.treelzebub.umap.util.getPrefs
 import org.scribe.model.Token
 import kotlin.platform.platformStatic
 
 /**
- * Created by tremurillo on 6/9/15
+ * Created by Tre Murillo on 6/9/15
  */
 public object TokenHolder {
 
@@ -16,7 +17,7 @@ public object TokenHolder {
     platformStatic
     public fun createTokenFromPref(c: Context): Boolean {
         if (accessToken != null) return true
-        val prefs = c.getApplicationContext().getSharedPreferences(c.getString(R.string.key_pref_file), Context.MODE_PRIVATE)
+        val prefs = getPrefs(c)?.getString(r.getString(R.string.key_pref_file), Context.MODE_PRIVATE)
         val key = prefs.getString(c.getString(R.string.key_access_token), null)
         val secret = prefs.getString(c.getString(R.string.key_access_token_secret), null)
         val rawResponse = prefs.getString(c.getString(R.string.key_access_token_raw_response), null)
