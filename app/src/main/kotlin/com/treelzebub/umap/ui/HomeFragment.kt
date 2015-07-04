@@ -17,10 +17,6 @@ import com.treelzebub.umap.util.BusProvider
  */
 public class HomeFragment : Fragment() {
 
-    companion object {
-        private val TAG = javaClass<HomeFragment>().getSimpleName()
-    }
-
     val tokenText: TextView by bindView(R.id.token_text)
 
     override fun onCreate(savedInstanceState: Bundle?) {

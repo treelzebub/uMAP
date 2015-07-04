@@ -9,8 +9,8 @@ android {
         applicationId "com.treelzebub.umap"
         minSdkVersion 17
         targetSdkVersion 22
-        versionCode 1
-        versionName "1.0"
+        versionName "0.001"
+        versionCode 2
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_7

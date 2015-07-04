@@ -17,10 +17,10 @@ public object TokenHolder {
     platformStatic
     public fun createTokenFromPref(c: Context): Boolean {
         if (accessToken != null) return true
-        val prefs = getPrefs(c)?.getString(r.getString(R.string.key_pref_file), Context.MODE_PRIVATE)
-        val key = prefs.getString(c.getString(R.string.key_access_token), null)
-        val secret = prefs.getString(c.getString(R.string.key_access_token_secret), null)
-        val rawResponse = prefs.getString(c.getString(R.string.key_access_token_raw_response), null)
+        val prefs = getPrefs(c)
+        val key = prefs?.getString(c.getString(R.string.key_access_token), null)
+        val secret = prefs?.getString(c.getString(R.string.key_access_token_secret), null)
+        val rawResponse = prefs?.getString(c.getString(R.string.key_access_token_raw_response), null)
         if (key == null || secret == null || rawResponse == null) {
             return false
         }
@@ -34,7 +34,22 @@ public object TokenHolder {
     }
 
     platformStatic
-    public fun clearTokens() {
+    public fun getOauthTokenFromPref(c: Context): String? {
+        return getPrefs(c)?.getString(c.getString(R.string.key_oauth_token), null)
+    }
+
+    platformStatic
+    public fun hasOauthToken(c: Context): Boolean {
+        return getOauthTokenFromPref(c) != null
+    }
+
+    platformStatic
+    public fun deleteTokens(c: Context) {
+        val editor = getPrefs(c)?.edit()
+        //TODO abstraction ffs
+        editor?.remove(c.getString(R.string.key_access_token))
+        editor?.remove(c.getString(R.string.key_access_token_secret))
+        editor?.remove(c.getString(R.string.key_access_token_raw_response))?.commit()
         requestToken = null
         accessToken = null
     }

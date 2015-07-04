@@ -13,7 +13,7 @@ public fun getPrefs(c: Context): SharedPreferences? {
 }
 
 public fun clearPrefs(c: Context): Boolean {
-    getPrefs(c)!!.edit().clear().commit()
+    getPrefs(c)?.edit()?.clear()?.commit()
     val root = c.getFilesDir() ?: return false
     val dir = File(root.getParent() + "/shared_prefs/")
     val xml = File(dir, c.getString(R.string.key_pref_file) + ".xml")

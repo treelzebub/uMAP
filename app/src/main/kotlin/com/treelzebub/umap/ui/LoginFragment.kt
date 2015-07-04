@@ -28,10 +28,6 @@ import org.scribe.builder.ServiceBuilder
  */
 public class LoginFragment : Fragment() {
 
-    companion object {
-        private val TAG = javaClass<LoginFragment>().getSimpleName()
-    }
-
     private var authUrl: String? = null
 
     val webView: WebView by bindView(R.id.webview)
@@ -42,15 +38,16 @@ public class LoginFragment : Fragment() {
         loadAuthUrl()
     }
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup, savedInstanceState: Bundle?): View {
         super.onCreateView(inflater, container, savedInstanceState)
         return inflater.inflate(R.layout.fragment_login, container, false)
     }
 
-    override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        webView.getSettings().setBuiltInZoomControls(true)
-        webView.getSettings().setJavaScriptEnabled(true)
+        val wvSettings = webView.getSettings()
+        wvSettings.setBuiltInZoomControls(true)
+        wvSettings.setJavaScriptEnabled(true)
         webView.setWebViewClient(Callback())
     }
 

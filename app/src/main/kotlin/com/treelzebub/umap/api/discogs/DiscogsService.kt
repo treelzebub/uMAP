@@ -1,9 +1,7 @@
 package com.treelzebub.umap.api.discogs
 
+import com.treelzebub.umap.api.discogs.model.*
 import com.treelzebub.umap.api.discogs.model.Collection
-import com.treelzebub.umap.api.discogs.model.CollectionFolder
-import com.treelzebub.umap.api.discogs.model.CollectionReleases
-import com.treelzebub.umap.api.discogs.model.User
 import retrofit.http.GET
 import retrofit.http.Path
 
@@ -12,6 +10,9 @@ import retrofit.http.Path
  */
 
 public interface DiscogsService {
+
+    GET("/oauth/identity")
+    public fun getIdentity(): Identity
 
     GET("/users/{username}")
     public fun getUser(Path("username") username: String): User

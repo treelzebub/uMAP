@@ -17,6 +17,7 @@ import butterknife.bindView
 import com.squareup.otto.Subscribe
 import com.squareup.picasso.Picasso
 import com.treelzebub.umap.R
+import com.treelzebub.umap.api.discogs.model.User
 import com.treelzebub.umap.async.event.AuthUrlEvent
 import com.treelzebub.umap.async.event.UserEvent
 import com.treelzebub.umap.async.requestAccessToken
@@ -47,14 +48,12 @@ public class DashboardActivity : AppCompatActivity() {
         setupDrawer()
 
         val data = getIntent().getData()
-        if (data != null && getPrefs(this)?.getString(getString(R.string.key_oauth_token), "null")?.equals("null") ?: false) {
+        if (data != null && !TokenHolder.hasOauthToken(this)) {
             val editor = getPrefs(this)?.edit()
-            // probably don't need to persist these, but will for now
             editor?.putString(getString(R.string.key_oauth_token), data.getQueryParameter("oauth_token"))
-            editor?.putString(getString(R.string.key_oauth_verifier), data.getQueryParameter("oauth_verifier"))
-            editor?.commit()
+            editor?.putString(getString(R.string.key_oauth_verifier), data.getQueryParameter("oauth_verifier"))?.commit()
             requestAccessToken(this, data)
-        } else if (TokenHolder.hasAccessToken(getApplicationContext())) {
+        } else if (TokenHolder.hasAccessToken(this)) {
             UserUtils.syncUser(this)
             getSupportFragmentManager().beginTransaction().add(R.id.content, HomeFragment()).commit()
         } else {

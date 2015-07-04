@@ -74,7 +74,16 @@ public object UserUtils {
     public fun syncUser(c: Context) {
         object : AsyncTask<Context, Void, User>() {
             override fun doInBackground(vararg params: Context): User {
-                return RestService.service.getUser(UserUtils.usernameFromPrefs(params[0]))
+                var userFromPrefs: String
+                var userFromIdentity: String
+                try {
+                    userFromPrefs = UserUtils.usernameFromPrefs(params[0])
+                    return RestService.service.getUser(userFromPrefs)
+                } catch (e: NoUserException) {
+                    val identity = RestService.service.getIdentity()
+                    //TODO this is unsafe
+                    return RestService.service.getUser(identity.username!!)
+                }
             }
 
             override fun onPostExecute(result: User) {

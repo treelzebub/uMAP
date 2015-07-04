@@ -5,6 +5,4 @@ import com.treelzebub.umap.api.discogs.model.User
 /**
  * Created by Tre Murillo on 6/6/15
  */
-public class UserEvent(val user: User) {
-
-}
+public class UserEvent(val user: User)
