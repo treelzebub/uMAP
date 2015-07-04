@@ -17,9 +17,9 @@ import butterknife.bindView
 import com.squareup.otto.Subscribe
 import com.squareup.picasso.Picasso
 import com.treelzebub.umap.R
-import com.treelzebub.umap.async.LoginUtils
 import com.treelzebub.umap.async.event.AuthUrlEvent
 import com.treelzebub.umap.async.event.UserEvent
+import com.treelzebub.umap.async.requestAccessToken
 import com.treelzebub.umap.auth.TokenHolder
 import com.treelzebub.umap.graphics.CircleTransform
 import com.treelzebub.umap.util.BusProvider
@@ -46,13 +46,13 @@ public class DashboardActivity : AppCompatActivity() {
         setupDrawer()
 
         val data = getIntent().getData()
-        if (data != null && PrefsUtils.getPrefs(this)!!.getString(getString(R.string.key_oauth_token), "null").equals("null")) {
+        if (data != null && PrefsUtils.getPrefs(this)?.getString(getString(R.string.key_oauth_token), "null")?.equals("null") ?: false) {
             val editor = PrefsUtils.getPrefs(this)?.edit()
             // probably don't need to persist these, but will for now
             editor?.putString(getString(R.string.key_oauth_token), data.getQueryParameter("oauth_token"))
             editor?.putString(getString(R.string.key_oauth_verifier), data.getQueryParameter("oauth_verifier"))
             editor?.commit()
-            LoginUtils.requestAccessToken(this, data)
+            requestAccessToken(this, data)
         } else if (TokenHolder.hasAccessToken(getApplicationContext())) {
             UserUtils.syncUser(this)
             getSupportFragmentManager().beginTransaction().add(R.id.content, HomeFragment()).commit()
@@ -92,13 +92,13 @@ public class DashboardActivity : AppCompatActivity() {
         })
     }
 
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
         getMenuInflater().inflate(R.menu.dashboard, menu)
         return true
     }
 
-    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
-        when (item!!.getItemId()) {
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.getItemId()) {
             android.R.id.home -> drawerLayout.openDrawer(GravityCompat.START)
             R.id.clear_prefs -> PrefsUtils.clearPrefs(this)
         }

@@ -12,8 +12,8 @@ import butterknife.bindView
 import com.squareup.otto.Subscribe
 import com.treelzebub.umap.R
 import com.treelzebub.umap.api.discogs.model.CollectionReleases
-import com.treelzebub.umap.async.CollectionUtils
 import com.treelzebub.umap.async.event.CollectionReleasesEvent
+import com.treelzebub.umap.async.syncCollection
 import com.treelzebub.umap.ui.adapter.CollectionAdapter
 import com.treelzebub.umap.util.BusProvider
 
@@ -30,7 +30,7 @@ public class CollectionFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         BusProvider.instance.register(this)
-        CollectionUtils.syncCollection(getActivity(), true)
+        syncCollection(getActivity(), true)
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup, savedInstanceState: Bundle?): View {
