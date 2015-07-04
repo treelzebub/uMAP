@@ -3,7 +3,6 @@ package com.treelzebub.umap.async.event
 import android.content.Context
 import com.treelzebub.umap.R
 import com.treelzebub.umap.auth.TokenHolder
-import com.treelzebub.umap.util.PrefsUtils
 import org.scribe.model.Token
 
 /**

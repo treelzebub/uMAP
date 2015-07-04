@@ -2,10 +2,7 @@ package com.treelzebub.umap.util
 
 import android.content.Context
 import android.content.SharedPreferences
-import android.support.annotation.StringRes
 import com.treelzebub.umap.R
-import net.sarazan.prefs.Pref
-import net.sarazan.prefs.SharedPref
 import java.io.File
 
 /**
