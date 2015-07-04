@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="key_pref_file">net.treelzebub.umap.PREFS</string>
+    <string name="key_pref_username">user</string>
+
     <string name="key_request_token">key_request_token</string>
     <string name="key_oauth_token">key_oauth_token</string>
     <string name="key_oauth_verifier">key_oauth_verifier</string>
     <string name="key_access_token">key_access_token</string>
     <string name="key_access_token_secret">key_access_token_secret</string>
     <string name="key_access_token_raw_response">key_access_token_raw_response</string>
-    <string name="key_username">key_username</string>
 </resources>

@@ -2,7 +2,6 @@ package com.treelzebub.umap.util
 
 import android.content.Context
 import android.os.AsyncTask
-import android.util.Log
 import com.treelzebub.umap.R
 import com.treelzebub.umap.USER_FILENAME
 import com.treelzebub.umap.api.discogs.model.User
@@ -39,8 +38,7 @@ public object UserUtils {
                 return false
             }
         } else {
-            Log.d("User Persist Error", "User not set.")
-            return false
+            throw NoUserException("User Persist Error")
         }
     }
 
@@ -59,12 +57,17 @@ public object UserUtils {
 
     platformStatic
     public fun usernameToPrefs(c: Context, u: User) {
-        PrefsUtils.getPrefs(c)?.edit()?.putString(c.getString(R.string.key_username), u.username)?.commit()
+        getPrefs(c)?.edit()?.putString(c.getString(R.string.key_pref_username), u.username)?.commit()
     }
 
     platformStatic
     public fun usernameFromPrefs(c: Context): String {
-        return PrefsUtils.getPrefs(c)?.getString(c.getString(R.string.key_username), "null") ?: "null"
+        val username = getPrefs(c)?.getString(c.getString(R.string.key_pref_username), "")?: ""
+        if (!username.equals("")) {
+            return username
+        } else {
+            throw NoUserException("SharedPrefs does not contain user.")
+        }
     }
 
     platformStatic
@@ -79,4 +82,6 @@ public object UserUtils {
             }
         }.execute(c)
     }
+
+    public class NoUserException(message: String?) : Exception(message)
 }
