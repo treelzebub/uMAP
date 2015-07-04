@@ -84,5 +84,9 @@ public fun requestAccessToken(c: Context, data: Uri) {
 
             return null
         }
+
+        override fun onPostExecute(result: Void?) {
+            BusProvider.instance.post(LoginEvent)
+        }
     }.execute()
 }

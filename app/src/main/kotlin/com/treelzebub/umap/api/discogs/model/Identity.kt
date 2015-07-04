@@ -8,4 +8,6 @@ public data class Identity {
     public var username: String? = null
     public var resource_url: String? = null
     public var consumer_name: String? = null
+
+    public var message: String? = null // error
 }

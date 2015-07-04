@@ -23,6 +23,6 @@ public object RestService {
                     .build()
 
     platformStatic
-    public val service: DiscogsService
+    public val instance: DiscogsService
         get() = s ?: restAdapter.create(javaClass<DiscogsService>())
 }

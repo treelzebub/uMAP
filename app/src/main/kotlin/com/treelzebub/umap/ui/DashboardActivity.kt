@@ -43,6 +43,7 @@ public class DashboardActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         BusProvider.instance.register(this)
+        clearPrefs(this)
         setContentView(R.layout.activity_dashboard)
         setupToolbar()
         setupDrawer()
@@ -53,7 +54,7 @@ public class DashboardActivity : AppCompatActivity() {
             editor?.putString(getString(R.string.key_oauth_token), data.getQueryParameter("oauth_token"))
             editor?.putString(getString(R.string.key_oauth_verifier), data.getQueryParameter("oauth_verifier"))?.commit()
             requestAccessToken(this, data)
-        } else if (TokenHolder.hasAccessToken(this)) {
+        } else if (TokenHolder.hasAccessToken(this) && UserUtils.hasUser(this)) {
             UserUtils.syncUser(this)
             getSupportFragmentManager().beginTransaction().add(R.id.content, HomeFragment()).commit()
         } else {
