@@ -1,6 +1,5 @@
 package com.treelzebub.umap.ui
 
-import android.app.FragmentTransaction
 import android.os.Bundle
 import android.support.design.widget.NavigationView
 import android.support.design.widget.Snackbar
@@ -17,7 +16,7 @@ import butterknife.bindView
 import com.squareup.otto.Subscribe
 import com.squareup.picasso.Picasso
 import com.treelzebub.umap.R
-import com.treelzebub.umap.async.event.AuthUrlEvent
+import com.treelzebub.umap.async.event.LoginEvent
 import com.treelzebub.umap.async.event.UserEvent
 import com.treelzebub.umap.auth.TokenHolder
 import com.treelzebub.umap.auth.requestAccessToken
@@ -75,7 +74,7 @@ public class DashboardActivity : AppCompatActivity() {
             Snackbar.make(content, it.getTitle(), Snackbar.LENGTH_LONG).show()
             it.setChecked(true)
             when (it.getItemId()) {
-                //TODO
+            //TODO
             }
             drawerLayout.closeDrawers()
             true
@@ -105,7 +104,7 @@ public class DashboardActivity : AppCompatActivity() {
     }
 
     Subscribe
-    public fun onLoginEvent(event: AuthUrlEvent) {
-        //TODO
+    public fun onLoginEvent(event: LoginEvent) {
+
     }
 }

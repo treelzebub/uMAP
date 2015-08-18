@@ -1,13 +1,17 @@
 package com.treelzebub.umap.util
 
 import android.content.Context
+import android.content.Intent
 import android.os.AsyncTask
+import android.util.Log
+import android.widget.Toast
 import com.treelzebub.umap.R
 import com.treelzebub.umap.USER_FILENAME
 import com.treelzebub.umap.api.discogs.model.User
 import com.treelzebub.umap.async.event.UserEvent
 import com.treelzebub.umap.auth.RestService
 import com.treelzebub.umap.auth.TokenHolder
+import com.treelzebub.umap.ui.LoginActivity
 import java.io.IOException
 import java.io.ObjectInputStream
 import java.io.ObjectOutputStream
@@ -83,9 +87,9 @@ public object UserUtils {
                     userFromPrefs = UserUtils.usernameFromPrefs(params[0])
                     return RestService.instance.getUser(userFromPrefs)
                 } catch (e: NoUserException) {
-                    val identity = RestService.instance.getIdentity()
-                    //TODO this is unsafe
-                    return RestService.instance.getUser(identity.username!!)
+                    Log.e(e.toString(), e.getMessage())
+                    Toast.makeText(c, "Something went wrong. Please retry login.", Toast.LENGTH_SHORT).show()
+                    c.startActivity(Intent(c, javaClass<LoginActivity>()))
                 }
             }
 

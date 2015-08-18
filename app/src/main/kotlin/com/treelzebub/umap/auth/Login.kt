@@ -9,7 +9,7 @@ import com.treelzebub.umap.DISCOGS_AUTH_URL_APPEND
 import com.treelzebub.umap.DISCOGS_CONSUMER_KEY
 import com.treelzebub.umap.DISCOGS_CONSUMER_SECRET
 import com.treelzebub.umap.async.event.AccessTokenEvent
-import com.treelzebub.umap.async.event.AuthUrlEvent
+import com.treelzebub.umap.async.event.LoginEvent
 import com.treelzebub.umap.util.BusProvider
 import org.scribe.builder.ServiceBuilder
 import org.scribe.exceptions.OAuthException
@@ -48,7 +48,7 @@ public fun retrieveAuthUrl() {
         }
 
         override fun onPostExecute(result: Void?) {
-            BusProvider.instance.post(AuthUrlEvent(authUrl))
+//            BusProvider.instance.post(LoginEvent(authUrl))
         }
     }.execute()
 }
@@ -83,7 +83,7 @@ public fun requestAccessToken(c: Context, data: Uri) {
         }
 
         override fun onPostExecute(result: Void?) {
-            BusProvider.instance.post(LoginEvent)
+            BusProvider.instance.post(LoginEvent())
         }
     }.execute()
 }
