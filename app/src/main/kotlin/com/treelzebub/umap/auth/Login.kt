@@ -48,7 +48,6 @@ public fun retrieveAuthUrl() {
         }
 
         override fun onPostExecute(result: Void?) {
-//            BusProvider.instance.post(LoginEvent(authUrl))
         }
     }.execute()
 }
@@ -66,13 +65,8 @@ public fun requestAccessToken(c: Context, data: Uri) {
         override fun doInBackground(vararg params: Void?): Void? {
             val requestToken = TokenHolder.requestToken
             val verifier = Verifier(data.getQueryParameter("oauth_verifier"))
-            val service = ServiceBuilder()
-                    .apiKey(DISCOGS_CONSUMER_KEY)
-                    .apiSecret(DISCOGS_CONSUMER_SECRET)
-                    .callback(CALLBACK_URL)
-                    .provider(javaClass<DiscogsApi>())
-                    .build()
-            val accessToken = service.getAccessToken(requestToken, verifier)
+            val sAuthService = AuthService.instance
+            val accessToken = sAuthService.getAccessToken(requestToken, verifier)
             if (accessToken != null) {
                 Log.d("OAuth Token: ", accessToken.getToken())
                 AccessTokenEvent(c, accessToken).onSuccess()

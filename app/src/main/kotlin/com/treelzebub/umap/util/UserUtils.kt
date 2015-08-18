@@ -1,18 +1,14 @@
 package com.treelzebub.umap.util
 
 import android.content.Context
-import android.content.Intent
 import android.os.AsyncTask
-import android.os.Looper
 import android.util.Log
-import android.widget.Toast
 import com.treelzebub.umap.R
 import com.treelzebub.umap.USER_FILENAME
 import com.treelzebub.umap.api.discogs.model.User
 import com.treelzebub.umap.async.event.UserEvent
 import com.treelzebub.umap.auth.RestService
 import com.treelzebub.umap.auth.TokenHolder
-import com.treelzebub.umap.ui.LoginActivity
 import java.io.IOException
 import java.io.ObjectInputStream
 import java.io.ObjectOutputStream

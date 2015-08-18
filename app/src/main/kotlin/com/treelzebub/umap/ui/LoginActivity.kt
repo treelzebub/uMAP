@@ -11,13 +11,10 @@ import android.webkit.WebViewClient
 import butterknife.bindView
 import com.treelzebub.umap
 import com.treelzebub.umap.DISCOGS_AUTH_URL_APPEND
-import com.treelzebub.umap.DISCOGS_CONSUMER_KEY
-import com.treelzebub.umap.DISCOGS_CONSUMER_SECRET
 import com.treelzebub.umap.R
-import com.treelzebub.umap.auth.DiscogsApi
+import com.treelzebub.umap.auth.AuthService
 import com.treelzebub.umap.auth.TokenHolder
 import com.treelzebub.umap.util.BusProvider
-import org.scribe.builder.ServiceBuilder
 
 /**
  * Created by Tre Murillo on 5/28/15
@@ -44,15 +41,10 @@ public class LoginActivity : AppCompatActivity() {
     private fun loadAuthUrl() {
         object : AsyncTask<Void, Void, Void>() {
             override fun doInBackground(vararg params: Void): Void? {
-                val oAuthService = ServiceBuilder()
-                        .apiKey(DISCOGS_CONSUMER_KEY)
-                        .apiSecret(DISCOGS_CONSUMER_SECRET)
-                        .callback(umap.CALLBACK_URL)
-                        .provider(javaClass<DiscogsApi>())
-                        .build()
-                val rt = oAuthService.getRequestToken()
+                val sAuthService = AuthService.instance
+                val rt = sAuthService.getRequestToken()
                 TokenHolder.requestToken = rt
-                authUrl = oAuthService.getAuthorizationUrl(rt) + DISCOGS_AUTH_URL_APPEND + rt.getToken()
+                authUrl = sAuthService.getAuthorizationUrl(rt) + DISCOGS_AUTH_URL_APPEND + rt.getToken()
                 return null
             }
 

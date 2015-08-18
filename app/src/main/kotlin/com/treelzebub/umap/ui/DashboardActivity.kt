@@ -16,7 +16,6 @@ import butterknife.bindView
 import com.squareup.otto.Subscribe
 import com.squareup.picasso.Picasso
 import com.treelzebub.umap.R
-import com.treelzebub.umap.async.event.LoginEvent
 import com.treelzebub.umap.async.event.UserEvent
 import com.treelzebub.umap.auth.TokenHolder
 import com.treelzebub.umap.auth.requestAccessToken
@@ -105,10 +104,5 @@ public class DashboardActivity : AppCompatActivity() {
             username.setText(user.username)
             name.setText(user.name)
         }
-    }
-
-    Subscribe
-    public fun onLoginEvent(event: LoginEvent) {
-
     }
 }

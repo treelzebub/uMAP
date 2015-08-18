@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity
 import com.treelzebub.umap.ui.DashboardActivity
 import com.treelzebub.umap.ui.LoginActivity
 import com.treelzebub.umap.util.UserUtils
+import com.treelzebub.umap.util.clearPrefs
 
 /**
  * Created by Tre Murillo on 8/17/15
@@ -14,6 +15,7 @@ public class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        clearPrefs(this)
         if (UserUtils.isLoggedIn(this)) {
             startActivity(Intent(this, javaClass<DashboardActivity>()))
         } else {
