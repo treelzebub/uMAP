@@ -81,7 +81,7 @@ public object UserUtils {
 
     public fun syncUser(c: Context) {
         object : AsyncTask<Context, Void, User>() {
-            override fun doInBackground(vararg params: Context): User {
+            override fun doInBackground(vararg params: Context): User? {
                 var userFromPrefs: String
                 try {
                     userFromPrefs = UserUtils.usernameFromPrefs(params[0])
@@ -91,6 +91,7 @@ public object UserUtils {
                     Toast.makeText(c, "Something went wrong. Please retry login.", Toast.LENGTH_SHORT).show()
                     c.startActivity(Intent(c, javaClass<LoginActivity>()))
                 }
+                return null
             }
 
             override fun onPostExecute(result: User) {

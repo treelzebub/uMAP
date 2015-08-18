@@ -10,17 +10,14 @@ import retrofit.client.OkClient
  */
 public object RestService {
 
-    private var s: DiscogsService? = null
-    private val restAdapter =
-            RestAdapter.Builder()
-                    .setClient(OkClient())
-                    .setEndpoint(DISCOGS_BASE_URL)
-                    .setLogLevel(RestAdapter.LogLevel.FULL)
-                    .setRequestInterceptor {
-                        it.addHeader("oauth_token", TokenHolder.accessToken?.getToken())
-                    }
-                    .build()
-
     public val instance: DiscogsService
-        get() = s ?: restAdapter.create(javaClass<DiscogsService>())
+        get() = RestAdapter.Builder()
+                .setClient(OkClient())
+                .setEndpoint(DISCOGS_BASE_URL)
+                .setLogLevel(RestAdapter.LogLevel.FULL)
+                .setRequestInterceptor {
+                    it.addHeader("oauth_token", TokenHolder.accessToken?.getToken())
+                }
+                .build()
+                .create(javaClass<DiscogsService>())
 }
