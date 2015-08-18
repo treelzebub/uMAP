@@ -8,7 +8,6 @@ import org.scribe.oauth.OAuthService
 
 /**
  * Created by Tre Murillo on 8/17/15
- * Copyright(c) 2015 Level, Inc.
  */
 public object AuthService {
     public val instance: OAuthService

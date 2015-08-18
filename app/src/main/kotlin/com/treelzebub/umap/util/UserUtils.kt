@@ -29,11 +29,14 @@ public object UserUtils {
         return getUsername(c) != null
     }
 
+    //    public fun getUser(c: Context): User? {
+    //    }
+
     public fun getUsername(c: Context): String? {
         return getPrefs(c)?.getString(c.getString(R.string.key_pref_username), null)
     }
 
-    public fun toFile(c: Context, u: User?): Boolean {
+    public fun userToFile(c: Context, u: User?): Boolean {
         if (u != null) {
             try {
                 val fileOutStream = c.openFileOutput(USER_FILENAME, Context.MODE_PRIVATE)
@@ -50,15 +53,14 @@ public object UserUtils {
         }
     }
 
-    public fun fromFile(c: Context): Boolean {
+    public fun userFromFile(c: Context): User? {
         try {
             val fileInStream = c.openFileInput(USER_FILENAME)
             val objInStream = ObjectInputStream(fileInStream)
-            user = objInStream.readObject() as User
-            return true
+            return objInStream.readObject() as User
         } catch (e: IOException) {
             e.printStackTrace()
-            return false
+            return null
         }
     }
 

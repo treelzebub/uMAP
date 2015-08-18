@@ -15,7 +15,6 @@ public class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        clearPrefs(this)
         if (UserUtils.isLoggedIn(this)) {
             startActivity(Intent(this, javaClass<DashboardActivity>()))
         } else {

@@ -16,6 +16,7 @@ import butterknife.bindView
 import com.squareup.otto.Subscribe
 import com.squareup.picasso.Picasso
 import com.treelzebub.umap.R
+import com.treelzebub.umap.api.discogs.model.User
 import com.treelzebub.umap.async.event.UserEvent
 import com.treelzebub.umap.auth.TokenHolder
 import com.treelzebub.umap.auth.requestAccessToken
@@ -37,6 +38,8 @@ public class DashboardActivity : AppCompatActivity() {
     val username: TextView          by bindView(R.id.username)
     val name: TextView              by bindView(R.id.name)
 
+    var user: User? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         BusProvider.instance.register(this)
@@ -51,6 +54,8 @@ public class DashboardActivity : AppCompatActivity() {
             editor?.putString(getString(R.string.key_oauth_token), data.getQueryParameter("oauth_token"))
             editor?.putString(getString(R.string.key_oauth_verifier), data.getQueryParameter("oauth_verifier"))?.commit()
             requestAccessToken(this, data)
+        } else {
+            user = UserUtils.userFromFile(this)
         }
     }
 
@@ -98,8 +103,9 @@ public class DashboardActivity : AppCompatActivity() {
     public fun onUserEvent(event: UserEvent) {
         val user = event.user
         if (user != null) {
-            UserUtils.toFile(getApplicationContext(), user)
+            UserUtils.userToFile(getApplicationContext(), user)
             UserUtils.usernameToPrefs(this, user)
+
             Picasso.with(this).load(user.avatar_url).transform(CircleTransform()).into(avatar)
             username.setText(user.username)
             name.setText(user.name)
