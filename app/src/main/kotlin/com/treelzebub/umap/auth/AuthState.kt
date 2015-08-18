@@ -5,7 +5,6 @@ import com.treelzebub.umap.util.UserUtils
 
 /**
  * Created by Tre Murillo on 8/17/15
- * Copyright(c) 2015 Level, Inc.
  */
 public object AuthState {
     private synchronized var sAuthRequests = 0
