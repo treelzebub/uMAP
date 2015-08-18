@@ -10,7 +10,6 @@ import com.treelzebub.umap.auth.RestService
 import java.io.IOException
 import java.io.ObjectInputStream
 import java.io.ObjectOutputStream
-import kotlin.platform.platformStatic
 
 /**
  * Created by Tre Murillo on 6/7/15
@@ -20,12 +19,10 @@ public object UserUtils {
     var user: User? = null
     var username: String? = null
 
-    platformStatic
     public fun hasUser(c: Context): Boolean {
         return user != null || username != null
     }
 
-    platformStatic
     public fun toFile(c: Context, u: User?): Boolean {
         if (u != null) {
             try {
@@ -43,7 +40,6 @@ public object UserUtils {
         }
     }
 
-    platformStatic
     public fun fromFile(c: Context): Boolean {
         try {
             val fileInStream = c.openFileInput(USER_FILENAME)
@@ -56,12 +52,10 @@ public object UserUtils {
         }
     }
 
-    platformStatic
     public fun usernameToPrefs(c: Context, u: User) {
         getPrefs(c)?.edit()?.putString(c.getString(R.string.key_pref_username), u.username)?.commit()
     }
 
-    platformStatic
     public fun usernameFromPrefs(c: Context): String {
         val username = getPrefs(c)?.getString(c.getString(R.string.key_pref_username), null)
         if (username != null) {
@@ -72,7 +66,6 @@ public object UserUtils {
         }
     }
 
-    platformStatic
     public fun syncUser(c: Context) {
         object : AsyncTask<Context, Void, User>() {
             override fun doInBackground(vararg params: Context): User {

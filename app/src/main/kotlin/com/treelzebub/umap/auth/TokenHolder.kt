@@ -4,7 +4,6 @@ import android.content.Context
 import com.treelzebub.umap.R
 import com.treelzebub.umap.util.getPrefs
 import org.scribe.model.Token
-import kotlin.platform.platformStatic
 
 /**
  * Created by Tre Murillo on 6/9/15
@@ -14,7 +13,6 @@ public object TokenHolder {
     public var requestToken: Token? = null
     public var accessToken: Token? = null
 
-    platformStatic
     public fun createTokenFromPref(c: Context): Boolean {
         if (accessToken != null) return true
         val prefs = getPrefs(c)
@@ -28,22 +26,18 @@ public object TokenHolder {
         return true
     }
 
-    platformStatic
     public fun hasAccessToken(c: Context): Boolean {
         return createTokenFromPref(c)
     }
 
-    platformStatic
     public fun getOauthTokenFromPref(c: Context): String? {
         return getPrefs(c)?.getString(c.getString(R.string.key_oauth_token), null)
     }
 
-    platformStatic
     public fun hasOauthToken(c: Context): Boolean {
         return getOauthTokenFromPref(c) != null
     }
 
-    platformStatic
     public fun deleteTokens(c: Context) {
         val editor = getPrefs(c)?.edit()
         //TODO abstraction ffs

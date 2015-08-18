@@ -4,7 +4,6 @@ import com.treelzebub.umap.DISCOGS_BASE_URL
 import com.treelzebub.umap.api.discogs.DiscogsService
 import retrofit.RestAdapter
 import retrofit.client.OkClient
-import kotlin.platform.platformStatic
 
 /**
  * Created by Tre Murillo on 6/9/15
@@ -22,7 +21,6 @@ public object RestService {
                     }
                     .build()
 
-    platformStatic
     public val instance: DiscogsService
         get() = s ?: restAdapter.create(javaClass<DiscogsService>())
 }

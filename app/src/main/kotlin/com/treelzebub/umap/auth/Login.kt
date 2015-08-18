@@ -1,17 +1,15 @@
-package com.treelzebub.umap.async
+package com.treelzebub.umap.auth
 
 import android.content.Context
 import android.net.Uri
 import android.os.AsyncTask
 import android.util.Log
-import com.treelzebub.umap
+import com.treelzebub.umap.CALLBACK_URL
 import com.treelzebub.umap.DISCOGS_AUTH_URL_APPEND
 import com.treelzebub.umap.DISCOGS_CONSUMER_KEY
 import com.treelzebub.umap.DISCOGS_CONSUMER_SECRET
 import com.treelzebub.umap.async.event.AccessTokenEvent
 import com.treelzebub.umap.async.event.AuthUrlEvent
-import com.treelzebub.umap.auth.DiscogsApi
-import com.treelzebub.umap.auth.TokenHolder
 import com.treelzebub.umap.util.BusProvider
 import org.scribe.builder.ServiceBuilder
 import org.scribe.exceptions.OAuthException
@@ -27,7 +25,7 @@ public fun getOAuthService(): OAuthService {
     return ServiceBuilder()
             .apiKey(DISCOGS_CONSUMER_KEY)
             .apiSecret(DISCOGS_CONSUMER_SECRET)
-            .callback(umap.CALLBACK_URL)
+            .callback(CALLBACK_URL)
             .provider(javaClass<DiscogsApi>())
             .build()
 }
@@ -71,7 +69,7 @@ public fun requestAccessToken(c: Context, data: Uri) {
             val service = ServiceBuilder()
                     .apiKey(DISCOGS_CONSUMER_KEY)
                     .apiSecret(DISCOGS_CONSUMER_SECRET)
-                    .callback(umap.CALLBACK_URL)
+                    .callback(CALLBACK_URL)
                     .provider(javaClass<DiscogsApi>())
                     .build()
             val accessToken = service.getAccessToken(requestToken, verifier)
@@ -81,7 +79,6 @@ public fun requestAccessToken(c: Context, data: Uri) {
             } else {
                 AccessTokenEvent(c, accessToken).onFailure()
             }
-
             return null
         }
 
