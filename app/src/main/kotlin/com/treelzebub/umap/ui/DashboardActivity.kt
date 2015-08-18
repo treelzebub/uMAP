@@ -42,6 +42,7 @@ public class DashboardActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         BusProvider.instance.register(this)
         setContentView(R.layout.activity_dashboard)
+        UserUtils.syncUser(this)
         setupToolbar()
         setupDrawer()
 
@@ -96,11 +97,14 @@ public class DashboardActivity : AppCompatActivity() {
 
     Subscribe
     public fun onUserEvent(event: UserEvent) {
-        UserUtils.toFile(getApplicationContext(), event.user)
-        UserUtils.usernameToPrefs(this, event.user)
-        Picasso.with(this).load(event.user.avatar_url).transform(CircleTransform()).into(avatar)
-        username.setText(event.user.username)
-        name.setText(event.user.name)
+        val user = event.user
+        if (user != null) {
+            UserUtils.toFile(getApplicationContext(), user)
+            UserUtils.usernameToPrefs(this, user)
+            Picasso.with(this).load(user.avatar_url).transform(CircleTransform()).into(avatar)
+            username.setText(user.username)
+            name.setText(user.name)
+        }
     }
 
     Subscribe

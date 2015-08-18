@@ -15,7 +15,6 @@ public class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         if (UserUtils.isLoggedIn(this)) {
-            UserUtils.syncUser(this)
             startActivity(Intent(this, javaClass<DashboardActivity>()))
         } else {
             startActivity(Intent(this, javaClass<LoginActivity>()))

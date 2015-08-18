@@ -3,6 +3,7 @@ package com.treelzebub.umap.util
 import android.content.Context
 import android.content.Intent
 import android.os.AsyncTask
+import android.os.Looper
 import android.util.Log
 import android.widget.Toast
 import com.treelzebub.umap.R
@@ -80,21 +81,19 @@ public object UserUtils {
     }
 
     public fun syncUser(c: Context) {
-        object : AsyncTask<Context, Void, User>() {
+        object : AsyncTask<Context, Void?, User>() {
             override fun doInBackground(vararg params: Context): User? {
                 var userFromPrefs: String
                 try {
                     userFromPrefs = UserUtils.usernameFromPrefs(params[0])
                     return RestService.instance.getUser(userFromPrefs)
                 } catch (e: NoUserException) {
-                    Log.e(e.toString(), e.getMessage())
-                    Toast.makeText(c, "Something went wrong. Please retry login.", Toast.LENGTH_SHORT).show()
-                    c.startActivity(Intent(c, javaClass<LoginActivity>()))
+                    Log.e("NoUserException", e.getMessage())
                 }
                 return null
             }
 
-            override fun onPostExecute(result: User) {
+            override fun onPostExecute(result: User?) {
                 BusProvider.instance.post(UserEvent(result))
             }
         }.execute(c)
