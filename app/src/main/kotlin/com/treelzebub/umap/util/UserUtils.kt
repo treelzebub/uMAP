@@ -7,6 +7,7 @@ import com.treelzebub.umap.USER_FILENAME
 import com.treelzebub.umap.api.discogs.model.User
 import com.treelzebub.umap.async.event.UserEvent
 import com.treelzebub.umap.auth.RestService
+import com.treelzebub.umap.auth.TokenHolder
 import java.io.IOException
 import java.io.ObjectInputStream
 import java.io.ObjectOutputStream
@@ -19,8 +20,16 @@ public object UserUtils {
     var user: User? = null
     var username: String? = null
 
+    public fun isLoggedIn(c: Context): Boolean {
+        return TokenHolder.hasAccessToken(c) && UserUtils.hasUser(c)
+    }
+
     public fun hasUser(c: Context): Boolean {
-        return user != null || username != null
+        return getUsername(c) != null
+    }
+
+    public fun getUsername(c: Context): String? {
+        return getPrefs(c)?.getString(c.getString(R.string.key_pref_username), null)
     }
 
     public fun toFile(c: Context, u: User?): Boolean {

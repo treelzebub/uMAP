@@ -56,7 +56,7 @@ public fun retrieveAuthUrl() {
 /**
  * Using the request token we retrieved earlier, get that sweet, sweet Access Token that will
  * allow access to Discogs' protected resources. This token is then broadcast by Otto and received
- * by {@link DashboardActivity}
+ * by [DashboardActivity]
  *
  * @param c: a Context used to access uMAP's SharedPreferences and String Resources.
  * @param data: the URI we caught from Discog's callback, after the user authorized the app.

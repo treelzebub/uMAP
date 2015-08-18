@@ -42,7 +42,6 @@ public class DashboardActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         BusProvider.instance.register(this)
-        clearPrefs(this)
         setContentView(R.layout.activity_dashboard)
         setupToolbar()
         setupDrawer()
@@ -53,11 +52,6 @@ public class DashboardActivity : AppCompatActivity() {
             editor?.putString(getString(R.string.key_oauth_token), data.getQueryParameter("oauth_token"))
             editor?.putString(getString(R.string.key_oauth_verifier), data.getQueryParameter("oauth_verifier"))?.commit()
             requestAccessToken(this, data)
-        } else if (TokenHolder.hasAccessToken(this) && UserUtils.hasUser(this)) {
-            UserUtils.syncUser(this)
-            getSupportFragmentManager().beginTransaction().add(R.id.content, HomeFragment()).commit()
-        } else {
-            getSupportFragmentManager().beginTransaction().add(R.id.content, LoginFragment()).commit()
         }
     }
 
@@ -78,15 +72,11 @@ public class DashboardActivity : AppCompatActivity() {
 
     private fun setupDrawer() {
         navView.setNavigationItemSelectedListener({
-            val ft = getSupportFragmentManager().beginTransaction()
             Snackbar.make(content, it.getTitle(), Snackbar.LENGTH_LONG).show()
             it.setChecked(true)
             when (it.getItemId()) {
-                R.id.drawer_home -> ft.replace(R.id.content, HomeFragment())
-                R.id.collection -> ft.replace(R.id.content, CollectionFragment())
+                //TODO
             }
-            ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
-            ft.commit()
             drawerLayout.closeDrawers()
             true
         })

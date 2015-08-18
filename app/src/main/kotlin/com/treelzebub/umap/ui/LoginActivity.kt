@@ -1,10 +1,12 @@
 package com.treelzebub.umap.ui
 
+import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.os.AsyncTask
 import android.os.Bundle
 import android.support.v4.app.Fragment
+import android.support.v7.app.AppCompatActivity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -24,9 +26,9 @@ import org.scribe.builder.ServiceBuilder
 /**
  * Created by Tre Murillo on 5/28/15
  *
- * A fragment that provides a one-time login to Discogs.com
+ * Provides a one-time login to Discogs.com
  */
-public class LoginFragment : Fragment() {
+public class LoginActivity : AppCompatActivity() {
 
     private var authUrl: String? = null
 
@@ -35,20 +37,12 @@ public class LoginFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         BusProvider.instance.register(this)
+        setContentView(R.layout.activity_login)
         loadAuthUrl()
-    }
-
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup, savedInstanceState: Bundle?): View {
-        super.onCreateView(inflater, container, savedInstanceState)
-        return inflater.inflate(R.layout.fragment_login, container, false)
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
         val wvSettings = webView.getSettings()
         wvSettings.setBuiltInZoomControls(true)
         wvSettings.setJavaScriptEnabled(true)
-        webView.setWebViewClient(Callback())
+        webView.setWebViewClient(RequestTokenCallback(this))
     }
 
     private fun loadAuthUrl() {
@@ -72,10 +66,10 @@ public class LoginFragment : Fragment() {
         }.execute()
     }
 
-    private inner class Callback : WebViewClient() {
+    private inner class RequestTokenCallback(val c: Context) : WebViewClient() {
         override fun shouldOverrideUrlLoading(view: WebView, url: String?): Boolean {
             if (url != null && url.startsWith(umap.CALLBACK_URL)) {
-                val i = Intent(getActivity(), javaClass<DashboardActivity>()).setData(Uri.parse(url))
+                val i = Intent(c, javaClass<DashboardActivity>()).setData(Uri.parse(url))
                 startActivity(i)
                 return true
             }
