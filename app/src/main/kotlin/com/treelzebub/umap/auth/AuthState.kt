@@ -1,7 +1,6 @@
 package com.treelzebub.umap.auth
 
 import android.content.Context
-import com.treelzebub.umap.util.UserUtils
 
 /**
  * Created by Tre Murillo on 8/17/15

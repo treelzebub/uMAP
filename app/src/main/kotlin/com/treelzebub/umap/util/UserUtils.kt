@@ -4,14 +4,10 @@ import android.content.Context
 import android.os.AsyncTask
 import android.util.Log
 import com.treelzebub.umap.R
-import com.treelzebub.umap.USER_FILENAME
 import com.treelzebub.umap.api.discogs.model.User
 import com.treelzebub.umap.auth.RestService
 import com.treelzebub.umap.auth.TokenHolder
 import com.treelzebub.umap.ui.UserEvent
-import java.io.IOException
-import java.io.ObjectInputStream
-import java.io.ObjectOutputStream
 
 /**
  * Created by Tre Murillo on 6/7/15
