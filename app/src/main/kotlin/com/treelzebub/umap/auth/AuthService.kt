@@ -12,9 +12,9 @@ import org.scribe.oauth.OAuthService
 public object AuthService {
     public val instance: OAuthService
         get() = ServiceBuilder()
-            .apiKey(DISCOGS_CONSUMER_KEY)
-            .apiSecret(DISCOGS_CONSUMER_SECRET)
-            .callback(umap.CALLBACK_URL)
-            .provider(javaClass<DiscogsApi>())
-            .build()
+                .apiKey(DISCOGS_CONSUMER_KEY)
+                .apiSecret(DISCOGS_CONSUMER_SECRET)
+                .callback(umap.CALLBACK_URL)
+                .provider(javaClass<DiscogsApi>())
+                .build()
 }

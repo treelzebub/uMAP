@@ -10,7 +10,7 @@ public object AuthState {
 
     private var didLogout = false
     public fun onDidLogout(c: Context) {
-        if(!didLogout) {
+        if (!didLogout) {
             didLogout = true
         }
     }
