@@ -18,11 +18,7 @@ public object UserUtils {
     var username: String? = null
 
     public fun isLoggedIn(c: Context): Boolean {
-        return TokenHolder.hasAccessToken(c) && UserUtils.hasUser(c)
-    }
-
-    public fun hasUser(c: Context): Boolean {
-        return getUsername(c) != null
+        return TokenHolder.hasAccessToken(c) && getUsername(c) != null
     }
 
     public fun getUser(c: Context): User? {
@@ -50,10 +46,8 @@ public object UserUtils {
     public fun syncUser(c: Context) {
         object : AsyncTask<Context, Void?, User>() {
             override fun doInBackground(vararg params: Context): User? {
-                var userFromPrefs: String
                 try {
-                    userFromPrefs = UserUtils.usernameFromPrefs(params[0])
-                    return RestService.instance.getUser(userFromPrefs)
+                    return RestService.instance.getUser(UserUtils.usernameFromPrefs(params[0]))
                 } catch (e: NoUserException) {
                     Log.e("NoUserException", e.getMessage())
                 }
