@@ -23,9 +23,9 @@ import com.treelzebub.umap.util.BusProvider
  */
 public class LoginActivity : AppCompatActivity() {
 
-    private var authUrl: String? = null
-
     val webView: WebView by bindView(R.id.webview)
+
+    private var authUrl: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,7 +35,7 @@ public class LoginActivity : AppCompatActivity() {
         val wvSettings = webView.getSettings()
         wvSettings.setBuiltInZoomControls(true)
         wvSettings.setJavaScriptEnabled(true)
-        webView.setWebViewClient(RequestTokenCallback(this))
+        webView.setWebViewClient(RequestTokenCallback())
     }
 
     private fun loadAuthUrl() {
@@ -54,10 +54,10 @@ public class LoginActivity : AppCompatActivity() {
         }.execute()
     }
 
-    private inner class RequestTokenCallback(val c: Context) : WebViewClient() {
+    private inner class RequestTokenCallback() : WebViewClient() {
         override fun shouldOverrideUrlLoading(view: WebView, url: String?): Boolean {
             if (url != null && url.startsWith(umap.CALLBACK_URL)) {
-                val i = Intent(c, javaClass<DashboardActivity>()).setData(Uri.parse(url))
+                val i = Intent(this@LoginActivity, javaClass<DashboardActivity>()).setData(Uri.parse(url))
                 startActivity(i)
                 return true
             }

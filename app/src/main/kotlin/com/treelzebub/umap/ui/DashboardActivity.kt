@@ -19,12 +19,11 @@ import com.treelzebub.umap.R
 import com.treelzebub.umap.api.discogs.model.User
 import com.treelzebub.umap.async.event.UserEvent
 import com.treelzebub.umap.auth.TokenHolder
-import com.treelzebub.umap.auth.requestAccessToken
 import com.treelzebub.umap.graphics.CircleTransform
 import com.treelzebub.umap.util.BusProvider
+import com.treelzebub.umap.util.LoginUtils
 import com.treelzebub.umap.util.UserUtils
 import com.treelzebub.umap.util.clearPrefs
-import com.treelzebub.umap.util.getPrefs
 
 /**
  * Created by Tre Murillo on 5/28/15
@@ -44,18 +43,13 @@ public class DashboardActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         BusProvider.instance.register(this)
         setContentView(R.layout.activity_dashboard)
-        UserUtils.syncUser(this)
         setupToolbar()
         setupDrawer()
-
         val data = getIntent().getData()
-        if (data != null && !TokenHolder.hasOauthToken(this)) {
-            val editor = getPrefs(this)?.edit()
-            editor?.putString(getString(R.string.key_oauth_token), data.getQueryParameter("oauth_token"))
-            editor?.putString(getString(R.string.key_oauth_verifier), data.getQueryParameter("oauth_verifier"))?.commit()
-            requestAccessToken(this, data)
+        if (data != null) {
+            LoginUtils.requestAccessToken(this, data)
         } else {
-            user = UserUtils.userFromFile(this)
+            UserUtils.syncUser(this)
         }
     }
 
@@ -112,3 +106,5 @@ public class DashboardActivity : AppCompatActivity() {
         }
     }
 }
+
+public class UserEvent(val user: User?)

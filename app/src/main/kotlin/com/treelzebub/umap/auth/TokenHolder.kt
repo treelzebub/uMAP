@@ -13,19 +13,6 @@ public object TokenHolder {
     public var requestToken: Token? = null
     public var accessToken: Token? = null
 
-    public fun createTokenFromPref(c: Context): Boolean {
-        if (accessToken != null) return true
-        val prefs = getPrefs(c)
-        val key = prefs?.getString(c.getString(R.string.key_access_token), null)
-        val secret = prefs?.getString(c.getString(R.string.key_access_token_secret), null)
-        val rawResponse = prefs?.getString(c.getString(R.string.key_access_token_raw_response), null)
-        if (key == null || secret == null || rawResponse == null) {
-            return false
-        }
-        accessToken = Token(key, secret, rawResponse)
-        return true
-    }
-
     public fun hasAccessToken(c: Context): Boolean {
         return createTokenFromPref(c)
     }
@@ -38,13 +25,26 @@ public object TokenHolder {
         return getOauthTokenFromPref(c) != null
     }
 
-    public fun deleteTokens(c: Context) {
+    public fun clearTokens(c: Context) {
         val editor = getPrefs(c)?.edit()
-        //TODO abstraction ffs
-        editor?.remove(c.getString(R.string.key_access_token))
-        editor?.remove(c.getString(R.string.key_access_token_secret))
-        editor?.remove(c.getString(R.string.key_access_token_raw_response))?.commit()
+        val tokens = listOf(R.string.key_access_token, R.string.key_access_token_secret, R.string.key_access_token_raw_response)
+        tokens.forEach {
+            editor?.remove(c.getString(it))
+        }
         requestToken = null
         accessToken = null
+    }
+
+    private fun createTokenFromPref(c: Context): Boolean {
+        if (accessToken != null) return true
+        val prefs = getPrefs(c)
+        val key = prefs?.getString(c.getString(R.string.key_access_token), null)
+        val secret = prefs?.getString(c.getString(R.string.key_access_token_secret), null)
+        val rawResponse = prefs?.getString(c.getString(R.string.key_access_token_raw_response), null)
+        if (key == null || secret == null || rawResponse == null) {
+            return false
+        }
+        accessToken = Token(key, secret, rawResponse)
+        return true
     }
 }

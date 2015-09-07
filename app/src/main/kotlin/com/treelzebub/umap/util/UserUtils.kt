@@ -6,9 +6,9 @@ import android.util.Log
 import com.treelzebub.umap.R
 import com.treelzebub.umap.USER_FILENAME
 import com.treelzebub.umap.api.discogs.model.User
-import com.treelzebub.umap.async.event.UserEvent
 import com.treelzebub.umap.auth.RestService
 import com.treelzebub.umap.auth.TokenHolder
+import com.treelzebub.umap.ui.UserEvent
 import java.io.IOException
 import java.io.ObjectInputStream
 import java.io.ObjectOutputStream
@@ -29,8 +29,9 @@ public object UserUtils {
         return getUsername(c) != null
     }
 
-    //    public fun getUser(c: Context): User? {
-    //    }
+    public fun getUser(c: Context): User? {
+        return user
+    }
 
     public fun getUsername(c: Context): String? {
         return getPrefs(c)?.getString(c.getString(R.string.key_pref_username), null)
