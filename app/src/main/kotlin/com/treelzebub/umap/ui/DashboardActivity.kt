@@ -97,9 +97,7 @@ public class DashboardActivity : AppCompatActivity() {
     public fun onUserEvent(event: UserEvent) {
         val user = event.user
         if (user != null) {
-            UserUtils.userToFile(getApplicationContext(), user)
             UserUtils.usernameToPrefs(this, user)
-
             Picasso.with(this).load(user.avatar_url).transform(CircleTransform()).into(avatar)
             username.setText(user.username)
             name.setText(user.name)

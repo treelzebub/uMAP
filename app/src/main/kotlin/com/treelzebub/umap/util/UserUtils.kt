@@ -37,34 +37,6 @@ public object UserUtils {
         return getPrefs(c)?.getString(c.getString(R.string.key_pref_username), null)
     }
 
-    public fun userToFile(c: Context, u: User?): Boolean {
-        if (u != null) {
-            try {
-                val fileOutStream = c.openFileOutput(USER_FILENAME, Context.MODE_PRIVATE)
-                var objOutStream = ObjectOutputStream(fileOutStream)
-                objOutStream.writeObject(u)
-                objOutStream.close()
-                return true
-            } catch(e: IOException) {
-                e.printStackTrace()
-                return false
-            }
-        } else {
-            throw NoUserException("User Persist Error")
-        }
-    }
-
-    public fun userFromFile(c: Context): User? {
-        try {
-            val fileInStream = c.openFileInput(USER_FILENAME)
-            val objInStream = ObjectInputStream(fileInStream)
-            return objInStream.readObject() as User
-        } catch (e: IOException) {
-            e.printStackTrace()
-            return null
-        }
-    }
-
     public fun usernameToPrefs(c: Context, u: User) {
         getPrefs(c)?.edit()?.putString(c.getString(R.string.key_pref_username), u.username)?.commit()
     }
