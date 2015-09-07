@@ -6,7 +6,6 @@ import android.os.AsyncTask
 import android.util.Log
 import com.treelzebub.umap.R
 import com.treelzebub.umap.async.event.AccessTokenEvent
-import com.treelzebub.umap.async.event.LoginEvent
 import com.treelzebub.umap.auth.AuthService
 import com.treelzebub.umap.auth.TokenHolder
 import org.scribe.model.Verifier
@@ -43,8 +42,8 @@ public object LoginUtils {
                 return null
             }
 
-            override fun onPostExecute(result: Void?) {
-                BusProvider.instance.post(LoginEvent())
+            override fun onPostExecute(nothing: Void?) {
+                UserUtils.syncUser(c)
             }
         }.execute()
     }

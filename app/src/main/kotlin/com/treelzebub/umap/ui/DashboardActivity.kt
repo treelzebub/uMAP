@@ -35,8 +35,6 @@ public class DashboardActivity : AppCompatActivity() {
     val username: TextView          by bindView(R.id.username)
     val name: TextView              by bindView(R.id.name)
 
-    var user: User? = null
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         BusProvider.instance.register(this)
