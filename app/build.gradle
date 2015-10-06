@@ -6,7 +6,7 @@ android {
     buildToolsVersion "$build_tools"
 
     defaultConfig {
-        applicationId "com.treelzebub.umap"
+        applicationId "net.treelzebub.umap"
         minSdkVersion 17
         targetSdkVersion 23
         versionName "0.001"
@@ -70,20 +70,22 @@ dependencies {
     //Lang + Util
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     compile 'com.squareup:otto:1.3.7'
-    compile 'com.jakewharton:butterknife:6.1.0'
+    compile 'com.jakewharton:butterknife:7.0.1'
     compile 'com.jakewharton:kotterknife:0.1.0-SNAPSHOT'
-    compile 'net.danlew:android.joda:2.8.0'
+    compile 'net.danlew:android.joda:2.8.2'
     compile 'com.levelmoney.velodrome:velodrome:0.9-SNAPSHOT@aar'
     compile 'net.sarazan.prefs:prefs:1.1.01@aar'
 
     //HTTP + REST
     compile 'org.scribe:scribe:1.3.7'
-    compile 'com.squareup.okhttp:okhttp:2.2.0'
+    compile 'com.squareup.okhttp:okhttp:2.5.0'
     compile 'com.squareup.retrofit:retrofit:1.9.0'
-    compile 'com.google.code.gson:gson:2.3'
+    compile 'com.google.code.gson:gson:2.4'
 
     //UI
     compile 'com.squareup.picasso:picasso:2.5.2'
+
+    testCompile 'junit:junit:4.12'
 
 }
 
