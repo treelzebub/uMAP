@@ -1,1 +1,1 @@
-include ':app', ':umap'
+include ':app'
