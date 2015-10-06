@@ -41,7 +41,7 @@ public class DashboardActivity : AppCompatActivity() {
         setContentView(R.layout.activity_dashboard)
         setupToolbar()
         setupDrawer()
-        val data = getIntent().getData()
+        val data = intent.data
         if (data != null) {
             LoginUtils.requestAccessToken(this, data)
         } else {
@@ -57,7 +57,7 @@ public class DashboardActivity : AppCompatActivity() {
     private fun setupToolbar() {
         val toolbar = findViewById(R.id.toolbar) as Toolbar
         setSupportActionBar(toolbar)
-        val actionBar = getSupportActionBar()
+        val actionBar = supportActionBar
         if (actionBar != null) {
             actionBar.setHomeAsUpIndicator(R.drawable.ic_menu_white_24dp)
             actionBar.setDisplayHomeAsUpEnabled(true)
@@ -66,9 +66,9 @@ public class DashboardActivity : AppCompatActivity() {
 
     private fun setupDrawer() {
         navView.setNavigationItemSelectedListener({
-            Snackbar.make(content, it.getTitle(), Snackbar.LENGTH_LONG).show()
+            Snackbar.make(content, it.title, Snackbar.LENGTH_LONG).show()
             it.setChecked(true)
-            when (it.getItemId()) {
+            when (it.itemId) {
             //TODO
             }
             drawerLayout.closeDrawers()
@@ -77,26 +77,26 @@ public class DashboardActivity : AppCompatActivity() {
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        getMenuInflater().inflate(R.menu.dashboard, menu)
+        menuInflater.inflate(R.menu.dashboard, menu)
         return true
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when (item.getItemId()) {
+        when (item.itemId) {
             android.R.id.home -> drawerLayout.openDrawer(GravityCompat.START)
             R.id.clear_prefs -> clearPrefs(this)
         }
         return super.onOptionsItemSelected(item)
     }
 
-    Subscribe
+    @Subscribe
     public fun onUserEvent(event: UserEvent) {
         val user = event.user
         if (user != null) {
             UserUtils.usernameToPrefs(this, user)
             Picasso.with(this).load(user.avatar_url).transform(CircleTransform()).into(avatar)
-            username.setText(user.username)
-            name.setText(user.name)
+            username.text = user.username
+            name.text = user.name
         }
     }
 }

@@ -21,7 +21,7 @@ public class CollectionAdapter(collectionReleases: CollectionReleases) : Recycle
     var collectionReleases = collectionReleases
 
     override fun onCreateViewHolder(parent: ViewGroup, i: Int): ViewHolder {
-        context = parent.getContext()
+        context = parent.context
         val v = LayoutInflater.from(context).inflate(R.layout.collection_card, parent, false)
         return ViewHolder(v)
     }
@@ -36,8 +36,8 @@ public class CollectionAdapter(collectionReleases: CollectionReleases) : Recycle
                 .fit()
                 .centerCrop()
                 .into(holder.albumCover)
-        holder.artist.setText(collectionReleases.releases!!.get(i).basic_information!!.artists.first().name)
-        holder.title.setText(collectionReleases.releases!!.get(i).basic_information!!.title)
+        holder.artist.text = collectionReleases.releases!!.get(i).basic_information!!.artists.first().name
+        holder.title.text = collectionReleases.releases!!.get(i).basic_information!!.title
     }
 
     override fun getItemCount(): Int {

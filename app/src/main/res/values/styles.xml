@@ -1,27 +1,27 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimary">@color/primary</item> 
         <item name="colorPrimaryDark">@color/primary_dark</item> 
         <item name="colorControlHighlight">@color/accent_translucent</item> 
-        <item name="android:colorControlHighlight">@color/accent_translucent</item> 
+        <item name="android:colorControlHighlight" tools:targetApi="lollipop">@color/accent_translucent</item> 
         <item name="colorAccent">@color/accent</item>
-        <item name="selectableItemBackground">@drawable/abc_item_background_holo_dark</item>
-        <item name="android:selectableItemBackground">@drawable/abc_item_background_holo_dark</item>
-        <item name="android:windowSharedElementEnterTransition">@android:transition/move</item>
-        <item name="android:windowSharedElementExitTransition">@android:transition/move</item>
-        <item name="android:windowSharedElementsUseOverlay">false</item>
-        <item name="android:windowTranslucentStatus">true</item>
+        <item name="selectableItemBackground">@drawable/sel_darken</item>
+        <item name="android:selectableItemBackground">@drawable/sel_darken</item>
+        <item name="android:windowSharedElementEnterTransition" tools:targetApi="lollipop">@android:transition/move</item>
+        <item name="android:windowSharedElementExitTransition" tools:targetApi="lollipop">@android:transition/move</item>
+        <item name="android:windowSharedElementsUseOverlay" tools:targetApi="lollipop">false</item>
+        <item name="android:windowTranslucentStatus" tools:targetApi="lollipop">true</item>
     </style>
 
     <style name="FabStyle">
         <item name="android:layout_width">?attr/actionBarSize</item>
         <item name="android:layout_height">?attr/actionBarSize</item>
         <item name="android:layout_margin">@dimen/spacing_large</item>
-        <item name="android:background">@drawable/fab_background</item>
-        <item name="android:src">@drawable/abc_ic_menu_copy_mtrl_am_alpha</item>
-        <item name="android:outlineProvider">background</item>
-        <item name="android:stateListAnimator">@anim/fab_elevation</item>
+        <item name="android:background">@color/cardview_dark_background</item>
+        <item name="android:src">@drawable/ic_alarm_white_24dp</item>
+        <item name="android:outlineProvider" tools:targetApi="lollipop">background</item>
+        <item name="android:stateListAnimator" tools:targetApi="lollipop">@anim/fab_elevation</item>
     </style>
 
     <color name="primary">#3F51B5</color>

@@ -34,7 +34,7 @@ public object LoginUtils {
                 val accessToken = sAuthService.getAccessToken(requestToken, verifier)
                 setTokens(c, data)
                 if (accessToken != null) {
-                    Log.d("OAuth Token: ", accessToken.getToken())
+                    Log.d("OAuth Token: ", accessToken.token)
                     AccessTokenEvent(c, accessToken).onSuccess()
                 } else {
                     AccessTokenEvent(c, accessToken).onFailure()

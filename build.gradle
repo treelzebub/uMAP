@@ -2,12 +2,12 @@
 
 buildscript {
 
-    ext.sdk_version     = 22
-    ext.kotlin_version  = "0.12.213"
-    ext.build_tools     = "22.0.1"
-    ext.gradle_plugin   = "1.2.3"
-    ext.support_version = "22.2.0"
-    ext.play_version    = "7.5.0"
+    ext.sdk_version     = 23
+    ext.kotlin_version  = "0.14.449"
+    ext.build_tools     = "23.0.1"
+    ext.gradle_plugin   = "1.3.1"
+    ext.support_version = "23.0.1"
+    ext.play_version    = "7.8.0"
 
     repositories {
         mavenLocal()

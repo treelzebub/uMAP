@@ -16,8 +16,8 @@ public object RestService {
                 .setEndpoint(DISCOGS_BASE_URL)
                 .setLogLevel(RestAdapter.LogLevel.FULL)
                 .setRequestInterceptor {
-                    it.addHeader("oauth_token", TokenHolder.accessToken?.getToken())
+                    it.addHeader("oauth_token", TokenHolder.accessToken?.token)
                 }
                 .build()
-                .create(javaClass<DiscogsService>())
+                .create(DiscogsService::class.java)
 }

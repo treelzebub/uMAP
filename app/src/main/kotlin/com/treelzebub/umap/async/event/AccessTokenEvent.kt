@@ -14,9 +14,9 @@ public class AccessTokenEvent(val c: Context, var accessToken: Token) : Event {
     override fun onSuccess() {
         TokenHolder.accessToken = accessToken
         val editor = getPrefs(c)?.edit()
-        editor?.putString(c.getString(R.string.key_access_token), accessToken.getToken())
-        editor?.putString(c.getString(R.string.key_access_token_secret), accessToken.getSecret())
-        editor?.putString(c.getString(R.string.key_access_token_raw_response), accessToken.getRawResponse())
+        editor?.putString(c.getString(R.string.key_access_token), accessToken.token)
+        editor?.putString(c.getString(R.string.key_access_token_secret), accessToken.secret)
+        editor?.putString(c.getString(R.string.key_access_token_raw_response), accessToken.rawResponse)
         editor?.commit()
     }
 
