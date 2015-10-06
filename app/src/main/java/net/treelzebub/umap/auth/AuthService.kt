@@ -4,6 +4,7 @@ import net.treelzebub.umap.CALLBACK_URL
 import net.treelzebub.umap.DISCOGS_CONSUMER_KEY
 import net.treelzebub.umap.DISCOGS_CONSUMER_SECRET
 import org.scribe.builder.ServiceBuilder
+import org.scribe.model.SignatureType
 import org.scribe.oauth.OAuthService
 
 /**

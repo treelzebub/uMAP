@@ -5,8 +5,11 @@ import android.os.AsyncTask
 import android.util.Log
 import net.treelzebub.umap.R
 import net.treelzebub.umap.api.discogs.model.User
+import net.treelzebub.umap.auth.AuthState
 import net.treelzebub.umap.auth.RestService
 import net.treelzebub.umap.ui.UserEvent
+import org.scribe.model.OAuthRequest
+import retrofit.RetrofitError
 
 /**
  * Created by Tre Murillo on 6/7/15
@@ -42,14 +45,23 @@ public object UserUtils {
         object : AsyncTask<Context, Void?, User>() {
             override fun doInBackground(vararg params: Context): User? {
                 try {
-                    return RestService.instance.getUser(UserUtils.usernameFromPrefs(params[0]))
+                    return RestService.instance.getUser(usernameFromPrefs(params[0]))
                 } catch (e: NoUserException) {
                     Log.e("NoUserException", e.getMessage())
+                } catch (e: RetrofitError) {
+                    if (e.isNetworkError) {
+
+                    } else if (e.response.status == 401) {
+                        Log.e(e.response.status.toString(), e.getMessage())
+                    }
                 }
                 return null
             }
 
             override fun onPostExecute(result: User?) {
+                if (result != null) {
+                    AuthState.setIsLoggedIn(true)
+                }
                 BusProvider.instance.post(UserEvent(result))
             }
         }.execute(c)

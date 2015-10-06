@@ -2,12 +2,17 @@ package net.treelzebub.umap.util
 
 import android.content.Context
 import android.net.Uri
-import android.os.AsyncTask
 import android.util.Log
+import com.google.gson.Gson
 import net.treelzebub.umap.R
+import net.treelzebub.umap.api.discogs.model.Identity
 import net.treelzebub.umap.async.event.AccessTokenEvent
 import net.treelzebub.umap.auth.AuthService
+import net.treelzebub.umap.auth.RestService
 import net.treelzebub.umap.auth.TokenHolder
+import org.scribe.model.OAuthRequest
+import org.scribe.model.Response
+import org.scribe.model.Verb
 import org.scribe.model.Verifier
 
 /**
@@ -26,26 +31,28 @@ public object LoginUtils {
      * @param data: the URI we caught from Discog's callback, after the user authorized the app.
      * */
     public fun requestAccessToken(c: Context, data: Uri) {
-        object : AsyncTask<Void, Void, Void>() {
-            override fun doInBackground(vararg params: Void?): Void? {
-                val verifier = Verifier(data.getQueryParameter("oauth_verifier"))
-                val requestToken = TokenHolder.requestToken
-                val sAuthService = AuthService.instance
-                val accessToken = sAuthService.getAccessToken(requestToken, verifier)
-                setTokens(c, data)
-                if (accessToken != null) {
-                    Log.d("OAuth Token: ", accessToken.token)
-                    AccessTokenEvent(c, accessToken).onSuccess()
-                } else {
-                    AccessTokenEvent(c, accessToken).onFailure()
-                }
-                return null
-            }
+        async({
+            val verifier = Verifier(data.getQueryParameter("oauth_verifier"))
+            val requestToken = TokenHolder.requestToken
+            val accessToken = AuthService.instance.getAccessToken(requestToken, verifier)
+            setTokens(c, data)
+            if (accessToken != null) {
+                Log.d("OAuth Token: ", accessToken.token)
 
-            override fun onPostExecute(nothing: Void?) {
-                UserUtils.syncUser(c)
+                // todo...
+                val request = OAuthRequest(Verb.GET, "https://api.discogs.com/oauth/identity")
+                AuthService.instance.signRequest(accessToken, request)
+                val response = request.send()
+                val identity = Gson().fromJson(response.body, Identity::class.java)
+                identity.username
+
+                AccessTokenEvent(c, accessToken).onSuccess()
+            } else {
+                AccessTokenEvent(c, accessToken).onFailure()
             }
-        }.execute()
+        }, {
+            UserUtils.syncUser(c)
+        })
     }
 
     private fun setTokens(c: Context, data: Uri) {

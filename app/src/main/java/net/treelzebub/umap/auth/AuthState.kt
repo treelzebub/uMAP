@@ -13,6 +13,10 @@ public object AuthState {
         return isLoggedIn
     }
 
+    public fun setIsLoggedIn(bool: Boolean) {
+        isLoggedIn = bool
+    }
+
     public fun onDidLogout(c: Context) {
         if (!isLoggedIn) {
             isLoggedIn = true

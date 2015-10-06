@@ -17,6 +17,7 @@ public object RestService {
                 .setLogLevel(RestAdapter.LogLevel.FULL)
                 .setRequestInterceptor {
                     it.addHeader("oauth_token", TokenHolder.accessToken?.token)
+                    it.addHeader("oauth_token_secret", TokenHolder.accessToken?.secret)
                 }
                 .build()
                 .create(DiscogsApi::class.java)
