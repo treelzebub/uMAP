@@ -7,7 +7,6 @@ import org.scribe.model.Token
 
 /**
  * Created by Tre Murillo on 10/11/15
- * Copyright(c) 2015 Level, Inc.
  */
 public object TokenHolder {
 
