@@ -3,11 +3,11 @@ package net.treelzebub.umap.api.discogs.model
 /**
  * Created by Tre Murillo on 7/4/15
  */
-public data class Identity {
-    public var id: Int = -1
-    public var username: String? = null
-    public var resource_url: String? = null
-    public var consumer_name: String? = null
+public data class Identity(
+        public val id: Int,
+        public val username: String,
+        public val resource_url: String,
+        public val consumer_name: String,
 
-    public var message: String? = null // error
-}
+        public val message: String? // error
+)

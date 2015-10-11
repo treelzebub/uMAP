@@ -18,7 +18,9 @@ import butterknife.bindView
 import com.squareup.otto.Subscribe
 import com.squareup.picasso.Picasso
 import net.treelzebub.umap.R
+import net.treelzebub.umap.api.discogs.ApiModule
 import net.treelzebub.umap.api.discogs.model.User
+import net.treelzebub.umap.auth.TokenHolder
 import net.treelzebub.umap.graphics.CircleTransform
 import net.treelzebub.umap.util.BusProvider
 import net.treelzebub.umap.util.UserUtils
@@ -34,6 +36,9 @@ public class DashboardActivity : AppCompatActivity() {
             return Intent(c, DashboardActivity::class.java)
         }
     }
+
+    private val api = ApiModule(TokenHolder.token(), TokenHolder.tokenSecret()).get()
+
 
     val drawerLayout: DrawerLayout  by bindView(R.id.drawer_layout)
     val navView: NavigationView     by bindView(R.id.navigation_view)
@@ -64,6 +69,7 @@ public class DashboardActivity : AppCompatActivity() {
     }
 
     private fun setupDrawer() {
+        updateUsername()
         navView.setNavigationItemSelectedListener {
             Snackbar.make(content, it.title, Snackbar.LENGTH_LONG).show()
             it.setChecked(true)
@@ -86,6 +92,12 @@ public class DashboardActivity : AppCompatActivity() {
             R.id.clear_prefs -> clearPrefs(this)
         }
         return super.onOptionsItemSelected(item)
+    }
+
+    private fun updateUsername() {
+        val identity = api.getIdentity() ?: return
+        api.getUser(identity.username).name
+        username.text =
     }
 
     @Subscribe

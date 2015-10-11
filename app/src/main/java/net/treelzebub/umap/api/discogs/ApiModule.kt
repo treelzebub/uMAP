@@ -11,7 +11,8 @@ public class ApiModule {
 
     private val api: DiscogsApi
 
-    constructor(token: String, tokenSecret: String) {
+    constructor(token: String?, tokenSecret: String?) {
+        if (token == null || tokenSecret == null) throw RuntimeException("null token or secret passed to ApiModule")
         val consumer = OkHttpOAuthConsumer(Constants.DISCOGS_CONSUMER_KEY, Constants.DISCOGS_CONSUMER_SECRET)
         consumer.setTokenWithSecret(token, tokenSecret)
         val restAdapter = Retrofit.Builder()

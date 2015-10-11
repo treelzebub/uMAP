@@ -14,6 +14,14 @@ public object TokenHolder {
     public var requestToken: Token? = null
     public var accessToken: Token? = null
 
+    public fun token(): String? {
+        return accessToken?.token
+    }
+
+    public fun tokenSecret(): String? {
+        return accessToken?.secret
+    }
+
     public fun hasAccessToken(): Boolean {
         return accessToken != null
     }

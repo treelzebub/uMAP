@@ -11,6 +11,7 @@ import net.treelzebub.umap.Constants
 import net.treelzebub.umap.R
 import net.treelzebub.umap.async.event.AccessTokenEvent
 import net.treelzebub.umap.auth.AuthService
+import net.treelzebub.umap.auth.AuthState
 import net.treelzebub.umap.auth.LoginUtils
 import net.treelzebub.umap.auth.TokenHolder
 import net.treelzebub.umap.util.BusProvider
@@ -63,6 +64,7 @@ public class LoginActivity : AppCompatActivity() {
     @Subscribe
     public fun onAccessToken(e: AccessTokenEvent) {
         //TODO spinner gone
+        AuthState.setIsLoggedIn(true)
         startActivity(DashboardActivity.getIntent(this@LoginActivity))
     }
 }
