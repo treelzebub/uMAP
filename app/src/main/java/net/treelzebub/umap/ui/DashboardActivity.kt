@@ -2,6 +2,7 @@ package net.treelzebub.umap.ui
 
 import android.content.Context
 import android.content.Intent
+import android.os.AsyncTask
 import android.os.Bundle
 import android.support.design.widget.NavigationView
 import android.support.design.widget.Snackbar
@@ -15,15 +16,11 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import butterknife.bindView
-import com.squareup.otto.Subscribe
 import com.squareup.picasso.Picasso
 import net.treelzebub.umap.R
-import net.treelzebub.umap.api.discogs.ApiModule
-import net.treelzebub.umap.api.discogs.model.User
-import net.treelzebub.umap.auth.TokenHolder
+import net.treelzebub.umap.api.discogs.DiscogsService
 import net.treelzebub.umap.graphics.CircleTransform
 import net.treelzebub.umap.util.BusProvider
-import net.treelzebub.umap.util.UserUtils
 import net.treelzebub.umap.util.clearPrefs
 
 /**
@@ -36,9 +33,6 @@ public class DashboardActivity : AppCompatActivity() {
             return Intent(c, DashboardActivity::class.java)
         }
     }
-
-    private val api = ApiModule(TokenHolder.token(), TokenHolder.tokenSecret()).get()
-
 
     val drawerLayout: DrawerLayout  by bindView(R.id.drawer_layout)
     val navView: NavigationView     by bindView(R.id.navigation_view)
@@ -64,12 +58,12 @@ public class DashboardActivity : AppCompatActivity() {
         val toolbar = findViewById(R.id.toolbar) as Toolbar
         setSupportActionBar(toolbar)
         val actionBar = supportActionBar
-        actionBar?.setHomeAsUpIndicator(R.drawable.ic_menu_white_24dp)
+        actionBar?.setHomeAsUpIndicator(R.drawable.ic_menu)
         actionBar?.setDisplayHomeAsUpEnabled(true)
     }
 
     private fun setupDrawer() {
-        updateUsername()
+        setHeader()
         navView.setNavigationItemSelectedListener {
             Snackbar.make(content, it.title, Snackbar.LENGTH_LONG).show()
             it.setChecked(true)
@@ -94,22 +88,17 @@ public class DashboardActivity : AppCompatActivity() {
         return super.onOptionsItemSelected(item)
     }
 
-    private fun updateUsername() {
-        val identity = api.getIdentity() ?: return
-        api.getUser(identity.username).name
-        username.text =
-    }
+    private fun setHeader() {
+        object : AsyncTask<Void, Void, String>() {
+            override fun doInBackground(vararg params: Void?): String? {
+                return DiscogsService.getIdentity().username
+            }
 
-    @Subscribe
-    public fun onUserEvent(event: UserEvent) {
-        val user = event.user
-        if (user != null) {
-            UserUtils.usernameToPrefs(this, user)
-            Picasso.with(this).load(user.avatar_url).transform(CircleTransform()).into(avatar)
-            username.text = user.username
-            name.text = user.name
-        }
+            override fun onPostExecute(result: String?) {
+                username.text = result
+            }
+        }.execute(null)
+//        Picasso.with(this).load(DiscogsService.avatar).transform(CircleTransform()).into(avatar)
+//        name.text = DiscogsService.getUser()?.name ?: "fail"
     }
 }
-
-public class UserEvent(val user: User?)

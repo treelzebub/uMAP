@@ -7,6 +7,7 @@ import com.google.gson.Gson
 import net.treelzebub.umap.R
 import net.treelzebub.umap.api.discogs.model.Identity
 import net.treelzebub.umap.async.event.AccessTokenEvent
+import net.treelzebub.umap.ui.DashboardActivity
 import net.treelzebub.umap.util.*
 import org.scribe.model.OAuthRequest
 import org.scribe.model.Verb
@@ -21,13 +22,13 @@ public object LoginUtils {
 
     /**
      * Using the request token we retrieved earlier, get that sweet, sweet Access Token that will
-     * allow access to Discogs' protected resources. This token is then broadcast by Otto and received
-     * by [DashboardActivity]
+     * allow access to Discogs' protected resources.
      *
      * @param c: a Context used to access uMAP's SharedPreferences and String Resources.
      * @param data: the URI we caught from Discog's callback, after the user authorized the app.
      * */
     public fun requestAccessToken(c: Context, data: Uri) {
+        BusProvider.instance.register(this)
         async {
             val verifier = Verifier(data.getQueryParameter("oauth_verifier"))
             val requestToken = TokenHolder.requestToken
@@ -36,7 +37,8 @@ public object LoginUtils {
             if (accessToken != null) {
                 Log.d("OAuth Token: ", accessToken.token)
                 TokenHolder.accessToken = accessToken
-                BusProvider.instance.post(AccessTokenEvent(accessToken))
+                AuthState.setIsLoggedIn(true)
+                c.startActivity(DashboardActivity.getIntent(c))
             } else {
                 // TODO
             }

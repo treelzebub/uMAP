@@ -6,10 +6,12 @@ import se.akerfeldt.okhttp.signpost.SigningInterceptor
 
 /**
  * Created by Tre Murillo on 10/11/15
+ * Copyright(c) 2015 Level, Inc.
  */
 public class SigningOkClient : OkHttpClient {
 
     constructor(consumer: OkHttpOAuthConsumer) {
         interceptors().add(SigningInterceptor(consumer))
     }
+
 }

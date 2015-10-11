@@ -1,7 +1,8 @@
 package net.treelzebub.umap.api.discogs
 
 import net.treelzebub.umap.Constants
-import retrofit.Retrofit
+import retrofit.RestAdapter
+import retrofit.client.OkClient
 import se.akerfeldt.okhttp.signpost.OkHttpOAuthConsumer
 
 /**
@@ -15,9 +16,9 @@ public class ApiModule {
         if (token == null || tokenSecret == null) throw RuntimeException("null token or secret passed to ApiModule")
         val consumer = OkHttpOAuthConsumer(Constants.DISCOGS_CONSUMER_KEY, Constants.DISCOGS_CONSUMER_SECRET)
         consumer.setTokenWithSecret(token, tokenSecret)
-        val restAdapter = Retrofit.Builder()
-                .baseUrl(Constants.DISCOGS_BASE_URL)
-                .client(SigningOkClient(consumer))
+        val restAdapter = RestAdapter.Builder()
+                .setEndpoint(Constants.DISCOGS_BASE_URL)
+                .setClient(OkClient(SigningOkClient(consumer)))
                 .build()
         api = restAdapter.create(DiscogsApi::class.java)
     }

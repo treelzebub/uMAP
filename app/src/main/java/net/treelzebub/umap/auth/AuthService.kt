@@ -19,7 +19,7 @@ public object AuthService {
                 .provider(DiscogsOauth::class.java)
                 .build()
 
-    private class DiscogsOauth : DefaultApi10a() {
+    public class DiscogsOauth : DefaultApi10a() {
         override fun getRequestTokenEndpoint(): String {
             return Constants.DISCOGS_REQUEST_TOKEN_URL
         }
