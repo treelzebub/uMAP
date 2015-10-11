@@ -1,4 +1,4 @@
-package net.treelzebub.umap.ui
+package net.treelzebub.umap.ui.activity
 
 import android.content.Intent
 import android.os.Bundle

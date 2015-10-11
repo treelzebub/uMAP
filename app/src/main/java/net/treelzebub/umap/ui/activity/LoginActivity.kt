@@ -1,4 +1,4 @@
-package net.treelzebub.umap.ui
+package net.treelzebub.umap.ui.activity
 
 import android.net.Uri
 import android.os.Bundle
@@ -44,7 +44,7 @@ public class LoginActivity : AppCompatActivity() {
             val sAuth = AuthService.instance
             val rt = sAuth.requestToken
             TokenHolder.requestToken = rt
-            authUrl = sAuth.getAuthorizationUrl(rt) + Constants.DISCOGS_AUTH_URL_APPEND + rt.token
+            authUrl = sAuth.getAuthorizationUrl(rt) + Constants.Companion.DISCOGS_AUTH_URL_APPEND + rt.token
         }, {
             webView.loadUrl(authUrl)
         })

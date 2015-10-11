@@ -1,8 +1,14 @@
 package net.treelzebub.umap.sync
 
 import android.content.Context
+import android.os.AsyncTask
 import net.treelzebub.umap.api.discogs.DiscogsService
 import net.treelzebub.umap.api.discogs.model.User
+import net.treelzebub.umap.api.discogs.model.Collection
+import net.treelzebub.umap.api.discogs.model.CollectionReleases
+import net.treelzebub.umap.async.event.CollectionEvent
+import net.treelzebub.umap.async.event.CollectionReleasesEvent
+import net.treelzebub.umap.util.BusProvider
 import net.treelzebub.umap.util.async
 import java.io.*
 
@@ -52,5 +58,29 @@ public object SyncCenter {
 
     public fun deserializeUser(c: Context): User {
         return deserialize(c, "user.umap", User::class.java)
+    }
+
+    public fun syncCollection() {
+        object : AsyncTask<Void, Void, Collection>() {
+            override fun doInBackground(vararg params: Void?): Collection {
+                return DiscogsService.getCollection()
+            }
+
+            override fun onPostExecute(result: Collection) {
+                BusProvider.instance.post(CollectionEvent(result.folders))
+            }
+        }
+    }
+
+    public fun syncCollectionReleases() {
+        object : AsyncTask<Void, Void, CollectionReleases>() {
+            override fun doInBackground(vararg params: Void?): CollectionReleases {
+                return DiscogsService.getCollectionReleases()
+            }
+
+            override fun onPostExecute(result: CollectionReleases) {
+                BusProvider.instance.post(CollectionReleasesEvent(result))
+            }
+        }
     }
 }

@@ -1,8 +1,9 @@
 package net.treelzebub.umap.api.discogs
 
-import net.treelzebub.umap.api.discogs.model.Identity
 import net.treelzebub.umap.api.discogs.model.User
 import net.treelzebub.umap.auth.TokenHolder
+import net.treelzebub.umap.api.discogs.model.Collection
+import net.treelzebub.umap.api.discogs.model.CollectionReleases
 
 /**
  * Created by Tre Murillo on 10/11/15
@@ -14,21 +15,22 @@ public object DiscogsService {
 
     private var username: String? = null
 
-    public fun getIdentity(): Identity {
-        return api.getIdentity()
-    }
-
     public fun getUsername(): String {
-        return username ?: api.getIdentity().username
+        if (username == null) {
+            username = api.getIdentity().username
+        }
+        return username!!
     }
 
     public fun getUser(): User {
         return api.getUser(getUsername())
     }
 
-    //    public val avatar: String
-    //        get() = user.avatar_url
-    //
-    //    public val name: String
-    //        get() = user.name
+    public fun getCollection(): Collection {
+        return api.getCollection(getUsername())
+    }
+
+    public fun getCollectionReleases(folderId: String = "0"): CollectionReleases {
+        return api.getCollectionReleases(getUsername(), folderId)
+    }
 }

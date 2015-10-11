@@ -1,10 +1,9 @@
-package net.treelzebub.umap.ui
+package net.treelzebub.umap.ui.activity
 
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.NavigationView
-import android.support.design.widget.Snackbar
 import android.support.v4.view.GravityCompat
 import android.support.v4.widget.DrawerLayout
 import android.support.v7.app.ActionBarDrawerToggle
@@ -20,6 +19,7 @@ import com.squareup.picasso.Picasso
 import net.treelzebub.umap.R
 import net.treelzebub.umap.graphics.CircleTransform
 import net.treelzebub.umap.sync.SyncCenter
+import net.treelzebub.umap.ui.fragment.CollectionFragment
 import net.treelzebub.umap.util.BusProvider
 import net.treelzebub.umap.util.clearPrefs
 
@@ -70,11 +70,12 @@ public class DashboardActivity : AppCompatActivity() {
     private fun setupDrawer() {
         setHeader()
         navView.setNavigationItemSelectedListener {
-            Snackbar.make(content, it.title, Snackbar.LENGTH_LONG).show()
             it.setChecked(true)
+            val ft = supportFragmentManager.beginTransaction()
             when (it.itemId) {
-            //            TODO
+                R.id.collection -> ft.add(R.id.content, CollectionFragment())
             }
+            ft.commit()
             drawerLayout.closeDrawers()
             true
         }

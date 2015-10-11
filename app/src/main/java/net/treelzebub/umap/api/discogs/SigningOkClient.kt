@@ -12,5 +12,4 @@ public class SigningOkClient : OkHttpClient {
     constructor(consumer: OkHttpOAuthConsumer) {
         interceptors().add(SigningInterceptor(consumer))
     }
-
 }

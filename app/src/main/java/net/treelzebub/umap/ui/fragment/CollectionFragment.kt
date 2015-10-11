@@ -1,4 +1,4 @@
-package net.treelzebub.umap.ui
+package net.treelzebub.umap.ui.fragment
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
@@ -29,7 +29,6 @@ public class CollectionFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         BusProvider.instance.register(this)
-//        syncCollection(activity, true)
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup, savedInstanceState: Bundle?): View {
@@ -37,7 +36,7 @@ public class CollectionFragment : Fragment() {
         val v = inflater.inflate(R.layout.fragment_collection, container, false)
         recyclerView = v.findViewById(R.id.recycler_view) as RecyclerView
         recyclerView?.setHasFixedSize(true)
-        recyclerView?.layoutManager = LinearLayoutManager(getActivity())
+        recyclerView?.layoutManager = LinearLayoutManager(activity)
         return v
     }
 
@@ -49,7 +48,7 @@ public class CollectionFragment : Fragment() {
     @Subscribe
     public fun onCollectionReleases(event: CollectionReleasesEvent) {
         collectionReleases = event.collectionReleases
-        tempText.text = event.collectionReleases.releases?.first()?.basic_information?.title
+        tempText.text = event.collectionReleases.releases.first().basic_information.title
         recyclerView?.adapter = CollectionAdapter(event.collectionReleases)
         recyclerView?.adapter?.notifyDataSetChanged()
     }

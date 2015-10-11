@@ -7,7 +7,7 @@ import com.google.gson.Gson
 import net.treelzebub.umap.R
 import net.treelzebub.umap.api.discogs.model.Identity
 import net.treelzebub.umap.async.event.AccessTokenEvent
-import net.treelzebub.umap.ui.DashboardActivity
+import net.treelzebub.umap.ui.activity.DashboardActivity
 import net.treelzebub.umap.util.*
 import org.scribe.model.OAuthRequest
 import org.scribe.model.Verb
