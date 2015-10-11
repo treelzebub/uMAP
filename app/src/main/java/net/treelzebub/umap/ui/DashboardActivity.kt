@@ -19,7 +19,6 @@ import net.treelzebub.umap.R
 import net.treelzebub.umap.api.discogs.model.User
 import net.treelzebub.umap.graphics.CircleTransform
 import net.treelzebub.umap.util.BusProvider
-import net.treelzebub.umap.util.LoginUtils
 import net.treelzebub.umap.util.UserUtils
 import net.treelzebub.umap.util.clearPrefs
 
@@ -43,7 +42,7 @@ public class DashboardActivity : AppCompatActivity() {
         setupDrawer()
         val data = intent.data
         if (data != null) {
-            LoginUtils.requestAccessToken(this, data)
+//            LoginUtils.requestAccessToken(this, data)
         } else {
             UserUtils.syncUser(this)
         }
