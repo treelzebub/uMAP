@@ -10,6 +10,7 @@ import butterknife.bindView
 import net.treelzebub.umap.Constants
 import net.treelzebub.umap.R
 import net.treelzebub.umap.auth.AuthService
+import net.treelzebub.umap.auth.TokenHolder
 import net.treelzebub.umap.util.BusProvider
 import net.treelzebub.umap.util.async
 
@@ -36,14 +37,14 @@ public class LoginActivity : AppCompatActivity() {
     }
 
     private fun loadAuthUrl() {
-//        async({
-//            val sAuthService = AuthService.instance
-//            val rt = sAuthService.requestToken
-//            TokenHolder.requestToken = rt
-//            authUrl = sAuthService.getAuthorizationUrl(rt) + Constants.DISCOGS_AUTH_URL_APPEND + rt.token
-//        }, {
-//            webView.loadUrl(authUrl)
-//        })
+        async({
+            val sAuth = AuthService.instance
+            val rt = sAuth.requestToken
+            TokenHolder.requestToken = rt
+            authUrl = sAuth.getAuthorizationUrl(rt) + Constants.DISCOGS_AUTH_URL_APPEND + rt.token
+        }, {
+            webView.loadUrl(authUrl)
+        })
     }
 
     private inner class RequestTokenCallback() : WebViewClient() {

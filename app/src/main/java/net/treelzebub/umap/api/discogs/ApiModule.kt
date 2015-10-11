@@ -20,4 +20,8 @@ public class ApiModule {
                 .build()
         api = restAdapter.create(DiscogsApi::class.java)
     }
+
+    public operator fun get(): DiscogsApi {
+        return api
+    }
 }
