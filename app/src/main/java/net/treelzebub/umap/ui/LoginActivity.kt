@@ -7,8 +7,7 @@ import android.support.v7.app.AppCompatActivity
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import butterknife.bindView
-import net.treelzebub.umap.CALLBACK_URL
-import net.treelzebub.umap.DISCOGS_AUTH_URL_APPEND
+import net.treelzebub.umap.Constants
 import net.treelzebub.umap.R
 import net.treelzebub.umap.auth.AuthService
 import net.treelzebub.umap.auth.TokenHolder
@@ -42,7 +41,7 @@ public class LoginActivity : AppCompatActivity() {
             val sAuthService = AuthService.instance
             val rt = sAuthService.requestToken
             TokenHolder.requestToken = rt
-            authUrl = sAuthService.getAuthorizationUrl(rt) + DISCOGS_AUTH_URL_APPEND + rt.token
+            authUrl = sAuthService.getAuthorizationUrl(rt) + Constants.DISCOGS_AUTH_URL_APPEND + rt.token
         }, {
             webView.loadUrl(authUrl)
         })
@@ -50,7 +49,7 @@ public class LoginActivity : AppCompatActivity() {
 
     private inner class RequestTokenCallback() : WebViewClient() {
         override fun shouldOverrideUrlLoading(view: WebView, url: String?): Boolean {
-            if (url != null && url.startsWith(CALLBACK_URL)) {
+            if (url != null && url.startsWith(Constants.CALLBACK_URL)) {
                 val i = Intent(this@LoginActivity, DashboardActivity::class.java).setData(Uri.parse(url))
                 startActivity(i)
                 return true

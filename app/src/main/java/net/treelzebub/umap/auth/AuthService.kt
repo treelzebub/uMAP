@@ -1,10 +1,7 @@
 package net.treelzebub.umap.auth
 
-import net.treelzebub.umap.CALLBACK_URL
-import net.treelzebub.umap.DISCOGS_CONSUMER_KEY
-import net.treelzebub.umap.DISCOGS_CONSUMER_SECRET
+import net.treelzebub.umap.Constants
 import org.scribe.builder.ServiceBuilder
-import org.scribe.model.SignatureType
 import org.scribe.oauth.OAuthService
 
 /**
@@ -13,9 +10,9 @@ import org.scribe.oauth.OAuthService
 public object AuthService {
     public val instance: OAuthService
         get() = ServiceBuilder()
-                .apiKey(DISCOGS_CONSUMER_KEY)
-                .apiSecret(DISCOGS_CONSUMER_SECRET)
-                .callback(CALLBACK_URL)
+                .apiKey(Constants.DISCOGS_CONSUMER_KEY)
+                .apiSecret(Constants.DISCOGS_CONSUMER_SECRET)
+                .callback(Constants.CALLBACK_URL)
                 .provider(DiscogsOauth::class.java)
                 .build()
 }
