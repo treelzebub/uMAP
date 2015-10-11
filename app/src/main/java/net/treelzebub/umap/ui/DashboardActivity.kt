@@ -1,5 +1,7 @@
 package net.treelzebub.umap.ui
 
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.NavigationView
 import android.support.design.widget.Snackbar
@@ -27,6 +29,12 @@ import net.treelzebub.umap.util.clearPrefs
  */
 public class DashboardActivity : AppCompatActivity() {
 
+    companion object {
+        public fun getIntent(c: Context): Intent {
+            return Intent(c, DashboardActivity::class.java)
+        }
+    }
+
     val drawerLayout: DrawerLayout  by bindView(R.id.drawer_layout)
     val navView: NavigationView     by bindView(R.id.navigation_view)
     val content: ViewGroup          by bindView(R.id.content)
@@ -40,12 +48,6 @@ public class DashboardActivity : AppCompatActivity() {
         setContentView(R.layout.activity_dashboard)
         setupToolbar()
         setupDrawer()
-        val data = intent.data
-        if (data != null) {
-//            LoginUtils.requestAccessToken(this, data)
-        } else {
-            UserUtils.syncUser(this)
-        }
     }
 
     override fun onDestroy() {

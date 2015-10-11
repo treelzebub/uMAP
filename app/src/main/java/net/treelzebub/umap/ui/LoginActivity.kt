@@ -1,15 +1,17 @@
 package net.treelzebub.umap.ui
 
-import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import butterknife.bindView
+import com.squareup.otto.Subscribe
 import net.treelzebub.umap.Constants
 import net.treelzebub.umap.R
+import net.treelzebub.umap.async.event.AccessTokenEvent
 import net.treelzebub.umap.auth.AuthService
+import net.treelzebub.umap.auth.LoginUtils
 import net.treelzebub.umap.auth.TokenHolder
 import net.treelzebub.umap.util.BusProvider
 import net.treelzebub.umap.util.async
@@ -50,11 +52,17 @@ public class LoginActivity : AppCompatActivity() {
     private inner class RequestTokenCallback() : WebViewClient() {
         override fun shouldOverrideUrlLoading(view: WebView, url: String?): Boolean {
             if (url != null && url.startsWith(Constants.CALLBACK_URL)) {
-                val i = Intent(this@LoginActivity, DashboardActivity::class.java).setData(Uri.parse(url))
-                startActivity(i)
+                //TODO spinner visible
+                LoginUtils.requestAccessToken(this@LoginActivity, Uri.parse(url))
                 return true
             }
             return false
         }
+    }
+
+    @Subscribe
+    public fun onAccessToken(e: AccessTokenEvent) {
+        //TODO spinner gone
+        startActivity(DashboardActivity.getIntent(this@LoginActivity))
     }
 }
