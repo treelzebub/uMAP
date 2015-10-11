@@ -25,7 +25,7 @@ public object SyncCenter {
     }
 
     @Suppress("UNCHECKED_CAST")
-    public fun deserialize<T>(c: Context, filename: String, obj: Class<out T>): T? {
+    public fun <T> deserialize(c: Context, filename: String, obj: Class<out T>): T {
         try {
             val fileIn = c.openFileInput(filename)
             val inStream = ObjectInputStream(fileIn)
@@ -35,10 +35,12 @@ public object SyncCenter {
             return retval
         } catch(e: IOException) {
             e.printStackTrace()
+        } catch(e: FileNotFoundException) {
+            e.printStackTrace()
         } catch(e: ClassNotFoundException) {
             e.printStackTrace();
         }
-        return null
+        throw(InvalidClassException("Invalid class ${obj.simpleName} for filename $filename"))
     }
 
     public fun serializeUser(c: Context) {
@@ -48,7 +50,7 @@ public object SyncCenter {
         }
     }
 
-    public fun deserializeUser(c: Context): User? {
+    public fun deserializeUser(c: Context): User {
         return deserialize(c, "user.umap", User::class.java)
     }
 }

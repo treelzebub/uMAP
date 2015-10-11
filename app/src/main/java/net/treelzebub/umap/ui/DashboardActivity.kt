@@ -2,7 +2,6 @@ package net.treelzebub.umap.ui
 
 import android.content.Context
 import android.content.Intent
-import android.os.AsyncTask
 import android.os.Bundle
 import android.support.design.widget.NavigationView
 import android.support.design.widget.Snackbar
@@ -19,7 +18,6 @@ import android.widget.TextView
 import butterknife.bindView
 import com.squareup.picasso.Picasso
 import net.treelzebub.umap.R
-import net.treelzebub.umap.api.discogs.DiscogsService
 import net.treelzebub.umap.graphics.CircleTransform
 import net.treelzebub.umap.sync.SyncCenter
 import net.treelzebub.umap.util.BusProvider
