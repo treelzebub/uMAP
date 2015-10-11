@@ -3,7 +3,6 @@ package net.treelzebub.umap.api.discogs
 import net.treelzebub.umap.api.discogs.model.Identity
 import net.treelzebub.umap.api.discogs.model.User
 import net.treelzebub.umap.auth.TokenHolder
-import net.treelzebub.umap.util.async
 
 /**
  * Created by Tre Murillo on 10/11/15
@@ -20,22 +19,17 @@ public object DiscogsService {
         return api.getIdentity()
     }
 
-    private fun getUsername(): String? {
-        var retval: String? = null
-        async ({
-            username = api.getIdentity().username
-        }, {
-            retval = username
-        })
-        return retval
+    public fun getUsername(): String {
+        return username ?: api.getIdentity().username
     }
 
-//    private val user: User
-//        get() = api.getUser(username)
-//
-//    public val avatar: String
-//        get() = user.avatar_url
-//
-//    public val name: String
-//        get() = user.name
+    public fun getUser(): User {
+        return api.getUser(getUsername())
+    }
+
+    //    public val avatar: String
+    //        get() = user.avatar_url
+    //
+    //    public val name: String
+    //        get() = user.name
 }

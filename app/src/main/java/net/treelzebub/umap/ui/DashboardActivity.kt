@@ -8,6 +8,7 @@ import android.support.design.widget.NavigationView
 import android.support.design.widget.Snackbar
 import android.support.v4.view.GravityCompat
 import android.support.v4.widget.DrawerLayout
+import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.Toolbar
 import android.view.Menu
@@ -20,6 +21,7 @@ import com.squareup.picasso.Picasso
 import net.treelzebub.umap.R
 import net.treelzebub.umap.api.discogs.DiscogsService
 import net.treelzebub.umap.graphics.CircleTransform
+import net.treelzebub.umap.sync.SyncCenter
 import net.treelzebub.umap.util.BusProvider
 import net.treelzebub.umap.util.clearPrefs
 
@@ -41,6 +43,8 @@ public class DashboardActivity : AppCompatActivity() {
     val username: TextView          by bindView(R.id.username)
     val name: TextView              by bindView(R.id.name)
 
+    private var drawerToggle: ActionBarDrawerToggle? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         BusProvider.instance.register(this)
@@ -58,8 +62,11 @@ public class DashboardActivity : AppCompatActivity() {
         val toolbar = findViewById(R.id.toolbar) as Toolbar
         setSupportActionBar(toolbar)
         val actionBar = supportActionBar
-        actionBar?.setHomeAsUpIndicator(R.drawable.ic_menu)
+        actionBar?.setHomeAsUpIndicator(R.drawable.ic_menu_white_24dp)
         actionBar?.setDisplayHomeAsUpEnabled(true)
+        drawerToggle = ActionBarDrawerToggle(this, drawerLayout, toolbar, 0, 0)
+        drawerLayout.setDrawerListener(drawerToggle)
+        drawerToggle?.syncState()
     }
 
     private fun setupDrawer() {
@@ -89,16 +96,9 @@ public class DashboardActivity : AppCompatActivity() {
     }
 
     private fun setHeader() {
-        object : AsyncTask<Void, Void, String>() {
-            override fun doInBackground(vararg params: Void?): String? {
-                return DiscogsService.getIdentity().username
-            }
-
-            override fun onPostExecute(result: String?) {
-                username.text = result
-            }
-        }.execute(null)
-//        Picasso.with(this).load(DiscogsService.avatar).transform(CircleTransform()).into(avatar)
-//        name.text = DiscogsService.getUser()?.name ?: "fail"
+        val user = SyncCenter.deserializeUser(this) ?: return
+        username.text = user.username
+        Picasso.with(this).load(user.avatar_url).transform(CircleTransform()).into(avatar)
+        name.text = user.name
     }
 }
