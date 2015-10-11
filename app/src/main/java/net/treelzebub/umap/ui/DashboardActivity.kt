@@ -58,10 +58,8 @@ public class DashboardActivity : AppCompatActivity() {
         val toolbar = findViewById(R.id.toolbar) as Toolbar
         setSupportActionBar(toolbar)
         val actionBar = supportActionBar
-        if (actionBar != null) {
-            actionBar.setHomeAsUpIndicator(R.drawable.ic_menu_white_24dp)
-            actionBar.setDisplayHomeAsUpEnabled(true)
-        }
+        actionBar?.setHomeAsUpIndicator(R.drawable.ic_menu_white_24dp)
+        actionBar?.setDisplayHomeAsUpEnabled(true)
     }
 
     private fun setupDrawer() {
