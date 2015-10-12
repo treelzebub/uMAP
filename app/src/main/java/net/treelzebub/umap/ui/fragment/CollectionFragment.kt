@@ -25,9 +25,6 @@ import net.treelzebub.umap.util.async
  */
 public class CollectionFragment : Fragment() {
 
-    var collectionReleases: CollectionReleases? = null
-
-    private val tempText: TextView         by bindView(R.id.collection_item)
     private val recyclerView: RecyclerView by bindView(R.id.recycler)
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -52,9 +49,10 @@ public class CollectionFragment : Fragment() {
 
     private fun syncCollectionReleases() {
         async({
+            // TODO spinner
             DiscogsService.getCollectionReleases()
         }, {
-            tempText.text = it.releases.first().basic_information.title
+            // TODO spinner
             recyclerView.adapter = CollectionAdapter(activity, it)
         })
     }

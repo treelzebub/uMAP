@@ -1,42 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:auto="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/margin_small"
+    android:layout_marginLeft="@dimen/margin_small"
+    android:layout_marginRight="@dimen/margin_small"
+    android:clipToPadding="false"
+    android:elevation="@dimen/el_high"
+    android:padding="@dimen/margin_normal"
+    auto:cardCornerRadius="2dp">
 
-    <android.support.v7.widget.CardView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        card_view:cardCornerRadius="5dp"
-        card_view:cardElevation="2dp"
-        card_view:contentPadding="16dp">
+        android:layout_height="match_parent"
+        android:gravity="left"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/cardview_album_cover"
+            android:layout_width="@dimen/cardview_album_cover"
+            android:layout_height="@dimen/cardview_album_cover"
+            android:adjustViewBounds="true" />
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:gravity="left"
+            android:layout_margin="@dimen/margin_small"
+            android:layout_weight="1"
+            android:clipToPadding="false"
             android:orientation="vertical">
-
-            <ImageView
-                android:id="@+id/cardview_album_cover"
-                android:layout_width="@dimen/cardview_album_cover"
-                android:layout_height="@dimen/cardview_album_cover" />
 
             <TextView
                 android:id="@+id/cardview_artist"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:singleLine="true"
                 android:ellipsize="end" />
 
             <TextView
                 android:id="@+id/cardview_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:ellipsize="end" />
-
+                android:ellipsize="end"
+                android:singleLine="true" />
         </LinearLayout>
 
-    </android.support.v7.widget.CardView>
+    </LinearLayout>
 
-</LinearLayout>
+</android.support.v7.widget.CardView>

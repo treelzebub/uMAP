@@ -1,6 +1,22 @@
 <resources>
-    <dimen name="activity_horizontal_margin">16dp</dimen>
-    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <dimen name="margin_pixel">1px</dimen>
+    <dimen name="margin_pixel_n">-1px</dimen>
+    <dimen name="margin_min">2dp</dimen>
+    <dimen name="margin_min_n">-2dp</dimen>
+    <dimen name="margin_tiny">4dp</dimen>
+    <dimen name="margin_tiny_n">-4dp</dimen>
+    <dimen name="margin_small">8dp</dimen>
+    <dimen name="margin_small_n">-8dp</dimen>
+    <dimen name="margin_smallish">12dp</dimen>
+    <dimen name="margin_smallish_n">-12dp</dimen>
+    <dimen name="margin_normal">16dp</dimen>
+    <dimen name="margin_normal_n">-16dp</dimen>
+    <dimen name="margin_large">32dp</dimen>
+    <dimen name="margin_large_n">-32dp</dimen>
+    <dimen name="margin_normal_edittext">12dp</dimen>
+
+    <dimen name="toolbar_height">56dp</dimen>
 
     <dimen name="navigation_drawer_width">240dp</dimen>
     <dimen name="nav_profile_photo">96dp</dimen>
@@ -11,8 +27,8 @@
     <dimen name="spacing_large">16dp</dimen>
     <dimen name="spacing_xlarge">32dp</dimen>
 
-    <dimen name="elevation_low">9dp</dimen>
-    <dimen name="elevation_high">12dp</dimen>
+    <dimen name="el_low">6dp</dimen>
+    <dimen name="el_high">12dp</dimen>
     <dimen name="status_bar_height">32dp</dimen>
     <dimen name="cardview_album_cover">64dp</dimen>
 </resources>
