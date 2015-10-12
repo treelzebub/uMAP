@@ -14,15 +14,14 @@ public fun async(fn: () -> Unit) {
     }.execute(null)
 }
 
-public fun async(fn: () -> Unit, post: () -> Unit) {
-    object : AsyncTask<Void, Void, Void>() {
-        override fun doInBackground(vararg params: Void): Void? {
-            fn()
-            return null
+public fun <T> async(fn: () -> T, post: (result: T) -> Unit) {
+    object : AsyncTask<Void, Void, T>() {
+        override fun doInBackground(vararg params: Void): T {
+            return fn()
         }
 
-        override fun onPostExecute(result: Void?) {
-            post()
+        override fun onPostExecute(result: T) {
+            post(result)
         }
     }.execute(null)
 }

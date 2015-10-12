@@ -55,7 +55,6 @@ public object SyncCenter {
     }
 
     public fun deserializeUser(c: Context): User? {
-        var user: User? = null
         try {
             return deserialize(c, "user.umap", User::class.java)
         } catch (e: FileNotFoundException) {
@@ -77,13 +76,12 @@ public object SyncCenter {
     }
 
     public fun syncCollectionReleases() {
-        object : AsyncTask<Void, Void, CollectionReleases>() {
-            override fun doInBackground(vararg params: Void?): CollectionReleases {
-                return DiscogsService.getCollectionReleases()
-            }
-
-            override fun onPostExecute(result: CollectionReleases) {
-                BusProvider.instance.post(CollectionReleasesEvent(result))
+        object : AsyncTask<Void, Void, Void>() {
+            override fun doInBackground(vararg params: Void?): Void? {
+                BusProvider.instance.register(this)
+                val releases = DiscogsService.getCollectionReleases()
+                BusProvider.instance.post(CollectionReleasesEvent(releases))
+                return null
             }
         }.execute(null)
     }

@@ -11,11 +11,14 @@ import android.widget.TextView
 import butterknife.bindView
 import com.squareup.otto.Subscribe
 import net.treelzebub.umap.R
+import net.treelzebub.umap.api.discogs.DiscogsApi
+import net.treelzebub.umap.api.discogs.DiscogsService
 import net.treelzebub.umap.api.discogs.model.CollectionReleases
 import net.treelzebub.umap.async.event.CollectionReleasesEvent
 import net.treelzebub.umap.sync.SyncCenter
 import net.treelzebub.umap.ui.adapter.CollectionAdapter
 import net.treelzebub.umap.util.BusProvider
+import net.treelzebub.umap.util.async
 
 /**
  * Created by Tre Murillo on 6/6/15
@@ -24,22 +27,22 @@ public class CollectionFragment : Fragment() {
 
     var collectionReleases: CollectionReleases? = null
 
-    val tempText: TextView by bindView(R.id.collection_item)
-    var recyclerView: RecyclerView? = null
+    private val tempText: TextView         by bindView(R.id.collection_item)
+    private val recyclerView: RecyclerView by bindView(R.id.recycler)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         BusProvider.instance.register(this)
-        SyncCenter.syncCollectionReleases()
+        syncCollectionReleases()
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup, savedInstanceState: Bundle?): View {
-        super.onCreateView(inflater, container, savedInstanceState)
-        val v = inflater.inflate(R.layout.fragment_collection, container, false)
-        recyclerView = v.findViewById(R.id.recycler_view) as RecyclerView
-        recyclerView?.setHasFixedSize(true)
-        recyclerView?.layoutManager = LinearLayoutManager(activity)
-        return v
+        return inflater.inflate(R.layout.fragment_collection, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        recyclerView.setHasFixedSize(true)
+        recyclerView.layoutManager = LinearLayoutManager(activity)
     }
 
     override fun onDestroy() {
@@ -47,11 +50,12 @@ public class CollectionFragment : Fragment() {
         BusProvider.instance.unregister(this)
     }
 
-    @Subscribe
-    public fun onCollectionReleases(event: CollectionReleasesEvent) {
-        collectionReleases = event.collectionReleases
-        tempText.text = event.collectionReleases.releases.first().basic_information.title
-        recyclerView?.adapter = CollectionAdapter(event.collectionReleases)
-        recyclerView?.adapter?.notifyDataSetChanged()
+    private fun syncCollectionReleases() {
+        async({
+            DiscogsService.getCollectionReleases()
+        }, {
+            tempText.text = it.releases.first().basic_information.title
+            recyclerView.adapter = CollectionAdapter(activity, it)
+        })
     }
 }
