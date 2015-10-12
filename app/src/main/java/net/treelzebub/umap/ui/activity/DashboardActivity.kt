@@ -22,6 +22,7 @@ import net.treelzebub.umap.sync.SyncCenter
 import net.treelzebub.umap.ui.fragment.CollectionFragment
 import net.treelzebub.umap.util.BusProvider
 import net.treelzebub.umap.util.PrefsUtils
+import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper
 
 /**
  * Created by Tre Murillo on 5/28/15
@@ -42,6 +43,10 @@ public class DashboardActivity : AppCompatActivity() {
     val name: TextView              by bindView(R.id.name)
 
     private var drawerToggle: ActionBarDrawerToggle? = null
+
+    override fun attachBaseContext(newBase: Context) {
+        super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase))
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

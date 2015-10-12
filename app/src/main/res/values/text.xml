@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="font_normal">fonts/Quattrocento-Sans.ttf</string>
+    <string name="font_bold">fonts/Quattrocento-Sans-Bold.ttf</string>
+    <string name="font_italic">fonts/Quattrocento-Sans-Italic.ttf</string>
+    <string name="font_bold_italic">fonts/Quattrocento-Sans-Bold-Italic.ttf</string>
+
+    <dimen name="text_small">11sp</dimen>
+    <dimen name="text_medium">14sp</dimen>
+    <dimen name="text_large">16sp</dimen>
+    <dimen name="text_huge">20sp</dimen>
+
+    <color name="text_normal">#F000</color>
+
+    <style name="Text">
+        <item name="android:textColor">@color/text_normal</item>
+        <item name="android:textSize">@dimen/text_medium</item>
+        <item name="fontPath">@string/font_normal</item>
+    </style>
+
+    <style name="Text.Bold">
+        <item name="fontPath">@string/font_bold</item>
+    </style>
+
+    <style name="Text.Italic">
+        <item name="fontPath">@string/font_italic</item>
+    </style>
+</resources>
