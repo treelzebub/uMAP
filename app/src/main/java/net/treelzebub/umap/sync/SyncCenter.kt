@@ -3,9 +3,9 @@ package net.treelzebub.umap.sync
 import android.content.Context
 import android.os.AsyncTask
 import net.treelzebub.umap.api.discogs.DiscogsService
-import net.treelzebub.umap.api.discogs.model.User
 import net.treelzebub.umap.api.discogs.model.Collection
 import net.treelzebub.umap.api.discogs.model.CollectionReleases
+import net.treelzebub.umap.api.discogs.model.User
 import net.treelzebub.umap.async.event.CollectionEvent
 import net.treelzebub.umap.async.event.CollectionReleasesEvent
 import net.treelzebub.umap.util.BusProvider
@@ -32,19 +32,17 @@ public object SyncCenter {
 
     @Suppress("UNCHECKED_CAST")
     public fun <T> deserialize(c: Context, filename: String, obj: Class<out T>): T {
+        val fileIn = c.openFileInput(filename)
+        val inStream = ObjectInputStream(fileIn)
         try {
-            val fileIn = c.openFileInput(filename)
-            val inStream = ObjectInputStream(fileIn)
-            val retval = inStream.readObject() as T
-            inStream.close()
-            fileIn.close()
-            return retval
+            return inStream.readObject() as T
         } catch(e: IOException) {
-            e.printStackTrace()
-        } catch(e: FileNotFoundException) {
             e.printStackTrace()
         } catch(e: ClassNotFoundException) {
             e.printStackTrace();
+        } finally {
+            inStream.close()
+            fileIn.close()
         }
         throw(InvalidClassException("Invalid class ${obj.simpleName} for filename $filename"))
     }
@@ -56,8 +54,14 @@ public object SyncCenter {
         }
     }
 
-    public fun deserializeUser(c: Context): User {
-        return deserialize(c, "user.umap", User::class.java)
+    public fun deserializeUser(c: Context): User? {
+        var user: User? = null
+        try {
+            return deserialize(c, "user.umap", User::class.java)
+        } catch (e: FileNotFoundException) {
+            e.printStackTrace()
+            return null
+        }
     }
 
     public fun syncCollection() {
@@ -81,6 +85,6 @@ public object SyncCenter {
             override fun onPostExecute(result: CollectionReleases) {
                 BusProvider.instance.post(CollectionReleasesEvent(result))
             }
-        }
+        }.execute(null)
     }
 }

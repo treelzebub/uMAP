@@ -2,15 +2,10 @@ package net.treelzebub.umap.auth
 
 import android.content.Context
 import android.net.Uri
-import android.util.Log
-import com.google.gson.Gson
-import net.treelzebub.umap.R
-import net.treelzebub.umap.api.discogs.model.Identity
-import net.treelzebub.umap.async.event.AccessTokenEvent
+import net.treelzebub.umap.sync.SyncCenter
 import net.treelzebub.umap.ui.activity.DashboardActivity
-import net.treelzebub.umap.util.*
-import org.scribe.model.OAuthRequest
-import org.scribe.model.Verb
+import net.treelzebub.umap.util.BusProvider
+import net.treelzebub.umap.util.async
 import org.scribe.model.Verifier
 
 /**
@@ -31,23 +26,15 @@ public object LoginUtils {
         BusProvider.instance.register(this)
         async {
             val verifier = Verifier(data.getQueryParameter("oauth_verifier"))
-            val requestToken = TokenHolder.requestToken
-            val accessToken = AuthService.instance.getAccessToken(requestToken, verifier)
-            setTokens(c, data)
+            val accessToken = AuthService.instance.getAccessToken(TokenHolder.getRequestToken(), verifier)
             if (accessToken != null) {
-                Log.d("OAuth Token: ", accessToken.token)
-                TokenHolder.accessToken = accessToken
-                AuthState.setIsLoggedIn(true)
+                TokenHolder.setToken(accessToken)
+                AuthUtils.setTokenPrefs(c, accessToken)
+                SyncCenter.serializeUser(c)
                 c.startActivity(DashboardActivity.getIntent(c))
             } else {
                 // TODO
             }
         }
-    }
-
-    private fun setTokens(c: Context, data: Uri) {
-        val editor = getPrefs(c)?.edit()
-        editor?.putString(c.getString(R.string.key_oauth_token), data.getQueryParameter("oauth_token"))
-        editor?.putString(c.getString(R.string.key_oauth_verifier), data.getQueryParameter("oauth_verifier"))?.commit()
     }
 }

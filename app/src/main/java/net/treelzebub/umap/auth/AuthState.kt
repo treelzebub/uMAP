@@ -8,19 +8,7 @@ import net.treelzebub.umap.sync.SyncCenter
  */
 public object AuthState {
 
-    private var isLoggedIn = false
-
     public fun isLoggedIn(c: Context): Boolean {
-        return SyncCenter.deserializeUser(c) != null
-    }
-
-    public fun setIsLoggedIn(bool: Boolean) {
-        isLoggedIn = bool
-    }
-
-    public fun onDidLogout(c: Context) {
-        if (!isLoggedIn) {
-            isLoggedIn = true
-        }
+        return SyncCenter.deserializeUser(c) != null && AuthUtils.getTokenPrefs(c)
     }
 }

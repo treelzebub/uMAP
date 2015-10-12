@@ -11,7 +11,7 @@ import net.treelzebub.umap.api.discogs.model.CollectionReleases
 public object DiscogsService {
 
     private val api: DiscogsApi
-        get() = ApiModule(TokenHolder.token(), TokenHolder.tokenSecret()).get()
+        get() = ApiModule(TokenHolder.getToken()).get()
 
     private var username: String? = null
 

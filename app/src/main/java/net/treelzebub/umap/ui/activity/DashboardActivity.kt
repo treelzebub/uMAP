@@ -21,7 +21,7 @@ import net.treelzebub.umap.graphics.CircleTransform
 import net.treelzebub.umap.sync.SyncCenter
 import net.treelzebub.umap.ui.fragment.CollectionFragment
 import net.treelzebub.umap.util.BusProvider
-import net.treelzebub.umap.util.clearPrefs
+import net.treelzebub.umap.util.PrefsUtils
 
 /**
  * Created by Tre Murillo on 5/28/15
@@ -89,7 +89,7 @@ public class DashboardActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             android.R.id.home -> drawerLayout.openDrawer(GravityCompat.START)
-            R.id.clear_prefs -> clearPrefs(this)
+            R.id.clear_prefs -> PrefsUtils.clearPrefs(this)
         }
         return super.onOptionsItemSelected(item)
     }

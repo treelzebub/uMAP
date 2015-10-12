@@ -24,7 +24,7 @@ public interface DiscogsApi {
     public fun getCollectionFolder(@Path("username") username: String,
                                    @Path("folder_id") folder_id: String): CollectionFolder
 
-    @GET("/users/{username}/collectio@n/folders/{folder_id}/releases")
+    @GET("/users/{username}/collection/folders/{folder_id}/releases")
     public fun getCollectionReleases(@Path("username") username: String,
                                      @Path("folder_id") folder_id: String): CollectionReleases
 }

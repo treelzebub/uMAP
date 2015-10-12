@@ -13,6 +13,7 @@ import com.squareup.otto.Subscribe
 import net.treelzebub.umap.R
 import net.treelzebub.umap.api.discogs.model.CollectionReleases
 import net.treelzebub.umap.async.event.CollectionReleasesEvent
+import net.treelzebub.umap.sync.SyncCenter
 import net.treelzebub.umap.ui.adapter.CollectionAdapter
 import net.treelzebub.umap.util.BusProvider
 
@@ -29,6 +30,7 @@ public class CollectionFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         BusProvider.instance.register(this)
+        SyncCenter.syncCollectionReleases()
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup, savedInstanceState: Bundle?): View {

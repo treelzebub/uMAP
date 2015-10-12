@@ -12,10 +12,15 @@ public class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        init()
         if (AuthState.isLoggedIn(this)) {
             startActivity(Intent(this, DashboardActivity::class.java))
         } else {
             startActivity(Intent(this, LoginActivity::class.java))
         }
+    }
+
+    private fun init() {
+
     }
 }
