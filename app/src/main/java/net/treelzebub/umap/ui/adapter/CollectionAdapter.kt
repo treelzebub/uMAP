@@ -22,7 +22,8 @@ public class CollectionAdapter(val c: Context, val releases: CollectionReleases)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, i: Int) {
-        var albumCoverUrl = releases.releases.get(i).basic_information.thumb
+        val info = releases.releases.get(i).basic_information
+        var albumCoverUrl = info.thumb
         if (albumCoverUrl.isNullOrEmpty()) {
             albumCoverUrl = "https://upload.wikimedia.org/wikipedia/commons/b/b9/No_Cover.jpg" // "http://treelzebub.net/img/no-cover.png"
         }
@@ -31,8 +32,10 @@ public class CollectionAdapter(val c: Context, val releases: CollectionReleases)
                 .fit()
                 .centerCrop()
                 .into(holder.albumCover)
-        holder.artist.text = releases.releases.get(i).basic_information.artists.first().name
-        holder.title.text = releases.releases.get(i).basic_information.title
+        holder.artist.text = info.artists.first().name
+        holder.title.text = info.title
+        holder.label.text = info.labels.first().name
+        holder.year.text = "${info.year}"
     }
 
     override fun getItemCount(): Int {
@@ -40,8 +43,10 @@ public class CollectionAdapter(val c: Context, val releases: CollectionReleases)
     }
 
     private inner class ViewHolder(v: View) : RecyclerView.ViewHolder(v) {
-        val albumCover: ImageView  by bindView(R.id.cardview_album_cover)
-        val artist: TextView       by bindView(R.id.cardview_artist)
-        val title: TextView        by bindView(R.id.cardview_title)
+        val albumCover: ImageView  by bindView(R.id.cover)
+        val artist: TextView       by bindView(R.id.artist)
+        val title: TextView        by bindView(R.id.title)
+        val label: TextView        by bindView(R.id.label)
+        val year: TextView         by bindView(R.id.year)
     }
 }

@@ -25,4 +25,8 @@
     <style name="Text.Italic">
         <item name="fontPath">@string/font_italic</item>
     </style>
+
+    <style name="Text.Italic.Detail">
+        <item name="android:textSize">@dimen/text_small</item>
+    </style>
 </resources>
