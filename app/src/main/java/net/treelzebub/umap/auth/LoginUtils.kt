@@ -24,7 +24,7 @@ object LoginUtils {
      * */
     fun requestAccessToken(c: Context, data: Uri) {
         BusProvider.instance.register(this)
-        async {
+        async() {
             val verifier = Verifier(data.getQueryParameter("oauth_verifier"))
             val accessToken = AuthService.instance.getAccessToken(TokenHolder.getRequestToken(), verifier)
             if (accessToken != null) {

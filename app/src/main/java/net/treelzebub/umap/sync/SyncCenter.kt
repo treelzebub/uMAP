@@ -4,7 +4,6 @@ import android.content.Context
 import android.os.AsyncTask
 import net.treelzebub.umap.api.discogs.DiscogsService
 import net.treelzebub.umap.api.discogs.model.Collection
-import net.treelzebub.umap.api.discogs.model.CollectionReleases
 import net.treelzebub.umap.api.discogs.model.User
 import net.treelzebub.umap.async.event.CollectionEvent
 import net.treelzebub.umap.async.event.CollectionReleasesEvent
@@ -48,7 +47,7 @@ object SyncCenter {
     }
 
     fun serializeUser(c: Context) {
-        async {
+        async() {
             val user = DiscogsService.getUser()
             serialize(c, user, "user.umap")
         }

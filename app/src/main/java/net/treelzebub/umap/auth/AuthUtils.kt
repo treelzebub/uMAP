@@ -1,7 +1,6 @@
 package net.treelzebub.umap.auth
 
 import android.content.Context
-import android.net.Uri
 import net.treelzebub.umap.R
 import net.treelzebub.umap.util.PrefsUtils
 import org.scribe.model.Token
@@ -13,10 +12,11 @@ import org.scribe.model.Token
 object AuthUtils {
 
     fun setTokenPrefs(c: Context, token: Token) {
-        val editor = PrefsUtils.getPrefs(c)?.edit()
-        editor?.putString(c.getString(R.string.key_access_token), token.token)
-        editor?.putString(c.getString(R.string.key_access_token_secret), token.secret)
-        editor?.commit()
+        PrefsUtils.getPrefs(c)?.edit()?.let {
+            it.putString(c.getString(R.string.key_access_token), token.token)
+            it.putString(c.getString(R.string.key_access_token_secret), token.secret)
+            it.commit()
+        }
     }
 
     fun getTokenPrefs(c: Context): Boolean {

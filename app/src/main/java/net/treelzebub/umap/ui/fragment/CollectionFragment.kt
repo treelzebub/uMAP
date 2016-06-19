@@ -7,15 +7,9 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import butterknife.bindView
-import com.squareup.otto.Subscribe
 import net.treelzebub.umap.R
-import net.treelzebub.umap.api.discogs.DiscogsApi
 import net.treelzebub.umap.api.discogs.DiscogsService
-import net.treelzebub.umap.api.discogs.model.CollectionReleases
-import net.treelzebub.umap.async.event.CollectionReleasesEvent
-import net.treelzebub.umap.sync.SyncCenter
 import net.treelzebub.umap.ui.adapter.CollectionAdapter
 import net.treelzebub.umap.util.BusProvider
 import net.treelzebub.umap.util.async

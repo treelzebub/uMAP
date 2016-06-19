@@ -1,6 +1,7 @@
 package net.treelzebub.umap
 
 import android.app.Application
+import net.treelzebub.umap.inject.ContextInjection
 import uk.co.chrisjenx.calligraphy.CalligraphyConfig
 
 /**
@@ -10,6 +11,7 @@ class UMapApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()
+        ContextInjection.c = this
         CalligraphyConfig.initDefault(CalligraphyConfig.Builder()
                 .setDefaultFontPath("fonts/Quattrocento-Sans.ttf")
                 .setFontAttrId(R.attr.fontPath)

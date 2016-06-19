@@ -2,7 +2,6 @@ package net.treelzebub.umap.ui.activity
 
 import android.net.Uri
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import butterknife.bindView
@@ -11,7 +10,7 @@ import net.treelzebub.umap.R
 import net.treelzebub.umap.auth.AuthService
 import net.treelzebub.umap.auth.LoginUtils
 import net.treelzebub.umap.auth.TokenHolder
-import net.treelzebub.umap.util.BusProvider
+import net.treelzebub.umap.net.chrome.WebviewActivity
 import net.treelzebub.umap.util.async
 
 /**
@@ -19,35 +18,37 @@ import net.treelzebub.umap.util.async
  *
  * Provides a one-time login to Discogs.com
  */
-class LoginActivity : AppCompatActivity() {
+class LoginActivity : WebviewActivity() {
 
-    val webView: WebView by bindView(R.id.webview)
+    override var webViewClient: WebViewClient = RequestTokenCallback()
+
+    private val webView by bindView<WebView>(R.id.webview)
 
     private var authUrl: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        BusProvider.instance.register(this)
         setContentView(R.layout.activity_login)
         loadAuthUrl()
-        val wvSettings = webView.settings
-        wvSettings.builtInZoomControls = true
-        wvSettings.javaScriptEnabled = true
-        webView.setWebViewClient(RequestTokenCallback())
+        webView.settings.apply {
+            builtInZoomControls = true
+            javaScriptEnabled = true
+        }
+        webView.setWebViewClient(webViewClient)
     }
 
     private fun loadAuthUrl() {
         async({
-            val sAuth = AuthService.instance
-            val rt = sAuth.requestToken
+            val auth = AuthService.instance
+            val rt = auth.requestToken
             TokenHolder.setRequestToken(rt)
-            authUrl = sAuth.getAuthorizationUrl(rt) + Constants.Companion.DISCOGS_AUTH_URL_APPEND + rt.token
+            authUrl = auth.getAuthorizationUrl(rt) + Constants.DISCOGS_AUTH_URL_APPEND + rt.token
         }, {
             webView.loadUrl(authUrl)
         })
     }
 
-    private inner class RequestTokenCallback() : WebViewClient() {
+    private inner class RequestTokenCallback : WebViewClient() {
         override fun shouldOverrideUrlLoading(view: WebView, url: String?): Boolean {
             if (url != null && url.startsWith(Constants.CALLBACK_URL)) {
                 //TODO spinner visible
@@ -58,3 +59,4 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 }
+

@@ -1,9 +1,9 @@
 package net.treelzebub.umap.api.discogs
 
-import net.treelzebub.umap.api.discogs.model.User
-import net.treelzebub.umap.auth.TokenHolder
 import net.treelzebub.umap.api.discogs.model.Collection
 import net.treelzebub.umap.api.discogs.model.CollectionReleases
+import net.treelzebub.umap.api.discogs.model.User
+import net.treelzebub.umap.auth.TokenHolder
 
 /**
  * Created by Tre Murillo on 10/11/15

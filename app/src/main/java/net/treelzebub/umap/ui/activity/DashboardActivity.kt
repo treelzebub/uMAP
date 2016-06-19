@@ -7,7 +7,6 @@ import android.support.design.widget.NavigationView
 import android.support.v4.view.GravityCompat
 import android.support.v4.widget.DrawerLayout
 import android.support.v7.app.ActionBarDrawerToggle
-import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.Toolbar
 import android.view.Menu
 import android.view.MenuItem
@@ -27,7 +26,7 @@ import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper
 /**
  * Created by Tre Murillo on 5/28/15
  */
-class DashboardActivity : AppCompatActivity() {
+class DashboardActivity : UmapActivity() {
 
     companion object {
         fun getIntent(c: Context): Intent {
