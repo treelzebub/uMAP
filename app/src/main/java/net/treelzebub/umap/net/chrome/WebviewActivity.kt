@@ -5,7 +5,7 @@ import android.support.v7.widget.Toolbar
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import net.treelzebub.umap.R
-import net.treelzebub.umap.ui.activity.UmapActivity
+import net.treelzebub.umap.activity.UmapActivity
 
 /**
  * Created by Tre Murillo on 6/18/16
@@ -15,9 +15,13 @@ import net.treelzebub.umap.ui.activity.UmapActivity
  */
 abstract class WebviewActivity : UmapActivity() {
 
+    companion object {
+        val EXTRA_URL = "extra.url"
+    }
+
     abstract var webViewClient: WebViewClient
 
-    public override fun onCreate(savedInstanceState: Bundle?) {
+    override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_webview)
         val url = intent.getStringExtra(EXTRA_URL)
@@ -28,10 +32,5 @@ abstract class WebviewActivity : UmapActivity() {
         setSupportActionBar(findViewById(R.id.toolbar) as Toolbar?)
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         webView.loadUrl(url)
-    }
-
-    companion object {
-
-        protected val EXTRA_URL = "extra.url"
     }
 }

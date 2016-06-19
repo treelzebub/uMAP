@@ -10,7 +10,7 @@ import android.widget.TextView
 import butterknife.bindView
 import com.squareup.picasso.Picasso
 import net.treelzebub.umap.R
-import net.treelzebub.umap.api.discogs.model.CollectionReleases
+import net.treelzebub.umap.api.model.CollectionReleases
 
 /**
  * Created by Tre Murillo on 6/7/15
@@ -39,10 +39,10 @@ class CollectionAdapter(val c: Context, val releases: CollectionReleases) : Recy
     }
 
     override fun getItemCount(): Int {
-        return releases.releases.size()
+        return releases.releases.size
     }
 
-    private inner class ViewHolder(v: View) : RecyclerView.ViewHolder(v) {
+    inner class ViewHolder(v: View) : RecyclerView.ViewHolder(v) {
         val albumCover: ImageView  by bindView(R.id.cover)
         val artist: TextView       by bindView(R.id.artist)
         val title: TextView        by bindView(R.id.title)

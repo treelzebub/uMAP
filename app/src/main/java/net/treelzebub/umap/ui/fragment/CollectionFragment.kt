@@ -9,10 +9,10 @@ import android.view.View
 import android.view.ViewGroup
 import butterknife.bindView
 import net.treelzebub.umap.R
-import net.treelzebub.umap.api.discogs.DiscogsService
+import net.treelzebub.umap.api.DiscogsService
 import net.treelzebub.umap.ui.adapter.CollectionAdapter
-import net.treelzebub.umap.util.BusProvider
-import net.treelzebub.umap.util.async
+import net.treelzebub.umap.util.bus.BusProvider
+import net.treelzebub.umap.util.android.async
 
 /**
  * Created by Tre Murillo on 6/6/15
@@ -27,7 +27,7 @@ class CollectionFragment : Fragment() {
         syncCollectionReleases()
     }
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup, savedInstanceState: Bundle?): View {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_collection, container, false)
     }
 

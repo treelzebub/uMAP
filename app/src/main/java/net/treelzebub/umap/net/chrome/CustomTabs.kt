@@ -4,7 +4,7 @@ import android.app.Activity
 import android.net.Uri
 import android.support.customtabs.CustomTabsIntent
 import net.treelzebub.umap.R
-import net.treelzebub.umap.util.resolveColor
+import net.treelzebub.umap.util.android.resolveColor
 
 /**
  * Created by Tre Murillo on 6/18/16

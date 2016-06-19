@@ -3,9 +3,9 @@ package net.treelzebub.umap.auth
 import android.content.Context
 import android.net.Uri
 import net.treelzebub.umap.sync.SyncCenter
-import net.treelzebub.umap.ui.activity.DashboardActivity
-import net.treelzebub.umap.util.BusProvider
-import net.treelzebub.umap.util.async
+import net.treelzebub.umap.activity.DashboardActivity
+import net.treelzebub.umap.util.bus.BusProvider
+import net.treelzebub.umap.util.android.async
 import org.scribe.model.Verifier
 
 /**

@@ -2,7 +2,7 @@ package net.treelzebub.umap.auth
 
 import android.content.Context
 import net.treelzebub.umap.R
-import net.treelzebub.umap.util.PrefsUtils
+import net.treelzebub.umap.util.android.PrefsUtils
 import org.scribe.model.Token
 
 /**

@@ -2,12 +2,12 @@
 //
 //import android.content.Context
 //import android.os.AsyncTask
-//import net.treelzebub.umap.api.discogs.model.CollectionFolder
-//import net.treelzebub.umap.api.discogs.model.CollectionReleases
+//import net.treelzebub.umap.api.CollectionFolder
+//import net.treelzebub.umap.api.CollectionReleases
 //import net.treelzebub.umap.async.event.CollectionEvent
 //import net.treelzebub.umap.async.event.CollectionReleasesEvent
 //import net.treelzebub.umap.auth.RestService
-//import net.treelzebub.umap.util.BusProvider
+//import net.treelzebub.umap.util.bus.BusProvider
 //import net.treelzebub.umap.util.UserUtils
 //
 ///**

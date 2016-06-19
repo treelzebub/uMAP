@@ -2,13 +2,13 @@ package net.treelzebub.umap.sync
 
 import android.content.Context
 import android.os.AsyncTask
-import net.treelzebub.umap.api.discogs.DiscogsService
-import net.treelzebub.umap.api.discogs.model.Collection
-import net.treelzebub.umap.api.discogs.model.User
+import net.treelzebub.umap.api.DiscogsService
+import net.treelzebub.umap.api.model.Collection
+import net.treelzebub.umap.api.model.User
 import net.treelzebub.umap.async.event.CollectionEvent
 import net.treelzebub.umap.async.event.CollectionReleasesEvent
-import net.treelzebub.umap.util.BusProvider
-import net.treelzebub.umap.util.async
+import net.treelzebub.umap.util.bus.BusProvider
+import net.treelzebub.umap.util.android.async
 import java.io.*
 
 /**
