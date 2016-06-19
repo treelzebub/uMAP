@@ -13,7 +13,7 @@ import org.scribe.model.Verifier
  *
  * Functions that handle the two-step nightmare that is OAuth1.0a
  */
-public object LoginUtils {
+object LoginUtils {
 
     /**
      * Using the request token we retrieved earlier, get that sweet, sweet Access Token that will
@@ -22,7 +22,7 @@ public object LoginUtils {
      * @param c: a Context used to access uMAP's SharedPreferences and String Resources.
      * @param data: the URI we caught from Discog's callback, after the user authorized the app.
      * */
-    public fun requestAccessToken(c: Context, data: Uri) {
+    fun requestAccessToken(c: Context, data: Uri) {
         BusProvider.instance.register(this)
         async {
             val verifier = Verifier(data.getQueryParameter("oauth_verifier"))

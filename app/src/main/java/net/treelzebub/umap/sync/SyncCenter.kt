@@ -15,9 +15,9 @@ import java.io.*
 /**
  * Created by Tre Murillo on 10/11/15
  */
-public object SyncCenter {
+object SyncCenter {
 
-    public fun serialize(c: Context, obj: Any, filename: String) {
+    fun serialize(c: Context, obj: Any, filename: String) {
         val fileOut = c.openFileOutput(filename, Context.MODE_PRIVATE)
         val out = ObjectOutputStream(fileOut)
         try {
@@ -31,7 +31,7 @@ public object SyncCenter {
     }
 
     @Suppress("UNCHECKED_CAST")
-    public fun <T> deserialize(c: Context, filename: String, obj: Class<out T>): T {
+    fun <T> deserialize(c: Context, filename: String, obj: Class<out T>): T {
         val fileIn = c.openFileInput(filename)
         val inStream = ObjectInputStream(fileIn)
         try {
@@ -47,14 +47,14 @@ public object SyncCenter {
         throw(InvalidClassException("Invalid class ${obj.simpleName} for filename $filename"))
     }
 
-    public fun serializeUser(c: Context) {
+    fun serializeUser(c: Context) {
         async {
             val user = DiscogsService.getUser()
             serialize(c, user, "user.umap")
         }
     }
 
-    public fun deserializeUser(c: Context): User? {
+    fun deserializeUser(c: Context): User? {
         try {
             return deserialize(c, "user.umap", User::class.java)
         } catch (e: FileNotFoundException) {
@@ -63,7 +63,7 @@ public object SyncCenter {
         }
     }
 
-    public fun syncCollection() {
+    fun syncCollection() {
         object : AsyncTask<Void, Void, Collection>() {
             override fun doInBackground(vararg params: Void?): Collection {
                 return DiscogsService.getCollection()
@@ -75,7 +75,7 @@ public object SyncCenter {
         }
     }
 
-    public fun syncCollectionReleases() {
+    fun syncCollectionReleases() {
         object : AsyncTask<Void, Void, Void>() {
             override fun doInBackground(vararg params: Void?): Void? {
                 BusProvider.instance.register(this)

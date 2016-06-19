@@ -19,7 +19,7 @@ import net.treelzebub.umap.util.async
  *
  * Provides a one-time login to Discogs.com
  */
-public class LoginActivity : AppCompatActivity() {
+class LoginActivity : AppCompatActivity() {
 
     val webView: WebView by bindView(R.id.webview)
 

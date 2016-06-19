@@ -9,9 +9,9 @@ import se.akerfeldt.okhttp.signpost.OkHttpOAuthConsumer
 /**
  * Created by Tre Murillo on 10/11/15
  */
-public class ApiModule {
+class ApiModule {
 
-    private val api: DiscogsApi
+    val api: DiscogsApi
 
     constructor(token: Token?) {
         if (token == null) throw RuntimeException("Null Token passed to ApiModule")
@@ -22,9 +22,5 @@ public class ApiModule {
                 .setClient(OkClient(SigningOkClient(consumer)))
                 .build()
         api = restAdapter.create(DiscogsApi::class.java)
-    }
-
-    public operator fun get(): DiscogsApi {
-        return api
     }
 }

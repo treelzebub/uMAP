@@ -5,7 +5,7 @@ buildscript {
     ext {
         min_sdk         = 17
         sdk_version     = 23
-        kotlin_version  = "1.0.2"
+        kotlin_version  = "1.0.3-eap-30"
         build_tools     = "23.0.3"
         gradle_plugin   = "2.1.0"
         support_version = "23.3.0"
@@ -14,22 +14,20 @@ buildscript {
     repositories {
         mavenLocal()
         jcenter()
+        maven { url "https://dl.bintray.com/kotlin/kotlin-eap" }
     }
     dependencies {
         classpath "com.android.tools.build:gradle:$gradle_plugin"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-        classpath "org.jetbrains.kotlin:kotlin-android-extensions:$kotlin_version"
     }
 }
 
 allprojects {
     repositories {
-        flatDir {
-            dirs "$rootDir/libs"
-        }
         mavenLocal()
         jcenter()
         maven { url 'https://github.com/asarazan/maven-repository/raw/master/' }
         maven { url 'https://oss.sonatype.org/content/repositories/snapshots/' }
+        maven { url "https://dl.bintray.com/kotlin/kotlin-eap" }
     }
 }

@@ -27,10 +27,10 @@ import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper
 /**
  * Created by Tre Murillo on 5/28/15
  */
-public class DashboardActivity : AppCompatActivity() {
+class DashboardActivity : AppCompatActivity() {
 
     companion object {
-        public fun getIntent(c: Context): Intent {
+        fun getIntent(c: Context): Intent {
             return Intent(c, DashboardActivity::class.java)
         }
     }

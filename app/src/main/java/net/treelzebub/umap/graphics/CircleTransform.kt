@@ -8,7 +8,7 @@ import com.squareup.picasso.Transformation
  *
  * https://gist.github.com/julianshen/5829333
  */
-public class CircleTransform : Transformation {
+class CircleTransform : Transformation {
 
     override fun transform(source: Bitmap): Bitmap {
         val size = Math.min(source.width, source.height)

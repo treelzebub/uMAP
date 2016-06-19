@@ -5,7 +5,7 @@ import java.io.Serializable
 /**
  * Created by Tre Murillo on 6/6/15
  */
-public data class User(
+data class User(
         val profile: String,
         val wantlist_url: String,
         val rank: Double,

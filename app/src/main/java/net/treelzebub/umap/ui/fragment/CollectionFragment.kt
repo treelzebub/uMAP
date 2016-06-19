@@ -23,7 +23,7 @@ import net.treelzebub.umap.util.async
 /**
  * Created by Tre Murillo on 6/6/15
  */
-public class CollectionFragment : Fragment() {
+class CollectionFragment : Fragment() {
 
     private val recyclerView: RecyclerView by bindView(R.id.recycler)
 

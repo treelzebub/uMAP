@@ -10,13 +10,13 @@ import java.io.File
 /**
  * Created by Tre Murillo on 6/5/15
  */
-public object PrefsUtils {
+object PrefsUtils {
 
-    public fun getPrefs(c: Context): SharedPreferences? {
+    fun getPrefs(c: Context): SharedPreferences? {
         return c.applicationContext.getSharedPreferences(c.getString(R.string.key_pref_file), Context.MODE_PRIVATE)
     }
 
-    public fun clearPrefs(c: Context): Boolean {
+    fun clearPrefs(c: Context): Boolean {
         getPrefs(c)?.edit()?.clear()?.commit()
         val root = c.filesDir ?: return false
         val dir = File(root.getParent() + "/shared_prefs/")
@@ -24,7 +24,7 @@ public object PrefsUtils {
         return xml.delete()
     }
 
-    public fun <T> userPref(key: String, clazz: Class<T>): Pref<T> {
+    fun <T> userPref(key: String, clazz: Class<T>): Pref<T> {
         return object : SharedPref<T>(key, clazz) {
             override fun getSharedPreferences(c: Context): SharedPreferences? {
                 return getPrefs(c)

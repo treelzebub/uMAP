@@ -6,7 +6,7 @@ import uk.co.chrisjenx.calligraphy.CalligraphyConfig
 /**
  * Created by Tre Murillo on 6/6/15
  */
-public class UMapApplication : Application() {
+class UMapApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()

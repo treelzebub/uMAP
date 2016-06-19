@@ -15,7 +15,7 @@ import net.treelzebub.umap.api.discogs.model.CollectionReleases
 /**
  * Created by Tre Murillo on 6/7/15
  */
-public class CollectionAdapter(val c: Context, val releases: CollectionReleases) : RecyclerView.Adapter<CollectionAdapter.ViewHolder>() {
+class CollectionAdapter(val c: Context, val releases: CollectionReleases) : RecyclerView.Adapter<CollectionAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, i: Int): ViewHolder {
         return ViewHolder(LayoutInflater.from(c).inflate(R.layout.collection_card, parent, false))

@@ -15,7 +15,7 @@
 // */
 //var folders: List<CollectionFolder>? = null
 //
-//public fun syncCollection(c: Context, fullSync: Boolean) {
+//fun syncCollection(c: Context, fullSync: Boolean) {
 //    object : AsyncTask<Void, Void, List<CollectionFolder>>() {
 //        override fun doInBackground(vararg params: Void?): List<CollectionFolder> {
 //            return RestService.instance.getCollection(UserUtils.usernameFromPrefs(c)).folders
@@ -31,7 +31,7 @@
 //    }.execute()
 //}
 //
-//public fun syncCollectionReleases(c: Context) {
+//fun syncCollectionReleases(c: Context) {
 //    object : AsyncTask<Void, Void, CollectionReleases>() {
 //        override fun doInBackground(vararg params: Void?): CollectionReleases {
 //            return RestService.instance.getCollectionReleases(UserUtils.usernameFromPrefs(c), folders!!.first().id.toString())

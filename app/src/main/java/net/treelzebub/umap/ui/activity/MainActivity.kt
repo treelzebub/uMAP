@@ -8,7 +8,7 @@ import net.treelzebub.umap.auth.AuthState
 /**
  * Created by Tre Murillo on 8/17/15
  */
-public class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

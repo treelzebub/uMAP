@@ -8,12 +8,15 @@ import com.squareup.otto.ThreadEnforcer
 /**
  * Created by Tre Murillo on 5/28/15
  */
-public class UMapBus : Bus(ThreadEnforcer.ANY) {
+class UMapBus : Bus(ThreadEnforcer.ANY) {
 
     private val mainThread = Handler(Looper.getMainLooper())
 
+    private val isMainLooper: Boolean
+        get() = Looper.myLooper() == Looper.getMainLooper()
+
     override fun post(event: Any) {
-        if (Looper.myLooper() == Looper.getMainLooper()) {
+        if (isMainLooper) {
             super.post(event)
         } else {
             mainThread.post { post(event) }
@@ -21,7 +24,7 @@ public class UMapBus : Bus(ThreadEnforcer.ANY) {
     }
 
     override fun register(any: Any) {
-        if (Looper.myLooper() == Looper.getMainLooper()) {
+        if (isMainLooper) {
             super.register(any)
         } else {
             mainThread.post { register(any) }
@@ -29,11 +32,10 @@ public class UMapBus : Bus(ThreadEnforcer.ANY) {
     }
 
     override fun unregister(any: Any) {
-        if (Looper.myLooper() == Looper.getMainLooper()) {
+        if (isMainLooper) {
             try {
                 super.unregister(any)
-            } catch (e: IllegalArgumentException) {
-                // dont care
+            } catch (ignore: IllegalArgumentException) {
             }
 
         } else {
