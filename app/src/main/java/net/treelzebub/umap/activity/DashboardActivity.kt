@@ -36,12 +36,14 @@ class DashboardActivity : UmapActivity() {
 
     val drawerLayout: DrawerLayout  by bindView(R.id.drawer_layout)
     val navView: NavigationView     by bindView(R.id.navigation_view)
+    val toolbar: Toolbar            by bindView(R.id.toolbar)
     val content: ViewGroup          by bindView(R.id.content)
     val avatar: ImageView           by bindView(R.id.avatar)
     val username: TextView          by bindView(R.id.username)
     val name: TextView              by bindView(R.id.name)
 
-    private var drawerToggle: ActionBarDrawerToggle? = null
+    private val drawerToggle: ActionBarDrawerToggle
+            by lazy { ActionBarDrawerToggle(this, drawerLayout, toolbar, 0, 0) }
 
     override fun attachBaseContext(newBase: Context) {
         super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase))
@@ -51,6 +53,10 @@ class DashboardActivity : UmapActivity() {
         super.onCreate(savedInstanceState)
         BusProvider.instance.register(this)
         setContentView(R.layout.activity_dashboard)
+    }
+
+    override fun onPostCreate(savedInstanceState: Bundle?) {
+        super.onPostCreate(savedInstanceState)
         setupToolbar()
         setupDrawer()
     }
@@ -61,20 +67,18 @@ class DashboardActivity : UmapActivity() {
     }
 
     private fun setupToolbar() {
-        val toolbar = findViewById(R.id.toolbar) as Toolbar
         setSupportActionBar(toolbar)
         val actionBar = supportActionBar
         actionBar?.setHomeAsUpIndicator(R.drawable.ic_menu_white_24dp)
         actionBar?.setDisplayHomeAsUpEnabled(true)
-        drawerToggle = ActionBarDrawerToggle(this, drawerLayout, toolbar, 0, 0)
-        drawerLayout.setDrawerListener(drawerToggle)
-        drawerToggle?.syncState()
+        drawerLayout.addDrawerListener(drawerToggle)
+        drawerToggle.syncState()
     }
 
     private fun setupDrawer() {
         setHeader()
         navView.setNavigationItemSelectedListener {
-            it.setChecked(true)
+            it.isChecked = true
             val ft = supportFragmentManager.beginTransaction()
             when (it.itemId) {
                 R.id.collection -> ft.add(R.id.content, CollectionFragment())

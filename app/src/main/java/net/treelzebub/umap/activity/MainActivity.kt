@@ -22,6 +22,10 @@ class MainActivity : UmapActivity() {
         }
     }
 
+    override fun onNewIntent(intent: Intent?) {
+        super.onNewIntent(intent)
+    }
+
     private fun handleData(uri: Uri) {
         for (s in uri.pathSegments) {
             when (s) {
