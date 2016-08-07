@@ -1,7 +1,7 @@
 package net.treelzebub.umap.api
 
 import net.treelzebub.umap.auth.TokenHolder
-import net.treelzebub.umap.data.DiscogsResponse
+import net.treelzebub.umap.inject.NetInjection
 
 /**
  * Created by Tre Murillo on 6/18/16
@@ -9,13 +9,11 @@ import net.treelzebub.umap.data.DiscogsResponse
 
 object Discogs {
 
-    val api: DiscogsApi get() = ApiModule(TokenHolder.getToken()).api
+    val api: DiscogsApi
+        get() = NetInjection.apiInjector ?: ApiModule(TokenHolder.getToken()).api
 
-    @Suppress("UNCHECKED_CAST")
-    fun <D : DiscogsResponse> connect(fn: DiscogsApi.() -> DiscogsResponse): D? {
-        while (true) {
-            val response = api.fn()
-            return response as D?
-        }
+    fun <D> connect(fn: DiscogsApi.() -> D): D? {
+        val response = api.fn()
+        return response
     }
 }

@@ -1,6 +1,5 @@
 package net.treelzebub.umap.api.model
 
-import net.treelzebub.umap.data.DiscogsResponse
 import java.io.Serializable
 
 /**
@@ -9,4 +8,4 @@ import java.io.Serializable
 data class Note(
         val field_id: Int,
         val value: String // Liner Note content
-) : DiscogsResponse
+) : Serializable

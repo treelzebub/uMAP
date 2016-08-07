@@ -1,6 +1,5 @@
 package net.treelzebub.umap.api.model
 
-import net.treelzebub.umap.data.DiscogsResponse
 import java.io.Serializable
 
 /**
@@ -12,4 +11,4 @@ data class Pagination(
         var page: Int,
         var items: Int,
         var urls: Pair<String, String> // Pair of URLs: Next, Last
-) : DiscogsResponse
+) : Serializable

@@ -1,6 +1,5 @@
 package net.treelzebub.umap.api.model
 
-import net.treelzebub.umap.data.DiscogsResponse
 import java.io.Serializable
 
 /**
@@ -8,5 +7,5 @@ import java.io.Serializable
  */
 data class CollectionReleases(
         val pagination: Pagination,
-        val  releases: List<Release>
-) : DiscogsResponse
+        val releases: List<Release>
+) : Serializable

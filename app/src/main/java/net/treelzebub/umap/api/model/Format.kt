@@ -1,6 +1,5 @@
 package net.treelzebub.umap.api.model
 
-import net.treelzebub.umap.data.DiscogsResponse
 import java.io.Serializable
 
 /**
@@ -10,4 +9,4 @@ data class Format(
         val qty: Int,
         val descriptions: List<String>, // Mini, EP,
         val name: String // CD, LP, Cassette, etc
-) : DiscogsResponse
+) : Serializable

@@ -1,6 +1,5 @@
 package net.treelzebub.umap.api.model
 
-import net.treelzebub.umap.data.DiscogsResponse
 import java.io.Serializable
 
 /**
@@ -8,4 +7,4 @@ import java.io.Serializable
  */
 data class Collection(
         val folders: List<CollectionFolder>
-) : DiscogsResponse
+) : Serializable

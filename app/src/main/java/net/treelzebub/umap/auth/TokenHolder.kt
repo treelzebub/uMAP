@@ -35,6 +35,7 @@ object TokenHolder {
         tokens.forEach {
             editor?.remove(c.getString(it))
         }
+        editor?.apply()
         requestToken = null
         accessToken = null
     }

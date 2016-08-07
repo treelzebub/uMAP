@@ -1,6 +1,6 @@
 package net.treelzebub.umap.api.model
 
-import net.treelzebub.umap.data.DiscogsResponse
+import java.io.Serializable
 
 /**
  * Created by Tre Murillo on 6/6/15
@@ -13,4 +13,4 @@ data class Artist(
         val anv: String,
         val tracks: String,
         val role: String
-) : DiscogsResponse
+) : Serializable

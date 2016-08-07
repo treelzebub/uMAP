@@ -1,6 +1,5 @@
 package net.treelzebub.umap.api.model
 
-import net.treelzebub.umap.data.DiscogsResponse
 import java.io.Serializable
 
 /**
@@ -12,4 +11,4 @@ data class Label(
         val catno: String,
         val id: Int,
         val name: String
-) : DiscogsResponse
+) : Serializable

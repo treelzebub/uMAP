@@ -16,8 +16,9 @@ import android.widget.TextView
 import butterknife.bindView
 import com.squareup.picasso.Picasso
 import net.treelzebub.umap.R
+import net.treelzebub.umap.auth.user.Users
 import net.treelzebub.umap.graphics.CircleTransform
-import net.treelzebub.umap.sync.SyncCenter
+import net.treelzebub.umap.sync.Files
 import net.treelzebub.umap.ui.fragment.CollectionFragment
 import net.treelzebub.umap.util.bus.BusProvider
 import net.treelzebub.umap.util.android.PrefsUtils
@@ -103,7 +104,7 @@ class DashboardActivity : UmapActivity() {
     }
 
     private fun setHeader() {
-        val user = SyncCenter.deserializeUser(this) ?: return
+        val user = Users.deserializeUser() ?: return
         username.text = user.username
         Picasso.with(this).load(user.avatar_url).transform(CircleTransform()).into(avatar)
         name.text = user.name

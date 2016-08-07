@@ -2,8 +2,9 @@ package net.treelzebub.umap.auth
 
 import android.content.Context
 import android.net.Uri
-import net.treelzebub.umap.sync.SyncCenter
+import net.treelzebub.umap.sync.Files
 import net.treelzebub.umap.activity.DashboardActivity
+import net.treelzebub.umap.auth.user.Users
 import net.treelzebub.umap.util.bus.BusProvider
 import net.treelzebub.umap.util.android.async
 import org.scribe.model.Verifier
@@ -30,7 +31,7 @@ object LoginUtils {
             if (accessToken != null) {
                 TokenHolder.setToken(accessToken)
                 AuthUtils.setTokenPrefs(c, accessToken)
-                SyncCenter.serializeUser(c)
+                Users.serializeUser()
                 c.startActivity(DashboardActivity.getIntent(c))
             } else {
                 // TODO

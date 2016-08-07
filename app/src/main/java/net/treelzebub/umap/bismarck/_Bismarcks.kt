@@ -1,12 +1,9 @@
 package net.treelzebub.umap.bismarck
 
 import android.util.Log
-import com.levelmoney.bismarck.Bismarck
-import com.levelmoney.bismarck.Bismarcks
-import com.levelmoney.bismarck.RateLimiter
+import com.levelmoney.bismarck.*
 import com.levelmoney.bismarck.android.persisters.AndroidPersisters
 import com.levelmoney.bismarck.impl.BaseBismarck
-import com.levelmoney.bismarck.listen
 import com.levelmoney.bismarck.serializers.SerializableSerializer
 import net.treelzebub.umap.auth.user.Users
 import net.treelzebub.umap.data.DiscogsResponse
@@ -18,9 +15,9 @@ import rx.Observer
  * Created by Tre Murillo on 8/6/16.
  */
 
-inline fun <reified D : DiscogsResponse> Bismarcks.discogs(key: String): DiscogsBismarck<D> = DiscogsBismarck(key)
+inline fun <reified D : Any> Bismarcks.discogs(key: String): DiscogsBismarck<D> = DiscogsBismarck(key)
 
-inline fun <reified D : DiscogsResponse> Bismarcks.api(key: String, rateLimiter: RateLimiter): BaseBismarck<D> {
+inline fun <reified D : DiscogsResponse<D>> Bismarcks.api(key: String, rateLimiter: RateLimiter): BaseBismarck<D> {
     val c = ContextInjection.c
     return Bismarcks.discogs<D>(key)
         .rateLimiter(rateLimiter)

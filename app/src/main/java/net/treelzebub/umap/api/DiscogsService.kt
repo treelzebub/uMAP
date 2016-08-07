@@ -22,7 +22,7 @@ object DiscogsService {
         return username!!
     }
 
-     fun getUser(): User {
+    fun getUser(): User {
         return api.getUser(getUsername())
     }
 
