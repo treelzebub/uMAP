@@ -4,4 +4,5 @@
     <color name="primaryColor">#2196F3</color>
     <color name="primaryColorDark">#0D47A1</color>
     <color name="darken">#2000</color>
+    <color name="clear">#0000</color>
 </resources>
