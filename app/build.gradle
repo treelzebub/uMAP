@@ -1,7 +1,6 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 
-
 android {
     compileSdkVersion project.sdk_version
     buildToolsVersion "$build_tools"
@@ -29,10 +28,19 @@ android {
 
     signingConfigs {
         debug {
-            storeFile file("/home/treelzeub/.android/debug.keystore")
+            storeFile file("debug.keystore")
             storePassword "android"
             keyAlias "androiddebugkey"
             keyPassword "android"
+        }
+
+        if (isCI) {
+            release {
+                storeFile rootProject.file('umap.keystore')
+                storePassword System.getenv("KEYSTORE_PASS")
+                keyAlias System.getenv("ALIAS_NAME")
+                keyPassword System.getenv("ALIAS_PASS")
+            }
         }
     }
 
