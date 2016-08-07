@@ -1,21 +1,22 @@
-// Top-level build file where you can add configuration options common to all sub-projects/modules.
-
 buildscript {
 
     ext {
         min_sdk         = 17
-        sdk_version     = 23
+        sdk_version     = 24
         kotlin_version  = "1.0.4-eap-62"
         build_tools     = "24.0.0"
-        gradle_plugin   = "2.2.0-alpha6"
+        gradle_plugin   = "2.1.0"
         support_version = "24.1.1"
         play_version    = "9.2.0"
+        isCI            = System.getenv("TRAVIS").equals("true")
     }
+
     repositories {
         mavenLocal()
         jcenter()
         maven { url "https://dl.bintray.com/kotlin/kotlin-eap" }
     }
+
     dependencies {
         classpath "com.android.tools.build:gradle:$gradle_plugin"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
@@ -26,9 +27,10 @@ allprojects {
     repositories {
         mavenLocal()
         jcenter()
-        maven { url 'https://github.com/asarazan/maven-repository/raw/master/' }
-        maven { url 'https://oss.sonatype.org/content/repositories/snapshots/' }
-        maven { url "https://dl.bintray.com/kotlin/kotlin-eap" }
         maven { url "https://jitpack.io" }
+        maven { url "https://dl.bintray.com/kotlin/kotlin-eap" }
+        maven { url 'https://oss.sonatype.org/content/repositories/snapshots/' }
+        maven { url 'https://dl.bintray.com/levelmoney/maven' }
+        maven { url 'https://github.com/asarazan/maven-repository/raw/master/' }
     }
 }

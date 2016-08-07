@@ -1,6 +1,7 @@
 package net.treelzebub.umap
 
 import android.app.Application
+import net.treelzebub.umap.data.UmapBismarcks
 import net.treelzebub.umap.inject.ContextInjection
 import uk.co.chrisjenx.calligraphy.CalligraphyConfig
 
@@ -16,5 +17,7 @@ class UMapApplication : Application() {
                 .setDefaultFontPath("fonts/Quattrocento-Sans.ttf")
                 .setFontAttrId(R.attr.fontPath)
                 .build())
+
+        UmapBismarcks.register()
     }
 }

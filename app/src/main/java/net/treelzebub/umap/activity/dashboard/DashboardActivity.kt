@@ -1,4 +1,4 @@
-package net.treelzebub.umap.activity
+package net.treelzebub.umap.activity.dashboard
 
 import android.content.Context
 import android.content.Intent
@@ -10,18 +10,18 @@ import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.widget.Toolbar
 import android.view.Menu
 import android.view.MenuItem
-import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import butterknife.bindView
 import com.squareup.picasso.Picasso
 import net.treelzebub.umap.R
+import net.treelzebub.umap.activity.UmapActivity
+import net.treelzebub.umap.activity.collection.CollectionActivity
+import net.treelzebub.umap.android.subscribeToBismarck
+import net.treelzebub.umap.api.model.User
+import net.treelzebub.umap.data.Data
 import net.treelzebub.umap.graphics.CircleTransform
-import net.treelzebub.umap.sync.SyncCenter
-import net.treelzebub.umap.ui.fragment.CollectionFragment
-import net.treelzebub.umap.util.bus.BusProvider
 import net.treelzebub.umap.util.android.PrefsUtils
-import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper
 
 /**
  * Created by Tre Murillo on 5/28/15
@@ -34,36 +34,25 @@ class DashboardActivity : UmapActivity() {
         }
     }
 
-    val drawerLayout: DrawerLayout  by bindView(R.id.drawer_layout)
-    val navView: NavigationView     by bindView(R.id.navigation_view)
-    val toolbar: Toolbar            by bindView(R.id.toolbar)
-    val content: ViewGroup          by bindView(R.id.content)
-    val avatar: ImageView           by bindView(R.id.avatar)
-    val username: TextView          by bindView(R.id.username)
-    val name: TextView              by bindView(R.id.name)
+    private val drawerLayout: DrawerLayout  by bindView(R.id.drawer_layout)
+    private val navView: NavigationView     by bindView(R.id.navigation_view)
+    private val toolbar: Toolbar            by bindView(R.id.toolbar)
+    private val avatar: ImageView           by bindView(R.id.avatar)
+    private val username: TextView          by bindView(R.id.username)
+    private val name: TextView              by bindView(R.id.name)
 
     private val drawerToggle: ActionBarDrawerToggle
             by lazy { ActionBarDrawerToggle(this, drawerLayout, toolbar, 0, 0) }
 
-    override fun attachBaseContext(newBase: Context) {
-        super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase))
-    }
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        BusProvider.instance.register(this)
         setContentView(R.layout.activity_dashboard)
-    }
-
-    override fun onPostCreate(savedInstanceState: Bundle?) {
-        super.onPostCreate(savedInstanceState)
         setupToolbar()
         setupDrawer()
-    }
 
-    override fun onDestroy() {
-        super.onDestroy()
-        BusProvider.instance.unregister(this)
+        subscribeToBismarck(Data.user) {
+            setUser(it)
+        }
     }
 
     private fun setupToolbar() {
@@ -71,21 +60,27 @@ class DashboardActivity : UmapActivity() {
         val actionBar = supportActionBar
         actionBar?.setHomeAsUpIndicator(R.drawable.ic_menu_white_24dp)
         actionBar?.setDisplayHomeAsUpEnabled(true)
-        drawerLayout.addDrawerListener(drawerToggle)
-        drawerToggle.syncState()
     }
 
     private fun setupDrawer() {
-        setHeader()
+        drawerLayout.addDrawerListener(drawerToggle)
+        drawerToggle.syncState()
         navView.setNavigationItemSelectedListener {
             it.isChecked = true
-            val ft = supportFragmentManager.beginTransaction()
-            when (it.itemId) {
-                R.id.collection -> ft.add(R.id.content, CollectionFragment())
-            }
-            ft.commit()
             drawerLayout.closeDrawers()
+            startActivity(Intent(this, CollectionActivity::class.java))
             true
+        }
+    }
+
+    private fun setUser(user: User?) {
+        user?.let {
+            username.text = it.username
+            name.text     = it.name
+            Picasso.with(this)
+                   .load(it.avatar_url)
+                   .transform(CircleTransform())
+                   .into(avatar)
         }
     }
 
@@ -100,12 +95,5 @@ class DashboardActivity : UmapActivity() {
             R.id.clear_prefs -> PrefsUtils.clearPrefs(this)
         }
         return super.onOptionsItemSelected(item)
-    }
-
-    private fun setHeader() {
-        val user = SyncCenter.deserializeUser(this) ?: return
-        username.text = user.username
-        Picasso.with(this).load(user.avatar_url).transform(CircleTransform()).into(avatar)
-        name.text = user.name
     }
 }

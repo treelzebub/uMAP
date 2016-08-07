@@ -12,15 +12,23 @@ import se.akerfeldt.okhttp.signpost.OkHttpOAuthConsumer
  */
 class ApiModule {
 
-    val api: DiscogsApi
+    companion object {
 
-    constructor(token: Token?) {
+        fun from(token: Token?): DiscogsApi {
+            return ApiModule(token).api
+        }
+    }
+
+    private val api: DiscogsApi
+
+    private constructor(token: Token?) {
         if (token == null) throw RuntimeException("Null Token passed to ApiModule")
         val consumer = OkHttpOAuthConsumer(Constants.DISCOGS_CONSUMER_KEY, Constants.DISCOGS_CONSUMER_SECRET)
         consumer.setTokenWithSecret(token.token, token.secret)
+        val signingClient = SigningOkClient(consumer)
         val restAdapter = RestAdapter.Builder()
                 .setEndpoint(Constants.DISCOGS_BASE_URL)
-                .setClient(OkClient(SigningOkClient(consumer)))
+                .setClient(OkClient(signingClient))
                 .build()
         api = restAdapter.create(DiscogsApi::class.java)
     }
