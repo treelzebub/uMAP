@@ -1,5 +1,6 @@
 package net.treelzebub.umap.activity
 
+import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import com.levelmoney.observefragment.activity.ObserveAppCompatActivity
@@ -9,6 +10,7 @@ import rx.Observable
 import rx.android.schedulers.AndroidSchedulers
 import rx.schedulers.Schedulers
 import rx.subscriptions.CompositeSubscription
+import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper
 
 /**
  * Created by Tre Murillo on 6/18/16
@@ -16,8 +18,11 @@ import rx.subscriptions.CompositeSubscription
 
 open class UmapActivity : ObserveAppCompatActivity() {
 
-
     private val subscription = CompositeSubscription()
+
+    override fun attachBaseContext(newBase: Context) {
+        super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase))
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

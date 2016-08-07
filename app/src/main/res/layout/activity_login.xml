@@ -26,8 +26,6 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:labelFor="@+id/auth_code_et"
-            android:lines="2"
             android:text="A one-time login to Discogs is required\nto authorize uMAP to access your data" />
 
     </LinearLayout>

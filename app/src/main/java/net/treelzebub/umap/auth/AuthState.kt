@@ -8,6 +8,6 @@ import net.treelzebub.umap.auth.user.Users
 object AuthState {
 
     fun isLoggedIn(): Boolean {
-        return Users.deserializeUser() != null
+        return Users.hasUser() //&& TokenHolder.hasAccessToken()
     }
 }

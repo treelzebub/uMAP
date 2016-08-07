@@ -23,14 +23,6 @@ object TokenHolder {
         setTokenPrefs(token)
     }
 
-    fun setRequestToken(token: Token) {
-        requestToken = token
-    }
-
-    fun getRequestToken(): Token {
-        return requestToken ?: throw(RuntimeException("Null RequestToken"))
-    }
-
     private fun setTokenPrefs(token: Token) {
         val c = ContextInjection.c
         PrefsUtils.getPrefs(c)?.edit()?.let {
@@ -40,7 +32,20 @@ object TokenHolder {
         }
     }
 
-    fun getTokenPrefs(c: Context): Boolean {
+    fun setRequestToken(token: Token) {
+        requestToken = token
+    }
+
+    fun getRequestToken(): Token {
+        return requestToken ?: throw(RuntimeException("Null RequestToken"))
+    }
+
+    fun hasAccessToken(): Boolean {
+        return accessToken != null || getTokenPrefs()
+    }
+
+    fun getTokenPrefs(): Boolean {
+        val c = ContextInjection.c
         val prefs = PrefsUtils.getPrefs(c)
         val token = prefs?.getString(c.getString(R.string.key_access_token), null)
         val secret = prefs?.getString(c.getString(R.string.key_access_token_secret), null)

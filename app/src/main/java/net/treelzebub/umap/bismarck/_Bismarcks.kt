@@ -24,7 +24,7 @@ inline fun <reified D : Serializable> Bismarcks.api(key: String, rateLimiter: Ra
     val c = ContextInjection.c
     return Bismarcks.discogs<D>(key)
         .rateLimiter(rateLimiter)
-        .persister(AndroidPersisters.account(c, key, Users.accountType, SerializableSerializer<D>(), true))
+        .persister(AndroidPersisters.account(c, key, Users.accountType, SerializableSerializer<D>(), false))
         .listen { Log.d("Bismarck", "Inserting: $key") }
         .ottoSubscribe() as DiscogsBismarck<D>
 }

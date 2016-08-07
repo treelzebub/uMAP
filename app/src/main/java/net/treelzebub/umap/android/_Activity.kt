@@ -16,18 +16,3 @@ fun Activity.toast(msg: String, duration: Int = Toast.LENGTH_SHORT) {
 inline fun <reified R : Any> UmapActivity.subscribeToBismarck(b: Bismarck<R>, noinline fn: (R?) -> Unit) {
     subscribe(b.observe(), fn)
 }
-
-/**
-
-
- subscribeToBismarck(Data.user) {
-   //do on next
- }
-
-
-
-
-
-
-
- * */

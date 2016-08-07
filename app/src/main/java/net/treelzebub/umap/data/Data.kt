@@ -1,7 +1,7 @@
 package net.treelzebub.umap.data
 
 import com.levelmoney.bismarck.Bismarcks
-import net.treelzebub.umap.api.model.Collection
+import net.treelzebub.umap.api.model.CollectionReleases
 import net.treelzebub.umap.api.model.User
 
 /**
@@ -11,5 +11,5 @@ object Data {
 
     var user = Bismarcks.baseBismarck<User>()
 
-    var collection = Bismarcks.baseBismarck<Collection>()
+    var collection = Bismarcks.baseBismarck<CollectionReleases>()
 }
