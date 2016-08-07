@@ -9,11 +9,8 @@ import net.treelzebub.umap.R
 import net.treelzebub.umap.activity.DashboardActivity
 import net.treelzebub.umap.activity.UmapActivity
 import net.treelzebub.umap.android.toast
-import net.treelzebub.umap.auth.AuthService
-import net.treelzebub.umap.auth.AuthUtils
-import net.treelzebub.umap.auth.TokenHolder
 import net.treelzebub.umap.conduit.LoginConduit
-import net.treelzebub.umap.util.android.async
+import net.treelzebub.umap.conduit.RequestTokenConduit
 
 /**
  * Created by Tre Murillo on 5/28/15
@@ -27,16 +24,21 @@ class LoginActivity : UmapActivity() {
 
     private val webViewClient = LoginClient()
 
-    private var authUrl: String? = null
+    private val requestToken = RequestTokenConduit(this)
+        .onComplete { authUrl ->
+            if (authUrl == null) {
+                loadAuthUrl()
+            } else {
+                webView.loadUrl(authUrl)
+            }
+        }
 
     private val login = LoginConduit(this)
-        .onComplete { accessToken ->
-            if (accessToken == null) {
+        .onComplete { success ->
+            if (success) {
                 toast("Login Failed. Please try again!")
                 loadAuthUrl()
             } else {
-                TokenHolder.setToken(accessToken)
-                AuthUtils.setTokenPrefs(this, accessToken)
                 startActivity(DashboardActivity.getIntent(this))
             }
         }
@@ -57,21 +59,14 @@ class LoginActivity : UmapActivity() {
     }
 
     private fun loadAuthUrl() {
-        async({
-            val auth = AuthService.instance
-            val rt = auth.requestToken
-            TokenHolder.setRequestToken(rt)
-            authUrl = auth.getAuthorizationUrl(rt) + Constants.DISCOGS_AUTH_URL_APPEND + rt.token
-        }, {
-            webView.loadUrl(authUrl)
-        })
+        presenter.loadAuthUrl(requestToken)
     }
 
     private inner class LoginClient : WebViewClient() {
 
         override fun shouldOverrideUrlLoading(view: WebView, url: String?): Boolean {
-            if (url?.startsWith(Constants.CALLBACK_URL) ?: false) {
-                presenter.getAccessToken(login, url!!)
+            if (url != null && Constants.CALLBACK_URL in url) {
+                presenter.getAccessToken(login, url)
                 return true
             }
             return false

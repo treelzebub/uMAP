@@ -16,7 +16,11 @@ import android.widget.TextView
 import butterknife.bindView
 import com.squareup.picasso.Picasso
 import net.treelzebub.umap.R
+import net.treelzebub.umap.android.subscribeToBismarck
+import net.treelzebub.umap.api.model.User
 import net.treelzebub.umap.auth.user.Users
+import net.treelzebub.umap.bismarck.ottoSubscribe
+import net.treelzebub.umap.data.Data
 import net.treelzebub.umap.graphics.CircleTransform
 import net.treelzebub.umap.ui.fragment.CollectionFragment
 import net.treelzebub.umap.util.android.PrefsUtils
@@ -51,19 +55,13 @@ class DashboardActivity : UmapActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        BusProvider.instance.register(this)
         setContentView(R.layout.activity_dashboard)
-    }
-
-    override fun onPostCreate(savedInstanceState: Bundle?) {
-        super.onPostCreate(savedInstanceState)
         setupToolbar()
         setupDrawer()
-    }
 
-    override fun onDestroy() {
-        super.onDestroy()
-        BusProvider.instance.unregister(this)
+        subscribeToBismarck(Data.user) {
+            setUser(it)
+        }
     }
 
     private fun setupToolbar() {
@@ -71,12 +69,11 @@ class DashboardActivity : UmapActivity() {
         val actionBar = supportActionBar
         actionBar?.setHomeAsUpIndicator(R.drawable.ic_menu_white_24dp)
         actionBar?.setDisplayHomeAsUpEnabled(true)
-        drawerLayout.addDrawerListener(drawerToggle)
-        drawerToggle.syncState()
     }
 
     private fun setupDrawer() {
-        setHeader()
+        drawerLayout.addDrawerListener(drawerToggle)
+        drawerToggle.syncState()
         navView.setNavigationItemSelectedListener {
             it.isChecked = true
             val ft = supportFragmentManager.beginTransaction()
@@ -102,8 +99,8 @@ class DashboardActivity : UmapActivity() {
         return super.onOptionsItemSelected(item)
     }
 
-    private fun setHeader() {
-        val user = Users.deserializeUser() ?: return
+    private fun setUser(user: User?) {
+        if (user == null) return
         username.text = user.username
         Picasso.with(this).load(user.avatar_url).transform(CircleTransform()).into(avatar)
         name.text = user.name

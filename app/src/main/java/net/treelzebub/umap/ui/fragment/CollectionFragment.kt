@@ -9,9 +9,6 @@ import android.view.View
 import android.view.ViewGroup
 import butterknife.bindView
 import net.treelzebub.umap.R
-import net.treelzebub.umap.api.DiscogsService
-import net.treelzebub.umap.ui.adapter.CollectionAdapter
-import net.treelzebub.umap.util.android.async
 import net.treelzebub.umap.util.bus.BusProvider
 
 /**
@@ -42,12 +39,6 @@ class CollectionFragment : Fragment() {
     }
 
     private fun syncCollectionReleases() {
-        async({
-            // TODO spinner
-            DiscogsService.getCollectionReleases()
-        }, {
-            // TODO spinner
-            recyclerView.adapter = CollectionAdapter(activity, it)
-        })
+        //TODO bismarck + conduit
     }
 }

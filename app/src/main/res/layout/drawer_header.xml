@@ -15,7 +15,7 @@
         android:layout_margin="@dimen/spacing_large"
         android:elevation="4dp"
         android:src="@drawable/ic_account_circle_white_48dp"
-        tools:src="@drawable/ic_account_circle_white_48dp"/>
+        tools:src="@drawable/ic_account_circle_white_48dp" />
 
     <TextView
         android:id="@+id/username"
@@ -25,15 +25,16 @@
         android:layout_marginLeft="@dimen/spacing_large"
         android:layout_marginStart="@dimen/spacing_large"
         android:text="My Username"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body2"/>
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+
     <TextView
         android:id="@id/name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/spacing_large"
         android:layout_marginLeft="@dimen/spacing_large"
         android:layout_marginStart="@dimen/spacing_large"
-        android:layout_marginBottom="@dimen/spacing_large"
         android:text="username@discogs.com"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1"/>
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 </RelativeLayout>

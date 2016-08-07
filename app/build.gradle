@@ -58,6 +58,9 @@ dependencies {
     compile "com.android.support:recyclerview-v7:$support_version"
     compile "com.android.support:customtabs:$support_version"
 
+    //RX
+    compile 'io.reactivex:rxandroid:1.2.1'
+    compile 'io.reactivex:rxjava:1.1.6'
 
     //Lang + Util
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"

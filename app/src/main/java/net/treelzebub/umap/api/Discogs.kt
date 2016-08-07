@@ -10,7 +10,7 @@ import net.treelzebub.umap.inject.NetInjection
 object Discogs {
 
     val api: DiscogsApi
-        get() = NetInjection.apiInjector ?: ApiModule(TokenHolder.getToken()).api
+        get() = NetInjection.apiInjector ?: ApiModule.from(TokenHolder.getToken())
 
     fun <D> connect(fn: DiscogsApi.() -> D): D? {
         val response = api.fn()
