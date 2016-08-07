@@ -9,8 +9,11 @@ import net.treelzebub.umap.R
 import net.treelzebub.umap.activity.DashboardActivity
 import net.treelzebub.umap.activity.UmapActivity
 import net.treelzebub.umap.android.toast
-import net.treelzebub.umap.conduit.LoginConduit
+import net.treelzebub.umap.conduit.AccessTokenConduit
+import net.treelzebub.umap.conduit.IdentityConduit
 import net.treelzebub.umap.conduit.RequestTokenConduit
+import net.treelzebub.umap.conduit.UserConduit
+import net.treelzebub.umap.data.Data
 
 /**
  * Created by Tre Murillo on 5/28/15
@@ -33,12 +36,32 @@ class LoginActivity : UmapActivity() {
             }
         }
 
-    private val login = LoginConduit(this)
-        .onComplete { success ->
-            if (success) {
+    private val login = AccessTokenConduit(this)
+        .onComplete { accessToken ->
+            if (accessToken == null) {
                 toast("Login Failed. Please try again!")
                 loadAuthUrl()
             } else {
+                identity.load(null)
+            }
+        }
+
+    private val identity = IdentityConduit(this)
+        .onComplete { identity ->
+            if (identity == null) {
+                loadAuthUrl()
+            } else {
+                user.load(Bundle().apply { putString("username", identity.username) })
+            }
+        }
+
+    private val user = UserConduit(this)
+        .onComplete { user ->
+            if (user == null) {
+                loadAuthUrl()
+            } else {
+                Data.user.insert(user)
+                toast("Login successful!")
                 startActivity(DashboardActivity.getIntent(this))
             }
         }
