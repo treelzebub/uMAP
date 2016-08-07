@@ -1,5 +1,7 @@
 package net.treelzebub.umap.api.model
 
+import net.treelzebub.umap.data.DiscogsResponse
+
 /**
  * Created by Tre Murillo on 6/6/15
  */
@@ -11,4 +13,4 @@ data class Artist(
         val anv: String,
         val tracks: String,
         val role: String
-)
+) : DiscogsResponse

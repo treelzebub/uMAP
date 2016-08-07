@@ -1,5 +1,6 @@
 package net.treelzebub.umap.api.model
 
+import net.treelzebub.umap.data.DiscogsResponse
 import java.io.Serializable
 
 /**
@@ -29,4 +30,4 @@ data class User(
         val uri: String,
         val avatar_url: String,
         val resource_url: String
-) : Serializable
+) : DiscogsResponse
