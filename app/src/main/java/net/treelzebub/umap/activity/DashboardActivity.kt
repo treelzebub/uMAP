@@ -18,10 +18,9 @@ import com.squareup.picasso.Picasso
 import net.treelzebub.umap.R
 import net.treelzebub.umap.auth.user.Users
 import net.treelzebub.umap.graphics.CircleTransform
-import net.treelzebub.umap.sync.Files
 import net.treelzebub.umap.ui.fragment.CollectionFragment
-import net.treelzebub.umap.util.bus.BusProvider
 import net.treelzebub.umap.util.android.PrefsUtils
+import net.treelzebub.umap.util.bus.BusProvider
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper
 
 /**

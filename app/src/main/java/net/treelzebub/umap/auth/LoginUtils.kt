@@ -2,11 +2,10 @@ package net.treelzebub.umap.auth
 
 import android.content.Context
 import android.net.Uri
-import net.treelzebub.umap.sync.Files
 import net.treelzebub.umap.activity.DashboardActivity
 import net.treelzebub.umap.auth.user.Users
-import net.treelzebub.umap.util.bus.BusProvider
 import net.treelzebub.umap.util.android.async
+import net.treelzebub.umap.util.bus.BusProvider
 import org.scribe.model.Verifier
 
 /**

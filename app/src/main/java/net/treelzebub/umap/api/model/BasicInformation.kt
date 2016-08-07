@@ -1,6 +1,6 @@
 package net.treelzebub.umap.api.model
 
-import net.treelzebub.umap.data.DiscogsResponse
+import java.io.Serializable
 
 /**
  * Created by Tre Murillo on 6/6/15
@@ -14,4 +14,4 @@ data class BasicInformation(
         var formats: List<Format>,
         var labels: List<Label>,
         var artists: List<Artist>
-) : DiscogsResponse
+) : Serializable

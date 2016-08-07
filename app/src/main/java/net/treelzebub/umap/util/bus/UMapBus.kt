@@ -3,7 +3,6 @@ package net.treelzebub.umap.util.bus
 import android.os.Handler
 import android.os.Looper
 import com.squareup.otto.Bus
-import com.squareup.otto.ThreadEnforcer
 
 /**
  * Created by Tre Murillo on 5/28/15

@@ -11,8 +11,8 @@ import butterknife.bindView
 import net.treelzebub.umap.R
 import net.treelzebub.umap.api.DiscogsService
 import net.treelzebub.umap.ui.adapter.CollectionAdapter
-import net.treelzebub.umap.util.bus.BusProvider
 import net.treelzebub.umap.util.android.async
+import net.treelzebub.umap.util.bus.BusProvider
 
 /**
  * Created by Tre Murillo on 6/6/15
