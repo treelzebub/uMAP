@@ -1,4 +1,8 @@
 language: android
+
+jdk:
+  - oraclejdk8
+
 android:
   components:
     - tools
@@ -12,6 +16,7 @@ android:
 
   script:
     - ./gradlew build
+
     # Specify at least one system image,
     # if you need to run emulator(s) during your tests
 #    - sys-img-armeabi-v7a-android-24

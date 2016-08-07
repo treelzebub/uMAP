@@ -1,9 +1,12 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 
+
 android {
     compileSdkVersion project.sdk_version
     buildToolsVersion "$build_tools"
+
+    sourceCompatibility = 1.8
 
     defaultConfig {
         applicationId "net.treelzebub.umap"
