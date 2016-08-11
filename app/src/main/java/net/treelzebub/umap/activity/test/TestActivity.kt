@@ -33,7 +33,9 @@ class TestActivity : UmapActivity() {
 class TestConduit(a: TestActivity) : Conduit<TestConduit, Unit>(a) {
 
     override fun onLoad(args: Bundle?) {
-        Looper.prepare()
+        if (Looper.myLooper() == null) {
+            Looper.prepare()
+        }
         Thread.sleep(10000L)
     }
 }

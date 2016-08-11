@@ -39,13 +39,11 @@ open class LoadingGifFragment : BlurDialogFragment() {
                 it.setCanceledOnTouchOutside(true)
                 it.window.setGravity(Gravity.CENTER)
             }
-            gradient.cornerRadius = this.cornerRadius
             gifImageView = _dialog!!.findViewById(R.id.gif_image_view) as GifImageView
-            val _id = getDrawableResId()
-            setBackgroundColor(bgColor)
+            gradient.cornerRadius = this.cornerRadius
             gradient.setColor(bgColor)
             _dialog?.findViewById(R.id.background)?.background = gradient
-            gifImageView.setImageResource(_id)
+            gifImageView.setImageResource(getDrawableResId())
             gradient.setColor(ContextCompat.getColor(context, R.color.loading_bg))
         }
 
@@ -53,7 +51,7 @@ open class LoadingGifFragment : BlurDialogFragment() {
     }
 
     open fun getDrawableResId(): Int {
-        return R.drawable.default_loading
+        return R.drawable.loading_gif
     }
 
     fun setBackgroundColor(bgColor: Int) {
