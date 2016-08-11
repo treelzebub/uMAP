@@ -6,7 +6,7 @@ import android.support.v7.widget.RecyclerView
 import butterknife.bindView
 import net.treelzebub.umap.R
 import net.treelzebub.umap.activity.UmapActivity
-import net.treelzebub.umap.android.subscribeToBismarck
+import net.treelzebub.umap.util.android.subscribeToBismarck
 import net.treelzebub.umap.data.Data
 import net.treelzebub.umap.ui.adapter.CollectionAdapter
 
