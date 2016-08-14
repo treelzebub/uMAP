@@ -1,5 +1,7 @@
 package net.treelzebub.umap.activity.master_release
 
+import com.levelmoney.klarity.withString
+import net.treelzebub.umap.R
 import net.treelzebub.umap.model.MasterRelease
 import net.treelzebub.umap.model.Track
 import net.treelzebub.umap.model.cover
@@ -39,32 +41,11 @@ object MasterReleaseMvp {
 }
 
 class MasterReleaseView(val a: MasterReleaseActivity) : MasterReleaseMvp.View {
-    override var cover: String
-        get() = throw UnsupportedOperationException()
-        set(value) {
-        }
-    override var artist: String
-        get() = throw UnsupportedOperationException()
-        set(value) {
-        }
-    override var title: String
-        get() = throw UnsupportedOperationException()
-        set(value) {
-        }
-    override var genre: String?
-        get() = throw UnsupportedOperationException()
-        set(value) {
-        }
-    override var style: String?
-        get() = throw UnsupportedOperationException()
-        set(value) {
-        }
-    override var year: String
-        get() = throw UnsupportedOperationException()
-        set(value) {
-        }
-    override var tracklist: List<Track>
-        get() = throw UnsupportedOperationException()
-        set(value) {
-        }
+    override var cover: String          by a.withString(R.id.cover).notNull
+    override var artist: String         by a.withString(R.id.artist).notNull
+    override var title: String          by a.withString(R.id.title).notNull
+    override var genre: String?         by a.withString(R.id.genre)
+    override var style: String?         by a.withString(R.id.style)
+    override var year: String           by a.withString(R.id.year).notNull
+    override var tracklist: List<Track> = listOf() //TODO recycler property?
 }

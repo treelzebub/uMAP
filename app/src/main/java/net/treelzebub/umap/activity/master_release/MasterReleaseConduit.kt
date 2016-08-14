@@ -20,4 +20,8 @@ class MasterReleaseConduit : Conduit<MasterReleaseConduit, Response<MasterReleas
             getMasterRelease(masterId)
         }
     }
+
+    fun load(masterId: String) {
+        load(Bundle().apply { putString("master_id", masterId) })
+    }
 }
