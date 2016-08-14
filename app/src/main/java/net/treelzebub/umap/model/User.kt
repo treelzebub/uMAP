@@ -10,7 +10,7 @@ data class User(
         val profile: String,
         @SerializedName("wantlist_url")
         val wantlistUrl: String,
-        val rank: Double,
+        val rank: String,
         @SerializedName("num_pending")
         val numPending: Int,
         val id: Int,

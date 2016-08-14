@@ -26,9 +26,9 @@ data class MasterRelease(
         override val tracklist: List<Track>,
         override val id: String,
         @SerializedName("num_for_sale")
-        override val numForSale: Int,
+        override val numForSale: String,
         @SerializedName("lowest_price")
-        override val lowestPrice: Float,
+        override val lowestPrice: String,
         @SerializedName("data_quality")
         override val dataQuality: String
 ) : IRelease, Serializable

@@ -25,24 +25,24 @@ class Release(
         @SerializedName("extraartists")
         val extraArtists: List<Artist>,
         @SerializedName("format_quantity")
-        val formatQuantity: Int,
+        val formatQuantity: String,
         val formats: List<Format>,
         override val genres: List<String>,
         val identifiers: List<Any>, // Pair: type, value
         override val images: List<Image>,
         val lavels: List<Label>,
         @SerializedName("lowest_price")
-        override val lowestPrice: Float,
+        override val lowestPrice: String,
         @SerializedName("master_id")
         val masterId: String,
         @SerializedName("master_url")
         val masterUrl: String,
         val notes: String, // split using /n delimiter
         @SerializedName("num_for_sale")
-        override val numForSale: Int,
+        override val numForSale: String,
         val released: String, // Might be a year, might be a date in format 09 June 2002
         @SerializedName("released_formatted")
-        val releasedFormatted: Int, // year
+        val releasedFormatted: String, // year
         @SerializedName("release_url")
         val releaseUrl: String,
         val series: Array<String>,

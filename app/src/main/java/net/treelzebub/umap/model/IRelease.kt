@@ -14,7 +14,7 @@ interface IRelease {
     val year: String
     val images: List<Image>
     val tracklist: List<Track>
-    val numForSale: Int
-    val lowestPrice: Float
+    val numForSale: String
+    val lowestPrice: String
     val dataQuality: String
 }
