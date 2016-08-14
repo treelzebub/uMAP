@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <ImageView
+        <pl.droidsonroids.gif.GifImageView
             android:id="@+id/cover"
             android:layout_width="@dimen/master_album_cover"
             android:layout_height="@dimen/master_album_cover"

@@ -1,23 +1,23 @@
 package net.treelzebub.umap.activity.base.mvp
 
-import android.widget.ImageView
 import com.levelmoney.klarity.withString
 import com.squareup.picasso.Picasso
 import net.treelzebub.umap.R
 import net.treelzebub.umap.activity.base.BaseReleaseActivity
 import net.treelzebub.umap.model.Track
 import org.jetbrains.anko.find
+import pl.droidsonroids.gif.GifImageView
 
 /**
  * Created by Tre Murillo on 8/14/16
  */
 class ReleaseView(val a: BaseReleaseActivity) : BaseReleaseView {
 
-    override var artist: String         by a.withString(R.id.artist).notNull
-    override var title: String          by a.withString(R.id.title).notNull
-    override var genre: String?         by a.withString(R.id.genre)
-    override var style: String?         by a.withString(R.id.style)
-    override var year: String           by a.withString(R.id.year).notNull
+    override var artist: String   by a.withString(R.id.artist).notNull
+    override var title:  String   by a.withString(R.id.title).notNull
+    override var genre:  String?  by a.withString(R.id.genre)
+    override var style:  String?  by a.withString(R.id.style)
+    override var year:   String   by a.withString(R.id.year).notNull
 
     override var tracklist: List<Track> = listOf()
         set(list) {
@@ -25,7 +25,7 @@ class ReleaseView(val a: BaseReleaseActivity) : BaseReleaseView {
             a.adapter.tracklist = list
         }
 
-    private val coverIV by lazy { a.find<ImageView>(R.id.cover) }
+    private val coverIV by lazy { a.find<GifImageView>(R.id.cover) }
     override var cover: String = ""
         set(url) {
             field = url
@@ -33,7 +33,7 @@ class ReleaseView(val a: BaseReleaseActivity) : BaseReleaseView {
                    .load(url)
                    .fit()
                    .centerCrop()
-                   .placeholder(R.drawable.icon)
+                   .placeholder(R.drawable.loading_spinner)
                    .into(coverIV)
         }
 }

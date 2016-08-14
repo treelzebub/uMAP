@@ -19,7 +19,7 @@ data class MasterRelease(
         override val artists: List<Artist>,
         @SerializedName("versions_url")
         val versionsUrl: String, // We'll immediately hit this URL to get individual releases of this master
-        override val year: Int,
+        override val year: String,
         override val images: List<Image>, // Display the one of type "primary"; the rest are images of the media, liner notes, et al.
         @SerializedName("resource_url")
         val resourceUrl: String, // Probably the same as mainReleaseUrl

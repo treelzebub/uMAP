@@ -11,7 +11,7 @@ interface IRelease {
     val id: String
     val uri: String
     val artists: List<Artist>
-    val year: Int
+    val year: String
     val images: List<Image>
     val tracklist: List<Track>
     val numForSale: Int

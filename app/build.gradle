@@ -101,6 +101,7 @@ dependencies {
     compile 'uk.co.chrisjenx:calligraphy:2.1.0'
     compile 'pl.droidsonroids.gif:android-gif-drawable:1.1.17'
     compile 'com.levelmoney:klarity:0.7'
+    compile 'com.zaihuishou:expandablerecycleradapter:1.0.2'
 
     testCompile 'junit:junit:4.12'
 }

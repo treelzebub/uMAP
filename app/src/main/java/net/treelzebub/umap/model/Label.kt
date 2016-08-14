@@ -12,6 +12,6 @@ data class Label(
         @SerializedName("entity_type")
         val entityType: String,
         val catno: String,
-        val id: Int,
+        val id: String,
         val name: String
 ) : Serializable

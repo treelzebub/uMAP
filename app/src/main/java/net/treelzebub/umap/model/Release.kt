@@ -21,7 +21,7 @@ class Release(
         @SerializedName("date_changed")
         val dateChanged: String,
         @SerializedName("estimated_weight")
-        val estimatedWeight: Double,
+        val estimatedWeight: String,
         @SerializedName("extraartists")
         val extraArtists: List<Artist>,
         @SerializedName("format_quantity")
@@ -40,7 +40,7 @@ class Release(
         val notes: String, // split using /n delimiter
         @SerializedName("num_for_sale")
         override val numForSale: Int,
-        val released: Int, // year
+        val released: String, // Might be a year, might be a date in format 09 June 2002
         @SerializedName("released_formatted")
         val releasedFormatted: Int, // year
         @SerializedName("release_url")
@@ -51,5 +51,5 @@ class Release(
         override val tracklist: List<Track>,
         override val uri: String,
         override val videos: List<Video>,
-        override val year: Int
+        override val year: String
 ) : IRelease, Serializable
