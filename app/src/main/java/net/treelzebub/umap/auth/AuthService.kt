@@ -11,13 +11,19 @@ import org.scribe.oauth.OAuthService
  */
 object AuthService {
 
-    val instance: OAuthService
-        get() = ServiceBuilder()
-                .apiKey(Constants.DISCOGS_CONSUMER_KEY)
-                .apiSecret(Constants.DISCOGS_CONSUMER_SECRET)
-                .callback(Constants.CALLBACK_URL)
-                .provider(DiscogsOauth::class.java)
-                .build()
+    private var instance: OAuthService? = null
+
+    fun get(): OAuthService {
+        if (instance == null) {
+            instance = ServiceBuilder()
+                            .apiKey(Constants.DISCOGS_CONSUMER_KEY)
+                            .apiSecret(Constants.DISCOGS_CONSUMER_SECRET)
+                            .callback(Constants.CALLBACK_URL)
+                            .provider(DiscogsOauth::class.java)
+                            .build()
+        }
+        return instance!!
+    }
 
     class DiscogsOauth : DefaultApi10a() {
 

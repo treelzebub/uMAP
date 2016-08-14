@@ -25,7 +25,7 @@ class RequestTokenConduit : Conduit<RequestTokenConduit, String?>, RequestTokenI
     constructor(a: ObserveAppCompatActivity) : super(a)
 
     override fun onLoad(args: Bundle?): String? {
-        val auth = AuthService.instance
+        val auth = AuthService.get()
         val rt = auth.requestToken
         TokenHolder.setRequestToken(rt)
         try {
@@ -56,7 +56,7 @@ class AccessTokenConduit : Conduit<AccessTokenConduit, Token?>, LoginInteractor 
         val data = Uri.parse(url)
         val verifierStr = data.getQueryParameter("oauth_verifier") ?: return null
         val verifier = Verifier(verifierStr)
-        val accessToken = AuthService.instance.getAccessToken(TokenHolder.getRequestToken(), verifier)
+        val accessToken = AuthService.get().getAccessToken(TokenHolder.getRequestToken(), verifier)
         TokenHolder.accessToken = accessToken
         return accessToken
     }
