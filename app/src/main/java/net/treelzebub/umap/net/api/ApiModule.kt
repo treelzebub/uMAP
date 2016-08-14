@@ -1,7 +1,9 @@
 package net.treelzebub.umap.net.api
 
 import net.treelzebub.umap.Constants
+import net.treelzebub.umap.R
 import net.treelzebub.umap.net.SigningOkClient
+import net.treelzebub.umap.util.android.str
 import org.scribe.model.Token
 import retrofit.RestAdapter
 import retrofit.client.OkClient
@@ -23,7 +25,7 @@ class ApiModule {
 
     private constructor(token: Token?) {
         if (token == null) throw RuntimeException("Null Token passed to ApiModule")
-        val consumer = OkHttpOAuthConsumer(Constants.DISCOGS_CONSUMER_KEY, Constants.DISCOGS_CONSUMER_SECRET)
+        val consumer = OkHttpOAuthConsumer(R.string.discogs_consumer_key.str(), R.string.discogs_consumer_secret.str())
         consumer.setTokenWithSecret(token.token, token.secret)
         val signingClient = SigningOkClient(consumer)
         val restAdapter = RestAdapter.Builder()

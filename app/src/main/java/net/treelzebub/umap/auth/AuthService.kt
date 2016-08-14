@@ -1,6 +1,8 @@
 package net.treelzebub.umap.auth
 
 import net.treelzebub.umap.Constants
+import net.treelzebub.umap.R
+import net.treelzebub.umap.util.android.str
 import org.scribe.builder.ServiceBuilder
 import org.scribe.builder.api.DefaultApi10a
 import org.scribe.model.Token
@@ -16,8 +18,8 @@ object AuthService {
     fun get(): OAuthService {
         if (instance == null) {
             instance = ServiceBuilder()
-                            .apiKey(Constants.DISCOGS_CONSUMER_KEY)
-                            .apiSecret(Constants.DISCOGS_CONSUMER_SECRET)
+                            .apiKey(R.string.discogs_consumer_key.str())
+                            .apiSecret(R.string.discogs_consumer_secret.str())
                             .callback(Constants.CALLBACK_URL)
                             .provider(DiscogsOauth::class.java)
                             .build()

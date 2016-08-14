@@ -10,6 +10,9 @@ buildscript {
         play_version    = "9.2.0"
         anko_version    = "0.9"
         isCI            = System.getenv("TRAVIS").equals("true")
+
+        discogsKey    = System.getenv('DISCOGS_CONSUMER_KEY')
+        discogsSecret = System.getenv('DISCOGS_CONSUMER_SECRET')
     }
 
     repositories {

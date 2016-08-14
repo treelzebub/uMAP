@@ -20,10 +20,14 @@ android {
         debug {
             minifyEnabled false
             applicationIdSuffix '.debug'
+            resValue("string", "discogs_consumer_key", project.discogsKey)
+            resValue("string", "discogs_consumer_secret", project.discogsSecret)
         }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            resValue("string", "discogs_consumer_key", project.discogsKey)
+            resValue("string", "discogs_consumer_secret", project.discogsSecret)
         }
     }
 

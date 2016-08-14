@@ -14,7 +14,7 @@ class ReleaseConduit : Conduit<ReleaseConduit, Response<Release>> {
     constructor(a: ReleaseActivity) : super(a)
 
     override fun onLoad(args: Bundle): Response<Release>? {
-        val releaseId = args.getString("release_id")
+            val releaseId = args.getString("release_id")
         return Discogs.connect {
             getRelease(releaseId)
         }

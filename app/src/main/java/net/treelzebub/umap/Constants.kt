@@ -17,9 +17,6 @@ object Constants {
     val DISCOGS_AUTHORIZATION_URL: String = "https://www.discogs.com/oauth/authorize"
     val DISCOGS_AUTH_URL_APPEND: String = "?oauth_token="
 
-    val DISCOGS_CONSUMER_KEY: String = "JfdZojxprrQHOqIpHwpV"
-    val DISCOGS_CONSUMER_SECRET: String = "uigJkstmlBPlLBFMoxAApEHgIdrCGQsx"
-
     val CREDENTIALS_STORE_FILENAME: String = "umap.prefs"
     val USER_FILENAME: String = "umap.discogs.user"
 }
