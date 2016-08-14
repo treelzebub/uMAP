@@ -13,10 +13,10 @@ import net.treelzebub.umap.inject.ContextInjection
 
 val c: Context get() = ContextInjection.c
 
-val Int.color: Int          get() = ContextCompat.getColor(c, this)
-val Int.str: String         get() = c.getString(this)
-val Int.dimen: Float        get() = c.resources.getDimension(this)
-val Int.drawable: Drawable get() = ContextCompat.getDrawable(c, this)
+fun Int.color(): Int          = ContextCompat.getColor(c, this)
+fun Int.str(): String         = c.getString(this)
+fun Int.dimen(): Float        = c.resources.getDimension(this)
+fun Int.drawable(): Drawable  = ContextCompat.getDrawable(c, this)
 
 fun Context.resolveColor(colorAttribute: Int): Int {
     val typedValue = TypedValue()

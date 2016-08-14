@@ -5,12 +5,11 @@ import android.os.Looper
 import com.levelmoney.conduit.Conduit
 import net.treelzebub.umap.R
 import net.treelzebub.umap.activity.UmapActivity
-import net.treelzebub.umap.async.post
 import net.treelzebub.umap.conduit.withSpinner
 import net.treelzebub.umap.util.android.onClick
 
 /**
- * Created by Tre Murillo on 8/7/16.
+ * Created by Tre Murillo on 8/7/16
  */
 class TestActivity : UmapActivity() {
 

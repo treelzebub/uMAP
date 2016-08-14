@@ -1,7 +1,6 @@
 package net.treelzebub.umap.ui.loadinggiffragment.gif
 
 import android.app.Dialog
-import android.graphics.BitmapFactory
 import android.graphics.Color
 import android.graphics.drawable.GradientDrawable
 import android.os.Bundle
@@ -13,7 +12,7 @@ import net.treelzebub.umap.ui.loadinggiffragment.blur.BlurDialogFragment
 import pl.droidsonroids.gif.GifImageView
 
 /**
- * Created by Tre Murillo on 8/7/16.
+ * Created by Tre Murillo on 8/7/16
  */
 open class LoadingGifFragment : BlurDialogFragment() {
 
@@ -36,7 +35,7 @@ open class LoadingGifFragment : BlurDialogFragment() {
             _dialog = Dialog(activity, R.style.LoadingGifDialog)
             _dialog!!.let {
                 it.setContentView(R.layout.dialog_loading_gif)
-                it.setCanceledOnTouchOutside(true)
+                it.setCanceledOnTouchOutside(false)
                 it.window.setGravity(Gravity.CENTER)
             }
             gifImageView = _dialog!!.findViewById(R.id.gif_image_view) as GifImageView
@@ -48,6 +47,12 @@ open class LoadingGifFragment : BlurDialogFragment() {
         }
 
         return _dialog!!
+    }
+
+    override fun onDestroyView() {
+        _dialog?.dismiss()
+        _dialog = null
+        super.onDestroyView()
     }
 
     open fun getDrawableResId(): Int {

@@ -1,4 +1,4 @@
-package net.treelzebub.umap.api
+package net.treelzebub.umap.net.api
 
 import net.treelzebub.umap.Constants
 import net.treelzebub.umap.net.SigningOkClient
@@ -27,7 +27,9 @@ class ApiModule {
         consumer.setTokenWithSecret(token.token, token.secret)
         val signingClient = SigningOkClient(consumer)
         val restAdapter = RestAdapter.Builder()
+                .setLogLevel(RestAdapter.LogLevel.FULL)
                 .setEndpoint(Constants.DISCOGS_BASE_URL)
+                .setErrorHandler(DiscogsErrorHandler())
                 .setClient(OkClient(signingClient))
                 .build()
         api = restAdapter.create(DiscogsApi::class.java)

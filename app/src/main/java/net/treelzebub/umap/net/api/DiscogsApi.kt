@@ -1,7 +1,7 @@
-package net.treelzebub.umap.api
+package net.treelzebub.umap.net.api
 
-import net.treelzebub.umap.api.model.*
-import net.treelzebub.umap.api.model.Collection
+import net.treelzebub.umap.model.*
+import net.treelzebub.umap.model.Collection
 import retrofit.http.GET
 import retrofit.http.Path
 
