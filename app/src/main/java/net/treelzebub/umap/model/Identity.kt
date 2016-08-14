@@ -1,5 +1,6 @@
 package net.treelzebub.umap.model
 
+import com.google.gson.annotations.SerializedName
 import java.io.Serializable
 
 /**
@@ -8,8 +9,9 @@ import java.io.Serializable
 data class Identity(
         val id: Int,
         val username: String,
-        val resource_url: String,
-        val consumer_name: String,
-
+        @SerializedName("resource_url")
+        val resourceUrl: String,
+        @SerializedName("consumer_name")
+        val consumerName: String,
         val message: String? // error
 ) : Serializable

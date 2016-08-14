@@ -1,5 +1,6 @@
 package net.treelzebub.umap.activity.login
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.webkit.WebView
@@ -8,7 +9,7 @@ import butterknife.bindView
 import net.treelzebub.umap.Constants
 import net.treelzebub.umap.R
 import net.treelzebub.umap.activity.UmapActivity
-import net.treelzebub.umap.activity.dashboard.DashboardActivity
+import net.treelzebub.umap.activity.collection.CollectionActivity
 import net.treelzebub.umap.conduit.onSuccess
 import net.treelzebub.umap.conduit.withSpinner
 import net.treelzebub.umap.data.Data
@@ -74,7 +75,7 @@ class LoginActivity : UmapActivity() {
                 Log.d(TAG, "Got User. Inserting into bismarck and going to dash...")
                 Data.user.insert(user)
                 toast("Login successful!")
-                startActivity(DashboardActivity.getIntent(this))
+                startActivity(Intent(this, CollectionActivity::class.java))
                 finish()
             }
         }

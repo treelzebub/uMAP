@@ -1,6 +1,7 @@
 package net.treelzebub.umap.model
 
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
 /**
  * Created by Tre Murillo on 8/14/16
@@ -18,7 +19,7 @@ data class Image(
         val uri: String, // Display this.
         val uri150: String,
         val width: Int
-)
+) : Serializable
 
 fun Image.isPrimary(): Boolean = type == PRIMARY
 fun List<Image>.cover(): String = find { it.isPrimary() }?.uri ?: NO_COVER

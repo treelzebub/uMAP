@@ -16,8 +16,6 @@ object Constants {
     val DISCOGS_ACCESS_TOKEN_URL: String = DISCOGS_BASE_URL + "/oauth/access_token"
     val DISCOGS_AUTHORIZATION_URL: String = "https://www.discogs.com/oauth/authorize"
     val DISCOGS_AUTH_URL_APPEND: String = "?oauth_token="
-    val DISCOGS_IDENTITY_URL: String = "/oauth/identity"
-    val DISCOGS_PROFILE_URL: String = "/users" // + /{username}
 
     val DISCOGS_CONSUMER_KEY: String = "JfdZojxprrQHOqIpHwpV"
     val DISCOGS_CONSUMER_SECRET: String = "uigJkstmlBPlLBFMoxAApEHgIdrCGQsx"

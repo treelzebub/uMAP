@@ -1,5 +1,6 @@
 package net.treelzebub.umap.model
 
+import com.google.gson.annotations.SerializedName
 import java.io.Serializable
 
 /**
@@ -7,26 +8,41 @@ import java.io.Serializable
  */
 data class User(
         val profile: String,
-        val wantlist_url: String,
+        @SerializedName("wantlist_url")
+        val wantlistUrl: String,
         val rank: Double,
-        val num_pending: Int,
+        @SerializedName("num_pending")
+        val numPending: Int,
         val id: Int,
-        val num_for_sale: Int,
-        val home_page: String,
+        @SerializedName("num_for_sale")
+        val numForSale: Int,
+        @SerializedName("home_page")
+        val homePage: String,
         val location: String,
-        val collection_folders_url: String,
+        @SerializedName("collection_folders_url")
+        val collectionFoldersUrl: String,
         val username: String,
-        val collection_fields_url: String,
-        val releases_contributed: Int,
+        @SerializedName("collection_fields_url")
+        val collectionFieldsUrl: String,
+        @SerializedName("releases_contributed")
+        val releasesContributed: Int,
         val registered: String,
-        val rating_avg: Double,
-        val num_collection: Int,
-        val releases_rated: Int,
-        val num_lists: Int,
+        @SerializedName("rating_avg")
+        val ratingAvg: Float,
+        @SerializedName("num_collection")
+        val numCollection: Int,
+        @SerializedName("releases_rated")
+        val releasesRated: Int,
+        @SerializedName("num_lists")
+        val numLists: Int,
         val name: String,
-        val num_wantlist: Int,
-        val inventory_url: String,
+        @SerializedName("num_wantlist")
+        val numWantlist: Int,
+        @SerializedName("inventory_url")
+        val inventoryUrl: String,
         val uri: String,
-        val avatar_url: String,
-        val resource_url: String
+        @SerializedName("avatar_url")
+        val avatarUrl: String,
+        @SerializedName("resource_url")
+        val resourceUrl: String
 ) : Serializable

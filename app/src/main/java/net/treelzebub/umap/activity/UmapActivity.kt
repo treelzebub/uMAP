@@ -12,7 +12,6 @@ import android.widget.ImageView
 import android.widget.TextView
 import com.levelmoney.observefragment.activity.ObserveAppCompatActivity
 import com.squareup.picasso.Picasso
-import kotlinx.android.synthetic.main.activity_dashboard.*
 import net.treelzebub.umap.R
 import net.treelzebub.umap.activity.collection.CollectionActivity
 import net.treelzebub.umap.data.Data
@@ -36,6 +35,8 @@ open class UmapActivity : ObserveAppCompatActivity() {
 
     private val subscription = CompositeSubscription()
 
+    var drawerToggle: ActionBarDrawerToggle? = null
+
     override fun attachBaseContext(newBase: Context) {
         super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase))
     }
@@ -49,25 +50,33 @@ open class UmapActivity : ObserveAppCompatActivity() {
         }
     }
 
+    override fun onResume() {
+        super.onResume()
+        setUser(Data.user.peek())
+    }
+
     override fun onDestroy() {
-        super.onDestroy()
         BusProvider.instance.unregister(this)
+        super.onDestroy()
     }
 
     fun setupToolbar() {
-        val toolbar = findOptional<Toolbar>(R.id.toolbar)
+        val toolbar = find<Toolbar>(R.id.toolbar)
         setSupportActionBar(toolbar)
         val actionBar = supportActionBar
         actionBar?.setHomeAsUpIndicator(R.drawable.ic_menu_white_24dp)
         actionBar?.setDisplayHomeAsUpEnabled(true)
     }
 
-    fun setupDrawer(toggle: ActionBarDrawerToggle) {
-        find<DrawerLayout>(R.id.drawer_layout).addDrawerListener(toggle)
-        toggle.syncState()
+    fun setupDrawer() {
+        val drawer = find<DrawerLayout>(R.id.drawer_layout)
+        val toolbar = find<Toolbar>(R.id.toolbar)
+        drawerToggle = ActionBarDrawerToggle(this, drawer, toolbar, 0, 0)
+        find<DrawerLayout>(R.id.drawer_layout).addDrawerListener(drawerToggle!!)
+        drawerToggle!!.syncState()
         find<NavigationView>(R.id.navigation_view).setNavigationItemSelectedListener {
             it.isChecked = true
-            drawer_layout.closeDrawers()
+            drawer.closeDrawers()
             startActivity(Intent(this, CollectionActivity::class.java))
             true
         }
@@ -82,7 +91,7 @@ open class UmapActivity : ObserveAppCompatActivity() {
             name?.text     = it.name
             if (avatar != null) {
                 Picasso.with(this)
-                       .load(it.avatar_url)
+                       .load(it.avatarUrl)
                        .transform(CircleTransform())
                        .placeholder(R.drawable.icon)
                        .into(avatar)

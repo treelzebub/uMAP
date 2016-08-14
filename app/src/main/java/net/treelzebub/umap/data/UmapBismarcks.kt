@@ -10,8 +10,9 @@ import net.treelzebub.umap.bismarck.api
 object UmapBismarcks {
 
     fun register(c: Context) {
-        Data.user       = Bismarcks.api(c, "umap_user")
-        Data.collection = Bismarcks.api(c, "umap_user_collection")
-        Data.lastMaster = Bismarcks.api(c, "umap_last_master")
+        Data.user        = Bismarcks.api(c, "umap_user")
+        Data.collection  = Bismarcks.api(c, "umap_user_collection")
+        Data.lastMaster  = Bismarcks.api(c, "umap_last_master")
+        Data.lastRelease = Bismarcks.api(c, "umap_last_release")
     }
 }

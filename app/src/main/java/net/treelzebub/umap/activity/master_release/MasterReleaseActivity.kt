@@ -5,8 +5,11 @@ import android.content.Intent
 import android.os.Bundle
 import net.treelzebub.umap.R
 import net.treelzebub.umap.activity.UmapActivity
+import net.treelzebub.umap.activity.base.BaseReleaseActivity
+import net.treelzebub.umap.activity.base.adapter.TracklistAdapter
+import net.treelzebub.umap.activity.base.mvp.ReleaseView
+import net.treelzebub.umap.activity.base.mvp.ReleasePresenter
 import net.treelzebub.umap.conduit.onSuccess
-import net.treelzebub.umap.activity.master_release.MasterReleaseMvp.Presenter
 import net.treelzebub.umap.conduit.withSpinner
 import net.treelzebub.umap.data.Data
 import net.treelzebub.umap.util.android.withIntent
@@ -14,7 +17,7 @@ import net.treelzebub.umap.util.android.withIntent
 /**
  * Created by Tre Murillo on 8/14/16
  */
-class MasterReleaseActivity : UmapActivity() {
+class MasterReleaseActivity : BaseReleaseActivity() {
 
     companion object {
         fun get(c: Context, masterId: String): Intent {
@@ -24,8 +27,10 @@ class MasterReleaseActivity : UmapActivity() {
 
     private val masterId: String?  by withIntent { it.getStringExtra("master_id") }
 
-    private val presenter by lazy { Presenter(MasterReleaseView(this)) }
-    private val conduit   = MasterReleaseConduit(this)
+    private val presenter by lazy { ReleasePresenter(ReleaseView(this)) }
+    override val adapter  = TracklistAdapter()
+
+    private val conduit = MasterReleaseConduit(this)
         .withSpinner()
         .onSuccess {
             presenter.set(it!!)

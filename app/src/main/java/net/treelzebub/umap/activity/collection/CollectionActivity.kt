@@ -17,9 +17,6 @@ import net.treelzebub.umap.util.android.subscribeToBismarck
  */
 class CollectionActivity : UmapActivity() {
 
-    private val drawerToggle: ActionBarDrawerToggle
-            by lazy { ActionBarDrawerToggle(this, drawer_layout, toolbar, 0, 0) }
-
     private val adapter = CollectionAdapter(this)
 
     private val collection = CollectionConduit(this)
@@ -31,7 +28,7 @@ class CollectionActivity : UmapActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_collection)
         setupToolbar()
-        setupDrawer(drawerToggle)
+        setupDrawer()
 
         recycler.let {
             it.setHasFixedSize(true)

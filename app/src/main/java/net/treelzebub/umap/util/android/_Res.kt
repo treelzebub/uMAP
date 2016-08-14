@@ -14,9 +14,11 @@ import net.treelzebub.umap.inject.ContextInjection
 val c: Context get() = ContextInjection.c
 
 fun Int.color(): Int          = ContextCompat.getColor(c, this)
-fun Int.str(): String         = c.getString(this)
 fun Int.dimen(): Float        = c.resources.getDimension(this)
 fun Int.drawable(): Drawable  = ContextCompat.getDrawable(c, this)
+
+fun Int.str(): String            = c.getString(this)
+fun Int.str(vararg args: String) = c.getString(this, *args)
 
 fun Context.resolveColor(colorAttribute: Int): Int {
     val typedValue = TypedValue()

@@ -11,7 +11,8 @@ import butterknife.bindView
 import com.squareup.picasso.Picasso
 import net.treelzebub.umap.R
 import net.treelzebub.umap.activity.master_release.MasterReleaseActivity
-import net.treelzebub.umap.model.Release
+import net.treelzebub.umap.activity.release.ReleaseActivity
+import net.treelzebub.umap.model.CollectionRelease
 import net.treelzebub.umap.util.android.drawable
 
 /**
@@ -19,18 +20,18 @@ import net.treelzebub.umap.util.android.drawable
  */
 class CollectionAdapter(val c: Context) : RecyclerView.Adapter<CollectionAdapter.ViewHolder>() {
 
-    var releases: List<Release> = listOf()
+    var releases: List<CollectionRelease> = listOf()
         set(value) {
             field = value
             notifyDataSetChanged()
         }
 
     override fun onCreateViewHolder(parent: ViewGroup, i: Int): ViewHolder {
-        return ViewHolder(LayoutInflater.from(c).inflate(R.layout.collection_card, parent, false))
+        return ViewHolder(LayoutInflater.from(c).inflate(R.layout.card_release, parent, false))
     }
 
     override fun onBindViewHolder(holder: ViewHolder, i: Int) {
-        val info = releases[i].basic_information
+        val info = releases[i].info
         Picasso.with(c)
                .load(info.thumb)
                .fit()
@@ -42,7 +43,7 @@ class CollectionAdapter(val c: Context) : RecyclerView.Adapter<CollectionAdapter
         holder.label.text  = info.labels.first().name
         holder.year.text   = "${info.year}"
         holder.clicker.setOnClickListener {
-            c.startActivity(MasterReleaseActivity.get(c, info.id.toString()))
+            c.startActivity(ReleaseActivity.get(c, info.id.toString()))
         }
     }
 

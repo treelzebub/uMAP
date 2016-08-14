@@ -1,71 +1,45 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="@dimen/margin_normal">
+    android:background="?colorPrimaryDark"
+    android:fitsSystemWindows="true">
 
-    <LinearLayout
+    <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_height="match_parent">
 
-        <ImageView
-            android:id="@+id/cover"
-            android:layout_width="@dimen/master_album_cover"
-            android:layout_height="@dimen/master_album_cover"
-            android:layout_marginBottom="@dimen/margin_normal"
-            android:layout_marginEnd="@dimen/margin_normal"
-            android:contentDescription="@string/desc_album_cover"
-            tools:src="@drawable/tools_cover" />
+        <android.support.design.widget.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/toolbar_height">
 
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical">
+            <android.support.design.widget.CollapsingToolbarLayout
+                android:id="@+id/collapsing_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
-            <TextView
-                android:id="@+id/artist"
-                style="@style/Text.AlbumInfo.Bold"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                tools:text="Boards of Canada" />
+                <FrameLayout
+                    android:id="@+id/toolbar_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_collapseMode="parallax" />
 
-            <TextView
-                android:id="@+id/title"
-                style="@style/Text.AlbumInfo.Bold"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                tools:text="Music Has the Right to Children" />
+                <android.support.v7.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/toolbar_height"
+                    android:background="?attr/colorPrimary"
+                    android:elevation="@dimen/el_low"
+                    android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                    app:layout_collapseMode="pin"
+                    app:layout_scrollFlags="scroll|enterAlways" />
 
-            <TextView
-                android:id="@+id/genre"
-                style="@style/Text.AlbumInfo.Detail"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                tools:text="Genre: Electronic" />
+            </android.support.design.widget.CollapsingToolbarLayout>
+        </android.support.design.widget.AppBarLayout>
 
-            <TextView
-                android:id="@+id/style"
-                style="@style/Text.AlbumInfo.Detail"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                tools:text="IDM, Ambient" />
+        <include layout="@layout/include_release" />
 
-            <TextView
-                android:id="@+id/year"
-                style="@style/Text.AlbumInfo.Detail"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                tools:text="Year: 1998" />
-        </LinearLayout>
-    </LinearLayout>
-
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/tracklist"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1" />
-</LinearLayout>
+    </android.support.design.widget.CoordinatorLayout>
+</FrameLayout>

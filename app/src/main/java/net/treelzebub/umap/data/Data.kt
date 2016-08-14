@@ -3,6 +3,7 @@ package net.treelzebub.umap.data
 import com.levelmoney.bismarck.Bismarcks
 import net.treelzebub.umap.model.CollectionReleases
 import net.treelzebub.umap.model.MasterRelease
+import net.treelzebub.umap.model.Release
 import net.treelzebub.umap.model.User
 
 /**
@@ -14,4 +15,5 @@ object Data {
 
     var collection = Bismarcks.baseBismarck<CollectionReleases>()
     var lastMaster = Bismarcks.baseBismarck<MasterRelease>()
+    var lastRelease = Bismarcks.baseBismarck<Release>()
 }

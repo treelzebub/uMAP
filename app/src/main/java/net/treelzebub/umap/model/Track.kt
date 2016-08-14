@@ -8,7 +8,7 @@ import java.io.Serializable
  */
 data class Track(
         val duration: String, // "4:45"
-        val position: String, // "1"
+        val position: String, // May match "1" or "A"
         @SerializedName("type_")
         val type: String, // Looks like this is always "track"...
         val title: String,
