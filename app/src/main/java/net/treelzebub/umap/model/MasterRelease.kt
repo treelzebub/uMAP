@@ -24,7 +24,7 @@ data class MasterRelease(
         @SerializedName("resource_url")
         val resourceUrl: String, // Probably the same as mainReleaseUrl
         val tracklist: List<Track>,
-        val id: Long,
+        val id: String,
         @SerializedName("num_for_sale")
         val numForSale: Int,
         @SerializedName("lowest_price")

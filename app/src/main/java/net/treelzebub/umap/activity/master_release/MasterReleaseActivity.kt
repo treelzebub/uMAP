@@ -7,6 +7,8 @@ import net.treelzebub.umap.R
 import net.treelzebub.umap.activity.UmapActivity
 import net.treelzebub.umap.conduit.onSuccess
 import net.treelzebub.umap.activity.master_release.MasterReleaseMvp.Presenter
+import net.treelzebub.umap.conduit.withSpinner
+import net.treelzebub.umap.data.Data
 import net.treelzebub.umap.util.android.withIntent
 
 /**
@@ -20,9 +22,11 @@ class MasterReleaseActivity : UmapActivity() {
         }
     }
 
+    private val masterId: String?  by withIntent { it.getStringExtra("master_id") }
+
     private val presenter by lazy { Presenter(MasterReleaseView(this)) }
-    private val masterId  by withIntent { it.getStringExtra("master_id") }
     private val conduit   = MasterReleaseConduit(this)
+        .withSpinner()
         .onSuccess {
             presenter.set(it!!)
         }
@@ -35,6 +39,7 @@ class MasterReleaseActivity : UmapActivity() {
 
     override fun onPostCreate(savedInstanceState: Bundle?) {
         super.onPostCreate(savedInstanceState)
-        conduit.load(masterId)
+        val lastMaster = Data.lastMaster.peek()?.id.toString()
+        conduit.load(masterId ?: lastMaster)
     }
 }

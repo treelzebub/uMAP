@@ -7,7 +7,7 @@ import java.io.Serializable
  * Created by Tre Murillo on 6/6/15
  */
 data class Artist(
-        val id: Long,
+        val id: String,
         val name: String,
         val join: String,
         @SerializedName("resource_url")
