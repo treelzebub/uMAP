@@ -1,4 +1,4 @@
-package net.treelzebub.umap.android
+package net.treelzebub.umap.util.android
 
 import android.os.Build
 

@@ -24,13 +24,27 @@
         <item name="android:stateListAnimator" tools:targetApi="lollipop">@anim/fab_elevation</item>
     </style>
 
-    <color name="primary">#3F51B5</color>
-    <color name="primary_dark">#303F9F</color>
-    <color name="primary_light">#C5CAE9</color>
-    <color name="accent_translucent">#C5CAE9</color>
-    <color name="accent">#607D8B</color>
-    <color name="primary_text">#212121</color>
-    <color name="secondary_text">#727272</color>
-    <color name="icons">#FFFFFF</color>
-    <color name="divider">#B6B6B6</color>
+    <style name="SpinnerDialog" parent="Theme.AppCompat.Dialog">
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowBackground">@color/clear</item>
+    </style>
+
+
+    <style name="BlurDialogFragment.Default.Animation" parent="@android:style/Animation.Activity">
+        <item name="android:windowEnterAnimation">@anim/default_dialog_in</item>
+        <item name="android:windowExitAnimation">@anim/default_dialog_out</item>
+    </style>
+
+    <style name="LoadingGifDialog"
+        parent="@android:style/Theme.Holo.Light.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:backgroundDimAmount">0.6</item>
+    </style>
+
 </resources>
