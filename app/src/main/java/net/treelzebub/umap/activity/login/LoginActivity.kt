@@ -28,6 +28,7 @@ class LoginActivity : UmapActivity() {
     private val webViewClient = LoginClient()
 
     private val requestToken = RequestTokenConduit(this)
+        .withSpinner()
         .onComplete { authUrl ->
             if (authUrl == null) {
                 Log.d(TAG, "Loading auth url failed. Retrying...")
@@ -39,6 +40,7 @@ class LoginActivity : UmapActivity() {
         }
 
     private val login = AccessTokenConduit(this)
+        .withSpinner()
         .onComplete { accessToken ->
             if (accessToken == null) {
                 toast("Login Failed. Please try again!")
