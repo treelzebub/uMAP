@@ -1,9 +1,10 @@
 package net.treelzebub.umap.activity.collection
 
 import android.os.Bundle
+import android.support.v7.app.ActionBarDrawerToggle
+import android.support.v7.widget.DefaultItemAnimator
 import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
-import butterknife.bindView
+import kotlinx.android.synthetic.main.activity_collection.*
 import net.treelzebub.umap.R
 import net.treelzebub.umap.activity.UmapActivity
 import net.treelzebub.umap.conduit.onSuccess
@@ -16,7 +17,8 @@ import net.treelzebub.umap.util.android.subscribeToBismarck
  */
 class CollectionActivity : UmapActivity() {
 
-    private val recyclerView: RecyclerView by bindView(R.id.recycler)
+    private val drawerToggle: ActionBarDrawerToggle
+            by lazy { ActionBarDrawerToggle(this, drawer_layout, toolbar, 0, 0) }
 
     private val adapter = CollectionAdapter(this)
 
@@ -28,11 +30,14 @@ class CollectionActivity : UmapActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_collection)
+        setupToolbar()
+        setupDrawer(drawerToggle)
 
-        recyclerView.let {
+        recycler.let {
             it.setHasFixedSize(true)
             it.layoutManager = LinearLayoutManager(this)
-            it.adapter = adapter
+            it.itemAnimator  = DefaultItemAnimator()
+            it.adapter       = adapter
         }
 
         subscribeToBismarck(Data.collection) {

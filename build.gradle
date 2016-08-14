@@ -8,6 +8,7 @@ buildscript {
         gradle_plugin   = "2.2.0-beta1"
         support_version = "24.1.1"
         play_version    = "9.2.0"
+        anko_version    = "0.9"
         isCI            = System.getenv("TRAVIS").equals("true")
     }
 
@@ -20,6 +21,7 @@ buildscript {
     dependencies {
         classpath "com.android.tools.build:gradle:$gradle_plugin"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath "org.jetbrains.kotlin:kotlin-android-extensions:$kotlin_version"
     }
 }
 
