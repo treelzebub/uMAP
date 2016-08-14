@@ -38,6 +38,6 @@
     <string name="error_network">Cannot access the internet. Check your network settings and try again.</string>
     <string name="error_response">Hmm…Didn\'t understand what discogs.com was trying to tell us.</string>
     <string name="error_unknown">Uh oh…An unknown error occurred. We\'re sorry.</string>
-    <string name="error_no_content">Discogs couldn't find the requested resource.</string>
+    <string name="error_no_content">Discogs couldn\'t find the requested resource.</string>
     <string name="error_unauthorized">Uh oh! Looks like you need to login again.</string>
 </resources>
