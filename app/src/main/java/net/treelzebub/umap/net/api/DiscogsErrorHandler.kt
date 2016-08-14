@@ -18,7 +18,9 @@ class DiscogsErrorHandler : ErrorHandler {
         if (cause == null || cause.response == null) {
             errorDescription = R.string.error_network.str()
         } else if (cause.kind == RetrofitError.Kind.NETWORK) {
-            errorDescription = R.string.error_response.str()
+            errorDescription = R.string.error_response.str(""+cause.response.status)
+        } else if (cause.kind == RetrofitError.Kind.CONVERSION) {
+            errorDescription = R.string.error_conversion.str()
         } else if (cause.response.status < 204) {
             errorDescription = handleStatus(cause.response.status)
         } else {

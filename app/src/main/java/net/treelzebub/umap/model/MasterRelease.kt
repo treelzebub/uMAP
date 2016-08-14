@@ -12,7 +12,7 @@ data class MasterRelease(
         override val videos: List<Video>,
         override val title: String,
         @SerializedName("main_release")
-        val mainRelease: Long,
+        val mainRelease: String,
         @SerializedName("main_release_url")
         val mainReleaseUrl: String, // The URL we just hit.
         override val uri: String, // The actual URL of the release.

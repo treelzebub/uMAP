@@ -54,10 +54,6 @@
             android:name=".activity.release.ReleaseActivity"
             android:label=""
             android:theme="@style/AppTheme" />
-        <activity
-            android:name=".activity.TemplateActivity"
-            android:label="@string/title_activity_template"
-            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>

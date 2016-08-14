@@ -4,7 +4,6 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import net.treelzebub.umap.R
-import net.treelzebub.umap.activity.UmapActivity
 import net.treelzebub.umap.activity.base.BaseReleaseActivity
 import net.treelzebub.umap.activity.base.adapter.TracklistAdapter
 import net.treelzebub.umap.activity.base.mvp.ReleaseView

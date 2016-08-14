@@ -1,15 +1,18 @@
 package net.treelzebub.umap.activity.collection
 
 import android.os.Bundle
-import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.widget.DefaultItemAnimator
 import android.support.v7.widget.LinearLayoutManager
+import android.util.Log
+import com.google.gson.Gson
+import com.google.gson.GsonBuilder
 import kotlinx.android.synthetic.main.activity_collection.*
 import net.treelzebub.umap.R
 import net.treelzebub.umap.activity.UmapActivity
 import net.treelzebub.umap.conduit.onSuccess
 import net.treelzebub.umap.data.Data
 import net.treelzebub.umap.ui.adapter.CollectionAdapter
+import net.treelzebub.umap.util.android.UmapVersions
 import net.treelzebub.umap.util.android.subscribeToBismarck
 
 /**
@@ -39,6 +42,9 @@ class CollectionActivity : UmapActivity() {
 
         subscribeToBismarck(Data.collection) {
             it?.releases?.let { adapter.releases = it }
+            if (UmapVersions.isDebug()) {
+                Log.d("Collection Contents", GsonBuilder().setPrettyPrinting().create().toJson(it))
+            }
         }
     }
 
