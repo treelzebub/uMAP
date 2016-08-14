@@ -2,10 +2,10 @@ package net.treelzebub.umap.net.api
 
 import android.util.Log
 import net.treelzebub.umap.R
-import net.treelzebub.umap.android.toast
 import net.treelzebub.umap.inject.ContextInjection
 import net.treelzebub.umap.net.response.ErrorResponse
 import net.treelzebub.umap.util.android.str
+import net.treelzebub.umap.util.android.toast
 import net.treelzebub.umap.util.kotlin.TAG
 import retrofit.ErrorHandler
 import retrofit.RetrofitError

@@ -17,11 +17,11 @@ import com.squareup.picasso.Picasso
 import net.treelzebub.umap.R
 import net.treelzebub.umap.activity.UmapActivity
 import net.treelzebub.umap.activity.collection.CollectionActivity
-import net.treelzebub.umap.android.subscribeToBismarck
 import net.treelzebub.umap.data.Data
 import net.treelzebub.umap.graphics.CircleTransform
 import net.treelzebub.umap.model.User
 import net.treelzebub.umap.util.android.PrefsUtils
+import net.treelzebub.umap.util.android.subscribeToBismarck
 
 /**
  * Created by Tre Murillo on 5/28/15

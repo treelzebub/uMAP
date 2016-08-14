@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/background"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/gif_image_view"
+        android:layout_width="@dimen/default_gif_width"
+        android:layout_height="@dimen/default_gif_height"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/default_gif_margin" />
+
+</FrameLayout>

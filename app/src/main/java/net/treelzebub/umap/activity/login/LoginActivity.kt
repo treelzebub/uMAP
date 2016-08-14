@@ -6,11 +6,11 @@ import android.webkit.WebViewClient
 import butterknife.bindView
 import net.treelzebub.umap.Constants
 import net.treelzebub.umap.R
-import net.treelzebub.umap.activity.dashboard.DashboardActivity
 import net.treelzebub.umap.activity.UmapActivity
-import net.treelzebub.umap.android.toast
+import net.treelzebub.umap.activity.dashboard.DashboardActivity
 import net.treelzebub.umap.conduit.onSuccess
 import net.treelzebub.umap.data.Data
+import net.treelzebub.umap.util.android.toast
 
 /**
  * Created by Tre Murillo on 5/28/15

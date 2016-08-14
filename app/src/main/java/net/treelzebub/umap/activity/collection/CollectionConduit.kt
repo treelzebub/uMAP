@@ -2,7 +2,6 @@ package net.treelzebub.umap.activity.collection
 
 import android.os.Bundle
 import com.levelmoney.conduit.Conduit
-import com.levelmoney.observefragment.ObserveSupportFragment
 import com.levelmoney.observefragment.activity.ObserveAppCompatActivity
 import net.treelzebub.umap.auth.user.Users
 import net.treelzebub.umap.model.CollectionReleases
@@ -15,7 +14,6 @@ import net.treelzebub.umap.net.response.Response
 class CollectionConduit : Conduit<CollectionConduit, Response<CollectionReleases>> {
 
     constructor(a: ObserveAppCompatActivity) : super(a)
-    constructor(f: ObserveSupportFragment) : super(f)
 
     override fun onLoad(args: Bundle?): Response<CollectionReleases>? {
         val username = Users.username ?: ""

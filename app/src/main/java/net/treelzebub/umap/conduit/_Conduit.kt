@@ -29,3 +29,7 @@ fun <C: IConduit<C, Response<D>>, D : Any> IConduit<C, Response<D>>.onFailure(fn
         }
     }
 }
+
+fun <C : IConduit<C, D>, D : Any> IConduit<C, D>.withSpinner(): C {
+    return listener(LoadingConduitListener(activity))
+}
