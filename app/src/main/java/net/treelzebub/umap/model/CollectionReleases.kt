@@ -7,5 +7,5 @@ import java.io.Serializable
  */
 data class CollectionReleases(
         val pagination: Pagination,
-        val releases: List<Release>
+        val releases: List<CollectionRelease>
 ) : Serializable

@@ -1,5 +1,6 @@
 package net.treelzebub.umap.model
 
+import com.google.gson.annotations.SerializedName
 import java.io.Serializable
 
 /**
@@ -9,7 +10,8 @@ data class BasicInformation(
         var id: Int,
         var title: String,
         var year: Int,
-        var resource_url: String,
+        @SerializedName("resource_url")
+        var resourceUrl: String,
         var thumb: String,
         var formats: List<Format>,
         var labels: List<Label>,

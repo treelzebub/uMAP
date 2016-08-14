@@ -44,11 +44,22 @@
             android:label="Home"
             android:theme="@style/AppTheme" />
 
-        <activity android:name=".activity.collection.CollectionActivity"
+        <activity
+            android:name=".activity.collection.CollectionActivity"
             android:label="Collection"
             android:theme="@style/AppTheme" />
 
-        <activity android:name=".activity.test.TestActivity"/>
+        <activity android:name=".activity.test.TestActivity" />
+
+        <activity
+            android:name=".activity.master_release.MasterReleaseActivity"
+            android:label=""
+            android:theme="@style/AppTheme" />
+
+        <activity
+            android:name=".activity.release.ReleaseActivity"
+            android:label=""
+            android:theme="@style/AppTheme" />
 
     </application>
 </manifest>

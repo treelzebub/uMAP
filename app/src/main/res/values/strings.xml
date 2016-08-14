@@ -15,7 +15,7 @@
     <string name="temp">temp</string>
     <string name="search">Search</string>
     <string name="marketplace">Marketplace</string>
-    <string name="search_hint">Search by Artist, Title, Label, Record Shop ...</string>
+    <string name="search_hint">Search by Artist, Title, Label, Record Shop …</string>
     <string name="not_logged_in_to_gemm">Not logged in to Gemm</string>
     <string name="not_logged_in_to_discogs">Not logged in to Discogs</string>
     <string name="logged_in_to_gemm">Logged in to Gemm</string>
@@ -33,6 +33,11 @@
     <string name="placeholder">placeholder</string>
     <string name="login_success">Login Successful!</string>
 
+    <string name="genre_x">Genre: %s</string>
+    <string name="style_x">Style: %s</string>
+
+    <!-- Accessibility -->
+    <string name="desc_album_cover">The album cover for the selected release.</string>
 
     <!-- Api Error Toasts -->
     <string name="error_network">Cannot access the internet. Check your network settings and try again.</string>

@@ -1,5 +1,6 @@
 package net.treelzebub.umap.model
 
+import com.google.gson.annotations.SerializedName
 import java.io.Serializable
 
 /**
@@ -9,5 +10,6 @@ data class CollectionFolder(
         val id: Int,
         val count: Int,
         val name: String,
-        val resource_url: String
+        @SerializedName("resource_url")
+        val resourceUrl: String
 ) : Serializable

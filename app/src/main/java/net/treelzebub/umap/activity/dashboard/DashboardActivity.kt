@@ -4,7 +4,6 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.support.v4.view.GravityCompat
-import android.support.v7.app.ActionBarDrawerToggle
 import android.view.Menu
 import android.view.MenuItem
 import kotlinx.android.synthetic.main.activity_dashboard.*
@@ -23,14 +22,11 @@ class DashboardActivity : UmapActivity() {
         }
     }
 
-    private val drawerToggle: ActionBarDrawerToggle
-            by lazy { ActionBarDrawerToggle(this, drawer_layout, toolbar, 0, 0) }
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dashboard)
         setupToolbar()
-        setupDrawer(drawerToggle)
+        setupDrawer()
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

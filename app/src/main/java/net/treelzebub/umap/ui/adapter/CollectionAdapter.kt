@@ -10,46 +10,47 @@ import android.widget.TextView
 import butterknife.bindView
 import com.squareup.picasso.Picasso
 import net.treelzebub.umap.R
-import net.treelzebub.umap.model.Release
+import net.treelzebub.umap.activity.master_release.MasterReleaseActivity
+import net.treelzebub.umap.activity.release.ReleaseActivity
+import net.treelzebub.umap.model.CollectionRelease
+import net.treelzebub.umap.util.android.drawable
 
 /**
  * Created by Tre Murillo on 6/7/15
  */
 class CollectionAdapter(val c: Context) : RecyclerView.Adapter<CollectionAdapter.ViewHolder>() {
 
-    // TODO "http://treelzebub.net/img/no-cover.png"
-    private val NO_COVER = "https://upload.wikimedia.org/wikipedia/commons/b/b9/No_Cover.jpg"
-
-    var releases: List<Release> = listOf()
+    var releases: List<CollectionRelease> = listOf()
         set(value) {
             field = value
             notifyDataSetChanged()
         }
 
     override fun onCreateViewHolder(parent: ViewGroup, i: Int): ViewHolder {
-        return ViewHolder(LayoutInflater.from(c).inflate(R.layout.collection_card, parent, false))
+        return ViewHolder(LayoutInflater.from(c).inflate(R.layout.card_release, parent, false))
     }
 
     override fun onBindViewHolder(holder: ViewHolder, i: Int) {
-        val info = releases[i].basic_information
-        var albumCoverUrl = info.thumb
-        if (albumCoverUrl.isNullOrEmpty()) {
-            albumCoverUrl = NO_COVER
-        }
+        val info = releases[i].info
         Picasso.with(c)
-                .load(albumCoverUrl)
-                .fit()
-                .centerCrop()
-                .into(holder.albumCover)
+               .load(info.thumb)
+               .fit()
+               .centerCrop()
+               .placeholder(R.drawable.icon.drawable())
+               .into(holder.albumCover)
         holder.artist.text = info.artists.first().name
         holder.title.text  = info.title
         holder.label.text  = info.labels.first().name
         holder.year.text   = "${info.year}"
+        holder.clicker.setOnClickListener {
+            c.startActivity(ReleaseActivity.get(c, info.id.toString()))
+        }
     }
 
     override fun getItemCount() = releases.size
 
     inner class ViewHolder(v: View) : RecyclerView.ViewHolder(v) {
+        val clicker: View          by bindView(R.id.clicker)
         val albumCover: ImageView  by bindView(R.id.cover)
         val artist: TextView       by bindView(R.id.artist)
         val title: TextView        by bindView(R.id.title)

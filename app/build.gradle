@@ -100,6 +100,7 @@ dependencies {
     compile 'com.squareup.picasso:picasso:2.5.2'
     compile 'uk.co.chrisjenx:calligraphy:2.1.0'
     compile 'pl.droidsonroids.gif:android-gif-drawable:1.1.17'
+    compile 'com.levelmoney:klarity:0.7'
 
     testCompile 'junit:junit:4.12'
 }

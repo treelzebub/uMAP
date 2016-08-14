@@ -28,6 +28,9 @@ interface DiscogsApi {
     fun getCollectionReleases(@Path("username") username: String,
                               @Path("folder_id") folder_id: String): CollectionReleases
 
+    @GET("/masters/{master_id}")
+    fun getMasterRelease(@Path("master_id") masterId: String): MasterRelease
+
     @GET("/releases/{release_id}")
-    fun getRelease(@Path("release_id") releaseId: String): Release
+fun getRelease(@Path("release_id") releaseId: String): Release
 }

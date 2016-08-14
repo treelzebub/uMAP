@@ -15,9 +15,10 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/sel_darken"
+        android:background="@drawable/sel_ripple"
+        android:id="@+id/clicker"
         android:clickable="true"
-        android:gravity="left"
+        android:gravity="start"
         android:orientation="horizontal">
 
         <ImageView

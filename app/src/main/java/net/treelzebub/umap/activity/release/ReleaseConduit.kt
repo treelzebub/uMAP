@@ -9,7 +9,6 @@ import net.treelzebub.umap.net.response.Response
 /**
  * Created by Tre Murillo on 6/18/16
  */
-
 class ReleaseConduit : Conduit<ReleaseConduit, Response<Release>> {
 
     constructor(a: ReleaseActivity) : super(a)
@@ -19,5 +18,9 @@ class ReleaseConduit : Conduit<ReleaseConduit, Response<Release>> {
         return Discogs.connect {
             getRelease(releaseId)
         }
+    }
+
+    fun load(id: String) {
+        load(Bundle().apply { putString("release_id", id) })
     }
 }
