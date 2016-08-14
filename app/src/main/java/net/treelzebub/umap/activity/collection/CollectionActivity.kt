@@ -21,9 +21,9 @@ class CollectionActivity : UmapActivity() {
     private val adapter = CollectionAdapter(this)
 
     private val collection = CollectionConduit(this)
-            .onSuccess {
-                Data.collection.insert(it)
-            }
+        .onSuccess {
+            Data.collection.insert(it)
+        }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

@@ -18,6 +18,6 @@ class UMapApplication : Application() {
                 .setFontAttrId(R.attr.fontPath)
                 .build())
 
-        UmapBismarcks.register()
+        UmapBismarcks.register(this)
     }
 }

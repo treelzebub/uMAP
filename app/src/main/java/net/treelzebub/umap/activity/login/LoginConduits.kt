@@ -57,7 +57,7 @@ class AccessTokenConduit : Conduit<AccessTokenConduit, Token?>, LoginInteractor 
         val verifierStr = data.getQueryParameter("oauth_verifier") ?: return null
         val verifier = Verifier(verifierStr)
         val accessToken = AuthService.instance.getAccessToken(TokenHolder.getRequestToken(), verifier)
-        TokenHolder.setToken(accessToken)
+        TokenHolder.accessToken = accessToken
         return accessToken
     }
 

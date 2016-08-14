@@ -12,11 +12,11 @@ import org.scribe.model.Token
 object TokenHolder {
 
     private var requestToken: Token? = null
-    private var accessToken: Token? = null
-
-    fun getToken(): Token? {
-        return accessToken
-    }
+    var accessToken: Token? = null
+        set(token) {
+            field = token ?: return
+            setTokenPrefs(token)
+        }
 
     fun setToken(token: Token) {
         accessToken = token
@@ -50,7 +50,7 @@ object TokenHolder {
         val token = prefs?.getString(c.getString(R.string.key_access_token), null)
         val secret = prefs?.getString(c.getString(R.string.key_access_token_secret), null)
         if (token != null && secret != null) {
-            TokenHolder.setToken(Token(token, secret))
+            TokenHolder.accessToken = Token(token, secret)
             return true
         } else {
             return false

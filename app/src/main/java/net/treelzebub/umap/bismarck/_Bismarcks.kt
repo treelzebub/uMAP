@@ -1,15 +1,12 @@
 package net.treelzebub.umap.bismarck
 
+import android.content.Context
 import android.util.Log
 import com.levelmoney.bismarck.Bismarck
 import com.levelmoney.bismarck.Bismarcks
 import com.levelmoney.bismarck.RateLimiter
-import com.levelmoney.bismarck.android.persisters.AndroidPersisters
-import com.levelmoney.bismarck.impl.BaseBismarck
 import com.levelmoney.bismarck.listen
 import com.levelmoney.bismarck.serializers.SerializableSerializer
-import net.treelzebub.umap.auth.user.Users
-import net.treelzebub.umap.inject.ContextInjection
 import net.treelzebub.umap.util.bus.BusProvider
 import rx.Observer
 import java.io.Serializable
@@ -20,13 +17,12 @@ import java.io.Serializable
 
 inline fun <reified D : Serializable> Bismarcks.discogs(key: String): DiscogsBismarck<D> = DiscogsBismarck(key)
 
-inline fun <reified D : Serializable> Bismarcks.api(key: String, rateLimiter: RateLimiter): BaseBismarck<D> {
-    val c = ContextInjection.c
-    return Bismarcks.discogs<D>(key)
-        .rateLimiter(rateLimiter)
-        .persister(AndroidPersisters.account(c, key, Users.accountType, SerializableSerializer<D>(), false))
-        .listen { Log.d("Bismarck", "Inserting: $key") }
-        .ottoSubscribe() as DiscogsBismarck<D>
+inline fun <reified D : Serializable> Bismarcks.api(c: Context, key: String, rateLimiter: RateLimiter = AlwaysRateLimiter()): DiscogsBismarck<D> {
+    return discogs<D>(key)
+                .rateLimiter(rateLimiter)
+                .persister(UmapFilePersister(c, key, SerializableSerializer<D>()))
+                .listen { Log.d("Bismarck", "Inserting: $key") }
+                .ottoSubscribe() as DiscogsBismarck<D>
 }
 
 fun <T : Any> Bismarck<T>.ottoSubscribe() = apply {
@@ -42,7 +38,6 @@ class OttoSubscribe<T>(val onError: (Throwable?) -> Unit) : Observer<T> {
     }
 
     override fun onError(e: Throwable?) {
-        // TODO crashlytics reporting
         onError.invoke(e)
     }
 

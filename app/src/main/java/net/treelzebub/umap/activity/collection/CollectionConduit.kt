@@ -18,7 +18,7 @@ class CollectionConduit : Conduit<CollectionConduit, Response<CollectionReleases
     override fun onLoad(args: Bundle?): Response<CollectionReleases>? {
         val username = Users.username ?: ""
         return Discogs.connect {
-            getCollectionReleases(username, "0")
+            getCollectionReleases(username, "0") // 0 is Discog's default user collection directory
         }
     }
 }
