@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/margin_normal">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/cover"
+            android:layout_width="@dimen/master_album_cover"
+            android:layout_height="@dimen/master_album_cover"
+            android:layout_marginBottom="@dimen/margin_normal"
+            android:layout_marginEnd="@dimen/margin_normal"
+            android:contentDescription="@string/desc_album_cover"
+            tools:src="@drawable/tools_cover" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/artist"
+                style="@style/Text.AlbumInfo.Bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="Boards of Canada" />
+
+            <TextView
+                android:id="@+id/title"
+                style="@style/Text.AlbumInfo.Bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="Music Has the Right to Children" />
+
+            <TextView
+                android:id="@+id/genre"
+                style="@style/Text.AlbumInfo.Detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="Genre: Electronic" />
+
+            <TextView
+                android:id="@+id/style"
+                style="@style/Text.AlbumInfo.Detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="IDM, Ambient" />
+
+            <TextView
+                android:id="@+id/year"
+                style="@style/Text.AlbumInfo.Detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="Year: 1998" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/tracklist"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+</LinearLayout>

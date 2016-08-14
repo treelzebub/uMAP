@@ -33,6 +33,8 @@
     <string name="placeholder">placeholder</string>
     <string name="login_success">Login Successful!</string>
 
+    <!-- Accessibility -->
+    <string name="desc_album_cover">The album cover for the selected release.</string>
 
     <!-- Api Error Toasts -->
     <string name="error_network">Cannot access the internet. Check your network settings and try again.</string>

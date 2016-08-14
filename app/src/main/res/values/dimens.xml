@@ -32,6 +32,8 @@
     <dimen name="status_bar_height">32dp</dimen>
     <dimen name="cardview_album_cover">64dp</dimen>
 
+    <dimen name="master_album_cover">128dp</dimen>
+
     <dimen name="default_gif_width">164dp</dimen>
     <dimen name="default_gif_height">164dp</dimen>
     <dimen name="default_gif_margin">12dp</dimen>
