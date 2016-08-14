@@ -9,6 +9,7 @@ import net.treelzebub.umap.R
 import net.treelzebub.umap.activity.dashboard.DashboardActivity
 import net.treelzebub.umap.activity.UmapActivity
 import net.treelzebub.umap.android.toast
+import net.treelzebub.umap.conduit.onSuccess
 import net.treelzebub.umap.data.Data
 
 /**
@@ -43,7 +44,7 @@ class LoginActivity : UmapActivity() {
         }
 
     private val identity = IdentityConduit(this)
-        .onComplete { identity ->
+        .onSuccess { identity ->
             if (identity == null) {
                 loadAuthUrl()
             } else {
@@ -52,7 +53,7 @@ class LoginActivity : UmapActivity() {
         }
 
     private val user = UserConduit(this)
-        .onComplete { user ->
+        .onSuccess { user ->
             if (user == null) {
                 loadAuthUrl()
             } else {
