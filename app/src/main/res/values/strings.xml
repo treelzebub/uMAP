@@ -45,4 +45,5 @@
     <string name="error_unknown">Uh oh…An unknown error occurred. We\'re sorry.</string>
     <string name="error_no_content">Discogs couldn\'t find the requested resource.</string>
     <string name="error_unauthorized">Uh oh! Looks like you need to login again.</string>
+    <string name="title_activity_template">TemplateActivity</string>
 </resources>

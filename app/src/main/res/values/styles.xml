@@ -4,12 +4,17 @@
         <item name="colorPrimary">@color/primary</item> 
         <item name="colorPrimaryDark">@color/primary_dark</item> 
         <item name="colorControlHighlight">@color/accent_translucent</item> 
-        <item name="android:colorControlHighlight" tools:targetApi="lollipop">@color/accent_translucent</item> 
+        <item name="android:colorControlHighlight" tools:targetApi="lollipop">
+            @color/accent_translucent</item> 
         <item name="colorAccent">@color/accent</item>
         <item name="selectableItemBackground">@drawable/sel_ripple</item>
         <item name="android:selectableItemBackground">@drawable/sel_ripple</item>
-        <item name="android:windowSharedElementEnterTransition" tools:targetApi="lollipop">@android:transition/move</item>
-        <item name="android:windowSharedElementExitTransition" tools:targetApi="lollipop">@android:transition/move</item>
+        <item name="android:windowSharedElementEnterTransition" tools:targetApi="lollipop">
+            @android:transition/move
+        </item>
+        <item name="android:windowSharedElementExitTransition" tools:targetApi="lollipop">
+            @android:transition/move
+        </item>
         <item name="android:windowSharedElementsUseOverlay" tools:targetApi="lollipop">false</item>
         <item name="android:windowTranslucentStatus" tools:targetApi="lollipop">true</item>
     </style>
@@ -35,8 +40,7 @@
         <item name="android:windowExitAnimation">@anim/default_dialog_out</item>
     </style>
 
-    <style name="LoadingGifDialog"
-        parent="@android:style/Theme.Holo.Light.Dialog">
+    <style name="LoadingGifDialog" parent="@android:style/Theme.Holo.Light.Dialog">
         <item name="android:windowFrame">@null</item>
         <item name="android:windowIsFloating">false</item>
         <item name="android:windowIsTranslucent">true</item>
@@ -46,5 +50,9 @@
         <item name="android:backgroundDimEnabled">true</item>
         <item name="android:backgroundDimAmount">0.6</item>
     </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
 </resources>

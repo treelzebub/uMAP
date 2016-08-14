@@ -6,11 +6,9 @@ import android.os.Bundle
 import android.support.v7.widget.Toolbar
 import android.view.MenuItem
 import net.treelzebub.umap.R
-import net.treelzebub.umap.activity.UmapActivity
 import net.treelzebub.umap.activity.base.BaseReleaseActivity
 import net.treelzebub.umap.activity.base.adapter.TracklistAdapter
 import net.treelzebub.umap.activity.base.mvp.ReleasePresenter
-import net.treelzebub.umap.activity.base.mvp.BaseReleaseView
 import net.treelzebub.umap.activity.base.mvp.ReleaseView
 import net.treelzebub.umap.activity.collection.CollectionActivity
 import net.treelzebub.umap.conduit.onSuccess
