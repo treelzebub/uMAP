@@ -1,8 +1,5 @@
 package net.treelzebub.umap.activity.login
 
-import net.treelzebub.umap.activity.login.LoginInteractor
-import net.treelzebub.umap.activity.login.RequestTokenInteractor
-
 /**
  * Created by Tre Murillo on 8/6/16.
  */

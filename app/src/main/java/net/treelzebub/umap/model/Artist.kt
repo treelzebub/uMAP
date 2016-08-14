@@ -1,4 +1,4 @@
-package net.treelzebub.umap.api.model
+package net.treelzebub.umap.model
 
 import java.io.Serializable
 

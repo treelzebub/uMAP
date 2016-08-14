@@ -4,21 +4,21 @@ import android.os.Bundle
 import com.levelmoney.conduit.Conduit
 import com.levelmoney.observefragment.ObserveSupportFragment
 import com.levelmoney.observefragment.activity.ObserveAppCompatActivity
-import net.treelzebub.umap.api.Discogs
-import net.treelzebub.umap.api.model.CollectionReleases
 import net.treelzebub.umap.auth.user.Users
+import net.treelzebub.umap.model.CollectionReleases
+import net.treelzebub.umap.net.api.Discogs
+import net.treelzebub.umap.net.response.Response
 
 /**
- * Created by treelzeub on 8/7/16.
- * Copyright(c) 2016 Level, Inc.
+ * Created by treelzeub on 8/7/16
  */
-class CollectionConduit : Conduit<CollectionConduit, CollectionReleases?> {
+class CollectionConduit : Conduit<CollectionConduit, Response<CollectionReleases>> {
 
     constructor(a: ObserveAppCompatActivity) : super(a)
     constructor(f: ObserveSupportFragment) : super(f)
 
-    override fun onLoad(args: Bundle?): CollectionReleases? {
-        val username = Users.username ?: return null
+    override fun onLoad(args: Bundle?): Response<CollectionReleases>? {
+        val username = Users.username ?: ""
         return Discogs.connect {
             getCollectionReleases(username, "0")
         }

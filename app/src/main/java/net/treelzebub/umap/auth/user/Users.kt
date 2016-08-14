@@ -1,9 +1,9 @@
 package net.treelzebub.umap.auth.user
 
 import net.treelzebub.umap.R
-import net.treelzebub.umap.api.model.User
 import net.treelzebub.umap.data.Data
 import net.treelzebub.umap.inject.ContextInjection
+import net.treelzebub.umap.model.User
 
 /**
  * Created by Tre Murillo on 8/6/16.

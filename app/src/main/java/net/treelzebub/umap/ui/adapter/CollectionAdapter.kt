@@ -10,7 +10,7 @@ import android.widget.TextView
 import butterknife.bindView
 import com.squareup.picasso.Picasso
 import net.treelzebub.umap.R
-import net.treelzebub.umap.api.model.Release
+import net.treelzebub.umap.model.Release
 
 /**
  * Created by Tre Murillo on 6/7/15

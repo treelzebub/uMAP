@@ -7,11 +7,12 @@ import butterknife.bindView
 import net.treelzebub.umap.R
 import net.treelzebub.umap.activity.UmapActivity
 import net.treelzebub.umap.android.subscribeToBismarck
+import net.treelzebub.umap.conduit.onSuccess
 import net.treelzebub.umap.data.Data
 import net.treelzebub.umap.ui.adapter.CollectionAdapter
 
 /**
- * Created by Tre Murillo on 8/7/16.
+ * Created by Tre Murillo on 8/7/16
  */
 class CollectionActivity : UmapActivity() {
 
@@ -20,7 +21,7 @@ class CollectionActivity : UmapActivity() {
     private val adapter = CollectionAdapter(this)
 
     private val collection = CollectionConduit(this)
-            .onComplete {
+            .onSuccess {
                 Data.collection.insert(it)
             }
 
@@ -35,7 +36,7 @@ class CollectionActivity : UmapActivity() {
         }
 
         subscribeToBismarck(Data.collection) {
-            adapter.releases = it?.releases ?: return@subscribeToBismarck
+            it?.releases?.let { adapter.releases = it }
         }
     }
 

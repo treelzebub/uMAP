@@ -42,4 +42,8 @@ open class UmapActivity : ObserveAppCompatActivity() {
                 }
         subscription.add(sub)
     }
+
+    fun checkRelogin() {
+        //TODO
+    }
 }

@@ -1,6 +1,6 @@
 package net.treelzebub.umap.inject
 
-import net.treelzebub.umap.api.DiscogsApi
+import net.treelzebub.umap.net.api.DiscogsApi
 
 /**
  * Created by Tre Murillo on 8/6/16.
