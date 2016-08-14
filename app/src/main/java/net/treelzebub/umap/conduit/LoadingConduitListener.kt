@@ -10,7 +10,7 @@ import net.treelzebub.umap.ui.loadinggiffragment.gif.LoadingGifFragment
 
 
 /**
- * Created by Tre Murillo on 8/7/16.
+ * Created by Tre Murillo on 8/7/16
  */
 class LoadingConduitListener<D> : DialogListener<D, LoadingGifFragment> {
 
@@ -20,9 +20,8 @@ class LoadingConduitListener<D> : DialogListener<D, LoadingGifFragment> {
     override fun onDialogFragmentCreated(dialogFragment: DialogFragment?) {
         val c = conduit.getActivity()
         if (dialogFragment is LoadingGifFragment) {
+            dialogFragment.retainInstance = true
             dialogFragment.setBackgroundColor(ContextCompat.getColor(c, R.color.accent_translucent))
         }
-
-
     }
 }

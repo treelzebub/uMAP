@@ -6,8 +6,8 @@ import net.treelzebub.umap.util.kotlin.TAG
 import java.io.Serializable
 
 /**
- * Created by Tre Murillo on 8/6/16.
- */
+* Created by Tre Murillo on 8/6/16
+*/
 class DiscogsBismarck<D : Serializable>(val name: String? = null) : BaseBismarck<D>() {
 
     override fun peek(): D? {

@@ -54,7 +54,8 @@ class AccessTokenConduit : Conduit<AccessTokenConduit, Token?>, LoginInteractor 
     override fun onLoad(args: Bundle?): Token? {
         val url = args?.getString("url") ?: return null
         val data = Uri.parse(url)
-        val verifier = Verifier(data.getQueryParameter("oauth_verifier"))
+        val verifierStr = data.getQueryParameter("oauth_verifier") ?: return null
+        val verifier = Verifier(verifierStr)
         val accessToken = AuthService.instance.getAccessToken(TokenHolder.getRequestToken(), verifier)
         TokenHolder.setToken(accessToken)
         return accessToken

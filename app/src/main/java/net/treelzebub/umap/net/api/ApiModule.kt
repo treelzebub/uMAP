@@ -27,6 +27,7 @@ class ApiModule {
         consumer.setTokenWithSecret(token.token, token.secret)
         val signingClient = SigningOkClient(consumer)
         val restAdapter = RestAdapter.Builder()
+                .setLogLevel(RestAdapter.LogLevel.FULL)
                 .setEndpoint(Constants.DISCOGS_BASE_URL)
                 .setErrorHandler(DiscogsErrorHandler())
                 .setClient(OkClient(signingClient))

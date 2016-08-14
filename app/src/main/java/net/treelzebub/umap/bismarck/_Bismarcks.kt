@@ -15,7 +15,7 @@ import rx.Observer
 import java.io.Serializable
 
 /**
- * Created by Tre Murillo on 8/6/16.
+ * Created by Tre Murillo on 8/6/16
  */
 
 inline fun <reified D : Serializable> Bismarcks.discogs(key: String): DiscogsBismarck<D> = DiscogsBismarck(key)

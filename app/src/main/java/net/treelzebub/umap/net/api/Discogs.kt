@@ -18,7 +18,7 @@ object Discogs {
         return object : Response<D> {
             override val data: D? = response
             override val exception: Exception? = null
-            override val success: Boolean = data == null
+            override val success: Boolean = data != null
         }
     }
 }

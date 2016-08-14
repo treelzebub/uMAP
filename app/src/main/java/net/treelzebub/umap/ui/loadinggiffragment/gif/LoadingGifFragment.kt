@@ -12,7 +12,7 @@ import net.treelzebub.umap.ui.loadinggiffragment.blur.BlurDialogFragment
 import pl.droidsonroids.gif.GifImageView
 
 /**
- * Created by Tre Murillo on 8/7/16.
+ * Created by Tre Murillo on 8/7/16
  */
 open class LoadingGifFragment : BlurDialogFragment() {
 
