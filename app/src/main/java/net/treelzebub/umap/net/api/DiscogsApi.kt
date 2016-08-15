@@ -32,5 +32,8 @@ interface DiscogsApi {
     fun getMasterRelease(@Path("master_id") masterId: String): MasterRelease
 
     @GET("/releases/{release_id}")
-fun getRelease(@Path("release_id") releaseId: String): Release
+    fun getRelease(@Path("release_id") releaseId: String): Release
+
+    @GET("/marketplace/listings/{listing_id}")
+    fun getListing(@Path("listing_id") listingId: String): Listing
 }

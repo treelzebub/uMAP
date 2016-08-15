@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.support.v7.widget.DefaultItemAnimator
 import android.support.v7.widget.LinearLayoutManager
 import android.util.Log
-import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import kotlinx.android.synthetic.main.activity_collection.*
 import net.treelzebub.umap.R
@@ -50,6 +49,6 @@ class CollectionActivity : UmapActivity() {
 
     override fun onPostCreate(savedInstanceState: Bundle?) {
         super.onPostCreate(savedInstanceState)
-        collection.load(null)
+        collection.load()
     }
 }

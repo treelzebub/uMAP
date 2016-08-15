@@ -1,14 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:background="@color/accent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/listing_id"
+        android:layout_width="192dp"
+        android:inputType="number"
+        android:background="@color/bg"
+        android:gravity="center"
+        android:layout_height="wrap_content" />
 
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="Loader" />
+        android:text="Grab Listing" />
 
-</FrameLayout>
+    <Space
+        android:layout_width="1px"
+        android:layout_height="72dp" />
+
+    <EditText
+        android:id="@+id/master_id"
+        android:layout_width="192dp"
+        android:inputType="number"
+        android:background="@color/bg"
+        android:gravity="center"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Grab Master Release" />
+</LinearLayout>

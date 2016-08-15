@@ -28,7 +28,7 @@ class Release(
         val formatQuantity: String,
         val formats: List<Format>,
         override val genres: List<String>,
-        val identifiers: List<Any>, // Pair: type, value
+        val identifiers: List<Any>, // Pair: type, value. Unpredictable but usually Strings
         override val images: List<Image>,
         val lavels: List<Label>,
         @SerializedName("lowest_price")

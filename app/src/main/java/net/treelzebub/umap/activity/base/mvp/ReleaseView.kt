@@ -33,7 +33,7 @@ class ReleaseView(val a: BaseReleaseActivity) : BaseReleaseView {
                    .load(url)
                    .fit()
                    .centerCrop()
-                   .placeholder(R.drawable.loading_spinner)
+                   .placeholder(R.drawable.icon)
                    .into(coverIV)
         }
 }

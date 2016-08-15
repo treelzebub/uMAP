@@ -5,6 +5,7 @@ import android.os.Bundle
 import net.treelzebub.umap.activity.collection.CollectionActivity
 import net.treelzebub.umap.activity.dashboard.DashboardActivity
 import net.treelzebub.umap.activity.login.LoginActivity
+import net.treelzebub.umap.activity.test.TestLoaderActivity
 import net.treelzebub.umap.auth.AuthState
 
 /**
@@ -16,7 +17,7 @@ class MainActivity : UmapActivity() {
         super.onCreate(savedInstanceState)
 
         if (AuthState.isLoggedIn()) {
-            startActivity(Intent(this, CollectionActivity::class.java))
+            startActivity(Intent(this, TestLoaderActivity::class.java))
         } else {
             startActivity(Intent(this, LoginActivity::class.java))
         }

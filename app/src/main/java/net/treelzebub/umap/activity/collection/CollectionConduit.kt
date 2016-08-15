@@ -21,4 +21,6 @@ class CollectionConduit : Conduit<CollectionConduit, Response<CollectionReleases
             getCollectionReleases(username, "0") // 0 is the "All" folder
         }
     }
+
+    fun load() { load(null) }
 }

@@ -38,6 +38,7 @@
 
     <!-- Accessibility -->
     <string name="desc_album_cover">The album cover for the selected release.</string>
+    <string name="desc_caret">A caret pointing downward, indicating that this item can be expanded to display more information.</string>
 
     <!-- Api Error Toasts -->
     <string name="error_network">No network access.</string>

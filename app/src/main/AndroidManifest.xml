@@ -45,7 +45,7 @@
             android:name=".activity.collection.CollectionActivity"
             android:label="Collection"
             android:theme="@style/AppTheme" />
-        <activity android:name=".activity.test.TestActivity" />
+        <activity android:name=".activity.test.TestLoaderActivity" />
         <activity
             android:name=".activity.master_release.MasterReleaseActivity"
             android:label=""

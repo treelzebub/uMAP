@@ -18,7 +18,7 @@ class DiscogsErrorHandler : ErrorHandler {
         if (cause == null || cause.response == null) {
             errorDescription = R.string.error_network.str()
         } else if (cause.kind == RetrofitError.Kind.NETWORK) {
-            errorDescription = R.string.error_response.str(""+cause.response.status)
+            errorDescription = R.string.error_response.str(""+cause.response?.status)
         } else if (cause.kind == RetrofitError.Kind.CONVERSION) {
             errorDescription = R.string.error_conversion.str()
         } else if (cause.response.status < 204) {
@@ -29,7 +29,7 @@ class DiscogsErrorHandler : ErrorHandler {
                 errorDescription = errorResponse.error?.data?.message ?: R.string.error_response.str()
             } catch (e: Exception) {
                 Log.e(TAG, e.message)
-                errorDescription = R.string.error_response.str()
+                errorDescription = R.string.error_response.str("Unknown")
             }
         }
         return Exception(errorDescription)
