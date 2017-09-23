@@ -15,7 +15,7 @@ import com.squareup.picasso.Picasso
 import net.treelzebub.umap.R
 import net.treelzebub.umap.activity.collection.CollectionActivity
 import net.treelzebub.umap.data.Data
-import net.treelzebub.umap.graphics.CircleTransform
+import net.treelzebub.umap.ui.CircleTransform
 import net.treelzebub.umap.model.User
 import net.treelzebub.umap.util.android.subscribeToBismarck
 import net.treelzebub.umap.util.bus.BusProvider

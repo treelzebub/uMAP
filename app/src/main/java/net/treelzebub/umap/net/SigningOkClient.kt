@@ -7,9 +7,8 @@ import se.akerfeldt.okhttp.signpost.SigningInterceptor
 /**
  * Created by Tre Murillo on 10/11/15
  */
-class SigningOkClient : OkHttpClient {
-
-    constructor(consumer: OkHttpOAuthConsumer) {
+class SigningOkClient(consumer: OkHttpOAuthConsumer) : OkHttpClient() {
+    init {
         interceptors().add(SigningInterceptor(consumer))
     }
 }
