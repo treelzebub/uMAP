@@ -1,17 +1,22 @@
 package net.treelzebub.umap.auth.user
 
-import net.treelzebub.umap.data.Data
+import android.content.Context
 import net.treelzebub.umap.model.User
+import org.jetbrains.anko.toast
 
 /**
  * Created by Tre Murillo on 8/6/16
  */
 object Users {
 
-    val user: User?       get() = Data.user.peek()
-    val username: String? get() = user?.username
+    private var user: User? = null
+
+    fun set(context: Context, user: User) {
+        this.user = user
+        context.toast("User Set...TODO -- persist to disk")
+    }
 
     fun hasUser() = user != null
 }
 
-class NoUserException(msg: String? = null) : RuntimeException(msg ?: "User Not Found.")
+class NoUserException(msg: String = "User Not Found.") : RuntimeException(msg)

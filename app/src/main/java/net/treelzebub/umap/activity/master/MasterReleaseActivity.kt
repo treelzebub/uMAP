@@ -1,4 +1,4 @@
-package net.treelzebub.umap.activity.master_release
+package net.treelzebub.umap.activity.master
 
 import android.content.Context
 import android.content.Intent
@@ -6,11 +6,8 @@ import android.os.Bundle
 import net.treelzebub.umap.R
 import net.treelzebub.umap.activity.base.BaseReleaseActivity
 import net.treelzebub.umap.activity.base.adapter.TracklistAdapter
-import net.treelzebub.umap.activity.base.mvp.ReleaseView
 import net.treelzebub.umap.activity.base.mvp.ReleasePresenter
-import net.treelzebub.umap.conduit.onSuccess
-import net.treelzebub.umap.conduit.withSpinner
-import net.treelzebub.umap.data.Data
+import net.treelzebub.umap.activity.base.mvp.ReleaseView
 import net.treelzebub.umap.util.android.withIntent
 
 /**
@@ -29,11 +26,11 @@ class MasterReleaseActivity : BaseReleaseActivity() {
     private val presenter by lazy { ReleasePresenter(ReleaseView(this)) }
     override val adapter  = TracklistAdapter()
 
-    private val conduit = MasterReleaseConduit(this)
-        .withSpinner()
-        .onSuccess {
-            presenter.set(it!!)
-        }
+//    private val conduit = MasterReleaseConduit(this)
+//        .withSpinner()
+//        .onSuccess {
+//            presenter.set(it!!)
+//        }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,7 +40,7 @@ class MasterReleaseActivity : BaseReleaseActivity() {
 
     override fun onPostCreate(savedInstanceState: Bundle?) {
         super.onPostCreate(savedInstanceState)
-        val lastMaster = Data.lastMaster.peek()?.id.toString()
-        conduit.load(masterId ?: lastMaster)
+//        val lastMaster = Data.lastMaster.peek()?.id.toString()
+//        conduit.load(masterId ?: lastMaster)
     }
 }

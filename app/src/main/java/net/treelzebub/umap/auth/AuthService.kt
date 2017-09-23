@@ -1,7 +1,7 @@
 package net.treelzebub.umap.auth
 
-import net.treelzebub.umap.Constants
 import net.treelzebub.umap.R
+import net.treelzebub.umap.net.api.Discogs
 import net.treelzebub.umap.util.android.str
 import org.scribe.builder.ServiceBuilder
 import org.scribe.builder.api.DefaultApi10a
@@ -20,7 +20,7 @@ object AuthService {
             instance = ServiceBuilder()
                             .apiKey(R.string.discogs_consumer_key.str())
                             .apiSecret(R.string.discogs_consumer_secret.str())
-                            .callback(Constants.CALLBACK_URL)
+                            .callback(Discogs.CALLBACK_URL)
                             .provider(DiscogsOauth::class.java)
                             .build()
         }
@@ -28,11 +28,8 @@ object AuthService {
     }
 
     class DiscogsOauth : DefaultApi10a() {
-
-        override fun getRequestTokenEndpoint() = Constants.DISCOGS_REQUEST_TOKEN_URL
-
-        override fun getAccessTokenEndpoint() = Constants.DISCOGS_ACCESS_TOKEN_URL
-
-        override fun getAuthorizationUrl(requestToken: Token) = Constants.DISCOGS_AUTHORIZATION_URL
+        override fun getRequestTokenEndpoint() = Discogs.DISCOGS_REQUEST_TOKEN_URL
+        override fun getAccessTokenEndpoint() = Discogs.DISCOGS_ACCESS_TOKEN_URL
+        override fun getAuthorizationUrl(requestToken: Token) = Discogs.DISCOGS_AUTHORIZATION_URL
     }
 }

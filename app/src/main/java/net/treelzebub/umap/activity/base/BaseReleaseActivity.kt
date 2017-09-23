@@ -18,10 +18,6 @@ abstract class BaseReleaseActivity : UmapActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-    }
-
-    override fun onPostCreate(savedInstanceState: Bundle?) {
-        super.onPostCreate(savedInstanceState)
         find<RecyclerView>(R.id.recycler).let {
             it.layoutManager = LinearLayoutManager(this)
             it.itemAnimator  = DefaultItemAnimator()
