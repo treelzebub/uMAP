@@ -7,6 +7,7 @@ import android.os.Build
  */
 object AndroidVersions {
 
-    fun isAtLeastL() = Build.VERSION.SDK_INT >= 21
-    fun isAtLeastM() = Build.VERSION.SDK_INT >= 23
+    fun isAtLeastL() = Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP
+    fun isAtLeastM() = Build.VERSION.SDK_INT >= Build.VERSION_CODES.M
+    fun isAtLeastN() = Build.VERSION.SDK_INT >= Build.VERSION_CODES.N
 }
