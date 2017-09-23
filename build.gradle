@@ -37,13 +37,13 @@ allprojects {
 }
 
 // Create externals for API keys, set from local props
-File props = file('./local.properties')
-if (props.exists()) {
-    Properties p = new Properties()
-    p.load(new FileInputStream(props))
-    p.each { name, value ->
-        ext[name] = value
-    }
-} else {
-    throw new IllegalStateException("Set up local.properties with api keys")
+def loadApiKeys() {
+    Properties properties = new Properties()
+    properties.load(project.rootProject.file('local.properties').newDataInputStream())
+    ext.discogsKey    = properties.getProperty('discogsKey')
+    ext.discogsSecret = properties.getProperty('discogsSecret')
+    properties.clear()
+    println "DISCOGS DISCOGS"+discogsKey
 }
+
+loadApiKeys()

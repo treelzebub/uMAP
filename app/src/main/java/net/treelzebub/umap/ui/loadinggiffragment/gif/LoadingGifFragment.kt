@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.support.annotation.ColorInt
 import android.support.v4.content.ContextCompat
 import android.view.Gravity
+import android.view.View
 import net.treelzebub.umap.R
 import net.treelzebub.umap.ui.loadinggiffragment.blur.BlurDialogFragment
 import pl.droidsonroids.gif.GifImageView
@@ -38,10 +39,10 @@ open class LoadingGifFragment : BlurDialogFragment() {
                 it.setCanceledOnTouchOutside(false)
                 it.window.setGravity(Gravity.CENTER)
             }
-            gifImageView = _dialog!!.findViewById(R.id.gif_image_view) as GifImageView
+            gifImageView = _dialog!!.findViewById<GifImageView>(R.id.gif_image_view)
             gradient.cornerRadius = this.cornerRadius
             gradient.setColor(bgColor)
-            _dialog?.findViewById(R.id.background)?.background = gradient
+            _dialog?.findViewById<View>(R.id.background)?.background = gradient
             gifImageView.setImageResource(getDrawableResId())
             gradient.setColor(ContextCompat.getColor(context, R.color.loading_bg))
         }

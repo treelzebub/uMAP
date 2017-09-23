@@ -7,10 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import butterknife.bindView
+import kotterknife.bindView
 import com.squareup.picasso.Picasso
 import net.treelzebub.umap.R
-import net.treelzebub.umap.activity.master_release.MasterReleaseActivity
 import net.treelzebub.umap.activity.release.ReleaseActivity
 import net.treelzebub.umap.model.CollectionRelease
 import net.treelzebub.umap.util.android.drawable

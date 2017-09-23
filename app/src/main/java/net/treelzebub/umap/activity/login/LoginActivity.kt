@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import android.webkit.WebView
 import android.webkit.WebViewClient
-import butterknife.bindView
+import kotterknife.bindView
 import net.treelzebub.umap.Constants
 import net.treelzebub.umap.R
 import net.treelzebub.umap.activity.UmapActivity

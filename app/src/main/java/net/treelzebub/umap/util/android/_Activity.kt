@@ -21,7 +21,7 @@ inline fun <reified R : Any> UmapActivity.subscribeToBismarck(b: Bismarck<R>, no
 }
 
 @Suppress("UNCHECKED_CAST")
-fun <T : View> Activity.findById(id: Int): T = findViewById(id) as T
+fun <T : View> Activity.findById(id: Int): T = findViewById<T>(id)
 
 inline fun Activity.onClick(@IdRes id: Int, crossinline fn: (View) -> Unit) {
     findById<View>(id).setOnClickListener {

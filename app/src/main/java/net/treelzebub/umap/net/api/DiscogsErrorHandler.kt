@@ -14,22 +14,21 @@ import retrofit.RetrofitError
 class DiscogsErrorHandler : ErrorHandler {
 
     override fun handleError(cause: RetrofitError?): Throwable {
-        val errorDescription: String
-        if (cause == null || cause.response == null) {
-            errorDescription = R.string.error_network.str()
+        val errorDescription = if (cause == null || cause.response == null) {
+            R.string.error_network.str()
         } else if (cause.kind == RetrofitError.Kind.NETWORK) {
-            errorDescription = R.string.error_response.str(""+cause.response.status)
+            R.string.error_response.str(""+cause.response.status)
         } else if (cause.kind == RetrofitError.Kind.CONVERSION) {
-            errorDescription = R.string.error_conversion.str()
+            R.string.error_conversion.str()
         } else if (cause.response.status < 204) {
-            errorDescription = handleStatus(cause.response.status)
+            handleStatus(cause.response.status)
         } else {
             try {
                 val errorResponse = cause.getBodyAs(ErrorResponse::class.java) as ErrorResponse
-                errorDescription = errorResponse.error?.data?.message ?: R.string.error_response.str()
+                errorResponse.error?.data?.message ?: R.string.error_response.str()
             } catch (e: Exception) {
                 Log.e(TAG, e.message)
-                errorDescription = R.string.error_response.str()
+                R.string.error_response.str()
             }
         }
         return Exception(errorDescription)
