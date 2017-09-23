@@ -1,4 +1,4 @@
-package net.treelzebub.umap.util.kotlin
+package net.treelzebub.umap.util
 
 /**
  * Created by Tre Murillo on 6/18/16

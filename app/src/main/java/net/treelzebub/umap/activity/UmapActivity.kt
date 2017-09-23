@@ -2,7 +2,6 @@ package net.treelzebub.umap.activity
 
 import android.content.Context
 import android.content.Intent
-import android.os.Bundle
 import android.support.design.widget.NavigationView
 import android.support.v4.widget.DrawerLayout
 import android.support.v7.app.ActionBarDrawerToggle
@@ -12,20 +11,17 @@ import android.widget.ImageView
 import android.widget.TextView
 import com.levelmoney.observefragment.activity.ObserveAppCompatActivity
 import com.squareup.picasso.Picasso
+import io.reactivex.Observable
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.disposables.CompositeDisposable
+import io.reactivex.schedulers.Schedulers
 import net.treelzebub.umap.R
 import net.treelzebub.umap.activity.collection.CollectionActivity
-import net.treelzebub.umap.data.Data
-import net.treelzebub.umap.graphics.CircleTransform
 import net.treelzebub.umap.model.User
-import net.treelzebub.umap.util.android.subscribeToBismarck
-import net.treelzebub.umap.util.bus.BusProvider
-import net.treelzebub.umap.util.kotlin.TAG
+import net.treelzebub.umap.ui.CircleTransform
+import net.treelzebub.umap.util.TAG
 import org.jetbrains.anko.find
 import org.jetbrains.anko.findOptional
-import rx.Observable
-import rx.android.schedulers.AndroidSchedulers
-import rx.schedulers.Schedulers
-import rx.subscriptions.CompositeSubscription
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper
 
 /**
@@ -33,30 +29,24 @@ import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper
  */
 open class UmapActivity : ObserveAppCompatActivity() {
 
-    private val subscription = CompositeSubscription()
+    private var subscription = CompositeDisposable()
 
-    var drawerToggle: ActionBarDrawerToggle? = null
+    protected var drawerToggle: ActionBarDrawerToggle? = null
 
     override fun attachBaseContext(newBase: Context) {
         super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase))
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        BusProvider.instance.register(this)
-
-        subscribeToBismarck(Data.user) {
-            setUser(it)
-        }
-    }
-
     override fun onResume() {
         super.onResume()
-        setUser(Data.user.peek())
+        if (subscription.isDisposed) {
+            subscription = CompositeDisposable()
+        }
+//        setUser(Data.user.peek())
     }
 
     override fun onDestroy() {
-        BusProvider.instance.unregister(this)
+        subscription.dispose()
         super.onDestroy()
     }
 
@@ -110,6 +100,6 @@ open class UmapActivity : ObserveAppCompatActivity() {
     }
 
     fun checkRelogin() {
-        //TODO
+        // TODO
     }
 }

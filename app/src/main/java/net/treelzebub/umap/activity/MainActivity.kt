@@ -3,7 +3,6 @@ package net.treelzebub.umap.activity
 import android.content.Intent
 import android.os.Bundle
 import net.treelzebub.umap.activity.collection.CollectionActivity
-import net.treelzebub.umap.activity.dashboard.DashboardActivity
 import net.treelzebub.umap.activity.login.LoginActivity
 import net.treelzebub.umap.auth.AuthState
 
