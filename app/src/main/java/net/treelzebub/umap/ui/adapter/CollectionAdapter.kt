@@ -1,23 +1,23 @@
 package net.treelzebub.umap.ui.adapter
 
 import android.content.Context
+import android.support.v4.content.ContextCompat
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import kotterknife.bindView
 import com.squareup.picasso.Picasso
+import kotterknife.bindView
 import net.treelzebub.umap.R
 import net.treelzebub.umap.activity.release.ReleaseActivity
 import net.treelzebub.umap.model.CollectionRelease
-import net.treelzebub.umap.util.android.drawable
 
 /**
  * Created by Tre Murillo on 6/7/15
  */
-class CollectionAdapter(val c: Context) : RecyclerView.Adapter<CollectionAdapter.ViewHolder>() {
+class CollectionAdapter(private val c: Context) : RecyclerView.Adapter<CollectionAdapter.ViewHolder>() {
 
     var releases: List<CollectionRelease> = listOf()
         set(value) {
@@ -35,7 +35,7 @@ class CollectionAdapter(val c: Context) : RecyclerView.Adapter<CollectionAdapter
                .load(info.thumb)
                .fit()
                .centerCrop()
-               .placeholder(R.drawable.icon.drawable())
+               .placeholder(ContextCompat.getDrawable(c, R.drawable.icon))
                .into(holder.albumCover)
         holder.artist.text = info.artists.first().name
         holder.title.text  = info.title
@@ -48,7 +48,7 @@ class CollectionAdapter(val c: Context) : RecyclerView.Adapter<CollectionAdapter
 
     override fun getItemCount() = releases.size
 
-    inner class ViewHolder(v: View) : RecyclerView.ViewHolder(v) {
+    class ViewHolder(v: View) : RecyclerView.ViewHolder(v) {
         val clicker: View          by bindView(R.id.clicker)
         val albumCover: ImageView  by bindView(R.id.cover)
         val artist: TextView       by bindView(R.id.artist)

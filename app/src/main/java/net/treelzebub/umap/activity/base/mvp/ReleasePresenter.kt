@@ -1,8 +1,6 @@
 package net.treelzebub.umap.activity.base.mvp
 
-import net.treelzebub.umap.R
 import net.treelzebub.umap.model.*
-import net.treelzebub.umap.util.android.str
 
 /**
  * Created by Tre Murillo on 8/14/16
@@ -15,8 +13,8 @@ open class ReleasePresenter(val view: BaseReleaseView)  {
                 cover     = it.images.cover()
                 artist    = it.artists.main()
                 title     = it.title
-                genre     = R.string.genre_x.str(it.genres.firstOrNull() ?: "")
-                style     = R.string.style_x.str(it.styles.firstOrNull() ?: "")
+//                genre     = R.string.genre_x.str(it.genres.firstOrNull() ?: "")
+//                style     = R.string.style_x.str(it.styles.firstOrNull() ?: "")
                 year      = "" + it.year
                 tracklist = it.tracklist
             }

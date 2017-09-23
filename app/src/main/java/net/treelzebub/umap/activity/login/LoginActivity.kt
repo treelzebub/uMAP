@@ -6,13 +6,14 @@ import android.webkit.WebView
 import android.webkit.WebViewClient
 import kotlinx.android.synthetic.main.activity_login.*
 import net.treelzebub.umap.R
+import net.treelzebub.umap.activity.MainActivity
 import net.treelzebub.umap.activity.UmapActivity
-import net.treelzebub.umap.activity.dashboard.DashboardActivity
-import net.treelzebub.umap.auth.user.Users
+import net.treelzebub.umap.auth.Users
 import net.treelzebub.umap.net.api.Discogs
-import net.treelzebub.umap.net.api.login.Login
+import net.treelzebub.umap.net.login.Login
 import net.treelzebub.umap.util.rx.umap
 import org.jetbrains.anko.doAsync
+import org.jetbrains.anko.startActivity
 import org.jetbrains.anko.uiThread
 
 /**
@@ -53,7 +54,7 @@ class LoginActivity : UmapActivity() {
         doAsync {
             login.complete(url).subscribe {
                 Discogs.api.getUser(it.username).umap().subscribe {
-                    Users.set(this@LoginActivity, it)
+                    Users.setUser(this@LoginActivity, it)
                     next()
                 }
             }
@@ -61,7 +62,7 @@ class LoginActivity : UmapActivity() {
     }
 
     private fun next() {
-        startActivity(DashboardActivity.getIntent(this))
+        startActivity<MainActivity>()
         finish()
     }
 

@@ -1,7 +1,5 @@
 package net.treelzebub.umap.activity.dashboard
 
-import android.content.Context
-import android.content.Intent
 import android.os.Bundle
 import android.support.v4.view.GravityCompat
 import android.view.Menu
@@ -16,17 +14,9 @@ import net.treelzebub.umap.util.android.PrefsUtils
  */
 class DashboardActivity : UmapActivity() {
 
-    companion object {
-        fun getIntent(c: Context): Intent {
-            return Intent(c, DashboardActivity::class.java)
-        }
-    }
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dashboard)
-        setupToolbar()
-        setupDrawer()
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
