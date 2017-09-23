@@ -9,12 +9,14 @@ import org.scribe.model.Token
 /**
  * Created by Tre Murillo on 8/6/16
  */
-object AuthState {
+object Users {
 
     private const val FILE_TOKEN = "umap.token"
     private const val FILE_USER = "umap.user"
 
-    private var user: User? = null
+    var user: User? = null
+        private set
+
     private var token: Token? = null
 
     fun setToken(context: Context, token: Token) {
@@ -30,6 +32,7 @@ object AuthState {
     fun isLoggedIn() = user != null && token != null
 
     fun load(context: Context): Boolean {
+        if (isLoggedIn()) return true
         user = context.loadFile(FILE_USER)
         token = context.loadFile(FILE_TOKEN)
         return isLoggedIn()

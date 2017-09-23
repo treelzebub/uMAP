@@ -15,11 +15,6 @@ class CollectionActivity : UmapActivity() {
 
     private val adapter = CollectionAdapter(this)
 
-//    private val collection = CollectionConduit(this)
-//        .onSuccess {
-//            Data.collection.insert(it)
-//        }
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_collection)
@@ -32,11 +27,6 @@ class CollectionActivity : UmapActivity() {
             it.itemAnimator = DefaultItemAnimator()
             it.adapter = adapter
         }
-
-//        subscribeToBismarck(Data.collection) {
-//            it?.releases?.let { adapter.releases = it }
-//            if (UmapVersions.isDebug()) {
-//                Log.d("Collection Contents", GsonBuilder().setPrettyPrinting().create().toJson(it))
-//            }
+        // it?.releases?.let { adapter.releases = it }
     }
 }
