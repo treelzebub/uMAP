@@ -1,11 +1,11 @@
 package net.treelzebub.umap.net.api
 
 import net.treelzebub.umap.net.SigningOkClient
+import oauth.signpost.OAuthConsumer
 import org.scribe.model.Token
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
-import se.akerfeldt.okhttp.signpost.OkHttpOAuthConsumer
 
 /**
  * Created by treelzebub on 9/22/2017
@@ -24,7 +24,7 @@ object Discogs {
     lateinit var api: DiscogsApi
         private set
 
-    fun init(consumer: OkHttpOAuthConsumer, token: Token) {
+    fun init(consumer: OAuthConsumer, token: Token) {
         val retrofit = Retrofit.Builder()
                 .baseUrl(DISCOGS_BASE_URL)
                 .client(SigningOkClient.create(consumer, token))

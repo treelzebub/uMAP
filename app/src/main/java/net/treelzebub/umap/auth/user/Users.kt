@@ -1,8 +1,9 @@
 package net.treelzebub.umap.auth.user
 
 import android.content.Context
+import android.util.Log
 import net.treelzebub.umap.model.User
-import org.jetbrains.anko.toast
+import net.treelzebub.umap.util.TAG
 
 /**
  * Created by Tre Murillo on 8/6/16
@@ -13,7 +14,7 @@ object Users {
 
     fun set(context: Context, user: User) {
         this.user = user
-        context.toast("User Set...TODO -- persist to disk")
+        Log.d(TAG, "User Set...TODO -- persist to disk")
     }
 
     fun hasUser() = user != null
