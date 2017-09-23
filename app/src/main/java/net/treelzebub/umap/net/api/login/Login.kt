@@ -3,9 +3,9 @@ package net.treelzebub.umap.net.api.login
 import android.content.Context
 import android.net.Uri
 import android.util.Log
+import io.reactivex.Observable
 import net.treelzebub.autograph.OauthConsumer
 import net.treelzebub.umap.R
-import net.treelzebub.umap.auth.user.Users
 import net.treelzebub.umap.model.Identity
 import net.treelzebub.umap.net.api.Discogs
 import net.treelzebub.umap.net.api.TokenService
@@ -33,9 +33,10 @@ class Login(private val context: Context) {
         return service.getAuthUrl(token)
     }
 
-    fun processUser(url: String) {
+    fun complete(url: String): Observable<Identity> {
         val token = getAccessToken(url)
         initRetrofit(token)
+        return getIdentity()
     }
 
     private fun getAccessToken(url: String): Token {
@@ -54,23 +55,8 @@ class Login(private val context: Context) {
         Discogs.init(consumer, token)
     }
 
-    fun initUser() {
+    private fun getIdentity(): Observable<Identity> {
         Log.d(TAG, "Getting Identity")
-        Discogs.api.getIdentity()
-                .umap()
-                .subscribe {
-                    Log.d(TAG, "GOT IDENTITY " + it.username)
-                    setUser(it)
-                }
-    }
-
-    private fun setUser(identity: Identity) {
-        Log.d(TAG, "Setting User")
-        Discogs.api.getUser(identity.username)
-                .umap()
-                .subscribe {
-                    Log.d(TAG, "GOT USER " + it.name)
-                    Users.set(context, it)
-                }
+        return Discogs.api.getIdentity().umap()
     }
 }

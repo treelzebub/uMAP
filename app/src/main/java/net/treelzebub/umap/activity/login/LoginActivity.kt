@@ -7,10 +7,12 @@ import android.webkit.WebViewClient
 import kotlinx.android.synthetic.main.activity_login.*
 import net.treelzebub.umap.R
 import net.treelzebub.umap.activity.UmapActivity
+import net.treelzebub.umap.activity.dashboard.DashboardActivity
+import net.treelzebub.umap.auth.user.Users
 import net.treelzebub.umap.net.api.Discogs
 import net.treelzebub.umap.net.api.login.Login
+import net.treelzebub.umap.util.rx.umap
 import org.jetbrains.anko.doAsync
-import org.jetbrains.anko.toast
 import org.jetbrains.anko.uiThread
 
 /**
@@ -47,18 +49,27 @@ class LoginActivity : UmapActivity() {
         }
     }
 
-    private inner class LoginClient : WebViewClient() {
-
-        override fun shouldOverrideUrlLoading(view: WebView, url: String?): Boolean {
-            if (url != null && Discogs.CALLBACK_URL in url) {
-                toast("Validating Identity...")
-                doAsync {
-                    login.processUser(url)
-                    login.initUser()
+    private fun login(url: String) {
+        doAsync {
+            login.complete(url).subscribe {
+                Discogs.api.getUser(it.username).umap().subscribe {
+                    Users.set(this@LoginActivity, it)
+                    next()
                 }
-                return true
             }
-            return false
+        }
+    }
+
+    private fun next() {
+        startActivity(DashboardActivity.getIntent(this))
+        finish()
+    }
+
+    private inner class LoginClient : WebViewClient() {
+        override fun shouldOverrideUrlLoading(view: WebView, url: String): Boolean {
+            return if (Discogs.CALLBACK_URL in url) {
+                login(url); true
+            } else false
         }
     }
 }
