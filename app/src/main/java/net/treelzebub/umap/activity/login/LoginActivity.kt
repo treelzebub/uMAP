@@ -8,9 +8,9 @@ import kotlinx.android.synthetic.main.activity_login.*
 import net.treelzebub.umap.R
 import net.treelzebub.umap.activity.UmapActivity
 import net.treelzebub.umap.activity.dashboard.DashboardActivity
-import net.treelzebub.umap.auth.user.Users
+import net.treelzebub.umap.auth.Users
 import net.treelzebub.umap.net.api.Discogs
-import net.treelzebub.umap.net.api.login.Login
+import net.treelzebub.umap.net.login.Login
 import net.treelzebub.umap.util.rx.umap
 import org.jetbrains.anko.doAsync
 import org.jetbrains.anko.uiThread

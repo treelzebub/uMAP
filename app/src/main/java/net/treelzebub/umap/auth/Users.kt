@@ -1,4 +1,4 @@
-package net.treelzebub.umap.auth.user
+package net.treelzebub.umap.auth
 
 import android.content.Context
 import android.util.Log
@@ -13,7 +13,7 @@ object Users {
     private var user: User? = null
 
     fun set(context: Context, user: User) {
-        this.user = user
+        Users.user = user
         Log.d(TAG, "User Set...TODO -- persist to disk")
     }
 

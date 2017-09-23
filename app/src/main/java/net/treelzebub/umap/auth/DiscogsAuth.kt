@@ -1,4 +1,4 @@
-package net.treelzebub.umap.auth2
+package net.treelzebub.umap.auth
 
 import org.scribe.model.Token
 

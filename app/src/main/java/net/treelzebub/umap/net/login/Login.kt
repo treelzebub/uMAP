@@ -1,4 +1,4 @@
-package net.treelzebub.umap.net.api.login
+package net.treelzebub.umap.net.login
 
 import android.content.Context
 import android.net.Uri
