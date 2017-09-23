@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:auto="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,30 +8,31 @@
     android:layout_marginBottom="@dimen/margin_small"
     android:layout_marginLeft="@dimen/margin_small"
     android:layout_marginRight="@dimen/margin_small"
-    android:clipToPadding="false"
-    android:elevation="@dimen/el_high"
     android:padding="@dimen/margin_normal"
-    auto:cardCornerRadius="2dp">
+    auto:cardCornerRadius="2dp"
+    auto:elevation="@dimen/el_high">
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/sel_ripple"
         android:id="@+id/clicker"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/sel_ripple"
         android:clickable="true"
+        android:focusable="true"
         android:gravity="start"
         android:orientation="horizontal">
 
         <ImageView
+            android:contentDescription="@string/desc_album_cover"
             android:id="@+id/cover"
             android:layout_width="@dimen/cardview_album_cover"
             android:layout_height="@dimen/cardview_album_cover"
-            android:adjustViewBounds="true"
-            tools:src="@drawable/tools_cover" />
+            android:layout_margin="@dimen/margin_small"
+            tools:src="@drawable/tools_cover"/>
 
         <LinearLayout
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_margin="@dimen/margin_small"
             android:layout_weight="1"
             android:clipToPadding="false"
@@ -43,7 +45,7 @@
                 android:layout_height="wrap_content"
                 android:ellipsize="end"
                 android:singleLine="true"
-                tools:text="A Former Life" />
+                tools:text="A Former Life"/>
 
             <TextView
                 android:id="@+id/title"
@@ -52,7 +54,7 @@
                 android:layout_height="wrap_content"
                 android:ellipsize="end"
                 android:singleLine="true"
-                tools:text="Skin Of Our Dentures And Other Tales, Volume One" />
+                tools:text="Skin Of Our Dentures And Other Tales, Volume One"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -67,7 +69,7 @@
                     android:layout_weight="1"
                     android:ellipsize="end"
                     android:singleLine="true"
-                    tools:text="Fruity Shoop Doo Records" />
+                    tools:text="Fruity Shoop Doo Records"/>
 
                 <TextView
                     android:id="@+id/year"
@@ -76,10 +78,8 @@
                     android:layout_height="wrap_content"
                     android:ellipsize="end"
                     android:singleLine="true"
-                    tools:text="2005" />
+                    tools:text="2005"/>
             </LinearLayout>
         </LinearLayout>
-
     </LinearLayout>
-
 </android.support.v7.widget.CardView>

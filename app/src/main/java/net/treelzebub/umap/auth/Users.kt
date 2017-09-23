@@ -17,7 +17,8 @@ object Users {
     var user: User? = null
         private set
 
-    private var token: Token? = null
+    var token: Token? = null
+        private set
 
     fun setToken(context: Context, token: Token) {
         this.token = token

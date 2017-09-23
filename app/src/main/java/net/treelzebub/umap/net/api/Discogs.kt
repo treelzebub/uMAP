@@ -1,6 +1,11 @@
 package net.treelzebub.umap.net.api
 
+import android.content.Context
+import android.util.Log
+import net.treelzebub.autograph.OauthConsumer
+import net.treelzebub.umap.R
 import net.treelzebub.umap.net.SigningOkClient
+import net.treelzebub.umap.util.TAG
 import oauth.signpost.OAuthConsumer
 import org.scribe.model.Token
 import retrofit2.Retrofit
@@ -24,7 +29,11 @@ object Discogs {
     lateinit var api: DiscogsApi
         private set
 
-    fun init(consumer: OAuthConsumer, token: Token) {
+    fun init(context: Context, token: Token) {
+        Log.d(TAG, "Initializing Retrofit")
+        val key = context.getString(R.string.discogs_consumer_key)
+        val secret = context.getString(R.string.discogs_consumer_secret)
+        val consumer = OauthConsumer(key, secret)
         val retrofit = Retrofit.Builder()
                 .baseUrl(DISCOGS_BASE_URL)
                 .client(SigningOkClient.create(consumer, token))

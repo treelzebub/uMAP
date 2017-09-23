@@ -1,7 +1,6 @@
 package net.treelzebub.umap.net.api
 
 import io.reactivex.Observable
-import io.reactivex.Single
 import net.treelzebub.umap.model.*
 import net.treelzebub.umap.model.Collection
 import retrofit2.http.GET
@@ -11,6 +10,12 @@ import retrofit2.http.Path
  * Created by treelzebub on 9/22/2017
  */
 interface DiscogsApi {
+
+    companion object {
+
+        // Feed this folder_id to CollectionReleases for all items.
+        const val ID_ROOT_COLLECTION_FOLDER = "0"
+    }
 
     @GET("/oauth/identity")
     fun getIdentity(): Observable<Identity>

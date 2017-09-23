@@ -37,7 +37,7 @@ class Login(private val context: Context) {
     fun complete(url: String): Observable<Identity> {
         val token = getAccessToken(url)
         Users.setToken(context, token)
-        initRetrofit(token)
+        Discogs.init(context, token)
         return getIdentity()
     }
 
@@ -47,14 +47,6 @@ class Login(private val context: Context) {
         val verifierParam = data.getQueryParameter(VERIFIER_KEY)!!
         val verifier = Verifier(verifierParam)
         return service.getAccessToken(requestToken!!, verifier)
-    }
-
-    private fun initRetrofit(token: Token) {
-        Log.d(TAG, "Initializing Retrofit")
-        val key = context.getString(R.string.discogs_consumer_key)
-        val secret = context.getString(R.string.discogs_consumer_secret)
-        val consumer = OauthConsumer(key, secret)
-        Discogs.init(consumer, token)
     }
 
     private fun getIdentity(): Observable<Identity> {
