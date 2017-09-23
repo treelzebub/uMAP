@@ -8,7 +8,7 @@ import kotlinx.android.synthetic.main.activity_login.*
 import net.treelzebub.umap.R
 import net.treelzebub.umap.activity.UmapActivity
 import net.treelzebub.umap.activity.dashboard.DashboardActivity
-import net.treelzebub.umap.auth.Users
+import net.treelzebub.umap.auth.AuthState
 import net.treelzebub.umap.net.api.Discogs
 import net.treelzebub.umap.net.login.Login
 import net.treelzebub.umap.util.rx.umap
@@ -53,7 +53,7 @@ class LoginActivity : UmapActivity() {
         doAsync {
             login.complete(url).subscribe {
                 Discogs.api.getUser(it.username).umap().subscribe {
-                    Users.set(this@LoginActivity, it)
+                    AuthState.setUser(this@LoginActivity, it)
                     next()
                 }
             }

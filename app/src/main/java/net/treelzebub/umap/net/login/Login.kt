@@ -6,6 +6,7 @@ import android.util.Log
 import io.reactivex.Observable
 import net.treelzebub.autograph.OauthConsumer
 import net.treelzebub.umap.R
+import net.treelzebub.umap.auth.AuthState
 import net.treelzebub.umap.model.Identity
 import net.treelzebub.umap.net.api.Discogs
 import net.treelzebub.umap.net.api.TokenService
@@ -35,6 +36,7 @@ class Login(private val context: Context) {
 
     fun complete(url: String): Observable<Identity> {
         val token = getAccessToken(url)
+        AuthState.setToken(context, token)
         initRetrofit(token)
         return getIdentity()
     }
