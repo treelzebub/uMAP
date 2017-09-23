@@ -19,7 +19,7 @@ import java.io.IOException
 class SigningOkClient {
 
     companion object {
-        fun create(consumer: OkHttpOAuthConsumer, token: Token): OkHttpClient {
+        fun create(consumer: OAuthConsumer, token: Token): OkHttpClient {
             consumer.setTokenWithSecret(token.token, token.secret)
             return OkHttpClient.Builder()
                     .addInterceptor(OauthInterceptor(consumer))
@@ -31,7 +31,7 @@ class SigningOkClient {
     }
 }
 
-private class OauthInterceptor(private val consumer: OkHttpOAuthConsumer) : Interceptor {
+private class OauthInterceptor(private val consumer: net.treelzebub.autograph.OAuthConsumer) : Interceptor {
 
     override fun intercept(chain: Interceptor.Chain): Response {
         val request = chain.request()
