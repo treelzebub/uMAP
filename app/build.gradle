@@ -71,7 +71,6 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation 'com.jakewharton:kotterknife:0.1.0-SNAPSHOT'
     implementation 'net.danlew:android.joda:2.9.9'
-    implementation 'com.levelmoney:conduit:0.9.9'
     annotationProcessor 'com.levelmoney.velodrome:velodrome:1.0'
     implementation 'net.sarazan.prefs:prefs:1.1.01@aar'
 
@@ -92,10 +91,7 @@ dependencies {
     //UI
     implementation "org.jetbrains.anko:anko-sdk15:$anko_version" // So here it's 15 too
     implementation "org.jetbrains.anko:anko-appcompat-v7:$anko_version"
-    implementation "org.jetbrains.anko:anko-design:$anko_version"
-    implementation "org.jetbrains.anko:anko-recyclerview-v7:$anko_version"
     implementation 'com.squareup.picasso:picasso:2.5.2'
-    implementation 'uk.co.chrisjenx:calligraphy:2.1.0'
     implementation 'pl.droidsonroids.gif:android-gif-drawable:1.1.17'
     implementation 'com.levelmoney:klarity:0.7'
     implementation 'com.zaihuishou:expandablerecycleradapter:1.0.2'
